@@ -1,262 +1,269 @@
 """
-Lattice geometry visualization + 60°-rotated "Model B" comparison.
+Three lattice models for the discrete path integral — compared geometrically
+and dynamically.
 
-Model A (original triangular):
-  moves: (-1,+1), (0,+1), (+1,+1)   [dx, dt]
-  all moves advance time by 1
+1. Feynman Checkerboard  (square lattice, 2 moves: ±1 in x, +1 in t)
+2. Equilateral Triangular (staggered grid,  2 moves: ±½ in x, +1 in t, |edge|=1)
+3. Square + Rest          (rectangular grid, 3 moves: -1/0/+1 in x, +1 in t)
 
-Model B (60°-rotated frame):
-  The rotation maps time axis T=(0,1) → T'=(-√3/2, 1/2).
-  In the rotated frame, move (+1,+1) goes *backward* (ΔT'=-0.37).
-  We replace it with (-1,0) which has ΔT'=+0.87 → genuinely forward.
-  moves: (-1,+1), (0,+1), (-1,0)    [dx, dt]
-  Note: move (-1,0) has dt=0 (horizontal), so the DP must track (t,x) separately.
+Amplitude rule everywhere: same direction → ×1, direction change → ×(iε).
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-from matplotlib.patches import FancyArrowPatch
 
-# ─────────────────────────── geometry helpers ───────────────────────────────
-
-MOVES_A = [(-1, 1), (0, 1), (1, 1)]   # (dx, dt)
-MOVES_B = [(-1, 1), (0, 1), (-1, 0)]  # (-1,0) replaces (+1,+1)
-
-COLORS = ['#e74c3c', '#2ecc71', '#3498db']   # red, green, blue per move
-LABELS_A = ['(-1,+1)', '(0,+1)', '(+1,+1)']
-LABELS_B = ['(-1,+1)', '(0,+1)', '(-1,0)']
+SQRT3_2 = np.sqrt(3) / 2   # vertical spacing for equilateral triangles
 
 
-def draw_lattice_ax(ax, moves, labels, T_draw=5, title='', show_rotation=False):
-    """Draw lattice nodes and move-vectors on ax."""
-    xs = range(-T_draw, T_draw + 1)
-    ts = range(0, T_draw + 1)
+# ═══════════════════════════════════════════════════════════════════════════
+#  Simulators
+# ═══════════════════════════════════════════════════════════════════════════
 
-    # grid nodes
-    for t in ts:
-        for x in xs:
-            ax.plot(x, t, 'o', color='#95a5a6', ms=3, zorder=2)
-
-    # highlight origin
-    ax.plot(0, 0, 'ko', ms=6, zorder=3)
-
-    # draw example move arrows from a few nodes
-    sample_nodes = [(0, 0), (-1, 1), (1, 1), (0, 2), (-1, 3), (1, 3)]
-    for (x0, t0) in sample_nodes:
-        for (dx, dt), col in zip(moves, COLORS):
-            x1, t1 = x0 + dx, t0 + dt
-            if -T_draw <= x1 <= T_draw and 0 <= t1 <= T_draw:
-                ax.annotate('', xy=(x1, t1), xytext=(x0, t0),
-                            arrowprops=dict(arrowstyle='->', color=col,
-                                           lw=1.4, shrinkA=3, shrinkB=3))
-
-    # legend patches
-    patches = [mpatches.Patch(color=c, label=l)
-               for c, l in zip(COLORS, labels)]
-    ax.legend(handles=patches, loc='upper right', fontsize=7)
-
-    if show_rotation:
-        # draw original and rotated time axis
-        ax.annotate('', xy=(0, T_draw * 0.7), xytext=(0, 0),
-                    arrowprops=dict(arrowstyle='->', color='black', lw=2))
-        ax.text(0.15, T_draw * 0.65, "T", fontsize=10, color='black')
-        # rotated axis: T' = (-√3/2, 1/2) normalized, scale by T_draw*0.6
-        scale = T_draw * 0.6
-        tx, ty = -np.sqrt(3) / 2 * scale, 0.5 * scale
-        ax.annotate('', xy=(tx, ty), xytext=(0, 0),
-                    arrowprops=dict(arrowstyle='->', color='purple', lw=2))
-        ax.text(tx - 0.5, ty + 0.1, "T'", fontsize=10, color='purple')
-
-    ax.set_xlim(-T_draw - 0.5, T_draw + 0.5)
-    ax.set_ylim(-0.5, T_draw + 0.5)
-    ax.set_xlabel('x')
-    ax.set_ylabel('t')
-    ax.set_title(title, fontsize=10)
-    ax.set_aspect('equal')
-    ax.grid(False)
+def _change_matrix(n_dirs, epsilon):
+    """n_dirs × n_dirs matrix: 1 on diagonal, iε off-diagonal."""
+    C = np.full((n_dirs, n_dirs), 1j * epsilon, dtype=complex)
+    np.fill_diagonal(C, 1.0 + 0j)
+    return C
 
 
-# ─────────────────────────── simulators ─────────────────────────────────────
-
-def simulate_model_A(T, epsilon=0.1):
+def simulate_checkerboard(T, epsilon=0.1):
     """
-    Model A: moves (-1,+1),(0,+1),(+1,+1).
-    Returns complex psi[T+1, 2T+1].
+    Feynman Checkerboard: moves (dx,dt) ∈ {(-1,+1),(+1,+1)}.
+    Returns psi[T+1, N], N=2T+1.  x[i] = i - T.
     """
     N = 2 * T + 1
     center = T
-    ie = 1j * epsilon
+    C = _change_matrix(2, epsilon)   # 2×2
 
-    # change[d_new, d_old]: factor when arriving via d_new from d_old
-    change = np.full((3, 3), ie, dtype=complex)
-    np.fill_diagonal(change, 1.0 + 0j)
-
-    amp = np.zeros((N, 3), dtype=complex)
-    amp[center, :] = 1.0 / 3.0  # start uniform over directions
+    amp = np.zeros((N, 2), dtype=complex)
+    amp[center, :] = 0.5
 
     psi = np.zeros((T + 1, N), dtype=complex)
-    psi[0] = np.sum(amp, axis=1)
+    psi[0] = amp.sum(axis=1)
 
-    dirs = [-1, 0, 1]
-    for step in range(1, T + 1):
-        new_amp = np.zeros((N, 3), dtype=complex)
-        for d_new, dv in enumerate(dirs):
-            weighted = amp @ change[d_new]   # (N,)
-            if dv == -1:
-                new_amp[:-1, d_new] += weighted[1:]
-            elif dv == 0:
-                new_amp[:, d_new]   += weighted
-            else:
-                new_amp[1:, d_new]  += weighted[:-1]
+    for _ in range(1, T + 1):
+        new_amp = np.zeros((N, 2), dtype=complex)
+        # d=0: dx=-1 → shift left
+        w = amp @ C[0]
+        new_amp[:-1, 0] += w[1:]
+        # d=1: dx=+1 → shift right
+        w = amp @ C[1]
+        new_amp[1:, 1] += w[:-1]
         amp = new_amp
-        psi[step] = np.sum(amp, axis=1)
+        psi[_] = amp.sum(axis=1)
 
-    return psi
+    return psi          # x[i] = i - center,  Δx = 1
 
 
-def simulate_model_B(T, epsilon=0.1):
+def simulate_equilateral(T, epsilon=0.1):
     """
-    Model B: moves (-1,+1),(0,+1),(-1,0).
-    Move 2 has dt=0, so we track a 2D amplitude grid amp[t, x, direction].
-    After each "time row" we apply the dt=0 move iteratively until convergence,
-    but since the move is purely spatial (no loop possible), one application suffices.
+    Equilateral triangular lattice: staggered grid.
+    Moves: (-½,+1) and (+½,+1)  — all edges length 1 when Δt = √3/2.
 
-    State: amp[x, d] for current time slice.
-    Advances:
-      d=0: (dx=-1, dt=+1) → spatial shift left, time advance
-      d=1: (dx= 0, dt=+1) → no spatial shift, time advance
-      d=2: (dx=-1, dt= 0) → spatial shift left, SAME time slice
+    Indexing: amp[i, d] at time t.
+      t even : physical x = (i - center)          (integer)
+      t odd  : physical x = (i - center) + ½      (half-integer)
 
-    We process each time step as:
-      1. Apply dt=0 move within current slice (only once; no cycles possible)
-      2. Advance to next time slice via dt=1 moves
+    Shift rule:
+      t even → t+1 odd:  left d=0 shifts i-1,  right d=1 keeps i
+      t odd  → t+2 even: left d=0 keeps i,      right d=1 shifts i+1
+    """
+    N = 2 * T + 3      # small margin
+    center = T + 1
+    C = _change_matrix(2, epsilon)
+
+    amp = np.zeros((N, 2), dtype=complex)
+    amp[center, :] = 0.5
+
+    psi = np.zeros((T + 1, N), dtype=complex)
+    psi[0] = amp.sum(axis=1)
+
+    for step in range(1, T + 1):
+        new_amp = np.zeros((N, 2), dtype=complex)
+        t_parity = (step - 1) % 2   # parity of the time slice we're leaving
+
+        if t_parity == 0:            # even → odd
+            w0 = amp @ C[0];  new_amp[:-1, 0] += w0[1:]   # left: i→i-1
+            w1 = amp @ C[1];  new_amp[:, 1]   += w1        # right: i→i
+        else:                        # odd → even
+            w0 = amp @ C[0];  new_amp[:, 0]   += w0        # left: i→i
+            w1 = amp @ C[1];  new_amp[1:, 1]  += w1[:-1]  # right: i→i+1
+
+        amp = new_amp
+        psi[step] = amp.sum(axis=1)
+
+    return psi          # x[i] = (i - center) + (t%2)*0.5,  Δx = 0.5
+
+
+def simulate_square_rest(T, epsilon=0.1):
+    """
+    Square lattice + rest move: 3 moves (dx,dt) ∈ {(-1,+1),(0,+1),(+1,+1)}.
+    Returns psi[T+1, N], N=2T+1.  x[i] = i - T.
     """
     N = 2 * T + 1
     center = T
-    ie = 1j * epsilon
-
-    # 3 moves: indices 0,1,2
-    # change[d_new, d_old]
-    change = np.full((3, 3), ie, dtype=complex)
-    np.fill_diagonal(change, 1.0 + 0j)
+    C = _change_matrix(3, epsilon)
 
     amp = np.zeros((N, 3), dtype=complex)
     amp[center, :] = 1.0 / 3.0
 
     psi = np.zeros((T + 1, N), dtype=complex)
-    psi[0] = np.sum(amp, axis=1)
+    psi[0] = amp.sum(axis=1)
 
     for step in range(1, T + 1):
-        # Step A: propagate dt=1 moves from previous slice → new slice
         new_amp = np.zeros((N, 3), dtype=complex)
-
-        # d_new=0: move (-1,+1)
-        weighted = amp @ change[0]
-        new_amp[:-1, 0] += weighted[1:]   # shift left
-
-        # d_new=1: move (0,+1)
-        weighted = amp @ change[1]
-        new_amp[:, 1] += weighted
-
-        # d_new=2: move (-1,0) arriving at new time slice from same slice
-        # Source: previous slice arriving via dt=0 from previous slice
-        # This is tricky: dt=0 move stays in the SAME time slice.
-        # We handle it as: within new_amp, after the dt=1 contributions,
-        # we fold in the dt=0 self-propagation once (no feedback loop possible
-        # because the chain can't cycle: each application shifts x by -1).
-        weighted = amp @ change[2]
-        new_amp[:-1, 2] += weighted[1:]   # shift left, same time
-
+        # d=0: dx=-1
+        w = amp @ C[0];  new_amp[:-1, 0] += w[1:]
+        # d=1: dx= 0
+        w = amp @ C[1];  new_amp[:, 1]   += w
+        # d=2: dx=+1
+        w = amp @ C[2];  new_amp[1:, 2]  += w[:-1]
         amp = new_amp
+        psi[step] = amp.sum(axis=1)
 
-        # Step B: apply dt=0 move within this slice (propagate d=2 arrivals
-        # that can themselves feed d=2 arrivals shifted further left).
-        # Since each application shifts left by 1, we apply T times max.
-        for _ in range(T):
-            extra = np.zeros((N, 3), dtype=complex)
-            weighted = amp[:, 2:3] @ change[2:3, 2:3]   # only from d=2
-            weighted = weighted[:, 0]
-            if np.max(np.abs(weighted)) < 1e-15:
-                break
-            # d_new = 0,1 can't come from dt=0 move (they have dt=1)
-            # d_new = 2 from d=2: shift left
-            extra[:-1, 2] += weighted[1:]
-            amp += extra
-
-        psi[step] = np.sum(amp, axis=1)
-
-    return psi
+    return psi          # x[i] = i - center,  Δx = 1
 
 
-# ─────────────────────────── figure 1: geometry ─────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════════
+#  Helper: x-axis arrays in physical units
+# ═══════════════════════════════════════════════════════════════════════════
 
-def fig_lattice_and_rotation():
-    fig, axes = plt.subplots(1, 3, figsize=(15, 6))
-    fig.suptitle('Triangular Lattice Geometry & 60° Time-Axis Rotation', fontsize=13)
+def xs_checkerboard(T):
+    return np.arange(2 * T + 1) - T           # integers, Δx=1
 
-    # Panel 1: Model A lattice
-    draw_lattice_ax(axes[0], MOVES_A, LABELS_A, T_draw=5,
-                    title='Model A — original\nmoves: (-1,+1), (0,+1), (+1,+1)')
+def xs_equilateral(T, t):
+    """Physical x at time step t for equilateral model."""
+    N = 2 * T + 3
+    center = T + 1
+    offset = 0.5 * (t % 2)
+    return (np.arange(N) - center + offset) * 0.5   # half-integers or integers
 
-    # Panel 2: rotation diagram
-    ax = axes[1]
-    ax.set_xlim(-2, 2)
-    ax.set_ylim(-0.5, 2.5)
+def xs_square_rest(T):
+    return np.arange(2 * T + 1) - T           # integers, Δx=1
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+#  Figure 1 — Lattice geometry (correct visual proportions)
+# ═══════════════════════════════════════════════════════════════════════════
+
+def _arrow(ax, x0, y0, x1, y1, color, lw=1.3):
+    ax.annotate('', xy=(x1, y1), xytext=(x0, y0),
+                arrowprops=dict(arrowstyle='->', color=color,
+                                lw=lw, shrinkA=4, shrinkB=4))
+
+
+def draw_checkerboard_panel(ax, T_draw=5):
+    """Square lattice, moves (±1,+1). All edges length √2."""
+    ax.set_title('Feynman Checkerboard\n2 moves: (±1,+1), Δx=Δt=1', fontsize=9)
+    for t in range(T_draw + 1):
+        for x in range(-T_draw, T_draw + 1):
+            ax.plot(x, t, 'o', color='#aaaaaa', ms=3, zorder=2)
+    ax.plot(0, 0, 'ko', ms=6, zorder=3)
+
+    samples = [(0,0),(-1,1),(1,1),(0,2),(-1,3),(1,3)]
+    for (x0, t0) in samples:
+        _arrow(ax, x0, t0, x0-1, t0+1, '#e74c3c')
+        _arrow(ax, x0, t0, x0+1, t0+1, '#3498db')
+
+    patches = [mpatches.Patch(color='#e74c3c', label='(-1,+1)'),
+               mpatches.Patch(color='#3498db', label='(+1,+1)')]
+    ax.legend(handles=patches, fontsize=7, loc='upper right')
+    ax.set_xlim(-T_draw-0.5, T_draw+0.5)
+    ax.set_ylim(-0.3, T_draw+0.3)
+    ax.set_xlabel('x');  ax.set_ylabel('t')
     ax.set_aspect('equal')
-    ax.set_title('60° rotation of time axis\nT=(0,1) → T\'=(-√3/2, 1/2)', fontsize=10)
-    ax.axhline(0, color='gray', lw=0.5)
-    ax.axvline(0, color='gray', lw=0.5)
 
-    # original axes
-    ax.annotate('', xy=(0, 2), xytext=(0, 0),
-                arrowprops=dict(arrowstyle='->', color='black', lw=2.5))
-    ax.annotate('', xy=(1.8, 0), xytext=(0, 0),
-                arrowprops=dict(arrowstyle='->', color='black', lw=2.5))
-    ax.text(0.1, 1.9, 'T', fontsize=12, color='black', fontweight='bold')
-    ax.text(1.7, 0.1, 'X', fontsize=12, color='black', fontweight='bold')
+    # annotate edge lengths
+    ax.text(0.6, 0.55, '√2', fontsize=7.5, color='#3498db', rotation=45)
+    ax.text(-0.95, 0.55, '√2', fontsize=7.5, color='#e74c3c', rotation=-45)
 
-    # rotated time axis (60° CCW from vertical = 30° CCW from y-axis)
-    angle_rad = np.radians(60)
-    tx = -np.sin(angle_rad) * 1.8   # -√3/2 * 1.8
-    ty =  np.cos(angle_rad) * 1.8   #  1/2  * 1.8
-    ax.annotate('', xy=(tx, ty), xytext=(0, 0),
-                arrowprops=dict(arrowstyle='->', color='purple', lw=2.5))
-    ax.text(tx - 0.35, ty + 0.05, "T'", fontsize=12, color='purple', fontweight='bold')
 
-    # show moves and their projection onto T'
-    moves_info = [
-        ((-1, 1), '#e74c3c', '(-1,+1)\nΔT\'=+0.87 ✓'),
-        (( 0, 1), '#2ecc71', '(0,+1)\nΔT\'=+0.50 ✓'),
-        (( 1, 1), '#3498db', '(+1,+1)\nΔT\'=-0.37 ✗'),
-        ((-1, 0), '#f39c12', '(-1,0)\nΔT\'=+0.87 ✓ (replacement)'),
-    ]
-    # unit T' vector
-    Tp = np.array([-np.sqrt(3) / 2, 0.5])
-    Tp /= np.linalg.norm(Tp)
+def draw_equilateral_panel(ax, T_draw=5):
+    """Staggered grid, moves (±½,+1) drawn at Δt=√3/2 so all edges = 1."""
+    ax.set_title('Equilateral Triangular\n2 moves: (±½,+1), |edge|=1', fontsize=9)
+    dt = SQRT3_2   # visual row spacing
 
-    offsets = [(-0.8, 0.15), (0.1, 0.1), (0.35, 0.1), (-0.6, -0.35)]
-    for (dx, dt), col, lbl, off in zip(
-            [m[0] for m in moves_info],
-            [m[1] for m in moves_info],
-            [m[2] for m in moves_info],
-            offsets):
-        v = np.array([dx, dt], dtype=float)
-        proj = np.dot(v, Tp)
-        ax.annotate('', xy=(dx * 0.6, dt * 0.6), xytext=(0, 0),
-                    arrowprops=dict(arrowstyle='->', color=col, lw=2,
-                                   shrinkA=0, shrinkB=0))
-        ax.text(dx * 0.6 + off[0], dt * 0.6 + off[1], lbl,
-                fontsize=7.5, color=col,
-                bbox=dict(boxstyle='round,pad=0.2', fc='white', alpha=0.8))
+    for t in range(T_draw + 1):
+        offset = 0.5 if t % 2 else 0.0
+        x_range = np.arange(-T_draw, T_draw + 1) + offset
+        for x in x_range:
+            ax.plot(x, t * dt, 'o', color='#aaaaaa', ms=3, zorder=2)
+        # draw horizontal edges within the row
+        for x in x_range[:-1]:
+            ax.plot([x, x+1], [t*dt, t*dt], '-', color='#dddddd', lw=0.5, zorder=1)
 
-    ax.set_xlabel('x')
-    ax.set_ylabel('t')
-    ax.grid(True, alpha=0.3)
+    # draw diagonal edges (all edges)
+    for t in range(T_draw):
+        offset = 0.5 if t % 2 else 0.0
+        x_range = np.arange(-T_draw, T_draw + 1) + offset
+        for x in x_range:
+            # left move
+            ax.plot([x, x-0.5], [t*dt, (t+1)*dt], '-', color='#dddddd', lw=0.5, zorder=1)
+            # right move
+            ax.plot([x, x+0.5], [t*dt, (t+1)*dt], '-', color='#dddddd', lw=0.5, zorder=1)
 
-    # Panel 3: Model B lattice
-    draw_lattice_ax(axes[2], MOVES_B, LABELS_B, T_draw=5,
-                    title='Model B — 60°-rotated frame\nmoves: (-1,+1), (0,+1), (-1,0)')
+    # origin
+    ax.plot(0, 0, 'ko', ms=6, zorder=3)
+
+    # arrows from a few nodes
+    samples_even = [(0,0),(-1,2),(1,2)]
+    samples_odd  = [(-0.5,1),(0.5,1),(-0.5,3),(0.5,3)]
+    for (x0, t0) in samples_even + samples_odd:
+        _arrow(ax, x0, t0*dt, x0-0.5, (t0+1)*dt, '#e74c3c')
+        _arrow(ax, x0, t0*dt, x0+0.5, (t0+1)*dt, '#3498db')
+
+    patches = [mpatches.Patch(color='#e74c3c', label='(-½,+1)'),
+               mpatches.Patch(color='#3498db', label='(+½,+1)')]
+    ax.legend(handles=patches, fontsize=7, loc='upper right')
+    ax.set_xlim(-T_draw-0.5, T_draw+0.5)
+    ax.set_ylim(-0.3, T_draw*dt+0.3)
+    ax.set_xlabel('x');  ax.set_ylabel('t  (unit: √3/2)')
+    ax.set_aspect('equal')
+
+    # annotate one edge
+    ax.text(0.35, dt*0.45, '1', fontsize=8, color='#3498db', rotation=60)
+    ax.text(-0.55, dt*0.45, '1', fontsize=8, color='#e74c3c', rotation=-60)
+
+
+def draw_square_rest_panel(ax, T_draw=5):
+    """Rectangular grid, 3 moves: (-1,+1),(0,+1),(+1,+1)."""
+    ax.set_title('Square + Rest move\n3 moves: (-1,+1),(0,+1),(+1,+1)', fontsize=9)
+    for t in range(T_draw + 1):
+        for x in range(-T_draw, T_draw + 1):
+            ax.plot(x, t, 'o', color='#aaaaaa', ms=3, zorder=2)
+    ax.plot(0, 0, 'ko', ms=6, zorder=3)
+
+    samples = [(0,0),(-1,1),(1,1),(0,2),(-1,3),(1,3)]
+    for (x0, t0) in samples:
+        _arrow(ax, x0, t0, x0-1, t0+1, '#e74c3c')
+        _arrow(ax, x0, t0, x0,   t0+1, '#2ecc71')
+        _arrow(ax, x0, t0, x0+1, t0+1, '#3498db')
+
+    patches = [mpatches.Patch(color='#e74c3c', label='(-1,+1)'),
+               mpatches.Patch(color='#2ecc71', label='( 0,+1)'),
+               mpatches.Patch(color='#3498db', label='(+1,+1)')]
+    ax.legend(handles=patches, fontsize=7, loc='upper right')
+    ax.set_xlim(-T_draw-0.5, T_draw+0.5)
+    ax.set_ylim(-0.3, T_draw+0.3)
+    ax.set_xlabel('x');  ax.set_ylabel('t')
+    ax.set_aspect('equal')
+
+    ax.text(0.1, 0.6, '1', fontsize=7.5, color='#2ecc71')
+    ax.text(0.55, 0.48, '√2', fontsize=7.5, color='#3498db', rotation=45)
+    ax.text(-1.0, 0.48, '√2', fontsize=7.5, color='#e74c3c', rotation=-45)
+
+
+def fig_geometry():
+    fig, axes = plt.subplots(1, 3, figsize=(15, 6))
+    fig.suptitle(
+        'Lattice geometry: edge lengths and move structure\n'
+        'Only the equilateral triangular lattice has all edges equal',
+        fontsize=11)
+
+    draw_checkerboard_panel(axes[0])
+    draw_equilateral_panel(axes[1])
+    draw_square_rest_panel(axes[2])
 
     plt.tight_layout()
     plt.savefig('lattice_geometry.png', dpi=150, bbox_inches='tight')
@@ -264,63 +271,70 @@ def fig_lattice_and_rotation():
     plt.close()
 
 
-# ─────────────────────────── figure 2: simulation comparison ────────────────
+# ═══════════════════════════════════════════════════════════════════════════
+#  Figure 2 — Probability heatmaps + 1-D slices
+# ═══════════════════════════════════════════════════════════════════════════
 
-def fig_simulation_comparison(T=30, epsilon=0.1):
-    print(f'Simulating Model A (T={T})…', flush=True)
-    psi_A = simulate_model_A(T, epsilon)
-    print(f'Simulating Model B (T={T})…', flush=True)
-    psi_B = simulate_model_B(T, epsilon)
+def fig_comparison(T=40, epsilon=0.1):
+    print(f'Simulating (T={T}, ε={epsilon})…', flush=True)
+    psi_C = simulate_checkerboard(T, epsilon)
+    psi_E = simulate_equilateral(T, epsilon)
+    psi_S = simulate_square_rest(T, epsilon)
 
-    prob_A = np.abs(psi_A) ** 2
-    prob_B = np.abs(psi_B) ** 2
-    N = prob_A.shape[1]
-    center = N // 2
-    xs = np.arange(N) - center
+    prob_C = np.abs(psi_C) ** 2
+    prob_E = np.abs(psi_E) ** 2
+    prob_S = np.abs(psi_S) ** 2
+
+    # x-axes for 1-D slices
+    xC = xs_checkerboard(T)                        # integers
+    xS = xs_square_rest(T)
+    # for equilateral, use x at the last time step (t=T)
+    xE = xs_equilateral(T, T)
 
     fig, axes = plt.subplots(2, 3, figsize=(16, 9))
     fig.suptitle(
-        f'Model A vs Model B  (T={T}, ε={epsilon})\n'
-        'Model A: symmetric moves  |  Model B: 60°-rotated (chiral, drifts left)',
+        f'Three models  —  |ψ(x,t)|²    (T={T}, ε={epsilon})',
         fontsize=12)
 
-    # ── Row 0: probability heatmaps ──
-    kw = dict(aspect='auto', origin='lower', cmap='inferno')
-    ext = [xs[0] - 0.5, xs[-1] + 0.5, -0.5, T + 0.5]
+    titles = ['Feynman Checkerboard\n(±1, +1)',
+              'Equilateral Triangular\n(±½, +1)',
+              'Square + Rest\n(-1/0/+1, +1)']
 
-    im0 = axes[0, 0].imshow(prob_A, extent=ext, **kw)
-    axes[0, 0].set_title('Model A  |ψ|²')
-    axes[0, 0].set_xlabel('x');  axes[0, 0].set_ylabel('t')
+    # ── Row 0: heatmaps ────────────────────────────────────────────────────
+    kw = dict(aspect='auto', origin='lower', cmap='inferno')
+
+    # Checkerboard
+    extC = [xC[0]-0.5, xC[-1]+0.5, -0.5, T+0.5]
+    im0 = axes[0, 0].imshow(prob_C, extent=extC, **kw)
+    axes[0, 0].set_title(titles[0]);  axes[0, 0].set_xlabel('x');  axes[0, 0].set_ylabel('t')
     plt.colorbar(im0, ax=axes[0, 0])
 
-    im1 = axes[0, 1].imshow(prob_B, extent=ext, **kw)
-    axes[0, 1].set_title('Model B  |ψ|²')
-    axes[0, 1].set_xlabel('x');  axes[0, 1].set_ylabel('t')
+    # Equilateral — x-axis covers (i-center)*0.5 range
+    xE_all = xs_equilateral(T, T)   # use last row for extent
+    extE = [xE_all[0]-0.25, xE_all[-1]+0.25, -0.5, T+0.5]
+    im1 = axes[0, 1].imshow(prob_E, extent=extE, **kw)
+    axes[0, 1].set_title(titles[1]);  axes[0, 1].set_xlabel('x (units: ½)');  axes[0, 1].set_ylabel('t')
     plt.colorbar(im1, ax=axes[0, 1])
 
-    # difference
-    diff = prob_B - prob_A
-    vmax = np.abs(diff).max()
-    im2 = axes[0, 2].imshow(diff, extent=ext, aspect='auto', origin='lower',
-                            cmap='RdBu_r', vmin=-vmax, vmax=vmax)
-    axes[0, 2].set_title('B − A  (probability difference)')
-    axes[0, 2].set_xlabel('x');  axes[0, 2].set_ylabel('t')
+    # Square + Rest
+    extS = [xS[0]-0.5, xS[-1]+0.5, -0.5, T+0.5]
+    im2 = axes[0, 2].imshow(prob_S, extent=extS, **kw)
+    axes[0, 2].set_title(titles[2]);  axes[0, 2].set_xlabel('x');  axes[0, 2].set_ylabel('t')
     plt.colorbar(im2, ax=axes[0, 2])
 
-    # ── Row 1: 1-D slices at several time steps ──
+    # ── Row 1: 1-D slices ──────────────────────────────────────────────────
     slices_t = [T // 4, T // 2, 3 * T // 4, T]
-    cmap_sl = plt.cm.plasma(np.linspace(0.2, 0.9, len(slices_t)))
+    colors = plt.cm.plasma(np.linspace(0.2, 0.9, len(slices_t)))
 
-    for t_idx, col in zip(slices_t, cmap_sl):
-        axes[1, 0].plot(xs, prob_A[t_idx], color=col, label=f't={t_idx}')
-        axes[1, 1].plot(xs, prob_B[t_idx], color=col, label=f't={t_idx}')
-        axes[1, 2].plot(xs, prob_B[t_idx] - prob_A[t_idx], color=col, label=f't={t_idx}')
+    for t_idx, col in zip(slices_t, colors):
+        xE_t = xs_equilateral(T, t_idx)
+        axes[1, 0].plot(xC, prob_C[t_idx], color=col, label=f't={t_idx}')
+        axes[1, 1].plot(xE_t, prob_E[t_idx], color=col, label=f't={t_idx}')
+        axes[1, 2].plot(xS, prob_S[t_idx], color=col, label=f't={t_idx}')
 
-    for ax_col, ttl in zip(axes[1], ['Model A  |ψ|²', 'Model B  |ψ|²', 'B − A']):
-        ax_col.set_xlabel('x');  ax_col.set_ylabel('probability')
-        ax_col.set_title(ttl)
-        ax_col.legend(fontsize=7)
-        ax_col.grid(True, alpha=0.3)
+    for ax, ttl in zip(axes[1], titles):
+        ax.set_xlabel('x');  ax.set_ylabel('|ψ|²')
+        ax.set_title(ttl);  ax.legend(fontsize=7);  ax.grid(True, alpha=0.3)
 
     plt.tight_layout()
     plt.savefig('model_comparison.png', dpi=150, bbox_inches='tight')
@@ -328,67 +342,79 @@ def fig_simulation_comparison(T=30, epsilon=0.1):
     plt.close()
 
 
-# ─────────────────────────── figure 3: mean / spread ────────────────────────
+# ═══════════════════════════════════════════════════════════════════════════
+#  Figure 3 — Spread σ(t) for all three models
+# ═══════════════════════════════════════════════════════════════════════════
 
-def fig_drift_and_spread(T=50, epsilon=0.1):
-    print(f'Simulating Model A (T={T})…', flush=True)
-    psi_A = simulate_model_A(T, epsilon)
-    print(f'Simulating Model B (T={T})…', flush=True)
-    psi_B = simulate_model_B(T, epsilon)
+def fig_spread(T=50, epsilon=0.1):
+    print(f'Simulating spread (T={T}, ε={epsilon})…', flush=True)
+    psi_C = simulate_checkerboard(T, epsilon)
+    psi_E = simulate_equilateral(T, epsilon)
+    psi_S = simulate_square_rest(T, epsilon)
 
-    N = psi_A.shape[1]
-    center = N // 2
-    xs = np.arange(N) - center
     t_arr = np.arange(T + 1)
 
-    def mean_and_std(prob):
-        mu  = np.array([np.sum(xs * p) / (np.sum(p) + 1e-30) for p in prob])
-        mu2 = np.array([np.sum(xs**2 * p) / (np.sum(p) + 1e-30) for p in prob])
-        sigma = np.sqrt(np.maximum(mu2 - mu**2, 0))
-        return mu, sigma
+    def spread(psi, x_arr_fn):
+        sigmas = []
+        for t_idx, row in enumerate(psi):
+            p = np.abs(row) ** 2
+            xs = x_arr_fn(t_idx)
+            # pad/trim xs to match row length
+            xs_aligned = xs[:len(p)] if len(xs) >= len(p) else np.pad(xs, (0, len(p)-len(xs)))
+            norm = p.sum()
+            if norm < 1e-30:
+                sigmas.append(0.0)
+                continue
+            mu  = np.dot(p, xs_aligned) / norm
+            mu2 = np.dot(p, xs_aligned**2) / norm
+            sigmas.append(np.sqrt(max(mu2 - mu**2, 0)))
+        return np.array(sigmas)
 
-    prob_A = np.abs(psi_A) ** 2
-    prob_B = np.abs(psi_B) ** 2
+    xC = lambda t: xs_checkerboard(T)
+    xE = lambda t: xs_equilateral(T, t)
+    xS = lambda t: xs_square_rest(T)
 
-    mu_A, sig_A = mean_and_std(prob_A)
-    mu_B, sig_B = mean_and_std(prob_B)
+    sig_C = spread(psi_C, xC)
+    sig_E = spread(psi_E, xE)
+    sig_S = spread(psi_S, xS)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    fig.suptitle(f'Drift and spread  (T={T}, ε={epsilon})', fontsize=12)
+    fig, ax = plt.subplots(figsize=(9, 5))
+    ax.set_title(f'Spread σ(t)  —  all three models  (ε={epsilon})', fontsize=11)
 
-    axes[0].plot(t_arr, mu_A,  label='Model A (symmetric)', color='steelblue')
-    axes[0].plot(t_arr, mu_B,  label='Model B (chiral)',    color='crimson')
-    axes[0].set_xlabel('t');  axes[0].set_ylabel('<x>')
-    axes[0].set_title('Mean position')
-    axes[0].legend();  axes[0].grid(True, alpha=0.3)
+    ax.plot(t_arr, sig_C, color='#3498db', lw=2, label='Feynman Checkerboard (±1)')
+    ax.plot(t_arr, sig_E, color='#e67e22', lw=2, label='Equilateral Triangular (±½)')
+    ax.plot(t_arr, sig_S, color='#2ecc71', lw=2, label='Square + Rest (-1/0/+1)')
 
-    axes[1].plot(t_arr, sig_A, label='Model A', color='steelblue')
-    axes[1].plot(t_arr, sig_B, label='Model B', color='crimson')
-    # reference: diffusive √t
-    ref_t = np.sqrt(t_arr.astype(float))
-    ref_t[0] = 0
-    axes[1].plot(t_arr, ref_t * (sig_A[-1] / ref_t[-1]),
-                 'k--', alpha=0.5, label='∝ √t (diffusive)')
-    axes[1].set_xlabel('t');  axes[1].set_ylabel('σ(x)')
-    axes[1].set_title('Spread (standard deviation)')
-    axes[1].legend();  axes[1].grid(True, alpha=0.3)
+    # reference: ballistic σ ∝ t
+    ref = t_arr * (sig_C[-1] / (T + 1e-9))
+    ax.plot(t_arr, ref, 'k--', alpha=0.4, label='∝ t (ballistic)')
+
+    ax.set_xlabel('t');  ax.set_ylabel('σ(x)')
+    ax.legend(fontsize=9);  ax.grid(True, alpha=0.3)
+
+    # note: equilateral x is in units of ½, so its σ will be half of checkerboard
+    ax.text(0.02, 0.97,
+            'Note: equilateral σ in units of ½ (physical σ is ×2)',
+            transform=ax.transAxes, fontsize=8, va='top', color='#e67e22')
 
     plt.tight_layout()
-    plt.savefig('drift_and_spread.png', dpi=150, bbox_inches='tight')
-    print('Saved drift_and_spread.png')
+    plt.savefig('lattice_spread.png', dpi=150, bbox_inches='tight')
+    print('Saved lattice_spread.png')
     plt.close()
 
 
-# ─────────────────────────── main ────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════════
+#  Main
+# ═══════════════════════════════════════════════════════════════════════════
 
 if __name__ == '__main__':
-    print('=== Lattice geometry visualization ===')
-    fig_lattice_and_rotation()
+    print('=== Lattice geometry ===')
+    fig_geometry()
 
-    print('\n=== Simulation comparison (T=30) ===')
-    fig_simulation_comparison(T=30, epsilon=0.1)
+    print('\n=== Probability comparison (T=40) ===')
+    fig_comparison(T=40, epsilon=0.1)
 
-    print('\n=== Drift and spread (T=50) ===')
-    fig_drift_and_spread(T=50, epsilon=0.1)
+    print('\n=== Spread analysis (T=50) ===')
+    fig_spread(T=50, epsilon=0.1)
 
     print('\nDone.')
