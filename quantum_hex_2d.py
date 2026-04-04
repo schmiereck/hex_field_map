@@ -425,8 +425,9 @@ def fig_dispersion(eps=0.1, n_k=40, k_max=1.5):
     E_phys = physical_band_2d(kx_arr, ky_arr, E_all, m_est=m_fit)
 
     # Isotropy: compare E along 6-fold symmetric directions
-    # Hexagonal lattice has 6-fold symmetry: E(k,0) should equal E(k*cos60, k*sin60) etc.
-    k_1d = np.linspace(0, k_max, n_k)
+    # Use k_iso_max << k_max to stay in the isotropic small-k regime
+    k_iso_max = min(0.4, k_max)
+    k_1d = np.linspace(0, k_iso_max, n_k)
     SQRT3_local = np.sqrt(3)
     dirs = {
         '0°  (k,0)':        (k_1d, np.zeros_like(k_1d)),
@@ -458,7 +459,7 @@ def fig_dispersion(eps=0.1, n_k=40, k_max=1.5):
     fig.suptitle(f'Dispersion relation  E(k)  —  2+1D Hexagonal (ε={eps})', fontsize=11)
 
     ax_e, ax_h = axes
-    k_ref = np.linspace(0, k_max, 300)
+    k_ref = np.linspace(0, k_iso_max, 300)
     E_ref = np.sqrt(c_fit**2 * k_ref**2 + m_fit**2)
 
     iso_vals = {}
@@ -483,7 +484,8 @@ def fig_dispersion(eps=0.1, n_k=40, k_max=1.5):
     print(f'  Isotropy error (max |E(0°)-E(60°)|/E) = {iso_err:.4f}')
 
     ax_e.set_xlabel('|k|'); ax_e.set_ylabel('E')
-    ax_e.set_title('E(|k|) along 3 directions')
+    ax_e.set_title(f'E(|k|) along 3 directions (|k|≤{k_iso_max})')
+    ax_e.set_xlim(0, k_iso_max)
     ax_e.legend(fontsize=7); ax_e.grid(alpha=0.3)
 
     # 2-D heatmap of E_phys
