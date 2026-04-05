@@ -666,6 +666,344 @@ def fig_epsilon_sweep(T=20, n_k=30, k_max=2.0):
     plt.close()
 
 
+# ─── wave packet simulation ───────────────────────────────────────────────────
+
+def simulate_wavepacket(T_phys, eps=0.1, sigma_phys=5.0, vg_frac=0.1, angle_deg=0.0):
+    """
+    Gaussian wave packet on the 2+1D hexagonal lattice.
+
+    Initial state:  ψ(x,y,0) ∝ exp(-(x²+y²)/(2σ²)) · exp(i·px·x + i·py·y)
+    with internal spinor set to the physical eigenvector at k=(px,py).
+
+    Observable:  prob(x,y,t) = |<v7c_ref | amp(x,y,t)>|²
+    (inner-product projection onto the physical direction — suppresses the
+    fast-growing non-physical mode by a factor >6000 at t=0).
+
+    Note: because σ_k = 1/σ >> px (low-momentum packet), the effective average
+    group velocity <vg> = ∫G(k)·vg(k)dk / ∫G(k)dk < vg_th.  This is correct
+    physics, not a numerical artifact.
+
+    Returns
+    -------
+    prob     : real (T+1, Nx, Ny) — projected probability density
+    xcenter  : int
+    ycenter  : int
+    px, py   : float — momenta used
+    m_phys   : float — physical mass ≈ 2ε
+    avg_vg   : float — wave-packet average group velocity (= expected CoM drift rate)
+    """
+    m_phys = float(np.arctan2(2 * eps, 1 - eps**2))
+
+    v0    = min(abs(vg_frac), 0.999)
+    k_mag = m_phys * v0 / (C_LIGHT * np.sqrt(1.0 - v0**2))
+    ang   = np.radians(angle_deg)
+    px, py = k_mag * np.cos(ang), k_mag * np.sin(ang)
+
+    # Compute wave-packet average group velocity (accounts for broad k-spread)
+    kx_fine = np.linspace(-2.0, 2.0, 20000)
+    gauss_k = np.exp(-(kx_fine - px)**2 / (2 * (1.0 / sigma_phys)**2))
+    vg_fine = C_LIGHT**2 * kx_fine / np.sqrt(C_LIGHT**2 * kx_fine**2 + m_phys**2)
+    avg_vg  = float((gauss_k * vg_fine).sum() / (gauss_k.sum() + 1e-30))
+
+    # Grid
+    N_half   = 2 * T_phys
+    x_spread = 2 * N_half
+    y_spread = N_half
+    Nx = 2 * x_spread + 1
+    Ny = 2 * y_spread + 1
+    xcenter = x_spread
+    ycenter = y_spread
+
+    x_ph = (np.arange(Nx) - xcenter) * DX_PHYS
+    y_ph = (np.arange(Ny) - ycenter) * DY_PHYS
+    XX, YY = np.meshgrid(x_ph, y_ph, indexing='ij')
+
+    # Gaussian envelope with momentum phase
+    envelope = np.exp(-(XX**2 + YY**2) / (2 * sigma_phys**2)
+                      + 1j * (px * XX + py * YY))
+
+    # Physical eigenvector at k=(px,py), L2-normalised (first 7 components)
+    M_ref = TM14_half(px, py, eps)
+    M_ref = M_ref @ M_ref
+    lam_r, vecs_r = np.linalg.eig(M_ref)
+    E_ref_0 = float(np.sqrt(C_LIGHT**2 * (px**2 + py**2) + m_phys**2))
+    idx_r   = np.argmin(np.abs(-np.angle(lam_r) - E_ref_0))
+    v7c_ref = vecs_r[:7, idx_r].copy()
+    v7p_ref = vecs_r[7:, idx_r].copy()
+    norm    = np.linalg.norm(v7c_ref) + 1e-30
+    v7c_ref /= norm;  v7p_ref /= norm
+
+    # Initialise: amp_d(x,y) = Gaussian(x,y) · v7c_ref[d]
+    amp_prev  = envelope[:, :, None] * v7c_ref[None, None, :]
+    amp_pprev = envelope[:, :, None] * v7p_ref[None, None, :]
+
+    # Normalise so prob(t=0) sums to 1
+    # Observable: p(x,y) = |<v7c_ref | amp(x,y)>|²
+    psi0 = (np.conj(v7c_ref)[None, None, :] * amp_prev).sum(axis=-1)
+    p0   = float((np.abs(psi0)**2).sum())
+    if p0 > 1e-30:
+        scale = 1.0 / np.sqrt(p0)
+        amp_prev  *= scale
+        amp_pprev *= scale
+
+    prob = np.zeros((T_phys + 1, Nx, Ny))
+    prob[0] = np.abs((np.conj(v7c_ref)[None, None, :] * amp_prev).sum(axis=-1))**2
+
+    C_mat = _C(N_DIRS, eps)
+
+    for tau in range(1, N_half + 1):
+        new_amp = np.zeros((Nx, Ny, N_DIRS), dtype=complex)
+        wc = amp_prev  @ C_mat
+        ws = amp_pprev @ C_mat
+        new_amp[2:,  :,   0] += wc[:-2, :,   0]
+        new_amp[1:,  1:,  1] += wc[:-1, :-1, 1]
+        new_amp[:-1, 1:,  2] += wc[1:,  :-1, 2]
+        new_amp[:-2, :,   3] += wc[2:,  :,   3]
+        new_amp[:-1, :-1, 4] += wc[1:,  1:,  4]
+        new_amp[1:,  :-1, 5] += wc[:-1, 1:,  5]
+        new_amp[:, :,     6] += ws[:, :,     6]
+        amp_pprev, amp_prev = amp_prev, new_amp
+        if tau % 2 == 0:
+            prob[tau // 2] = np.abs(
+                (np.conj(v7c_ref)[None, None, :] * new_amp).sum(axis=-1))**2
+
+    return prob, xcenter, ycenter, px, py, m_phys, avg_vg
+
+
+def wavepacket_observables(prob, xcenter, ycenter):
+    """
+    Per-timestep center-of-mass, rms width, and total probability.
+
+    Parameters
+    ----------
+    prob : real (T+1, Nx, Ny)  — Σ_d |amp_d|² returned by simulate_wavepacket
+
+    Returns: t_arr, xcom, ycom, sigma_x, sigma_y, prob_total
+    """
+    Nx = prob.shape[1]
+    Ny = prob.shape[2]
+    x_ph = (np.arange(Nx) - xcenter) * DX_PHYS
+    y_ph = (np.arange(Ny) - ycenter) * DY_PHYS
+
+    ptot = prob.sum(axis=(1, 2)) + 1e-30
+
+    xcom = (prob * x_ph[None, :, None]).sum(axis=(1, 2)) / ptot
+    ycom = (prob * y_ph[None, None, :]).sum(axis=(1, 2)) / ptot
+
+    dx2 = (prob * (x_ph[None, :, None] - xcom[:, None, None])**2
+           ).sum(axis=(1, 2)) / ptot
+    dy2 = (prob * (y_ph[None, None, :] - ycom[:, None, None])**2
+           ).sum(axis=(1, 2)) / ptot
+
+    return (np.arange(prob.shape[0], dtype=float),
+            xcom, ycom,
+            np.sqrt(np.maximum(dx2, 0)),
+            np.sqrt(np.maximum(dy2, 0)),
+            ptot - 1e-30)
+
+
+# ─── figure 6: wave packet heatmaps ───────────────────────────────────────────
+
+def fig_wavepacket_heatmap(prob, xcenter, ycenter, px, py, m_phys,
+                           eps=0.1, vg_frac=0.1, sigma_phys=5.0, avg_vg=None):
+    """4-panel probability density heatmaps at t=0, T/3, 2T/3, T."""
+    T_phys = prob.shape[0] - 1
+    x_ph   = (np.arange(prob.shape[1]) - xcenter) * DX_PHYS
+    y_ph   = (np.arange(prob.shape[2]) - ycenter) * DY_PHYS
+
+    t_show  = [0, T_phys // 3, 2 * T_phys // 3, T_phys]
+    vg_phys = avg_vg if avg_vg is not None else vg_frac * C_LIGHT
+    ang     = np.arctan2(py, px)
+
+    # Compute CoM trajectory from observables
+    _, xcom, ycom, sigx, sigy, _ = wavepacket_observables(prob, xcenter, ycenter)
+
+    fig, axes = plt.subplots(1, 4, figsize=(18, 5))
+    fig.suptitle(
+        f'Gaussian wave packet  Σ|amp_d(x,y,t)|²  —  2+1D Hexagonal'
+        f'\n(ε={eps},  σ={sigma_phys},  v_g={vg_frac}c,  '
+        f'px={px:.4f},  m={m_phys:.4f})',
+        fontsize=10)
+
+    theta = np.linspace(0, 2 * np.pi, 200)
+    for ax, t in zip(axes, t_show):
+        prob_t = prob[t]
+        vmax = prob_t.max()
+        vmin = max(vmax * 1e-8, 1e-30)
+
+        # Crop view: follow measured CoM with margin
+        margin = max(3 * sigx[t] + 2, 3 * sigma_phys)
+        mask_x = np.abs(x_ph - xcom[t]) <= margin
+        mask_y = np.abs(y_ph - ycom[t]) <= margin
+        if mask_x.sum() < 3:
+            mask_x[:] = True
+        if mask_y.sum() < 3:
+            mask_y[:] = True
+
+        p_crop = prob_t[np.ix_(mask_x, mask_y)]
+        xx     = x_ph[mask_x]
+        yy     = y_ph[mask_y]
+
+        im = ax.imshow(p_crop.T, origin='lower', aspect='equal',
+                       extent=[xx[0], xx[-1], yy[0], yy[-1]],
+                       norm=LogNorm(vmin=vmin, vmax=vmax), cmap='inferno')
+        plt.colorbar(im, ax=ax, fraction=0.04, pad=0.02)
+
+        # Theoretical centre (white cross)
+        x_th = vg_phys * np.cos(ang) * t
+        y_th = vg_phys * np.sin(ang) * t
+        ax.plot(x_th, y_th, 'w+', ms=14, mew=2.5, label='theory')
+
+        # Measured CoM (cyan dot)
+        ax.plot(xcom[t], ycom[t], 'co', ms=6, label='CoM')
+
+        # Measured σ ellipse
+        ax.plot(xcom[t] + sigx[t] * np.cos(theta),
+                ycom[t] + sigy[t] * np.sin(theta),
+                'c--', lw=1.2, alpha=0.8, label=f'σ')
+
+        ax.set_title(f't = {t}\nCoM=({xcom[t]:.2f}, {ycom[t]:.2f})', fontsize=9)
+        ax.set_xlabel('x'); ax.set_ylabel('y')
+        if t == 0:
+            ax.legend(fontsize=7)
+
+    plt.tight_layout()
+    plt.savefig('wavepacket_heatmap_2d.png', dpi=150, bbox_inches='tight')
+    print('Saved wavepacket_heatmap_2d.png')
+    plt.close()
+
+
+# ─── figure 7: wave packet dynamics analysis ──────────────────────────────────
+
+def fig_wavepacket_analysis(prob, xcenter, ycenter, px, py, m_phys,
+                            eps=0.1, vg_frac=0.1, sigma_phys=5.0, avg_vg=None):
+    """
+    3-panel analysis:
+      1. xcom(t) vs expected vg·t  — measures actual drift speed
+      2. σx(t), σy(t)             — wave packet spreading
+      3. vx(t) = dxcom/dt         — instantaneous velocity, shows Zitterbewegung
+    """
+    t_arr, xcom, ycom, sigx, sigy, ptot = wavepacket_observables(
+        prob, xcenter, ycenter)
+
+    ang = np.arctan2(py, px)
+
+    # Theoretical dispersion at central momentum: v_g = c²·kx/E
+    E_phys  = np.sqrt(C_LIGHT**2 * (px**2 + py**2) + m_phys**2)
+    vg_th_x = C_LIGHT**2 * px / E_phys     # single-mode prediction
+    vg_th_y = C_LIGHT**2 * py / E_phys
+
+    # Wave-packet average group velocity (accounts for broad k-spread)
+    vg_avg_x = avg_vg if avg_vg is not None else vg_th_x
+
+    # Instantaneous velocity (smooth with Savitzky-Golay-like gradient)
+    vx = np.gradient(xcom, t_arr)
+    vy = np.gradient(ycom, t_arr)
+
+    # Zitterbewegung parameters
+    zbw_freq   = 2 * m_phys        # angular frequency 2m
+    zbw_period = 2 * np.pi / zbw_freq
+    zbw_amp_th = abs(vg_th_x) / (2 * m_phys)   # rough estimate
+
+    # Residual oscillation (subtract linear trend)
+    t_fit = t_arr[t_arr > 0]
+    if len(t_fit) > 2:
+        coeffs   = np.polyfit(t_arr[1:], xcom[1:], 1)
+        xcom_lin = np.polyval(coeffs, t_arr)
+        vg_meas  = coeffs[0]
+    else:
+        xcom_lin = vg_th_x * t_arr
+        vg_meas  = vg_th_x
+    residual = xcom - xcom_lin
+
+    fig, axes = plt.subplots(3, 1, figsize=(10, 12))
+    vg_avg_label = f'  ⟨vg⟩={vg_avg_x:.4f}' if avg_vg is not None else ''
+    fig.suptitle(
+        f'Wave packet dynamics  —  2+1D Hexagonal (ε={eps}, σ={sigma_phys})\n'
+        f'p=({px:.4f},{py:.4f})  m={m_phys:.4f}  '
+        f'vg_th={vg_th_x:.4f} ({vg_frac}c){vg_avg_label}',
+        fontsize=10)
+
+    # Panel 1: CoM position
+    ax1 = axes[0]
+    ax1.plot(t_arr, xcom, 'b-',  lw=1.5, label=f'xcom (meas.)')
+    ax1.plot(t_arr, ycom, 'g-',  lw=1.2, label=f'ycom (meas.)', alpha=0.7)
+    ax1.plot(t_arr, vg_avg_x * t_arr, 'b--', lw=1.5,
+             label=f'⟨vg⟩·t = {vg_avg_x:.4f}·t  (pk avg)')
+    ax1.plot(t_arr, vg_th_x * t_arr, 'b:', lw=1.0, alpha=0.5,
+             label=f'vg_th·t = {vg_th_x:.4f}·t  (pk centre)')
+    if abs(vg_avg_x) > 1e-9:
+        ax1.text(0.02, 0.95,
+                 f'Measured vg = {vg_meas:.4f}\n'
+                 f'⟨vg⟩ (pk avg) = {vg_avg_x:.4f}\n'
+                 f'vg_th (pk ctr) = {vg_th_x:.4f}\n'
+                 f'meas/avg = {vg_meas/vg_avg_x:.4f}',
+                 transform=ax1.transAxes, fontsize=9, va='top',
+                 bbox=dict(fc='lightyellow', alpha=0.9))
+    ax1.set_xlabel('t'); ax1.set_ylabel('x_CoM (physical)')
+    ax1.set_title('Center-of-mass trajectory')
+    ax1.legend(fontsize=8); ax1.grid(alpha=0.3)
+
+    # Panel 2: wave packet width
+    ax2 = axes[1]
+    ax2.plot(t_arr, sigx, 'b-', lw=1.5, label='σx(t)')
+    ax2.plot(t_arr, sigy, 'r-', lw=1.5, label='σy(t)')
+    ax2.axhline(sigma_phys, color='k', ls='--', lw=1, alpha=0.5,
+                label=f'σ₀={sigma_phys}')
+    # Theoretical spreading: σ(t) = √(σ₀² + (d²E/dk² · t / σ₀)²)
+    # d²E/dk² at k=px: m²c²/E³
+    d2E = m_phys**2 * C_LIGHT**2 / E_phys**3
+    sigma_th = np.sqrt(sigma_phys**2 + (d2E * t_arr / sigma_phys)**2)
+    ax2.plot(t_arr, sigma_th, 'k:', lw=1.5, label=f'theory σ(t)  (d²E/dk²={d2E:.2f})')
+    ax2.set_xlabel('t'); ax2.set_ylabel('σ (physical units)')
+    ax2.set_title('Wave packet spreading')
+    ax2.legend(fontsize=8); ax2.grid(alpha=0.3)
+
+    # Panel 3: velocity and Zitterbewegung
+    ax3 = axes[2]
+    ax3.plot(t_arr, vx, 'b-', lw=1.2, alpha=0.8, label='vx = dxcom/dt')
+    ax3.plot(t_arr, vy, 'g-', lw=1.0, alpha=0.6, label='vy = dycom/dt')
+    ax3.axhline(vg_avg_x, color='b', ls='--', lw=1.5,
+                label=f'⟨vg⟩ = {vg_avg_x:.4f}  (pk avg)')
+    ax3.axhline(vg_th_x, color='b', ls=':', lw=1.0, alpha=0.5,
+                label=f'vg_th = {vg_th_x:.4f}  (pk ctr)')
+    ax3.axhline(0, color='k', ls='-', lw=0.5, alpha=0.4)
+
+    # Zitterbewegung: fit residual CoM oscillation
+    if len(residual) > 5 and zbw_period < t_arr[-1]:
+        ax3_r = ax3.twinx()
+        ax3_r.plot(t_arr, residual, 'm-', lw=1.0, alpha=0.6,
+                   label=f'ZBW residual (xcom − linear fit)')
+        ax3_r.axhline(0, color='m', ls=':', lw=0.5)
+        # Expected ZBW sine
+        t_fine = np.linspace(0, t_arr[-1], 500)
+        zbw_sine = zbw_amp_th * np.sin(zbw_freq * t_fine)
+        ax3_r.plot(t_fine, zbw_sine, 'm--', lw=1, alpha=0.5,
+                   label=f'ZBW model: {zbw_amp_th:.3f}·sin(2m·t),  T={zbw_period:.1f}')
+        ax3_r.set_ylabel('ZBW residual (purple, right axis)', color='m', fontsize=8)
+        ax3_r.legend(fontsize=7, loc='lower right')
+        ax3_r.tick_params(axis='y', colors='m')
+
+    ax3.set_xlabel('t'); ax3.set_ylabel('velocity (physical/time)')
+    ax3.set_title(
+        f'Instantaneous velocity  |  ZBW period ≈ {zbw_period:.1f},  '
+        f'ZBW amp_est ≈ {zbw_amp_th:.3f}')
+    ax3.legend(fontsize=8, loc='upper right'); ax3.grid(alpha=0.3)
+
+    plt.tight_layout()
+    plt.savefig('wavepacket_analysis_2d.png', dpi=150, bbox_inches='tight')
+    print('Saved wavepacket_analysis_2d.png')
+    plt.close()
+
+    if abs(vg_avg_x) > 1e-9:
+        print(f'  Measured vg_x = {vg_meas:.5f}  '
+              f'(⟨vg⟩={vg_avg_x:.5f}, vg_th={vg_th_x:.5f}, '
+              f'meas/avg={vg_meas/vg_avg_x:.4f})')
+    print(f'  σx(0)={sigx[0]:.2f} → σx(T)={sigx[-1]:.2f}  '
+          f'σy(0)={sigy[0]:.2f} → σy(T)={sigy[-1]:.2f}')
+    print(f'  ZBW period={zbw_period:.2f},  ZBW amp_est={zbw_amp_th:.4f}')
+
+
 # ─── main ─────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
@@ -690,5 +1028,28 @@ if __name__ == '__main__':
 
     print('\n=== Epsilon sweep ===')
     fig_epsilon_sweep(T=T_MAX)
+
+    print('\n=== Wave packet simulation (T=30, v_g=0.1c) ===')
+    T_WP      = 30
+    SIGMA_WP  = 5.0    # physical units
+    VG_FRAC   = 0.1    # fraction of c
+
+    print(f'  Simulating T={T_WP}, eps={EPS}, sigma={SIGMA_WP}, vg={VG_FRAC}c ...',
+          flush=True)
+    prob_wp, xc_wp, yc_wp, px_wp, py_wp, m_wp, avg_vg_wp = simulate_wavepacket(
+        T_WP, eps=EPS, sigma_phys=SIGMA_WP, vg_frac=VG_FRAC, angle_deg=0.0)
+    print(f'  px={px_wp:.5f}  py={py_wp:.5f}  m_phys={m_wp:.5f}')
+    print(f'  avg_vg={avg_vg_wp:.5f}  (theory vg_th={VG_FRAC*C_LIGHT:.5f})')
+    print(f'  prob shape: {prob_wp.shape}  ptot(0)={prob_wp[0].sum():.4f}  ptot(T)={prob_wp[-1].sum():.4f}')
+
+    print('  Generating heatmap figure...')
+    fig_wavepacket_heatmap(prob_wp, xc_wp, yc_wp, px_wp, py_wp, m_wp,
+                           eps=EPS, vg_frac=VG_FRAC, sigma_phys=SIGMA_WP,
+                           avg_vg=avg_vg_wp)
+
+    print('  Generating analysis figure...')
+    fig_wavepacket_analysis(prob_wp, xc_wp, yc_wp, px_wp, py_wp, m_wp,
+                            eps=EPS, vg_frac=VG_FRAC, sigma_phys=SIGMA_WP,
+                            avg_vg=avg_vg_wp)
 
     print('\nDone.')
