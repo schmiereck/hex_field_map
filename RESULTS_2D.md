@@ -91,13 +91,45 @@ Das 5-fach entartete Band bei 2ε spaltet sich für k > 0 in Sub-Bänder auf. Da
 
 ## Abbildungen
 
-| Datei | Inhalt |
-|-------|--------|
-| `lattice_geometry_2d.png` | Gittergeometrie, Kantenlängen, Bewegungsrichtungen |
-| `spacetime_spread_2d.png` | \|ψ(x,y,t)\|² bei t=5,10,15,20 mit Lichtkegel r=√3·t |
-| `dispersion_relation_2d.png` | E(k) entlang 3 Richtungen + 2D-Heatmap E(kx,ky) |
-| `group_velocity_2d.png` | E(k) + Gruppengeschwindigkeit im (vgx,vgy)-Raum |
-| `epsilon_sweep_2d.png` | c und m als Funktion von ε |
+### Abbildung 1: Gittergeometrie
+
+![Gittergeometrie](lattice_geometry_2d.png)
+
+Alle 7 Bewegungsrichtungen mit Kantenlängen = 1.000. Links: 3D-Darstellung mit Gitterpunkten; Rechts: 2D-Draufsicht mit Winkelangaben.
+
+---
+
+### Abbildung 2: Raumzeit-Ausbreitung |ψ(x,y,t)|²
+
+![Spacetime Spread](spacetime_spread_2d.png)
+
+Wahrscheinlichkeitsdichte zu den Zeiten t=5, 10, 15, 20. Die gestrichelte weiße Linie zeigt den Lichtkegel r = √3·t. Die Wahrscheinlichkeit bleibt strikt innerhalb des Kegels — **keine superluminale Ausbreitung**.
+
+---
+
+### Abbildung 3: Dispersionsrelation E(k)
+
+![Dispersion Relation](dispersion_relation_2d.png)
+
+**Links:** E(|k|) entlang 3 Richtungen (0°, 60°, 30°) im Vergleich zur relativistischen Kurve E=√(c²k²+m²). Die drei Kurven liegen übereinander → **perfekte 6-fache Isotropie** (Fehler=0.0000).  
+**Rechts:** 2D-Heatmap E(kx,ky) — die kreisförmige Symmetrie bestätigt die Isotropie.
+
+---
+
+### Abbildung 4: Gruppengeschwindigkeit
+
+![Group Velocity](group_velocity_2d.png)
+
+**Links:** E(k) entlang 6 hexagonalen Richtungen (0°–300°).  
+**Rechts:** Gruppengeschwindigkeitsvektoren (vgx, vgy) im Geschwindigkeitsraum. Der schwarze Kreis zeigt |v_g| = c = √3. Die Punkte liegen im Wesentlichen innerhalb des Kreises — **max|v_g| = 1.88 ≈ c**.
+
+---
+
+### Abbildung 5: ε-Sweep (Massenabhängigkeit)
+
+![Epsilon Sweep](epsilon_sweep_2d.png)
+
+Simulation für ε ∈ {0.01, 0.1, 0.5, 1.0}. Die gemessene Masse m_phys ≈ 2ε bestätigt die **lineare Skalierung** für kleine ε.
 
 ---
 
