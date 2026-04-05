@@ -114,6 +114,17 @@ def momentum_for_vfrac(v_frac, m_phys):
     return m_phys * vf / (SQRT3 * np.sqrt(1.0 - vf**2))
 
 
+def _grid_size(T_phys, sigma, v_frac):
+    """Adaptive grid: 3σ envelope + v·c·T drift + margin, minimum 4T+1."""
+    x_drift = abs(v_frac) * C_LIGHT * T_phys           # physical drift
+    x_gauss = 3.0 * sigma                               # 3σ envelope width
+    xi_need = (x_drift + x_gauss) / SQRT3_2 + 10        # grid cells needed from centre
+    xi_min  = 2 * T_phys                                # causal minimum
+    xcenter = int(max(xi_need, xi_min)) + 1
+    Nx      = 2 * xcenter + 1
+    return Nx, xcenter
+
+
 # ── wave-packet simulation ────────────────────────────────────────────────────
 
 def simulate_eq_wp(T_phys, eps, sigma, v_frac):
@@ -141,8 +152,7 @@ def simulate_eq_wp(T_phys, eps, sigma, v_frac):
     vc_ref, vp_ref = phys_eigvec_full(k_phys, eps, m_phys)
 
     N_half  = 2 * T_phys
-    Nx      = 4 * T_phys + 1
-    xcenter = 2 * T_phys
+    Nx, xcenter = _grid_size(T_phys, sigma, v_frac)
     xi_arr  = np.arange(Nx) - xcenter                # grid indices relative to 0
     x_phys  = xi_arr * SQRT3_2                       # physical positions
 
@@ -210,8 +220,7 @@ def simulate_eq_tau(T_phys, eps, sigma, v_frac):
 
     N_half  = 2 * T_phys
     N_ns    = N_half + 1
-    Nx      = 4 * T_phys + 1
-    xcenter = 2 * T_phys
+    Nx, xcenter = _grid_size(T_phys, sigma, v_frac)
     xi_arr  = np.arange(Nx) - xcenter
     x_phys  = xi_arr * SQRT3_2
     tau_arr = np.arange(N_ns) * 0.5
@@ -609,55 +618,123 @@ def fig_proper_time_distribution(results_subset, T_phys, eps):
 
 
 
+def _print_table(results, label=''):
+    """Print a summary table for a set of velocity-sweep results."""
+    if label:
+        print(f'\n  {label}')
+    print(f'  {"v/c":>6} | {"τ_classical":>12} | {"τ_quantum":>10} | '
+          f'{"τ_phase":>10} | {"τ_dist":>8} | {"qt_vs_cl%":>10}')
+    print('  ' + '-' * 72)
+    for r in results:
+        dev = 100.0 * (r['tau_th_quantum'] - r['tau_th_classical']) / (r['tau_th_classical'] + 1e-30)
+        print(f'  {r["v_frac"]:>6.1f} | {r["tau_th_classical"]:>12.4f} | '
+              f'{r["tau_th_quantum"]:>10.4f} | {r["tau_phase"]:>10.4f} | '
+              f'{r["tau_dist"]:>8.4f} | {dev:>10.2f}%')
+
+
+# ── Figure 5: σ comparison dilation curve ────────────────────────────────────
+
+def fig_sigma_comparison(all_sigma_results, T_phys, eps):
+    """
+    τ_quantum/T vs v/c for multiple σ values — shows convergence to classical SR.
+    """
+    v_fine = np.linspace(0, 0.95, 200)
+    tau_cl_fine = np.sqrt(1.0 - v_fine**2)
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 9),
+                                   gridspec_kw={'height_ratios': [3, 1]})
+    fig.suptitle(
+        f'σ Convergence:  τ_quantum/T  →  √(1−v²/c²)  as  σ_k/m → 0\n'
+        f'EQ Triangular Lattice  (ε={eps},  T={T_phys})',
+        fontsize=11)
+
+    ax1.plot(v_fine, tau_cl_fine, 'k-', lw=2.5,
+             label='Classical SR:  √(1−v²/c²)')
+
+    colors = ['#e41a1c', '#377eb8', '#4daf4a', '#984ea3']
+    markers = ['o', 's', 'D', '^']
+    for i, (sigma, results) in enumerate(all_sigma_results):
+        v   = np.array([r['v_frac'] for r in results])
+        tqt = np.array([r['tau_th_quantum'] for r in results])
+        tcl = np.array([r['tau_th_classical'] for r in results])
+        sk  = 1.0 / sigma
+        m   = m_phys_eq(eps)
+        c   = colors[i % len(colors)]
+        mk  = markers[i % len(markers)]
+        ax1.plot(v, tqt / T_phys, f'{mk}-', color=c, ms=8, lw=1.3,
+                 label=f'σ={sigma}  (σ_k/m={sk/m:.3f})')
+
+        # Residuals: (τ_quantum − τ_classical) / τ_classical
+        res = 100.0 * (tqt - tcl) / (tcl + 1e-30)
+        ax2.plot(v, res, f'{mk}-', color=c, ms=6, lw=1.2,
+                 label=f'σ={sigma}')
+
+    ax1.set_ylabel('τ / T')
+    ax1.set_xlim(-0.02, 1.0); ax1.set_ylim(-0.02, 1.1)
+    ax1.legend(fontsize=9); ax1.grid(alpha=0.3)
+
+    ax2.axhline(0, color='k', lw=1)
+    ax2.set_xlabel('v / c')
+    ax2.set_ylabel('(τ_quantum − τ_classical) / τ_classical  [%]')
+    ax2.set_title('Residuals: quantum vs classical proper time', fontsize=9)
+    ax2.set_xlim(-0.02, 1.0); ax2.legend(fontsize=8); ax2.grid(alpha=0.3)
+
+    plt.tight_layout()
+    plt.savefig('sigma_convergence.png', dpi=150, bbox_inches='tight')
+    print('Saved sigma_convergence.png')
+    plt.close()
+
+
 # ── main ──────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    EPS   = 0.1
-    T     = 20
-    SIGMA = 8.0
+    EPS     = 0.1
+    T       = 20
+    SIGMA   = 8.0
+    SIGMAS  = [8.0, 20.0, 30.0]
     V_FRACS = [0.0, 0.1, 0.3, 0.5, 0.7, 0.9]
 
     m_phys = m_phys_eq(EPS)
     print(f'=== EQ Triangular Lattice — Proper Time Investigation ===')
-    print(f'  ε={EPS}  T={T}  σ={SIGMA}  c=√3={C_LIGHT:.4f}')
+    print(f'  ε={EPS}  T={T}  c=√3={C_LIGHT:.4f}')
     print(f'  m_phys = {m_phys:.5f}  (≈ 2ε = {2*EPS:.3f},  NOT ε — same scaling as 2+1D hexagonal)')
-    print(f'  σ_k = 1/σ = {1/SIGMA:.4f},  σ_k/m = {1/(SIGMA*m_phys):.3f}  (broad packet: σ_k ≳ m)')
     print()
     print('  Physical eigenvector (E≈2ε, k=0) has |vc_straight|=0 → purely lightlike mode.')
     print('  τ_dist ≈ 2 is from the TIMELIKE mode (E≈ε) via uniform initialisation.')
     print('  τ_quantum = T·m·⟨1/E(k)⟩_G is the correct QM proper-time prediction.')
 
     # ── Figure 1: worldlines ──────────────────────────────────────────────────
-    print(f'\n=== Fig 1: Worldlines heatmap (v=0 and v=0.5c) ===')
+    print(f'\n=== Fig 1: Worldlines heatmap (v=0 and v=0.5c)  [σ={SIGMA}] ===')
     fig_worldlines(T, EPS, SIGMA)
 
     # ── Figure 2: phase vs time ───────────────────────────────────────────────
-    print(f'\n=== Fig 2: Phase vs time ===')
+    print(f'\n=== Fig 2: Phase vs time  [σ={SIGMA}] ===')
     fig_phase_vs_time(T, EPS, SIGMA, v_fracs_show=(0.0, 0.5, 0.9))
 
-    # ── Velocity sweep ────────────────────────────────────────────────────────
-    print(f'\n=== Velocity sweep (τ distribution for each v) ===')
-    results = velocity_sweep(T, EPS, SIGMA, V_FRACS)
+    # ── σ sweep ──────────────────────────────────────────────────────────────
+    all_sigma_results = []
+    for sig in SIGMAS:
+        sk = 1.0 / sig
+        print(f'\n=== Velocity sweep  σ={sig}  (σ_k/m={sk/m_phys:.3f}) ===')
+        res = velocity_sweep(T, EPS, sig, V_FRACS)
+        all_sigma_results.append((sig, res))
+        _print_table(res, label=f'σ={sig}  σ_k/m={sk/m_phys:.3f}')
 
-    # Print summary table
-    print()
-    print(f'{"v/c":>6} | {"τ_classical":>12} | {"τ_quantum":>10} | '
-          f'{"τ_phase":>10} | {"τ_dist":>8} | {"phase_err%":>10}')
-    print('-' * 70)
-    for r in results:
-        err = 100.0 * (r['tau_phase'] - r['tau_th_quantum']) / (r['tau_th_quantum'] + 1e-30)
-        print(f'{r["v_frac"]:>6.1f} | {r["tau_th_classical"]:>12.4f} | '
-              f'{r["tau_th_quantum"]:>10.4f} | {r["tau_phase"]:>10.4f} | '
-              f'{r["tau_dist"]:>8.4f} | {err:>10.2f}%')
+    # Use σ=8 for backward-compatible figures 3 & 4
+    results_s8 = all_sigma_results[0][1]
 
-    # ── Figure 3: dilation curve ──────────────────────────────────────────────
-    print(f'\n=== Fig 3: Dilation curve ===')
-    fig_dilation_curve(results, T, EPS)
+    # ── Figure 3: dilation curve (σ=8, original) ─────────────────────────────
+    print(f'\n=== Fig 3: Dilation curve  [σ={SIGMA}] ===')
+    fig_dilation_curve(results_s8, T, EPS)
 
-    # ── Figure 4: proper-time histograms ─────────────────────────────────────
-    print(f'\n=== Fig 4: Proper-time distributions ===')
-    subset = [r for r in results if r['v_frac'] in (0.0, 0.3, 0.7, 0.9)]
+    # ── Figure 4: proper-time histograms (σ=8) ──────────────────────────────
+    print(f'\n=== Fig 4: Proper-time distributions  [σ={SIGMA}] ===')
+    subset = [r for r in results_s8 if r['v_frac'] in (0.0, 0.3, 0.7, 0.9)]
     fig_proper_time_distribution(subset, T, EPS)
+
+    # ── Figure 5: σ convergence ──────────────────────────────────────────────
+    print(f'\n=== Fig 5: σ convergence (σ={SIGMAS}) ===')
+    fig_sigma_comparison(all_sigma_results, T, EPS)
 
     print('\nDone.')
 
