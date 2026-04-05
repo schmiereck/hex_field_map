@@ -60,8 +60,9 @@ Extension to 2 spatial dimensions with hexagonal lattice:
 
 | File | Description |
 |------|-------------|
-| `RESULTS.md` | Results of the 1+1D models |
-| `RESULTS_2D.md` | Results of the 2+1D hexagonal model (with figures) |
+| `RESULTS.md` | Results of the 1+1D models (original) |
+| `RESULTS_1D_en.md` | English version — 1+1D results with corrected m ≈ 2ε |
+| `RESULTS_2D_de.md` | German version — 2+1D hexagonal model |
 | `RESULTS_2D_en.md` | English version — 2+1D results including wave packet simulation |
 | `RESULT_Proper_Time_1D_en.md` | Proper time investigation — 1+1D equilateral triangular |
 
