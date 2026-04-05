@@ -159,5 +159,11 @@ Current work runs on: `claude/quantum-path-integral-simulator-GZNoz`
   per path is zero; the quantum average τ_quantum = T·m·⟨1/E(k)⟩_G gives the correct
   relativistic time dilation.
 
+- **Non-unitarity**: All non-zero eigenmodes of TM_full have |λ| > 1. The fastest-growing
+  mode (|λ|=1.033, E=−0.319 at k=0) is a negative-energy antiparticle analogue.
+  Non-unitarity is O(ε²) and structural (rank-deficient block matrix). Eigenvalue
+  *phases* (energies) remain correct; only amplitudes grow. Project onto physical
+  subspace or renormalise per step for long-time simulations.
+
 - **3+1D extension**: The next logical step would be a 3+1D face-centred cubic (FCC)
   lattice with an analogous amplitude rule.

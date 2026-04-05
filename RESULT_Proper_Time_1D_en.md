@@ -226,6 +226,54 @@ The convergence is **monotone and quantitative**: each doubling of σ roughly ha
 
 ---
 
+## Non-Unitarity and the Fast-Growing Mode
+
+### Complete Eigenvalue Spectrum at k = 0, ε = 0.1
+
+The 6×6 transfer matrix TM_full has 4 non-zero and 2 dead modes:
+
+| # | |λ| | E = −arg(λ) | Structure | Classification |
+|---|-----|-------------|-----------|----------------|
+| 1 | **1.033** | **−0.319** | 84% diagonal, 16% straight | **Fast/growing, negative energy** |
+| 2 | 1.010 | +0.199 | 100% diagonal, 0% straight | Physical propagating (m ≈ 2ε) |
+| 3 | 1.010 | +0.0005 | 99.5% straight | Near-zero-energy straight mode |
+| 4 | 1.007 | +0.123 | 57% straight, 43% diagonal | Mixed mode (m ≈ ε) |
+| 5 | 0.0 | — | v_prev only | Dead mode (zero eigenvalue) |
+| 6 | 0.0 | — | v_prev only | Dead mode (zero eigenvalue) |
+
+**All four non-zero modes have |λ| > 1** — none are unitary.
+
+### The Fast Mode (#1): Negative-Energy Antiparticle Analogue
+
+- **|λ| = 1.033 at k = 0**, ranging 1.020–1.033 across all k — always growing, never stable.
+- **E = −0.319 (negative energy)** — phase rotates opposite to the physical modes.
+- Eigenvector is L-R symmetric (both diagonals + significant straight), unlike the physical mode (#2) which is L-R antisymmetric and purely diagonal.
+- Dispersion tracks approximately **−E_phys(k)**: at large k, E_fast + E_phys → 0 (within ~0.002), confirming it as an approximate **negative-energy partner**.
+
+**Dirac analogy:** In the continuum 1+1D Dirac equation, both particle (E > 0) and antiparticle (E < 0) branches are unitary (|λ| = 1). Here the discrete lattice reproduces the E/−E splitting but breaks the symmetry: the negative-E "antiparticle" mode grows fastest. This is a **lattice instability**, not a healthy antiparticle branch.
+
+### Root Cause of Non-Unitarity
+
+The non-unitarity is **structural**, not a numerical artefact:
+
+1. **Singular values of TM_half**: {1.425, 1.418, 1.010, 1.000, 0, 0} — far from all-ones.
+2. **Block structure** `[[A, B], [I, 0]]` has rank 4 (not 6), since the straight direction (d=1) couples only through B to the previous time step.
+3. **Scaling with ε**: As ε → 0, all |λ| → 1. The non-unitarity is O(ε²) — vanishes in the massless limit.
+4. **Product conservation**: The product of all non-zero |λ| is constant (1.0609) across all k, tied to det(effective 4×4 submatrix).
+
+### Can it be Fixed?
+
+The non-unitarity is inherent to embedding a mixed-time-step second-order recurrence into a single transfer matrix. Possible mitigations:
+
+- **Physical subspace projection**: Only track the 4 non-null modes in a reduced state space.
+- **Norm renormalisation per step**: Divide by |λ|_max each step (ad hoc but effective).
+- **First-order reformulation**: Derive a genuine first-order evolution on a 3-component state (non-trivial due to mixed Δt).
+- **Accept for dispersion analysis**: Eigenvalue *phases* (energies) remain physically meaningful — c = √3 and m = 2ε are correct. The code uses this approach.
+
+**Conclusion:** The fast mode is a discrete-lattice analogue of the Dirac negative-energy sea, with an extra complication: exponential growth. For dispersion analysis and proper-time investigations, projecting onto the physical band (E ≈ 2ε) and ignoring the growing modes yields correct results. Long-time real-space simulations would require explicit suppression of the fast mode.
+
+---
+
 ## Summary
 
 | Property | Value | Notes |
@@ -238,6 +286,8 @@ The convergence is **monotone and quantitative**: each doubling of σ roughly ha
 | σ convergence | ✓ | τ_quantum → τ_classical as σ_k/m → 0 |
 | τ_phase trend | decreasing ✓ | Correct direction, wrong scale (k-spread) |
 | τ_dist | ≈ 2 (small) | Physical mode is lightlike — no τ_acc |
+| Fast mode (E < 0) | |λ| = 1.033 | Negative-energy antiparticle analogue |
+| Non-unitarity | O(ε²) | Structural — vanishes as ε → 0 |
 
 ### Physical Interpretation
 
