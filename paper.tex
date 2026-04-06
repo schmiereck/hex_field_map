@@ -12,6 +12,7 @@
 \usepackage{physics}
 \usepackage{xcolor}
 \usepackage{microtype}
+\usepackage{nicefrac}
 
 % ── convenience macros ────────────────────────────────────────────────────────
 \newcommand{\eps}{\varepsilon}
@@ -97,6 +98,12 @@ In this paper we introduce such a construction.
 The key ingredient is an \emph{equilateral triangular lattice}: a triangular
 tiling rotated $30°$ so that one edge points exactly upward in the time
 direction.
+The choice is motivated by two requirements that uniquely single out this
+geometry: \emph{(i)}~all edges have equal length (so no direction is
+geometrically preferred), and \emph{(ii)}~exactly one edge is aligned with
+the time axis (so a rest state exists alongside the two lightlike diagonals).
+No other 2D lattice simultaneously satisfies both conditions with three forward
+directions.
 All three edge lengths are equal and all three move directions---left-diagonal,
 right-diagonal, and straight-up---are present.
 The amplitude rule is identical to Feynman's: no direction change gives
@@ -279,12 +286,17 @@ Mode & $|\lambda|$ & $E = -\arg\lambda$ & Classification \\
 \hline
 1 & 1.033 & $-0.319$ & Fast / negative-energy \\
 2 & 1.010 & $+0.199$ & Physical propagating   \\
-3 & 1.010 & $+0.001$ & Near-zero (timelike)   \\
+3 & 1.010 & $+0.001$ & Near-zero straight mode$^a$ \\
 4 & 1.007 & $+0.123$ & Mixed ($E \approx \eps$) \\
 5 & 0     & ---      & Dead                   \\
 6 & 0     & ---      & Dead                   \\
 \end{tabular}
 \end{ruledtabular}
+\noindent\small$^a$Mode~3 has $99.5\%$ straight-component weight and
+$E \approx 0.001 \approx 0$. It is \emph{not} a Goldstone or gauge zero
+mode: the lattice has no continuous symmetry to break.  It is a
+nearly-degenerate artefact of the block structure in which the straight
+direction decouples from the diagonal directions at leading order in~$\eps$.
 \end{table}
 
 The physical band is mode~2, with energy $E = 0.199 \approx 2\eps$.
@@ -686,14 +698,17 @@ continuum limit $a \to 0$.
 Several aspects of the model are not yet fully understood.
 
 \emph{5-fold degeneracy.}
-The 5-fold degenerate physical band in 2+1D is intriguing.
-Five is not a standard spin degeneracy for a Dirac fermion in 2+1D
-(which would be 2).
-This may indicate an additional internal degree of freedom---possibly a
-lattice-specific ``orientation'' quantum number---or a partial suppression of
-doublers that leaves a residual degeneracy.
-Understanding this structure could reveal a richer spin content than
-anticipated.
+The physical band in 2+1D is 5-fold degenerate at $k=0$.
+To place this in context: the hexagonal transfer matrix has $7$ internal
+directions and a $14\times14$ state space, so the degeneracy structure is
+richer than in a minimal Dirac theory (which has $2$ components in 2+1D).
+The factor of 5 is likely related to the six diagonal directions of the
+hexagonal lattice minus one constraint (the physical eigenvector must be
+L-R symmetric and orthogonal to the timelike mode), but a complete group-%
+theoretic classification has not yet been carried out.
+It is not a standard spin degeneracy and may point to an additional
+lattice-specific internal quantum number or a partial doubler structure
+that remains to be understood.
 
 \emph{3+1D extension.}
 The natural 3+1D generalisation would use a tetrahedral-octahedral honeycomb
@@ -765,8 +780,8 @@ was supported by Claude (Anthropic, claude-sonnet-4-6).
 
 \bibitem{ord1983}
   G.~N.~Ord,
-  ``A classical analogue of quantum phase,''
-  \emph{J.\ Phys.\ A: Math.\ Gen.}\ \textbf{16}, 1869 (1983).
+  ``A reformulation of the Feynman chessboard model,''
+  \emph{J.\ Phys.\ A: Math.\ Gen.}\ \textbf{16}, 1847 (1983).
 
 \bibitem{jacobson1984}
   T.~Jacobson and L.~S.~Schulman,
