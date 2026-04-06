@@ -260,8 +260,8 @@ The straight (timelike) component is **exactly zero**. Every microscopic path in
 |---|---|---|
 | $c$ | $\sqrt{3} = 1.7321$ | Geometrically exact |
 | $m(\varepsilon=0.1)$ | $0.1993 \approx 2\varepsilon$ | 5-fold degenerate $k=0$ eigenvalue |
-| Isotropy error | 0.0000 | At $|k| \le 0.4$, 6-fold symmetry |
-| $\max|v_g|$ | $1.88 \approx c$ | Minor lattice artefact at zone boundary |
+| Isotropy error | 0.0000 | At $\|k\| \le 0.4$, 6-fold symmetry |
+| $\max\|v_g\|$ | $1.88 \approx c$ | Minor lattice artefact at zone boundary |
 | Causality | strict | Light cone $r=\sqrt{3}\,t$ respected |
 
 ---
