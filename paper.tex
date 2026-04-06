@@ -144,9 +144,9 @@ Section~\ref{sec:conclusion} concludes.
 
 \subsection{1+1D Equilateral Triangular Lattice}
 
-\begin{figure}[b]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{lattice_geometry_2d.png}
+  \includegraphics[width=0.82\textwidth]{lattice_geometry_2d.png}
   \caption{%
     Geometry of the 2+1D hexagonal lattice showing all seven move directions
     and edge lengths.
@@ -155,7 +155,7 @@ Section~\ref{sec:conclusion} concludes.
     All edges have length~1.
   }
   \label{fig:geometry}
-\end{figure}
+\end{figure*}
 
 The lattice is obtained by rotating the standard triangular tiling by $30°$
 so that one lattice edge points along the time axis.
@@ -339,20 +339,34 @@ $\eps$ & $\mphys$ (measured) & $2\eps$ & Deviation \\
 
 \subsection{Relativistic Dispersion}
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{dispersion_relation_2d.png}
-  \caption{%
-    Dispersion relation $E(k)$ in 2+1D.
-    \emph{Left}: $E(|\mathbf{k}|)$ along three directions
-    ($0°$, $30°$, $60°$) compared to the relativistic curve
-    $E = \sqrt{3k^2 + m^2}$.  All three curves overlap, confirming
-    6-fold isotropy (error\,$= 0.0000$ for $|k| \le 0.4$).
-    \emph{Right}: 2D heatmap $E(k_x, k_y)$; circular symmetry
-    confirms isotropy.
-  }
-  \label{fig:dispersion2d}
-\end{figure}
+  \begin{minipage}[t]{0.56\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{dispersion_relation_2d.png}
+    \caption{%
+      Dispersion relation $E(k)$ in 2+1D.
+      \emph{Left}: $E(|\mathbf{k}|)$ along three directions
+      ($0°$, $30°$, $60°$) compared to $E = \sqrt{3k^2 + m^2}$.
+      All curves overlap, confirming 6-fold isotropy
+      (error\,$= 0.0000$ for $|k| \le 0.4$).
+      \emph{Right}: 2D heatmap $E(k_x, k_y)$.
+    }
+    \label{fig:dispersion2d}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{spacetime_spread_2d.png}
+    \caption{%
+      Probability density $|\psi(x,y,t)|^2$ in 2+1D at times
+      $t = 5, 10, 15, 20$.
+      Dashed circles: light cone $r = \sqrt{3}\,t$.
+      The density is strictly causal.
+    }
+    \label{fig:spread}
+  \end{minipage}
+\end{figure*}
 
 The physical band follows
 \begin{equation}
@@ -396,17 +410,7 @@ well-understood lattice artefact; the probability density at all simulated
 times remains strictly within the light cone $r = \sqrt{3}\,t$
 (Fig.~\ref{fig:spread}).
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{spacetime_spread_2d.png}
-  \caption{%
-    Probability density $|\psi(x,y,t)|^2$ in 2+1D at times
-    $t = 5, 10, 15, 20$.
-    Dashed circles show the light cone $r = \sqrt{3}\,t$.
-    The density is strictly causal: no weight lies outside the cone.
-  }
-  \label{fig:spread}
-\end{figure}
+% Fig. \ref{fig:spread} appears beside Fig. \ref{fig:dispersion2d} above.
 
 \subsection{No Fermion Doubling}
 
@@ -456,23 +460,36 @@ For a narrow packet ($\sigma_k \ll m$),
 Eq.~\eqref{eq:tau_quantum} reduces to $T \cdot m / E(k_0) = T/\gamma$,
 i.e.\ the classical relativistic result.
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{dilation_curve.png}
-  \caption{%
-    Relativistic time dilation.
-    Black solid line: classical prediction $\tau/T = \sqrt{1 - v^2/c^2}$.
-    Blue circles: quantum prediction $\tauq/T$ for $\sigma = 8$
-    ($\sigma_k/m = 0.627$).
-    Red squares: phase-slope measurement (overestimates due to broad
-    $k$-spread).
-    Green triangles: straight-step distribution $\langle\tau_{\rm acc}\rangle$
-    (small, since the physical mode is lightlike).
-    Residuals in the lower panel show the deviation of the phase measurement
-    from $\tauq$.
-  }
-  \label{fig:dilation_curve}
-\end{figure}
+  \begin{minipage}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{dilation_curve.png}
+    \caption{%
+      Relativistic time dilation ($\sigma = 8$, $\sigma_k/m = 0.627$).
+      Black line: $\sqrt{1-v^2/c^2}$.
+      Blue circles: $\tauq/T$.
+      Red squares: phase-slope measurement.
+      Green triangles: straight-step $\langle\tau_{\rm acc}\rangle$
+      (near zero — physical mode is lightlike).
+      Lower panel: residuals of phase measurement vs.\ $\tauq$.
+    }
+    \label{fig:dilation_curve}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{sigma_convergence.png}
+    \caption{%
+      $\sigma$-convergence: $\tauq/T$ vs.\ $v/c$ for $\sigma = 8, 20, 30$.
+      Black line: $\sqrt{1-v^2/c^2}$.
+      Lower panel: residuals $({\tauq - \taucl})/\taucl$ in per cent.
+      Deviation halves with each doubling of~$\sigma$, confirming convergence
+      to the SR prediction in the narrow-packet limit.
+    }
+    \label{fig:sigma_convergence}
+  \end{minipage}
+\end{figure*}
 
 \subsection{Convergence to Classical Time Dilation}
 
@@ -501,19 +518,7 @@ $\sigma$ & $\sigma_k/m$ &
 \end{ruledtabular}
 \end{table}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{sigma_convergence.png}
-  \caption{%
-    $\sigma$-convergence of $\tauq/T$ toward the SR curve.
-    Main panel: $\tauq/T$ vs.\ $v/c$ for $\sigma = 8, 20, 30$;
-    the black solid line is $\sqrt{1 - v^2/c^2}$.
-    Lower panel: residuals $({\tauq - \taucl})/\taucl$ in per cent.
-    The deviation halves with each doubling of~$\sigma$, confirming
-    convergence to the SR prediction in the narrow-packet limit.
-  }
-  \label{fig:sigma_convergence}
-\end{figure}
+% Fig. \ref{fig:sigma_convergence} appears beside Fig. \ref{fig:dilation_curve} above.
 
 The convergence is monotone: each doubling of $\sigma$ roughly halves the
 maximum deviation.
@@ -548,9 +553,9 @@ signature.
 
 \subsection{Zitterbewegung}
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\columnwidth]{wavepacket_analysis_2d.png}
+  \includegraphics[width=0.82\textwidth]{wavepacket_analysis_2d.png}
   \caption{%
     Wave packet dynamics in 2+1D ($T = 30$, $\eps = 0.1$, $\sigma = 5$,
     $v_g/c = 0.1$).
@@ -563,7 +568,7 @@ signature.
     Zitterbewegung oscillation with period $15.76 \approx 2\pi/(2m) = 15.77$.
   }
   \label{fig:zitterbewegung}
-\end{figure}
+\end{figure*}
 
 The wave packet centre of mass in 2+1D exhibits a rapid oscillation
 superimposed on its mean drift (Fig.~\ref{fig:zitterbewegung}).
