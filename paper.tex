@@ -341,31 +341,28 @@ $\eps$ & $\mphys$ (measured) & $2\eps$ & Deviation \\
 
 \begin{figure*}[t]
   \centering
-  \begin{minipage}[t]{0.56\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{dispersion_relation_2d.png}
-    \caption{%
-      Dispersion relation $E(k)$ in 2+1D.
-      \emph{Left}: $E(|\mathbf{k}|)$ along three directions
-      ($0°$, $30°$, $60°$) compared to $E = \sqrt{3k^2 + m^2}$.
-      All curves overlap, confirming 6-fold isotropy
-      (error\,$= 0.0000$ for $|k| \le 0.4$).
-      \emph{Right}: 2D heatmap $E(k_x, k_y)$.
-    }
-    \label{fig:dispersion2d}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.42\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{spacetime_spread_2d.png}
-    \caption{%
-      Probability density $|\psi(x,y,t)|^2$ in 2+1D at times
-      $t = 5, 10, 15, 20$.
-      Dashed circles: light cone $r = \sqrt{3}\,t$.
-      The density is strictly causal.
-    }
-    \label{fig:spread}
-  \end{minipage}
+  \includegraphics[width=\textwidth]{dispersion_relation_2d.png}
+  \caption{%
+    Dispersion relation $E(k)$ in 2+1D.
+    \emph{Left}: $E(|\mathbf{k}|)$ along three directions
+    ($0°$, $30°$, $60°$) compared to $E = \sqrt{3k^2 + m^2}$.
+    All curves overlap, confirming 6-fold isotropy
+    (error\,$= 0.0000$ for $|k| \le 0.4$).
+    \emph{Right}: 2D heatmap $E(k_x, k_y)$.
+  }
+  \label{fig:dispersion2d}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{spacetime_spread_2d.png}
+  \caption{%
+    Probability density $|\psi(x,y,t)|^2$ in 2+1D at times
+    $t = 5, 10, 15, 20$.
+    Dashed circles: light cone $r = \sqrt{3}\,t$.
+    The density is strictly causal.
+  }
+  \label{fig:spread}
 \end{figure*}
 
 The physical band follows
@@ -410,7 +407,6 @@ well-understood lattice artefact; the probability density at all simulated
 times remains strictly within the light cone $r = \sqrt{3}\,t$
 (Fig.~\ref{fig:spread}).
 
-% Fig. \ref{fig:spread} appears beside Fig. \ref{fig:dispersion2d} above.
 
 \subsection{No Fermion Doubling}
 
@@ -462,33 +458,30 @@ i.e.\ the classical relativistic result.
 
 \begin{figure*}[t]
   \centering
-  \begin{minipage}[t]{0.49\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{dilation_curve.png}
-    \caption{%
-      Relativistic time dilation ($\sigma = 8$, $\sigma_k/m = 0.627$).
-      Black line: $\sqrt{1-v^2/c^2}$.
-      Blue circles: $\tauq/T$.
-      Red squares: phase-slope measurement.
-      Green triangles: straight-step $\langle\tau_{\rm acc}\rangle$
-      (near zero — physical mode is lightlike).
-      Lower panel: residuals of phase measurement vs.\ $\tauq$.
-    }
-    \label{fig:dilation_curve}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.49\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{sigma_convergence.png}
-    \caption{%
-      $\sigma$-convergence: $\tauq/T$ vs.\ $v/c$ for $\sigma = 8, 20, 30$.
-      Black line: $\sqrt{1-v^2/c^2}$.
-      Lower panel: residuals $({\tauq - \taucl})/\taucl$ in per cent.
-      Deviation halves with each doubling of~$\sigma$, confirming convergence
-      to the SR prediction in the narrow-packet limit.
-    }
-    \label{fig:sigma_convergence}
-  \end{minipage}
+  \includegraphics[width=\textwidth]{dilation_curve.png}
+  \caption{%
+    Relativistic time dilation ($\sigma = 8$, $\sigma_k/m = 0.627$).
+    Black line: $\sqrt{1-v^2/c^2}$.
+    Blue circles: $\tauq/T$.
+    Red squares: phase-slope measurement.
+    Green triangles: straight-step $\langle\tau_{\rm acc}\rangle$
+    (near zero — physical mode is lightlike).
+    Lower panel: residuals of phase measurement vs.\ $\tauq$.
+  }
+  \label{fig:dilation_curve}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{sigma_convergence.png}
+  \caption{%
+    $\sigma$-convergence: $\tauq/T$ vs.\ $v/c$ for $\sigma = 8, 20, 30$.
+    Black line: $\sqrt{1-v^2/c^2}$.
+    Lower panel: residuals $({\tauq - \taucl})/\taucl$ in per cent.
+    Deviation halves with each doubling of~$\sigma$, confirming convergence
+    to the SR prediction in the narrow-packet limit.
+  }
+  \label{fig:sigma_convergence}
 \end{figure*}
 
 \subsection{Convergence to Classical Time Dilation}
