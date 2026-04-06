@@ -240,7 +240,7 @@ Energies from eigenvalue phases: $E = -\arg(\lambda)$.
 
 ### Eigenvalue Spectrum at $k=0$, $\varepsilon=0.1$
 
-| Mode | $|\lambda|$ | $E$ | Classification |
+| Mode | $\|\lambda\|$ | $E$ | Classification |
 |---|---|---|---|
 | 1 | 1.033 | −0.319 | Fast / negative-energy (antiparticle analogue) |
 | 2 | 1.010 | +0.199 | **Physical propagating** |
