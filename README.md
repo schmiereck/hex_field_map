@@ -21,7 +21,7 @@ From this single rule the following emerge automatically:
 | Speed of light | $c = \sqrt{3}$ | Geometric (edge ratios) |
 | Physical mass | $m \approx 2\varepsilon$ | Transfer-matrix eigenvalue |
 | Relativistic dispersion | $E^2 = c^2 k^2 + m^2$, RMSE = 0.007 | Eigenvalue phases |
-| Isotropy (2+1D) | error = 0.0000 for $\|k\| \le 0.4$ | 6-fold hexagonal symmetry |
+| Isotropy (2+1D) | error = 0.0000 for $\vert k\vert \le 0.4$ | 6-fold hexagonal symmetry |
 | Fermion doubling | none | No Brillouin-zone corner modes |
 | Zitterbewegung period | $2\pi/(2m) = 15.77$ | Interference of ±k bands |
 | Antiparticle mode | $E \approx -m$ | Negative-energy eigenvalue |
@@ -76,7 +76,7 @@ The lattice is a triangular tiling rotated 30° so that one edge points along th
 | Straight-up | $0$ | $1$ | 1 | timelike |
 | Right-diagonal | $+\sqrt{3}/2$ | $1/2$ | 1 | lightlike |
 
-The speed of light follows geometrically: $c = \Delta x / \Delta t\big|_\text{diag} = (\sqrt{3}/2)/(1/2) = \sqrt{3}$.
+The speed of light follows geometrically: $c = \Delta x / \Delta t\,\vert_{\mathrm{diag}} = (\sqrt{3}/2)/(1/2) = \sqrt{3}$.
 
 **Key insight:** The physical propagating eigenmode has **zero straight-component** — it is a purely lightlike left/right standing wave. Mass arises entirely from left/right interference, a discrete Zitterbewegung.
 
@@ -127,7 +127,7 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Epsilon sweep 2+1D](epsilon_sweep_2d.png)
 
-*Physical mass $m_\text{phys}$ vs. $\varepsilon$ in 2+1D. Formula: $m_\text{phys} = \arctan(2\varepsilon/(1-\varepsilon^2)) \approx 2\varepsilon$ for small $\varepsilon$.*
+*Physical mass $m_{\mathrm{phys}}$ vs. $\varepsilon$ in 2+1D. Formula: $m_{\mathrm{phys}} = \arctan(2\varepsilon/(1-\varepsilon^2)) \approx 2\varepsilon$ for small $\varepsilon$.*
 
 | $\varepsilon$ | $m_\text{phys}$ (measured) | $2\varepsilon$ | Deviation |
 |---|---|---|---|
@@ -181,18 +181,18 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 The quantum proper time prediction for a Gaussian wave packet of width $\sigma$ centred at momentum $k_0$ is:
 
-$$\tau_\text{quantum} = T \cdot m \cdot \frac{\int G(k)\,E(k)^{-1}\,dk}{\int G(k)\,dk}$$
+$$\tau_{\mathrm{quantum}} = T \cdot m \cdot \frac{\int G(k)\,E(k)^{-1}\,dk}{\int G(k)\,dk}$$
 
 where $G(k) = \exp[-(k-k_0)^2/(2\sigma_k^2)]$, $\sigma_k = 1/\sigma$.
 For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical SR result.
 
 ![Dilation curve](dilation_curve.png)
 
-*Relativistic time dilation ($\sigma=8$, $\sigma_k/m=0.627$). Black: $\sqrt{1-v^2/c^2}$. Blue circles: $\tau_\text{quantum}/T$. Red squares: phase-slope measurement. Green triangles: straight-step $\langle\tau_\text{acc}\rangle$ (near zero — physical mode is lightlike). Lower panel: residuals.*
+*Relativistic time dilation ($\sigma=8$, $\sigma_k/m=0.627$). Black: $\sqrt{1-v^2/c^2}$. Blue circles: $\tau_{\mathrm{quantum}}/T$. Red squares: phase-slope measurement. Green triangles: straight-step $\langle\tau_{\mathrm{acc}}\rangle$ (near zero — physical mode is lightlike). Lower panel: residuals.*
 
 ![Sigma convergence](sigma_convergence.png)
 
-*$\sigma$-convergence: $\tau_\text{quantum}/T$ vs. $v/c$ for $\sigma = 8, 20, 30$. Deviation halves with each doubling of $\sigma$, confirming convergence to the SR prediction.*
+*$\sigma$-convergence: $\tau_{\mathrm{quantum}}/T$ vs. $v/c$ for $\sigma = 8, 20, 30$. Deviation halves with each doubling of $\sigma$, confirming convergence to the SR prediction.*
 
 | $\sigma$ | $\sigma_k/m$ | $\tau_q(v=0)/T$ | $\tau_q(0.5c)/T$ | Max. dev. |
 |---|---|---|---|---|
@@ -210,7 +210,7 @@ For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical 
 
 ![Proper time distribution](proper_time_distribution.png)
 
-*$P(\tau_\text{acc})$ histograms for selected velocities.*
+*$P(\tau_{\mathrm{acc}})$ histograms for selected velocities.*
 
 ---
 
@@ -233,14 +233,14 @@ For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical 
 
 One half-step ($\Delta t = 0.5$) in Fourier space:
 
-$$M_\text{half}(k) = \begin{pmatrix} A(k) & B \\ I_3 & 0 \end{pmatrix}$$
+$$M_{\mathrm{half}}(k) = \begin{pmatrix} A(k) & B \\ I_3 & 0 \end{pmatrix}$$
 
-Full one-step matrix: $M_\text{full}(k) = M_\text{half}(k)^2$.
+Full one-step matrix: $M_{\mathrm{full}}(k) = M_{\mathrm{half}}(k)^2$.
 Energies from eigenvalue phases: $E = -\arg(\lambda)$.
 
 ### Eigenvalue Spectrum at $k=0$, $\varepsilon=0.1$
 
-| Mode | $\|\lambda\|$ | $E$ | Classification |
+| Mode | $\vert\lambda\vert$ | $E$ | Classification |
 |---|---|---|---|
 | 1 | 1.033 | −0.319 | Fast / negative-energy (antiparticle analogue) |
 | 2 | 1.010 | +0.199 | **Physical propagating** |
@@ -250,7 +250,7 @@ Energies from eigenvalue phases: $E = -\arg(\lambda)$.
 
 ### Physical Eigenvector
 
-$$\mathbf{v}_\text{phys} = [-0.707,\; 0.000,\; +0.707]^T$$
+$$\mathbf{v}_{\mathrm{phys}} = [-0.707,\; 0.000,\; +0.707]^T$$
 
 The straight (timelike) component is **exactly zero**. Every microscopic path in the physical mode is lightlike. Mass is pure interference.
 
@@ -260,8 +260,8 @@ The straight (timelike) component is **exactly zero**. Every microscopic path in
 |---|---|---|
 | $c$ | $\sqrt{3} = 1.7321$ | Geometrically exact |
 | $m(\varepsilon=0.1)$ | $0.1993 \approx 2\varepsilon$ | 5-fold degenerate $k=0$ eigenvalue |
-| Isotropy error | 0.0000 | At $\|k\| \le 0.4$, 6-fold symmetry |
-| $\max\|v_g\|$ | $1.88 \approx c$ | Minor lattice artefact at zone boundary |
+| Isotropy error | 0.0000 | At $\vert k\vert \le 0.4$, 6-fold symmetry |
+| $\max\vert v_g\vert$ | $1.88 \approx c$ | Minor lattice artefact at zone boundary |
 | Causality | strict | Light cone $r=\sqrt{3}\,t$ respected |
 
 ---
