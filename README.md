@@ -106,15 +106,15 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Dispersion relation 2+1D](dispersion_relation_2d.png)
 
-*$E(k)$ in 2+1D. Left: $E(|\mathbf{k}|)$ along three directions (0°, 30°, 60°) compared to $E = \sqrt{3k^2 + m^2}$. All curves overlap, confirming 6-fold isotropy (error = 0.0000 for $|k| \le 0.4$). Right: 2D heatmap $E(k_x, k_y)$.*
+$E(k)$ in 2+1D. Left: $E(|\mathbf{k}|)$ along three directions (0°, 30°, 60°) compared to $E = \sqrt{3k^2 + m^2}$. All curves overlap, confirming 6-fold isotropy (error = 0.0000 for $|k| \le 0.4$). Right: 2D heatmap $E(k_x, k_y)$.
 
 ![Group velocity 2+1D](group_velocity_2d.png)
 
-*Group velocity $v_g = dE/dk$ in 2+1D. Maximum $|v_g| = 1.88 \approx c \cdot 1.086$; the 8.6% excess occurs only at the zone boundary and is a lattice artefact.*
+Group velocity $v_g = dE/dk$ in 2+1D. Maximum $|v_g| = 1.88 \approx c \cdot 1.086$; the 8.6% excess occurs only at the zone boundary and is a lattice artefact.
 
 ![Dispersion residuals](dispersion_residuals.png)
 
-*Residuals between simulated $E(k)$ and the relativistic formula $\sqrt{3k^2+m^2}$.*
+Residuals between simulated $E(k)$ and the relativistic formula $\sqrt{3k^2+m^2}$.
 
 ![Dispersion (1+1D physical)](dispersion_phys.png)
 
@@ -127,7 +127,7 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Epsilon sweep 2+1D](epsilon_sweep_2d.png)
 
-*Physical mass $m_{\mathrm{phys}}$ vs. $\varepsilon$ in 2+1D. Formula: $m_{\mathrm{phys}} = \arctan(2\varepsilon/(1-\varepsilon^2)) \approx 2\varepsilon$ for small $\varepsilon$.*
+Physical mass $m_{\mathrm{phys}}$ vs. $\varepsilon$ in 2+1D. Formula: $m_{\mathrm{phys}} = \arctan(2\varepsilon/(1-\varepsilon^2)) \approx 2\varepsilon$ for small $\varepsilon$.
 
 | $\varepsilon$ | $m_\text{phys}$ (measured) | $2\varepsilon$ | Deviation |
 |---|---|---|---|
@@ -143,7 +143,7 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Spacetime spread 2+1D](spacetime_spread_2d.png)
 
-*Probability density $|\psi(x,y,t)|^2$ in 2+1D at $t = 5, 10, 15, 20$. Dashed circles: light cone $r = \sqrt{3}\,t$. Propagation is strictly causal.*
+Probability density $|\psi(x,y,t)|^2$ in 2+1D at $t = 5, 10, 15, 20$. Dashed circles: light cone $r = \sqrt{3}\,t$. Propagation is strictly causal.
 
 ![Wave packet heatmap 2+1D](wavepacket_heatmap_2d.png)
 
@@ -151,7 +151,7 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Wave packet analysis 2+1D](wavepacket_analysis_2d.png)
 
-*Wave packet dynamics in 2+1D ($T=30$, $\varepsilon=0.1$, $\sigma=5$, $v_g/c=0.1$). Top: centre-of-mass trajectory. Middle: packet widths $\sigma_x(t)$, $\sigma_y(t)$. Bottom: instantaneous velocity and residual CoM after linear subtraction — the Zitterbewegung oscillation with period $15.76 \approx 2\pi/(2m) = 15.77$.*
+Wave packet dynamics in 2+1D ($T=30$, $\varepsilon=0.1$, $\sigma=5$, $v_g/c=0.1$). Top: centre-of-mass trajectory. Middle: packet widths $\sigma_x(t)$, $\sigma_y(t)$. Bottom: instantaneous velocity and residual CoM after linear subtraction — the Zitterbewegung oscillation with period $15.76 \approx 2\pi/(2m) = 15.77$.
 
 ---
 
@@ -168,7 +168,7 @@ Seven move directions: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°, each $
 
 ![Spread vs time](spread_vs_time.png)
 
-*Spatial spread $\sigma_x(t)$ for the different 1+1D models.*
+Spatial spread $\sigma_x(t)$ for the different 1+1D models.
 
 ![Lattice spread 1+1D](lattice_spread.png)
 
@@ -188,11 +188,11 @@ For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical 
 
 ![Dilation curve](dilation_curve.png)
 
-*Relativistic time dilation ($\sigma=8$, $\sigma_k/m=0.627$). Black: $\sqrt{1-v^2/c^2}$. Blue circles: $\tau_{\mathrm{quantum}}/T$. Red squares: phase-slope measurement. Green triangles: straight-step $\langle\tau_{\mathrm{acc}}\rangle$ (near zero — physical mode is lightlike). Lower panel: residuals.*
+Relativistic time dilation ($\sigma=8$, $\sigma_k/m=0.627$). Black: $\sqrt{1-v^2/c^2}$. Blue circles: $\tau_{\mathrm{quantum}}/T$. Red squares: phase-slope measurement. Green triangles: straight-step $\langle\tau_{\mathrm{acc}}\rangle$ (near zero — physical mode is lightlike). Lower panel: residuals.
 
 ![Sigma convergence](sigma_convergence.png)
 
-*$\sigma$-convergence: $\tau_{\mathrm{quantum}}/T$ vs. $v/c$ for $\sigma = 8, 20, 30$. Deviation halves with each doubling of $\sigma$, confirming convergence to the SR prediction.*
+$\sigma$-convergence: $\tau_{\mathrm{quantum}}/T$ vs. $v/c$ for $\sigma = 8, 20, 30$. Deviation halves with each doubling of $\sigma$, confirming convergence to the SR prediction.
 
 | $\sigma$ | $\sigma_k/m$ | $\tau_q(v=0)/T$ | $\tau_q(0.5c)/T$ | Max. dev. |
 |---|---|---|---|---|
@@ -202,15 +202,15 @@ For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical 
 
 ![Worldlines proper time](worldlines_proper_time.png)
 
-*Spacetime heatmap with worldlines coloured by accumulated proper time $\tau$ for different velocities.*
+Spacetime heatmap with worldlines coloured by accumulated proper time $\tau$ for different velocities.
 
 ![Phase vs time](phase_vs_time.png)
 
-*Phase oscillation at the centre of mass for $v=0$, $0.5c$, $0.9c$.*
+Phase oscillation at the centre of mass for $v=0$, $0.5c$, $0.9c$.
 
 ![Proper time distribution](proper_time_distribution.png)
 
-*$P(\tau_{\mathrm{acc}})$ histograms for selected velocities.*
+$P(\tau_{\mathrm{acc}})$ histograms for selected velocities.
 
 ---
 
@@ -223,7 +223,7 @@ For narrow packets ($\sigma_k \ll m$) this reduces to $T/\gamma$, the classical 
 
 ![Phase components T=20](phase_components_T20.png) ![Phase components T=50](phase_components_T50.png)
 
-*Phase components at $T=20$ (left) and $T=50$ (right).*
+Phase components at $T=20$ (left) and $T=50$ (right).
 
 ---
 
