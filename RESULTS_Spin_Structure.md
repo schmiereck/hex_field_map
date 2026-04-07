@@ -189,3 +189,7 @@ factor-of-6 spectral gap in the local amplitude matrix C.
 - `quantum_spin_structure.py` — Tasks 1–4 (irrep decomposition, eigenstates, k-splitting)
 - `quantum_spin_cluster.py` — Task 5 (rank-revealing cluster sharpening)
 - `quantum_mzero_check.py` — Task 6 (chirality test + m-sector decomposition)
+
+## Visualization
+
+- [hex_lattice_wave_modes.html](hex_lattice_wave_modes.html)

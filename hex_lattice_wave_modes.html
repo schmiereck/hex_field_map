@@ -1,0 +1,188 @@
+<canvas id="cv" style="width:100%;display:block;border-radius:8px"></canvas>
+<div style="display:flex;gap:16px;align-items:flex-end;margin-top:10px;flex-wrap:wrap;padding:0 2px">
+  <div>
+    <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:3px">angular momentum m</div>
+    <select id="mSel" style="font-size:13px;padding:4px 8px">
+      <option value="-2">m = −2  d-wave</option>
+      <option value="-1">m = −1  p-wave ↻</option>
+      <option value="1" selected>m = +1  p-wave ↺</option>
+      <option value="2">m = +2  d-wave</option>
+      <option value="3">m = +3  B-mode</option>
+    </select>
+  </div>
+  <div style="flex:1;min-width:90px">
+    <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:3px">k = <span id="kLbl">0.35</span></div>
+    <input type="range" id="kSl" min="0.05" max="0.65" step="0.05" value="0.35" style="width:100%">
+  </div>
+  <div style="flex:1;min-width:90px">
+    <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:3px">speed = <span id="spLbl">1.0</span></div>
+    <input type="range" id="spSl" min="0" max="2.5" step="0.1" value="1.0" style="width:100%">
+  </div>
+  <div>
+    <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:3px">view</div>
+    <button id="viewBtn" style="font-size:12px;padding:4px 10px">spiral</button>
+  </div>
+</div>
+<script>
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+let m=1, k=0.35, sp=1.0, t=0, viewMode='lattice';
+
+const D6 = Array.from({length:6},(_,d)=>({c:Math.cos(d*Math.PI/3),s:Math.sin(d*Math.PI/3)}));
+
+function resize(){
+  const W = cv.parentElement.offsetWidth||680;
+  cv.width=W; cv.height=Math.round(W*0.52);
+}
+resize();
+
+function hsl(phase){
+  const h=(((phase*180/Math.PI)%360)+360)%360;
+  const l=48+14*Math.cos(phase);
+  return `hsl(${h.toFixed(0)},92%,${l.toFixed(0)}%)`;
+}
+
+function drawLattice(){
+  const W=cv.width, H=cv.height;
+  ctx.fillStyle='#070810'; ctx.fillRect(0,0,W,H);
+
+  const spacing=50;
+  const a1x=spacing, a2x=spacing*0.5, a2y=spacing*Math.sqrt(3)/2;
+  const arrowLen=16;
+  const mPhys=0.199;
+  const E=Math.sqrt(3*k*k+mPhys*mPhys);
+  const cx=W/2, cy=H/2;
+
+  const nodes=[];
+  for(let i=-10;i<=10;i++) for(let j=-8;j<=8;j++){
+    const x=cx+i*a1x+j*a2x, y=cy+j*a2y;
+    if(x>-10&&x<W+10&&y>-10&&y<H+10) nodes.push({x,y});
+  }
+
+  for(const n of nodes){
+    const sp0=k*(n.x-cx)/spacing - E*t;
+    ctx.beginPath(); ctx.arc(n.x,n.y,1.8,0,Math.PI*2);
+    ctx.fillStyle='rgba(160,160,220,0.55)'; ctx.fill();
+    for(let d=0;d<6;d++){
+      const ph=m*d*Math.PI/3+sp0;
+      const col=hsl(ph);
+      const len=arrowLen*(0.65+0.35*Math.abs(Math.cos(ph)));
+      const ex=n.x+D6[d].c*len, ey=n.y+D6[d].s*len;
+      ctx.beginPath(); ctx.moveTo(n.x,n.y); ctx.lineTo(ex,ey);
+      ctx.strokeStyle=col; ctx.lineWidth=2; ctx.stroke();
+      const hl=4, ang=Math.atan2(D6[d].s,D6[d].c);
+      ctx.beginPath();
+      ctx.moveTo(ex,ey);
+      ctx.lineTo(ex-hl*Math.cos(ang-0.45),ey-hl*Math.sin(ang-0.45));
+      ctx.moveTo(ex,ey);
+      ctx.lineTo(ex-hl*Math.cos(ang+0.45),ey-hl*Math.sin(ang+0.45));
+      ctx.strokeStyle=col; ctx.lineWidth=1.2; ctx.stroke();
+    }
+  }
+
+  const names={'-2':'d-wave  m=−2','-1':'p-wave  m=−1','1':'p-wave  m=+1','2':'d-wave  m=+2','3':'B-mode  m=+3'};
+  ctx.fillStyle='rgba(180,180,230,0.55)'; ctx.font='11px monospace';
+  ctx.fillText(names[m.toString()], 10, 18);
+  ctx.fillText(`E=${E.toFixed(3)}  λ=${(2*Math.PI/k).toFixed(1)}`, 10, H-8);
+}
+
+function drawSpiral(){
+  const W=cv.width, H=cv.height;
+  ctx.fillStyle='#070810'; ctx.fillRect(0,0,W,H);
+
+  const mPhys=0.199;
+  const E=Math.sqrt(3*k*k+mPhys*mPhys);
+  const N=18, margin=50;
+  const xStep=(W-2*margin)/N;
+  const cx=W/2, cy=H/2;
+  const R=Math.min(H*0.33, 90);
+
+  ctx.fillStyle='rgba(120,120,180,0.3)';
+  ctx.font='10px monospace';
+  ctx.fillText('propagation direction  x →', margin, H-8);
+
+  const pts=[];
+  for(let i=0;i<=N;i++){
+    const x=margin+i*xStep;
+    const nodeX=(x-cx)/(xStep*0.7);
+    const basePh=k*nodeX - E*t;
+
+    const scl=0.55+0.45*i/N;
+    const yr=cy, xr=x;
+    const r=R*scl;
+
+    if(i<N){
+      const xNext=margin+(i+1)*xStep;
+      const nodeXNext=(xNext-cx)/(xStep*0.7);
+      const basePhNext=k*nodeXNext - E*t;
+      const sclNext=0.55+0.45*(i+1)/N;
+      const rNext=R*sclNext;
+      for(let d=0;d<6;d++){
+        const ph1=m*d*Math.PI/3+basePh;
+        const ph2=m*d*Math.PI/3+basePhNext;
+        const h1=(((ph1*180/Math.PI)%360)+360)%360;
+        const h2=(((ph2*180/Math.PI)%360)+360)%360;
+        const x1=xr+D6[d].c*r, y1=yr+D6[d].s*r;
+        const x2=xNext+D6[d].c*rNext, y2=yr+D6[d].s*rNext;
+        const grad=ctx.createLinearGradient(x1,y1,x2,y2);
+        grad.addColorStop(0,`hsla(${h1.toFixed(0)},85%,52%,0.18)`);
+        grad.addColorStop(1,`hsla(${h2.toFixed(0)},85%,52%,0.18)`);
+        ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+        ctx.strokeStyle=grad; ctx.lineWidth=1.5; ctx.stroke();
+      }
+    }
+
+    ctx.beginPath();
+    for(let d=0;d<6;d++){
+      const vx=D6[d].c*r+xr, vy=D6[d].s*r+yr;
+      d===0?ctx.moveTo(vx,vy):ctx.lineTo(vx,vy);
+    }
+    ctx.closePath();
+    ctx.strokeStyle=`rgba(100,100,160,${0.2+0.25*scl})`; ctx.lineWidth=0.5; ctx.stroke();
+
+    for(let d=0;d<6;d++){
+      const ph=m*d*Math.PI/3+basePh;
+      const col=hsl(ph);
+      const ex=xr+D6[d].c*r, ey=yr+D6[d].s*r;
+      ctx.beginPath(); ctx.moveTo(xr,yr); ctx.lineTo(ex,ey);
+      ctx.strokeStyle=col; ctx.lineWidth=2.2*scl; ctx.stroke();
+      ctx.beginPath(); ctx.arc(ex,ey,3*scl,0,Math.PI*2);
+      ctx.fillStyle=col; ctx.fill();
+    }
+
+    ctx.beginPath(); ctx.arc(xr,yr,2.5*scl,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,200,255,0.7)'; ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(xr, cy+R*1.15);
+    ctx.lineTo(xr, cy+R*1.22);
+    ctx.strokeStyle='rgba(120,120,180,0.3)'; ctx.lineWidth=0.5; ctx.stroke();
+  }
+
+  const names={'-2':'d-wave  m=−2','-1':'p-wave  m=−1 (right-handed)','1':'p-wave  m=+1 (left-handed)','2':'d-wave  m=+2','3':'B-mode  m=+3'};
+  ctx.fillStyle='rgba(180,180,230,0.55)'; ctx.font='11px monospace';
+  ctx.fillText(names[m.toString()], 10, 18);
+  ctx.fillText(`E=${E.toFixed(3)}  λ=${(2*Math.PI/k).toFixed(1)}`, 10, H-8);
+}
+
+function loop(){
+  viewMode==='lattice'?drawLattice():drawSpiral();
+  t+=0.013*sp;
+  requestAnimationFrame(loop);
+}
+
+document.getElementById('mSel').addEventListener('change',e=>m=parseInt(e.target.value));
+document.getElementById('kSl').addEventListener('input',e=>{
+  k=parseFloat(e.target.value);
+  document.getElementById('kLbl').textContent=k.toFixed(2);
+});
+document.getElementById('spSl').addEventListener('input',e=>{
+  sp=parseFloat(e.target.value);
+  document.getElementById('spLbl').textContent=sp.toFixed(1);
+});
+document.getElementById('viewBtn').addEventListener('click',()=>{
+  viewMode=viewMode==='lattice'?'spiral':'lattice';
+  document.getElementById('viewBtn').textContent=viewMode==='lattice'?'spiral':'lattice';
+});
+loop();
+</script>
