@@ -12,6 +12,7 @@
 
 A discrete path-integral model on a **1+1D equilateral triangular lattice** and its **2+1D hexagonal extension** in which all relativistic structure emerges purely from lattice geometry.
 
+**README**: [`README1_lattice_geometry.md`](README1_lattice_geometry.md)  
 LaTeX version: [`paper.tex`](paper.tex)  
 PDF version: [`paper.pdf`](paper.pdf)
 
@@ -33,6 +34,7 @@ extension.
 
 follow-up to [`paper.tex`](paper.tex) / [`paper.pdf`](paper.pdf) / [`README1_lattice_geometry.md`](README1_lattice_geometry.md)
 
+**README**: [`README2_internal_structure.md`](README2_internal_structure.md)  
 LaTeX version: [`paper2_internal_structure.tex`](paper2_internal_structure.tex)  
 PDF version: [`paper2_internal_structure.pdf`](paper2_internal_structure.pdf)
 
