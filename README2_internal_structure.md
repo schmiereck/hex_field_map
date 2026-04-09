@@ -2,9 +2,12 @@
 
 **Crystal Angular Momentum, Emergent Vector Ground State, and Symmetry Breaking by Confinement**
 
-Thomas Schmiereck — follow-up to [`paper.tex`](paper.tex) / [`README.md`](README.md)
+*Thomas Schmiereck — thomas@schmiereck.de*
 
-LaTeX version: [`paper2_internal_structure.tex`](paper2_internal_structure.tex)
+follow-up to [`paper.tex`](paper.tex) / [`paper.pdf`](paper.pdf) / [`README1_lattice_geometry.md`](README1_lattice_geometry.md)
+
+LaTeX version: [`paper2_internal_structure.tex`](paper2_internal_structure.tex)  
+PDF version: [`paper2_internal_structure.pdf`](paper2_internal_structure.pdf)
 
 ---
 
@@ -38,7 +41,7 @@ lattice.
 
 ## 1. Introduction
 
-Paper 1 ([`paper.tex`](paper.tex), [`README.md`](README.md)) introduced an
+Paper 1 ([`paper.tex`](paper.tex), ([`paper.pdf`](paper.pdf), [`README1_lattice_geometry.md`](README1_lattice_geometry.md)) introduced an
 equilateral path-integral lattice in which every edge has length one, a
 single amplitude rule assigns a factor iε to every direction change and 1
 to every straight continuation, and all relativistic structure (c = √3,
@@ -540,10 +543,12 @@ lattice geometry alone.
 
 ### Companion papers
 
-- [`paper.tex`](paper.tex) / [`README.md`](README.md) — paper 1:
+- [`paper.tex`](paper.tex) / [`paper.pdf`](paper.pdf) / [`README1_lattice_geometry.md`](README1_lattice_geometry.md) — paper 1:
   relativistic quantum mechanics from lattice geometry
 - [`paper2_internal_structure.tex`](paper2_internal_structure.tex) —
   LaTeX version of the present document
+- [`paper2_internal_structure.pdf`](paper2_internal_structure.pdf) —
+  PDF version of the present document
 
 ---
 
