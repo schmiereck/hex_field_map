@@ -30,8 +30,9 @@ GRAY    = '#AAAACC'
 CYAN    = '#00D4FF'
 ORANGE  = '#FF8C00'
 MAGENTA = '#FF44CC'
-LATTICE_NODE = '#1a1a3a'
-LATTICE_EDGE = '#0d0d2a'
+LATTICE_NODE = '#2a2a5a'
+LATTICE_EDGE = '#1a1a4a'
+LATTICE_DIAG = '#2a2a6a'
 
 # cool colormap: black -> deep blue -> cyan -> white
 _cmap_data = {
@@ -99,6 +100,17 @@ for (i, j) in node_set:
         if (ni, nj) in node_set:
             p1 = ni * a1 + nj * a2
             lattice_edges.append(((p0[0], p0[1]), (p1[0], p1[1])))
+
+# Diagonal edges: all 6 principal directions per node
+# (1,0),(0,1),(-1,1),(-1,0),(0,-1),(1,-1) — covers all 6 hex neighbors
+lattice_diag_edges = []
+for (i, j) in node_set:
+    p0 = i * a1 + j * a2
+    for di, dj in [(1, 0), (0, 1), (-1, 1), (-1, 0), (0, -1), (1, -1)]:
+        ni, nj = i + di, j + dj
+        if (ni, nj) in node_set:
+            p1 = ni * a1 + nj * a2
+            lattice_diag_edges.append(((p0[0], p0[1]), (p1[0], p1[1])))
 
 lattice_nodes_x = np.array(lattice_nodes_x)
 lattice_nodes_y = np.array(lattice_nodes_y)
@@ -185,14 +197,18 @@ def make_figure(dpi=100, figsize=(16, 7)):
 # ════════════════════════════════════════════════════════════════════════════
 
 def draw_lattice(ax):
-    """Draw hex lattice nodes + edges as ghost background."""
-    # Edges
-    lc = LineCollection(lattice_edges, colors=LATTICE_EDGE,
-                        linewidths=0.3, zorder=0)
+    """Draw hex lattice nodes + edges as ghost overlay (white, low alpha)."""
+    # Triangular-lattice edges
+    lc = LineCollection(lattice_edges, colors=(1, 1, 1, 0.08),
+                        linewidths=0.3, zorder=3)
     ax.add_collection(lc)
+    # 6 principal diagonal directions
+    lc2 = LineCollection(lattice_diag_edges, colors=(1, 1, 1, 0.08),
+                         linewidths=0.5, zorder=3)
+    ax.add_collection(lc2)
     # Nodes
     ax.scatter(lattice_nodes_x, lattice_nodes_y,
-               s=1.5, color=LATTICE_NODE, zorder=0, marker='.')
+               s=3, color='white', alpha=0.15, zorder=3, marker='.')
 
 
 def draw_panel1(ax, t_idx):
@@ -202,16 +218,16 @@ def draw_panel1(ax, t_idx):
     ax.set_title('2+1D hexagonal lattice \u00b7 causal propagation',
                  color=WHITE, fontsize=11, pad=6, fontfamily='DejaVu Sans')
 
-    # Hex lattice background (drawn first, beneath everything)
-    draw_lattice(ax)
-
     # Probability heatmap
     p = prob_crop[t_idx]
     vmin = max(p.max() * 1e-5, 1e-15)
     vmax = max(p.max(), 1e-12)
     ax.pcolormesh(y_crop, x_crop, p, cmap=COOL_CMAP,
                   norm=LogNorm(vmin=vmin, vmax=vmax),
-                  shading='auto', rasterized=True, zorder=1, alpha=0.92)
+                  shading='auto', rasterized=True, zorder=1)
+
+    # Hex lattice overlay (drawn after heatmap, ghosts through the wave)
+    draw_lattice(ax)
 
     # Light cone
     if t_idx > 0:
@@ -240,11 +256,15 @@ def draw_panel2(ax, n_pts, show_annotations=False):
                  color=WHITE, fontsize=11, pad=6, fontfamily='DejaVu Sans')
     ax.grid(True, color='#222244', linewidth=0.3, alpha=0.6)
 
-    # Theoretical continuum curve (faded, clipped to data range)
-    E_clip = E_data_0[-1] * 1.15
-    mask_th = E_theory <= E_clip
+    # Theoretical continuum curve (faded, limited to k <= 0.38)
+    mask_th = k_theory <= 0.38
     ax.plot(k_theory[mask_th], E_theory[mask_th], '--', color='#FFFFFF44',
             linewidth=1.5, zorder=1, label='E\u00b2 = c\u00b2k\u00b2 + m\u00b2')
+
+    # Label the lattice-correction region
+    ax.text(0.32, E_data_0[np.argmin(np.abs(k_vals - 0.32))] * 0.88,
+            'lattice corrections\n> 0.3', color=GRAY, fontsize=8,
+            ha='left', va='top', style='italic')
 
     # Mass line
     ax.axhline(m_fit, color=GRAY, linewidth=0.4, linestyle=':', alpha=0.4)
