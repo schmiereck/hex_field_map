@@ -32,7 +32,7 @@ has **zero straight (timelike) component** — it is a purely lightlike standing
 Mass arises from interference between left and right diagonal paths (discrete Zitterbewegung).
 The timelike mode sits at E ≈ ε but has unphysical (decreasing) dispersion.
 
-### 2+1D Model (`quantum_hex_2d.py`) ← **current main model**
+### 2+1D Model (`quantum_hex_2d.py`)
 
 Extension to 2 spatial dimensions with hexagonal lattice:
 - **7 directions**: 6 diagonal (0°, 60°, 120°, 180°, 240°, 300°) + 1 straight
@@ -41,6 +41,24 @@ Extension to 2 spatial dimensions with hexagonal lattice:
 - **14×14 transfer matrix** (7 amplitudes each for current and previous time)
 
 ---
+
+### 2+1D Turning-Phase Model (`quantum_hex_turning.py`) ← **current main model**
+
+Path weight = **sum of turning angles**, scaled by a free parameter α:
+
+```
+w_path = prod_steps  a(|n|) · exp(i·α·60°·n)      n = signed 60°-units turned
+```
+
+State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as above.
+
+- For every closed walk returning to the same directed edge, Σθ = 360°·w exactly
+  (discrete Whitney turning-number theorem, verified for all walks up to L=9).
+  Hence the raw angle sum gives every loop phase 1 — **α is what makes it physical**.
+- Loop phase = exp(i·2πα·w): α is an **Aharonov–Bohm flux in heading space**,
+  physical only mod 1. α = 1/2 → (−1)^w = spinor double cover.
+- Coin operator `C = expm(i·ε·G_α)` with `G_α = e^{iπα/3}R + h.c.`, R = +60° rotation.
+  **Exactly unitary** (2e-16) — fixes the |λ|>1 problem of the model above.
 
 ## Files
 
@@ -55,6 +73,8 @@ Extension to 2 spatial dimensions with hexagonal lattice:
 | `quantum_lattice_viz.py` | Lattice visualisation |
 | `quantum_hex_2d.py` | **2+1D hexagonal model** (main file) |
 | `quantum_proper_time.py` | **Proper time investigation** (1+1D equilateral triangular) |
+| `quantum_hex_turning.py` | **2+1D turning-phase model** (model + transfer matrix + simulation) |
+| `quantum_hex_turning_figs.py` | Figures and numerical report for the turning-phase model |
 
 ### Result Files
 
@@ -65,6 +85,7 @@ Extension to 2 spatial dimensions with hexagonal lattice:
 | `RESULTS_2D_de.md` | German version — 2+1D hexagonal model |
 | `RESULTS_2D_en.md` | English version — 2+1D results including wave packet simulation |
 | `RESULT_Proper_Time_1D_en.md` | Proper time investigation — 1+1D equilateral triangular |
+| `RESULTS_Turning_2D_de.md` | German — 2+1D turning-phase model (angle sum as path integral) |
 
 ### Generated Figures (2+1D)
 
@@ -141,9 +162,44 @@ Not the single eigenvalue at ε (that is a non-propagating mode).
 
 ---
 
+### Generated Figures (2+1D turning phase)
+
+| File | Content |
+|------|---------|
+| `turning_geometry.png` | Headings, turn table n, coin operator arg C at α=0 and 1/2 |
+| `turning_loops.png` | Winding numbers of all closed walks up to L=9, structure factor A(α) |
+| `turning_spectrum.png` | E_m(α) numeric vs analytic, Kramers doubling, mass knob |
+| `turning_dispersion.png` | 6 bands at α=0/0.25/0.5, cone zoom, isotropy, v_g(k) |
+| `turning_motion.png` | CoM tracks in 11 directions, direction error, null test for δ |
+| `turning_two_packets.png` | Crossing packets (fringes) vs head-on packets (none) |
+
+---
+
+## Confirmed Results — 2+1D Turning Phase
+
+| Property | Value | Note |
+|----------|-------|------|
+| Whitney theorem | 0 violations | all closed walks up to L=9 |
+| Unitarity | 2.2e-16 | `mode="unitary"`; norm 1.00000000 over 120 steps |
+| Rest spectrum | E_m = −4ε·cos(π(α−m)/3) | numeric vs analytic: 2.4e-15 |
+| Kramers doubling | 3 doublets at α=1/2 | vs 4 distinct levels at α=0, 6 generically |
+| Mass knob | massive ∀α **except** α=1/2 | at α=1/2 the top pair opens a massless cone |
+| Cone slope | **√3/2 = c/2 = 0.86602** | independent of ε (0.05, 0.1, 0.2) |
+| Motion, direction error | ≤ 0.070° | 11 angles, \|k\|=0.8, 120 steps |
+| Isotropy of \|v_g\| | 3.5 % at \|k\|=0.3, 10.1 % at \|k\|=0.8 | 6-fold lattice ripple |
+| Constant δ per step | E → E − δ/Δt, trajectory identical | cannot move anything |
+| Head-on spinor overlap | 3.7e-16 (exactly 0) | counter-propagating packets do not interfere |
+
+### Winding-number families (closed walks, no 180° reversal)
+
+L=3,4,5 have **only** w=±1 (pure left/right triangles).  w=0 ("figure eights")
+first appears at L=6 (24 of 74 walks).  w=±3 first appears at L=9.
+
+---
+
 ## Development Branch
 
-Current work runs on: `claude/quantum-path-integral-simulator-GZNoz`
+Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
 
 ---
 
@@ -168,3 +224,10 @@ Current work runs on: `claude/quantum-path-integral-simulator-GZNoz`
 
 - **3+1D extension**: The next logical step would be a 3+1D face-centred cubic (FCC)
   lattice with an analogous amplitude rule.
+
+- **Turning phase — open points**: (a) exclusion/collisions need either a two-particle
+  Hilbert space on pairs of directed edges (exact, expensive) or a nonlinear
+  self-interaction (cheap, ad hoc); the linear model gives interference only.
+  (b) Chirality families are combinatorially established but need a position-dependent
+  Peierls factor A = (B/2)(−y, x) to separate them dynamically (cyclotron orbits).
+  (c) No closed derivation yet for why the cone slope is exactly c/2.
