@@ -75,6 +75,8 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_proper_time.py` | **Proper time investigation** (1+1D equilateral triangular) |
 | `quantum_hex_turning.py` | **2+1D turning-phase model** (model + transfer matrix + simulation) |
 | `quantum_hex_turning_figs.py` | Figures and numerical report for the turning-phase model |
+| `quantum_hex_magnetic.py` | **Magnetic field** (Peierls phase) on the turning-phase model |
+| `quantum_hex_magnetic_figs.py` | Figures and numerical report for the magnetic model |
 
 ### Result Files
 
@@ -86,6 +88,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_2D_en.md` | English version — 2+1D results including wave packet simulation |
 | `RESULT_Proper_Time_1D_en.md` | Proper time investigation — 1+1D equilateral triangular |
 | `RESULTS_Turning_2D_de.md` | German — 2+1D turning-phase model (angle sum as path integral) |
+| `RESULTS_Magnetic_2D_de.md` | German — magnetic field, chirality families, Onsager quantisation |
 
 ### Generated Figures (2+1D)
 
@@ -190,6 +193,40 @@ Not the single eigenvalue at ε (that is a non-propagating mode).
 | Constant δ per step | E → E − δ/Δt, trajectory identical | cannot move anything |
 | Head-on spinor overlap | 3.7e-16 (exactly 0) | counter-propagating packets do not interfere |
 
+### Generated Figures (2+1D magnetic)
+
+| File | Content |
+|------|---------|
+| `magnetic_geometry.png` | Peierls construction, flux per plaquette, gauge invariance, loop families vs B |
+| `magnetic_orbits.png` | Cyclotron orbits, mirror orbits at ±B, R vs k/B, chirality order parameter L_z |
+| `magnetic_landau.png` | Time-domain spectrum, level spacings, Onsager line with γ = 1/2 vs 0 |
+| `magnetic_standing_waves.png` | Standing ring waves, ⟨r⟩ vs n, coherent sum running the orbit |
+
+---
+
+## Confirmed Results — Magnetic Field
+
+Peierls phase exp(i·(B/2)(x·dy − y·dx)); the midpoint rule is exact, and the sum
+around any closed walk is B·(signed enclosed area) — the same shoelace quantity
+that classifies the loop families.
+
+| Property | Value | Note |
+|----------|-------|------|
+| Flux per plaquette | exact to 1e-9 | triangle 3√3/16, hexagon 6×, reversed −1× |
+| Unitarity | 1.000000000000 | diagonal phase × shift × unitary coin |
+| Gauge invariance of ρ | 1.7e-15 | symmetric vs Landau gauge |
+| Cyclotron radius | R = k/B, ratio 0.94 | 6 % deficit from wave-packet spreading |
+| Chirality separation | L_z flips sign exactly with B | −2.36 at B=+0.03, +2.36 at B=−0.03 |
+| **Bare excited edge** | L_z = −1.7e-14 | populates all 6 bands at exactly 1/6 → exact cancellation |
+| Onsager quantisation | A_k/(2πB) = n + γ, slope 0.998 | measured via time-domain spectroscopy |
+| **Berry offset γ** | **0.518 at α=0, 0.020 at α=1/2** | γ=1/2 → 0 is the Dirac Berry phase π = the same (−1)^w spinor |
+| Ring states | stationary to 0.2–1.0 % / 40 steps | ⟨r⟩ ∝ √(n+1/2) |
+| Superposition of rings | closed orbit, returns at t=67.5 | direction emerges from Fourier superposition |
+
+**Magnetic breakdown:** at ε=0.1 the effective mass is tiny (m\*=0.087) so
+ħω_c exceeds the band gap and the packet splits.  All magnetic runs use ε=0.5,
+where ω_c/gap = 0.05.
+
 ### Winding-number families (closed walks, no 180° reversal)
 
 L=3,4,5 have **only** w=±1 (pure left/right triangles).  w=0 ("figure eights")
@@ -231,3 +268,9 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   (b) Chirality families are combinatorially established but need a position-dependent
   Peierls factor A = (B/2)(−y, x) to separate them dynamically (cyclotron orbits).
   (c) No closed derivation yet for why the cone slope is exactly c/2.
+
+- **Magnetic — open points**: (a) the 6 % deficit in R = k/B is only argued as a
+  spreading effect, not derived.  (b) The Landau degeneracy per level was not
+  measured; a magnetic unit cell at rational flux would give the full Hofstadter
+  spectrum on this lattice.  (c) Chirality separation requires selecting one band —
+  a bare excited edge populates all six equally and its circulation cancels exactly.
