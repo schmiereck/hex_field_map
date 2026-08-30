@@ -77,6 +77,9 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_hex_turning_figs.py` | Figures and numerical report for the turning-phase model |
 | `quantum_hex_magnetic.py` | **Magnetic field** (Peierls phase) on the turning-phase model |
 | `quantum_hex_magnetic_figs.py` | Figures and numerical report for the magnetic model |
+| `quantum_fcc_holonomy.py` | **3D FCC holonomy** — does the turning-number theorem survive? |
+| `quantum_hex_su3.py` | **SU(3) colour** — non-abelian links, Wilson loops |
+| `quantum_qcd_3d_report.py` | Report + overview figure for the 3D-spin and QCD questions |
 
 ### Result Files
 
@@ -89,6 +92,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULT_Proper_Time_1D_en.md` | Proper time investigation — 1+1D equilateral triangular |
 | `RESULTS_Turning_2D_de.md` | German — 2+1D turning-phase model (angle sum as path integral) |
 | `RESULTS_Magnetic_2D_de.md` | German — magnetic field, chirality families, Onsager quantisation |
+| `ROADMAP_QCD_3D_de.md` | German — why spin needs 3D, and what QCD needs (with measurements) |
 
 ### Generated Figures (2+1D)
 
@@ -259,8 +263,25 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   *phases* (energies) remain correct; only amplitudes grow. Project onto physical
   subspace or renormalise per step for long-time simulations.
 
-- **3+1D extension**: The next logical step would be a 3+1D face-centred cubic (FCC)
-  lattice with an analogous amplitude rule.
+- **3+1D extension / spin rigidity** (measured, see `ROADMAP_QCD_3D_de.md`): the 2D
+  turning-number theorem does NOT survive in 3D.  On the FCC lattice the holonomy of a
+  closed walk is a rotation about the initial heading (axis exact to 8e-16) but its angle
+  is not quantised — 23 distinct values of φ/2π up to L=6, with cos(φ/2) ∈ {1/3, 1/√3,
+  √(2/3), 2√2/3}, and holonomies about different axes do not commute (0.333).
+  Since π₁(S¹)=ℤ but π₁(S²)=0, the continuous α of the 2D model has no 3D counterpart:
+  SU(2) is simple, so only its centre ℤ₂ survives → **α ∈ {0, 1/2}, boson or fermion**.
+  Spin is quantised in 3D precisely because SO(3) is doubly, not infinitely, connected.
+  The α=1/2 point of the 2D model is therefore the shadow of the only nontrivial 3D option.
+
+- **QCD** (measured, see `ROADMAP_QCD_3D_de.md`): the magnetic module is already a U(1)
+  lattice gauge theory.  `quantum_hex_su3.py` promotes the link phase to SU(3):
+  tr W is gauge invariant to 9e-16; U(1) fluxes add exactly (0.0e+00) while SU(3) needs a
+  transporter to a common base point (9.7e-17 with, 0.065 without) and its plaquettes do
+  not commute (0.82).  A **static** random background gives a perimeter law
+  ⟨W⟩ = c^perimeter (matches to 3 digits) — i.e. **no confinement**.  An area law needs the
+  links correlated by the Wilson action (Monte Carlo); that is the next concrete step.
+  Real QCD additionally needs 3+1D (asymptotic freedom), unquenching, and — the hardest
+  barrier — real-time evolution has a sign problem.
 
 - **Turning phase — open points**: (a) exclusion/collisions need either a two-particle
   Hilbert space on pairs of directed edges (exact, expensive) or a nonlinear
