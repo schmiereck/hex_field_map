@@ -8,185 +8,211 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from scipy.linalg import expm
 
-from quantum_hex_su3_mc import (run, single_plaquette, haar_reweight,
-                                binned_error, N_C)
+from quantum_hex_su3_mc import (run, single_plaquette, haar_reweight, sweep,
+                                binned_error, mean_plaquette, wilson_rhombus,
+                                update_pool, N_C)
 
 plt.rcParams.update({"figure.dpi": 110, "font.size": 9})
 
-BETAS = [1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 12.0]
-LOOPS = [(1, 1), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]
 L = 24
+BETAS_PLAQ = [1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 12.0]
+BETAS_LOOP = [4.0, 8.0, 12.0]
+
+# Loops chosen so that several share a PERIMETER while differing in AREA:
+#   P=8 : (3,1) A=6   (2,2) A=8
+#   P=10: (4,1) A=8   (3,2) A=12
+#   P=12: (5,1) A=10  (4,2) A=16  (3,3) A=18
+LOOPS = [(1, 1), (2, 1), (3, 1), (2, 2), (4, 1), (3, 2), (5, 1), (4, 2), (3, 3)]
 
 
-def jack_log(x, n_bin=20):
-    """mean and error of log(<x>) by binned jackknife."""
-    x = np.asarray(x)
-    m = len(x) // n_bin * n_bin
-    b = x[:m].reshape(n_bin, -1).mean(axis=1)
-    tot = b.mean()
-    jk = np.array([np.delete(b, i).mean() for i in range(n_bin)])
-    lg = np.log(np.maximum(jk, 1e-12))
-    return float(np.log(max(tot, 1e-12))), \
-        float(np.sqrt((n_bin - 1) * np.var(lg, ddof=0)))
+def geom(lp):
+    a, b = lp
+    return 2 * (a + b), 2 * a * b          # perimeter, area
 
+
+# ─── static (quenched, uncorrelated) reference ensemble ──────────────────────
+
+def static_config(g, L, rng):
+    U = np.empty((L, L, 3, N_C, N_C), dtype=complex)
+    for i in range(L):
+        for j in range(L):
+            for mu in range(3):
+                a = rng.normal(size=(N_C, N_C)) + 1j * rng.normal(size=(N_C, N_C))
+                H = (a + a.conj().T) / 2.0
+                H -= np.trace(H) / N_C * np.eye(N_C)
+                H /= np.sqrt((np.abs(H) ** 2).sum())
+                U[i, j, mu] = expm(1j * g * H)
+    return U
+
+
+def static_measure(g, n_conf=120, L=L, seed=5):
+    """Independently drawn links: <plaquette>, <U> scalar, and the loops."""
+    rng = np.random.default_rng(seed)
+    pl, cs, wl = [], [], {lp: [] for lp in LOOPS}
+    for _ in range(n_conf):
+        U = static_config(g, L, rng)
+        pl.append(mean_plaquette(U))
+        cs.append(np.trace(U.reshape(-1, N_C, N_C).mean(axis=0)).real / N_C)
+        for lp in LOOPS:
+            wl[lp].append(float(wilson_rhombus(U, *lp).mean()))
+    return (float(np.mean(pl)), float(np.mean(cs)),
+            {k: np.array(v) for k, v in wl.items()})
+
+
+def match_g(target, lo=0.3, hi=1.8, n_conf=25, seed=4):
+    """Find g so the static ensemble has the same plaquette as the MC."""
+    for _ in range(16):
+        mid = 0.5 * (lo + hi)
+        p, _, _ = static_measure(mid, n_conf=n_conf, L=12, seed=seed)
+        if p > target:
+            lo = mid
+        else:
+            hi = mid
+    return 0.5 * (lo + hi)
+
+
+# ─── main ────────────────────────────────────────────────────────────────────
 
 def main():
-    print("=" * 74)
+    print("=" * 76)
     print("SU(3) lattice gauge theory, Wilson action, triangular lattice")
-    print(f"L = {L}, {len(BETAS)} couplings")
-    print("=" * 74)
+    print(f"L = {L}")
+    print("=" * 76)
 
-    res = {}
-    print("\n[1] plaquette vs the exact single-plaquette integral")
-    print("  beta   eps   acc     lattice <plaq>       exact 1-plaq      "
-          "Haar reweight   sigma=-ln w1")
-    for b in BETAS:
-        r = run(b, L=L, n_therm=800, n_meas=600, n_sep=4, seed=1, loops=LOOPS)
-        ref, eref, _ = single_plaquette(b, seed=2)
-        hw = haar_reweight(b) if b <= 3.0 else np.nan
+    print("\n[1] Validation: plaquette vs the EXACT single-plaquette integral")
+    print("    (in 2D the plaquettes are independent, so this is the exact answer)")
+    print("  beta   eps   acc     lattice <plaq>     exact 1-plaq     "
+          "Haar rew.   pull")
+    plaq_tab = []
+    for b in BETAS_PLAQ:
+        r = run(b, L=L, n_therm=700, n_meas=500, n_sep=4, seed=1, loops=[(1, 1)])
+        ref, eref, _ = single_plaquette(b, n_meas=300000, seed=2)
+        hw = haar_reweight(b, n=250000) if b <= 3.0 else np.nan
         p, e = r['plaq'].mean(), binned_error(r['plaq'])
-        r['w1'], r['w1_err'], r['ref'], r['ref_err'] = p, e, ref, eref
-        res[b] = r
-        print("  %5.1f  %.2f  %.3f   %.5f(%2d)      %.5f(%2d)     %s     %.4f"
+        pull = (p - ref) / np.sqrt(e ** 2 + eref ** 2)
+        plaq_tab.append((b, p, e, ref, eref, pull))
+        print("  %5.1f  %.2f  %.3f   %.5f(%2d)    %.5f(%3d)    %s  %+5.2f"
               % (b, r['eps'], r['acc'], p, int(round(e * 1e5)),
                  ref, int(round(eref * 1e5)),
-                 ("%.5f" % hw) if np.isfinite(hw) else "     -   ",
-                 -np.log(max(p, 1e-12))))
+                 ("%.5f" % hw) if np.isfinite(hw) else "    -    ", pull))
+    print("  => all %d couplings agree within |pull| = %.2f sigma"
+          % (len(plaq_tab), max(abs(t[5]) for t in plaq_tab)))
 
-    print("\n[2] Wilson loops: is <W> = w1^(enclosed triangles)?")
-    for b in BETAS:
-        r = res[b]
-        w1 = r['w1']
-        print(f"  beta = {b}")
-        print("     (a,b)  area   <W> measured         w1^area      ratio")
+    print("\n[2] The decisive test: loops of EQUAL PERIMETER but different AREA,")
+    print("    measured in two ensembles TUNED TO THE SAME PLAQUETTE.")
+    res = {}
+    for b in BETAS_LOOP:
+        r = run(b, L=L, n_therm=800, n_meas=1500, n_sep=4, seed=1, loops=LOOPS)
+        w1 = r['plaq'].mean()
+        g = match_g(w1)
+        sp, sc, swl = static_measure(g, n_conf=120)
+        res[b] = dict(mc=r, w1=w1, g=g, sp=sp, sc=sc, swl=swl)
+        print(f"\n  beta = {b}:  Wilson-action <plaq> = {w1:.5f}"
+              f"   static ensemble tuned to g = {g:.4f} -> <plaq> = {sp:.5f}"
+              f"   (c = {sc:.5f})")
+        print("    (a,b)  perim  area |  Wilson action <W>    w1^area  |"
+              "   static <W>      c^perim")
         for lp in LOOPS:
-            v = r['wl'][lp]
-            m, e = v.mean(), binned_error(v)
-            A = 2 * lp[0] * lp[1]
-            pred = w1 ** A
-            print("     (%d,%d)   %3d   %10.6f(%s)  %10.6f   %6.3f"
-                  % (lp[0], lp[1], A, m,
-                     ("%.0f" % (e * 1e6)).rjust(4), pred,
-                     m / pred if pred > 1e-12 else np.nan))
+            P, A = geom(lp)
+            m, e = r['wl'][lp].mean(), binned_error(r['wl'][lp])
+            sm, se = swl[lp].mean(), binned_error(swl[lp], 12)
+            print("    (%d,%d)  %4d  %4d | %9.6f(%4.0f) %10.6f | %9.6f(%4.0f) %10.6f"
+                  % (lp[0], lp[1], P, A, m, e * 1e6, w1 ** A,
+                     sm, se * 1e6, sc ** P))
 
-    print("\n[3] Creutz ratios chi(a,b) = -ln[W(a,b)W(a-1,b-1)/(W(a-1,b)W(a,b-1))]")
-    print("    exact 2D area law predicts chi = 2*sigma = -2 ln w1 for every (a,b)")
-    creutz = {}
-    for b in BETAS:
-        r = res[b]
-        pred = -2 * np.log(max(r['w1'], 1e-12))
-        rows = []
-        for (a, bb) in [(2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]:
-            need = [(a, bb), (a - 1, bb - 1), (a - 1, bb), (a, bb - 1)]
-            if not all(t in r['wl'] or tuple(reversed(t)) in r['wl'] for t in need):
+    print("\n[3] Same perimeter, different area — the two ensembles separate")
+    for b in BETAS_LOOP:
+        d = res[b]
+        print(f"  beta = {b}")
+        for P in (8, 10, 12):
+            grp = [lp for lp in LOOPS if geom(lp)[0] == P]
+            if len(grp) < 2:
                 continue
-            def get(t):
-                return r['wl'][t] if t in r['wl'] else r['wl'][tuple(reversed(t))]
-            l1, e1 = jack_log(get(need[0]))
-            l2, e2 = jack_log(get(need[1]))
-            l3, e3 = jack_log(get(need[2]))
-            l4, e4 = jack_log(get(need[3]))
-            chi = -(l1 + l2 - l3 - l4)
-            err = np.sqrt(e1**2 + e2**2 + e3**2 + e4**2)
-            rows.append(((a, bb), chi, err))
-        creutz[b] = (rows, pred)
-        print("  beta=%4.1f  prediction %.4f   measured: " % (b, pred)
-              + "  ".join("%s %.4f(%.0f)" % (str(k), c, e * 1e4) for k, c, e in rows))
+            mc = [d['mc']['wl'][lp].mean() for lp in grp]
+            st = [d['swl'][lp].mean() for lp in grp]
+            ar = [geom(lp)[1] for lp in grp]
+            print("    perimeter %2d, areas %s:" % (P, ar))
+            print("        Wilson action: %s   ratio %.2f  (area law predicts %.2f)"
+                  % (["%.5f" % v for v in mc],
+                     mc[0] / mc[-1] if abs(mc[-1]) > 1e-9 else np.nan,
+                     d['w1'] ** (ar[0] - ar[-1])))
+            print("        static       : %s   ratio %.2f  (perimeter law predicts 1)"
+                  % (["%.5f" % v for v in st],
+                     st[0] / st[-1] if abs(st[-1]) > 1e-9 else np.nan))
 
-    figure(res, creutz)
-    return res, creutz
+    figure(plaq_tab, res)
+    return plaq_tab, res
 
 
-def figure(res, creutz, fname="su3_mc_confinement.png"):
-    fig, ax = plt.subplots(2, 3, figsize=(15.5, 8))
+def figure(plaq_tab, res, fname="su3_mc_confinement.png"):
+    fig, ax = plt.subplots(1, 4, figsize=(17, 4.1))
 
-    a = ax[0, 0]
-    for b in (1.0, 4.0, 12.0):
-        th = res[b]['therm']
-        a.plot(np.arange(len(th)) * 10, th, lw=1.5, label=f"$\\beta={b}$")
-        a.axhline(res[b]['w1'], color='k', ls=':', lw=.7)
-    a.set_xlabel("sweep"); a.set_ylabel("$\\langle\\frac{1}{3}{\\rm Re\\,tr}\\,U_P\\rangle$")
-    a.set_title("thermalisation from a hot start\n(dotted: equilibrium value)", fontsize=9)
-    a.legend(fontsize=7); a.grid(alpha=.3)
-
-    a = ax[0, 1]
-    bs = np.array(BETAS)
-    w = np.array([res[b]['w1'] for b in BETAS])
-    we = np.array([res[b]['w1_err'] for b in BETAS])
-    rf = np.array([res[b]['ref'] for b in BETAS])
-    a.errorbar(bs, w, yerr=we, fmt='o', ms=6, label="lattice MC")
-    a.plot(bs, rf, 'x', ms=8, color='C3', label="exact single plaquette")
+    a = ax[0]
+    b = np.array([t[0] for t in plaq_tab])
+    w = np.array([t[1] for t in plaq_tab]); we = np.array([t[2] for t in plaq_tab])
+    rf = np.array([t[3] for t in plaq_tab]); re_ = np.array([t[4] for t in plaq_tab])
+    a.errorbar(b, w, yerr=we, fmt='o', ms=7, label="lattice Monte Carlo")
+    a.errorbar(b, rf, yerr=re_, fmt='x', ms=9, color='C3',
+               label="exact single-plaquette integral")
     bb = np.linspace(0.2, 3.5, 50)
-    a.plot(bb, bb / (2 * N_C ** 2), 'k--', lw=1,
-           label="strong coupling $\\beta/2N^2$")
-    a.set_xlabel("$\\beta$"); a.set_ylabel("$w_1$")
-    a.set_title("plaquette: lattice vs the exact\n2D single-plaquette integral", fontsize=9)
-    a.legend(fontsize=7); a.grid(alpha=.3)
-
-    a = ax[0, 2]
-    for b, col in zip((2.0, 4.0, 8.0, 12.0), ('C0', 'C1', 'C2', 'C3')):
-        r = res[b]
-        A = np.array([2 * p * q for p, q in LOOPS])
-        m = np.array([r['wl'][lp].mean() for lp in LOOPS])
-        e = np.array([binned_error(r['wl'][lp]) for lp in LOOPS])
-        o = np.argsort(A)
-        a.errorbar(A[o], np.abs(m[o]), yerr=e[o], fmt='o', ms=5, color=col,
-                   label=f"$\\beta={b}$")
-        Ax = np.linspace(1, A.max(), 50)
-        a.plot(Ax, r['w1'] ** Ax, '-', color=col, lw=1.2)
-    a.set_yscale('log')
-    a.set_xlabel("enclosed elementary triangles $A$")
-    a.set_ylabel("$\\langle W\\rangle$")
-    a.set_title("area law: points = measured,\nlines = $w_1^{A}$ (no free parameter)",
+    a.plot(bb, bb / (2 * N_C ** 2), 'k--', lw=1, label="strong coupling $\\beta/2N^2$")
+    a.set_xlabel("$\\beta$"); a.set_ylabel("$w_1=\\langle\\frac{1}{3}{\\rm Re\\,tr}U_P\\rangle$")
+    a.set_title("validation: the MC reproduces the\nexact 2D result at every coupling",
                 fontsize=9)
     a.legend(fontsize=7); a.grid(alpha=.3)
 
-    a = ax[1, 0]
-    for b, col in zip(BETAS, plt.cm.viridis(np.linspace(0, .9, len(BETAS)))):
-        rows, pred = creutz[b]
-        if not rows:
-            continue
-        x = np.arange(len(rows))
-        a.errorbar(x, [c for _, c, _ in rows], yerr=[e for _, _, e in rows],
-                   fmt='o-', ms=4, color=col, label=f"$\\beta={b}$")
-        a.axhline(pred, color=col, ls=':', lw=1)
-        if b == BETAS[0]:
-            a.set_xticks(x); a.set_xticklabels([str(k) for k, _, _ in rows], fontsize=7)
-    a.set_yscale('log')
-    a.set_ylabel("Creutz ratio $\\chi(a,b)$")
-    a.set_title("Creutz ratios are flat and equal\n$-2\\ln w_1$ (dotted)", fontsize=9)
+    a = ax[1]
+    bref = BETAS_LOOP[-1]
+    d = res[bref]
+    P = np.array([geom(lp)[0] for lp in LOOPS])
+    A = np.array([geom(lp)[1] for lp in LOOPS])
+    mc = np.array([d['mc']['wl'][lp].mean() for lp in LOOPS])
+    mce = np.array([binned_error(d['mc']['wl'][lp]) for lp in LOOPS])
+    st = np.array([d['swl'][lp].mean() for lp in LOOPS])
+    a.errorbar(A, np.abs(mc), yerr=mce, fmt='o', ms=7, color='C0',
+               label="Wilson action (dynamical)")
+    Ax = np.linspace(1, A.max(), 50)
+    a.plot(Ax, d['w1'] ** Ax, '-', color='C0', lw=1.3, label="$w_1^{\\,A}$")
+    a.plot(A, st, 's', ms=6, color='C3', label="static random links")
+    a.axhline(3 * mce.mean(), color='gray', ls=':', lw=1,
+              label="$3\\sigma$ noise floor")
+    a.set_yscale('log'); a.set_xlabel("enclosed area $A$ (triangles)")
+    a.set_ylabel("$\\langle W\\rangle$")
+    a.set_title(f"$\\beta={bref}$, both ensembles at the\nSAME plaquette $w_1$="
+                f"{d['w1']:.3f}", fontsize=9)
+    a.legend(fontsize=7); a.grid(alpha=.3)
+
+    a = ax[2]
+    for P0, col in ((8, 'C0'), (10, 'C1'), (12, 'C2')):
+        grp = [lp for lp in LOOPS if geom(lp)[0] == P0]
+        ar = [geom(lp)[1] for lp in grp]
+        mcv = [d['mc']['wl'][lp].mean() for lp in grp]
+        stv = [d['swl'][lp].mean() for lp in grp]
+        a.plot(ar, mcv, 'o-', ms=7, color=col, label=f"Wilson, $P={P0}$")
+        a.plot(ar, stv, 's--', ms=6, color=col, alpha=.55,
+               label=f"static, $P={P0}$")
+    a.set_yscale('log'); a.set_xlabel("enclosed area $A$ at FIXED perimeter")
+    a.set_ylabel("$\\langle W\\rangle$")
+    a.set_title("at fixed perimeter the static curves are\nflat; the dynamical ones "
+                "fall with area", fontsize=9)
     a.legend(fontsize=6, ncol=2); a.grid(alpha=.3)
 
-    a = ax[1, 1]
-    sig = np.array([-np.log(max(res[b]['w1'], 1e-12)) for b in BETAS])
-    a.semilogy(bs, sig, 'o-', ms=6)
-    a.set_xlabel("$\\beta$"); a.set_ylabel("$\\sigma = -\\ln w_1$  per triangle")
-    a.set_title("string tension: finite for every $\\beta$\n"
+    a = ax[3]
+    bs = np.array([t[0] for t in plaq_tab])
+    sig = -np.log(np.array([t[1] for t in plaq_tab]))
+    a.semilogy(bs, sig, 'o-', ms=7)
+    for bl in BETAS_LOOP:
+        a.plot([bl], [-np.log(res[bl]['w1'])], 'r*', ms=13)
+    a.set_xlabel("$\\beta$")
+    a.set_ylabel("$\\sigma=-\\ln w_1$ per triangle")
+    a.set_title("string tension, finite at every $\\beta$\n"
                 "(2D confines at all couplings)", fontsize=9)
     a.grid(alpha=.3)
 
-    a = ax[1, 2]
-    for b, col in zip((2.0, 4.0, 8.0), ('C0', 'C1', 'C2')):
-        r = res[b]
-        Rs, Vs = [], []
-        for (R, T) in [(1, 1), (2, 1), (2, 2), (3, 2), (3, 3), (4, 3), (4, 4)]:
-            if (R, T) not in r['wl']:
-                continue
-            m = r['wl'][(R, T)].mean()
-            if m <= 1e-9:
-                continue
-            Rs.append(R); Vs.append(-np.log(m) / T)
-        a.plot(Rs, Vs, 'o', ms=6, color=col, label=f"$\\beta={b}$")
-        x = np.linspace(0, max(Rs), 20)
-        a.plot(x, 2 * (-np.log(r['w1'])) * x, '-', color=col, lw=1.1)
-    a.set_xlabel("$R$"); a.set_ylabel("$V(R) = -\\ln W(R,T)/T$")
-    a.set_title("static potential rises linearly:\n$V(R)=2\\sigma R$ (lines)", fontsize=9)
-    a.legend(fontsize=7); a.grid(alpha=.3)
-
-    fig.suptitle("SU(3) with the Wilson action on the triangular lattice: "
-                 "a dynamical gauge field confines (area law), "
-                 "unlike the static random background (perimeter law)", y=1.01)
+    fig.suptitle("A dynamical SU(3) gauge field confines (area law); a static random "
+                 "background at the same plaquette does not (perimeter law)", y=1.03)
     fig.tight_layout(); fig.savefig(fname, bbox_inches='tight'); plt.close(fig)
     print("\nwrote", fname)
 
