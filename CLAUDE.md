@@ -86,6 +86,8 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_fcc_3d_figs.py` | Report + figure for the 3+1D walker |
 | `quantum_two_particle.py` | **Two-particle Hilbert space** — exclusion, statistics, collisions |
 | `quantum_two_particle_figs.py` | Report + figure for the two-particle work |
+| `quantum_scatter_2d.py` | **2+1D deflection scattering** (relative-coordinate reduction) |
+| `quantum_scatter_2d_figs.py` | Report + figure for the scattering work |
 
 ### Result Files
 
@@ -102,6 +104,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_SU3_MC_de.md` | German — SU(3) Wilson-action Monte Carlo: area law vs perimeter law |
 | `RESULTS_FCC_3D_de.md` | German — 3+1D FCC walker: spin becomes rigid, Kramers automatic |
 | `RESULTS_TwoParticle_de.md` | German — two-particle space: Pauli hole, bound states, colour singlet |
+| `RESULTS_Scatter_2D_de.md` | German — 2+1D deflection scattering, Mott interference, helicity ceiling |
 
 ### Generated Figures (2+1D)
 
@@ -323,6 +326,22 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   (reduction checked against the full evolution to 5.2e-15): a site contact binds both
   species, a full-coincidence contact binds only bosons.  Gauge averaging keeps only the
   colour singlet (norm 1.000000) and annihilates the octet.
+
+- **Deflection scattering in 2+1D** (built, see `RESULTS_Scatter_2D_de.md`): the
+  relative-coordinate reduction at fixed total momentum is exact (0.000e+00 against the
+  full two-particle evolution, with and without contact; [step, X] = 1e-17), which makes
+  2D two-body scattering affordable at (N_sites x 36).  Deflection works — 6.2 % of the
+  state is scattered with a forward/backward ratio of 8.0 and a six-fold lattice ray
+  pattern — which 1+1D forbids.  Mott interference is present (fermion minimum at 90°,
+  ~10x below the boson) but **capped by |⟨u(k)|u(−k)⟩|**: best contrast 0.752 against a
+  ceiling of 0.794 at k=0.3, 0.401 against 0.516 at k=0.6.  The cause is structural —
+  the band eigenvector is locked to k (helicity-like), so counter-propagating particles
+  are partly distinguishable; at **α=1/2 the overlap is exactly 0 and no exchange
+  interference exists at all**.  This same fact has now appeared four times (3.7e-16 in
+  the 2D two-packet test, 0.009 on FCC, in step 3, and here) and is a central property of
+  this model class.  Two analysis traps recorded: the contrast dephases with radius (a
+  broad annulus gave +0.28 instead of +0.75), and the mirror partner of angular bin i is
+  71−i, not 72−i (which faked a 29 % asymmetry where there is 8.4 %).
 
 - **Turning phase — open points**: (a) exclusion/collisions need either a two-particle
   Hilbert space on pairs of directed edges (exact, expensive) or a nonlinear

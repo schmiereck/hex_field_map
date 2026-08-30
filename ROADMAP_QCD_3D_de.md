@@ -186,6 +186,11 @@ offen — es wäre aber der erste Ort, an dem ich nachsehen würde.
    Pauli-Loch und Bunching exakt gemessen (Koinzidenzverhältnis 0 : 2);
    ein Koinzidenz-Kontakt lässt Fermionen exakt unberührt (6e-17);
    Bindungszustände per exakter Diagonalisierung; nur das Farbsingulett
-   überlebt die Eichmittelung.  Offen: Deflexionsstöße brauchen ≥ 2
-   Raumdimensionen, in 1+1D ist Kontaktstreuung integrabel.
+   überlebt die Eichmittelung.
+
+4. ~~**Deflexionsstöße in 2D**~~ — **erledigt**, siehe `RESULTS_Scatter_2D_de.md`.
+   Relativkoordinaten-Reduktion exakt (0.000e+00); 6.2 % gestreut mit
+   sechszähligem Gittermuster; Mott-Interferenz vorhanden, aber durch den
+   Helizitäts-Überlapp |⟨u(k)|u(−k)⟩| gedeckelt (0.752 gegen 0.794), und bei
+   α=1/2 gar nicht vorhanden.
 4. Erst danach: unquenched, Vorzeichenproblem, echte QCD-Observablen.
