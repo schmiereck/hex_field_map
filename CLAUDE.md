@@ -80,6 +80,8 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_fcc_holonomy.py` | **3D FCC holonomy** — does the turning-number theorem survive? |
 | `quantum_hex_su3.py` | **SU(3) colour** — non-abelian links, Wilson loops |
 | `quantum_qcd_3d_report.py` | Report + overview figure for the 3D-spin and QCD questions |
+| `quantum_hex_su3_mc.py` | **SU(3) Wilson-action Monte Carlo** (dynamical gauge field) |
+| `quantum_hex_su3_mc_figs.py` | Report + figure for the Monte Carlo |
 
 ### Result Files
 
@@ -93,6 +95,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_Turning_2D_de.md` | German — 2+1D turning-phase model (angle sum as path integral) |
 | `RESULTS_Magnetic_2D_de.md` | German — magnetic field, chirality families, Onsager quantisation |
 | `ROADMAP_QCD_3D_de.md` | German — why spin needs 3D, and what QCD needs (with measurements) |
+| `RESULTS_SU3_MC_de.md` | German — SU(3) Wilson-action Monte Carlo: area law vs perimeter law |
 
 ### Generated Figures (2+1D)
 
@@ -279,7 +282,15 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   transporter to a common base point (9.7e-17 with, 0.065 without) and its plaquettes do
   not commute (0.82).  A **static** random background gives a perimeter law
   ⟨W⟩ = c^perimeter (matches to 3 digits) — i.e. **no confinement**.  An area law needs the
-  links correlated by the Wilson action (Monte Carlo); that is the next concrete step.
+  links correlated by the Wilson action (Monte Carlo) — **done**, see
+  `RESULTS_SU3_MC_de.md`: the triangular lattice is perfectly 3-colourable (every
+  plaquette holds exactly one link of each direction), so the Metropolis sweep is fully
+  vectorised; the plaquette matches the exact single-plaquette integral at all 7
+  couplings within 0.98σ; and loops of equal area but different perimeter — (2,2) and
+  (4,1) — give 0.044716 vs 0.044699 under the Wilson action (identical, area law) but
+  0.35263 vs 0.27240 in a static ensemble at the same plaquette (perimeter law).
+  In 2D this area law is exact and kinematic, so it validates the machinery rather than
+  discovering confinement; the same measurement first says something nontrivial in 3+1D.
   Real QCD additionally needs 3+1D (asymptotic freedom), unquenching, and — the hardest
   barrier — real-time evolution has a sign problem.
 

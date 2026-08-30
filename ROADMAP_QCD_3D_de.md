@@ -169,9 +169,12 @@ offen — es wäre aber der erste Ort, an dem ich nachsehen würde.
 
 ## Reihenfolge, die ich vorschlagen würde
 
-1. **SU(3) mit Wilson-Wirkung** auf dem bestehenden 2D-Gitter (Monte Carlo,
-   Stringspannung, Flächengesetz). Klein, abgeschlossen, liefert die erste echte
-   Confinement-Messung. Baut nur auf `quantum_hex_su3.py` auf.
+1. ~~**SU(3) mit Wilson-Wirkung** auf dem bestehenden 2D-Gitter~~ — **erledigt**,
+   siehe `RESULTS_SU3_MC_de.md`. Plakette trifft das exakte Ein-Matrix-Integral bei
+   allen 7 Kopplungen auf 0.98σ; Flächengesetz gegen Umfanggesetz kontrolliert
+   getrennt (gleiche Fläche/verschiedener Umfang: Wilson 1.0004, statisch 1.294).
+   Einschränkung: in 2D ist das Flächengesetz exakt und kinematisch — der Schritt
+   validiert die Maschinerie, er entdeckt kein Confinement.
 2. **3+1D FCC-Walker** mit `SU(2)`-Münze (Teil A, Punkte 1–4). Groß, aber es ist
    der Schritt, der den Spin von einer Wahl zu einer Notwendigkeit macht.
 3. **Zwei-Teilchen-Raum** — löst Ausschließlichkeit *und* Farbsingulett in einem.

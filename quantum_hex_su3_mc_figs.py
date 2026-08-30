@@ -142,6 +142,18 @@ def main():
                   % (["%.5f" % v for v in st],
                      st[0] / st[-1] if abs(st[-1]) > 1e-9 else np.nan))
 
+    print("\n[4] The sharpest pair: SAME AREA, DIFFERENT PERIMETER")
+    print("    (2,2): perimeter 8, area 8    (4,1): perimeter 10, area 8")
+    for b in BETAS_LOOP:
+        d = res[b]
+        m1, m2 = d['mc']['wl'][(2, 2)].mean(), d['mc']['wl'][(4, 1)].mean()
+        s1, s2 = d['swl'][(2, 2)].mean(), d['swl'][(4, 1)].mean()
+        print("  beta=%4.1f  Wilson action: %.6f vs %.6f  ratio %.4f (area law: 1)"
+              % (b, m1, m2, m1 / m2 if abs(m2) > 1e-9 else np.nan))
+        print("            static       : %.6f vs %.6f  ratio %.4f "
+              "(perimeter law: c^-2 = %.4f)"
+              % (s1, s2, s1 / s2 if abs(s2) > 1e-9 else np.nan, d['sc'] ** -2))
+
     figure(plaq_tab, res)
     return plaq_tab, res
 
