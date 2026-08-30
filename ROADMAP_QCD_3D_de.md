@@ -71,7 +71,8 @@ den 3+1D-FCC-Schritt tatsächlich zu gehen.
    Transport-Quaternionen — die Bausteine liegen in `quantum_fcc_holonomy.py`.
 2. **Zwei Spinorkomponenten pro Richtung** (der Rahmen hat in 3D eine
    Zusatzfreiheit, die es in 2D nicht gibt): `amp[x,y,z,d,s]` mit s = ±½.
-3. **Lichtgeschwindigkeit und Masse neu vermessen** — c ist auf FCC nicht √3.
+3. **Lichtgeschwindigkeit und Masse neu vermessen.** *(Korrektur: mit derselben
+   Kantenlängen-Konvention wie in 2D ist c auch auf FCC exakt √3.)*
 4. Dispersion, Isotropie, Kegelsteigung: alles wie in 2D, aber mit 12 Richtungen.
 
 Rechenaufwand: das 2D-Modell hatte `(Nx·Ny·6)`; 3D hat `(Nx·Ny·Nz·12·2)`. Bei
@@ -175,7 +176,11 @@ offen — es wäre aber der erste Ort, an dem ich nachsehen würde.
    getrennt (gleiche Fläche/verschiedener Umfang: Wilson 1.0004, statisch 1.294).
    Einschränkung: in 2D ist das Flächengesetz exakt und kinematisch — der Schritt
    validiert die Maschinerie, er entdeckt kein Confinement.
-2. **3+1D FCC-Walker** mit `SU(2)`-Münze (Teil A, Punkte 1–4). Groß, aber es ist
-   der Schritt, der den Spin von einer Wahl zu einer Notwendigkeit macht.
+2. ~~**3+1D FCC-Walker** mit `SU(2)`-Münze~~ — **erledigt**, siehe
+   `RESULTS_FCC_3D_de.md`. Kramers-Verdopplung automatisch und bei jedem k
+   (Aufspaltung ~1e-15); Gürteltrick direkt gemessen (L=6 gibt −1, L=12 gibt +1);
+   m = 8ε bzw. 4√3·ε exakt; Dispersion relativistisch auf 0.8–4.7 %.
+   Gefundene Einschränkung: keine Teilchen-Antiteilchen-Symmetrie, weil der
+   Kuboktaeder nicht bipartit ist.
 3. **Zwei-Teilchen-Raum** — löst Ausschließlichkeit *und* Farbsingulett in einem.
 4. Erst danach: unquenched, Vorzeichenproblem, echte QCD-Observablen.

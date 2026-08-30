@@ -82,6 +82,8 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_qcd_3d_report.py` | Report + overview figure for the 3D-spin and QCD questions |
 | `quantum_hex_su3_mc.py` | **SU(3) Wilson-action Monte Carlo** (dynamical gauge field) |
 | `quantum_hex_su3_mc_figs.py` | Report + figure for the Monte Carlo |
+| `quantum_fcc_3d.py` | **3+1D FCC walker with an SU(2) coin** (spin 0 vs spin 1/2) |
+| `quantum_fcc_3d_figs.py` | Report + figure for the 3+1D walker |
 
 ### Result Files
 
@@ -96,6 +98,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_Magnetic_2D_de.md` | German — magnetic field, chirality families, Onsager quantisation |
 | `ROADMAP_QCD_3D_de.md` | German — why spin needs 3D, and what QCD needs (with measurements) |
 | `RESULTS_SU3_MC_de.md` | German — SU(3) Wilson-action Monte Carlo: area law vs perimeter law |
+| `RESULTS_FCC_3D_de.md` | German — 3+1D FCC walker: spin becomes rigid, Kramers automatic |
 
 ### Generated Figures (2+1D)
 
@@ -275,6 +278,16 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   SU(2) is simple, so only its centre ℤ₂ survives → **α ∈ {0, 1/2}, boson or fermion**.
   Spin is quantised in 3D precisely because SO(3) is doubly, not infinitely, connected.
   The α=1/2 point of the 2D model is therefore the shadow of the only nontrivial 3D option.
+  **Built** in `quantum_fcc_3d.py` (see `RESULTS_FCC_3D_de.md`): the walker carries a
+  spinor and turning rotates it by the SU(2) transport, so α is gone and only spin 0 or
+  1/2 remain.  Coin C = expm(i·ε·G), G = Σ_{d'~d} |d'⟩⟨d| ⊗ Q(d→d') over the 60° edges
+  of the cuboctahedron — exactly unitary (4e-16), and the 180° reversal never occurs.
+  Kramers doubling is automatic and holds at **every** k (splitting ~1e-15), only for
+  spin 1/2.  The belt trick is measured directly: the shortest closed heading loop
+  (L=6) returns the spinor with −1, and +1 first appears at L=12.  m = 8ε (boson),
+  4√3·ε (fermion), exactly linear.  Causality structural: max |v_g| = 1.7223 < c = √3.
+  Limitation found: no particle–antiparticle symmetry, because the cuboctahedron
+  contains triangles and is therefore not bipartite (the 2D 6-cycle was).
 
 - **QCD** (measured, see `ROADMAP_QCD_3D_de.md`): the magnetic module is already a U(1)
   lattice gauge theory.  `quantum_hex_su3.py` promotes the link phase to SU(3):
