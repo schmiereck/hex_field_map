@@ -148,13 +148,86 @@ folgt dem Überlapp als Skalierungsgesetz**, nicht als strenge Schranke.
 
 ---
 
-## 7. Offen
+## 7. Nachtrag: Flavour hilft nicht — und zwar beweisbar nicht
 
-* **Ein Modell ohne Heading-Kopplung.** Man könnte den inneren Raum künstlich
-  vergrößern (mehrere Kopien pro Richtung), sodass zwei Teilchen denselben
-  „Flavour"-Zustand bei entgegengesetztem Impuls tragen können. Ob das eine
-  konsistente unitäre Dynamik ergibt oder nur ein Etikett ohne Wirkung ist,
-  wurde nicht geprüft.
+Die in Abschnitt 6 offen gelassene Idee war, den inneren Raum künstlich zu
+vergrößern (mehrere Kopien pro Richtung), sodass zwei Teilchen bei
+entgegengesetztem Impuls denselben „Flavour" tragen können.
+
+### Ein passives Etikett trägt Faktor 1 bei
+
+Wird die Münze zu `C ⊗ 1_f`, faktorisiert der Bandeigenvektor: `u(k) ⊗ χ`.
+Dann ist `⟨u(k)⊗χ | u(−k)⊗χ⟩ = ⟨u(k)|u(−k)⟩ · ⟨χ|χ⟩`. Gemessen für N_f = 2
+und 4:
+
+| k | ohne Flavour | mit N_f=2 | mit N_f=4 |
+|---|---|---|---|
+| 0.3 | 0.7943075987 | 0.7943075987 | 0.7943075987 |
+| 0.6 | 0.5159907613 | 0.5159907613 | 0.5159907613 |
+
+Identisch auf zehn Stellen. Das Etikett ändert nichts.
+
+### Es geht allgemeiner: eine kinematische Schranke
+
+Man muss gar nicht ausprobieren. Mit den Randverteilungen der Richtungen
+`p_d`, `q_d`, `a_d = √p_d`, `b_d = √q_d` und `c_d = n_d·v̂ ∈ [−1,1]` gilt
+
+```
+|<u|v>|  <=  sum_d a_d b_d  =:  F           (Cauchy-Schwarz je Richtung)
+
+2 beta = sum_d c_d (a_d - b_d)(a_d + b_d)
+       <= max|c_d| * sqrt(sum (a-b)^2) * sqrt(sum (a+b)^2)
+       <= sqrt(2-2F) * sqrt(2+2F) = 2 sqrt(1-F^2)
+
+=>   F <= sqrt(1 - beta^2) = 1/gamma
+```
+
+**Der Austauschüberlapp zweier Zustände mit den Geschwindigkeiten ±v ist durch
+1/γ beschränkt — für jedes Gitter und jeden inneren Raum.** Der Grund: die
+Schranke hängt nur von den Richtungs-Randverteilungen ab, und die sind durch
+die Geschwindigkeit festgenagelt. Kein zusätzlicher Index kann das umgehen.
+
+Numerisch bestätigt: die optimierte Fidelity trifft √(1−β²) auf **9·10⁻¹³**
+(2D-Dreiecksgitter entlang einer Achse). Gleichheit verlangt `max|c_d| = 1`,
+also Gitterrichtungen exakt entlang ±v — auf FCC entlang x zeigt keine
+Richtung dorthin, dort liegt das Optimum echt darunter (0.977 statt 0.989).
+
+### Der Dirac-Spinor sättigt die Schranke
+
+`u†(k,s)u(−k,s) = m/E = 1/γ` — genau der Wert der Schranke. **Dirac ist
+optimal.** Meine frühere Feststellung „die Dirac-Hypothese ist widerlegt"
+bekommt damit ihre richtige Deutung: der Dirac-Wert ist nicht der *erwartete*,
+sondern der *maximal mögliche*, und die Gittermodelle bleiben darunter.
+
+| Modell | β | Überlapp | 1/γ | Ausschöpfung |
+|---|---|---|---|---|
+| 2D, ε=1.5 | 0.046 | 0.9960 | 0.9989 | 0.997 |
+| 2D, ε=0.5 | 0.166 | 0.9705 | 0.9862 | 0.984 |
+| FCC Spin 0 | 0.255 | 0.8889 | 0.9669 | 0.919 |
+| FCC Spin ½ | 0.381 | 0.6896 | 0.9247 | 0.746 |
+| 2D, ε=0.5 | 0.731 | 0.2910 | 0.6824 | 0.426 |
+
+Keine einzige Messung verletzt die Schranke.
+
+### Was daraus folgt
+
+Die Deckelung ist **kein Modelldefekt und nicht reparierbar**. Sie ist
+kinematisch: zwei Teilchen, die sich mit ±v bewegen, *sind* durch ihre
+Bewegung teilweise unterscheidbar, und zwar genau um den Faktor 1/γ. Die volle
+Mott-Nullstelle existiert nur im Grenzfall v → 0 — was die Messung aus
+Abschnitt 4 (Kontrast 0.9937 bei β = 0.136) genau bestätigt.
+
+*Abbildung:* `overlap_bound.png`
+
+---
+
+## 8. Offen
+
+* ~~Ein Modell ohne Heading-Kopplung~~ — erledigt, siehe Abschnitt 7: ein
+  Etikett ist wirkungslos, und die Schranke 1/γ gilt für jeden inneren Raum.
+  Was offen bleibt, ist nur noch, wie nah ein Gittermodell an die
+  Dirac-Sättigung herankommen kann; die hier gebauten schöpfen zwischen 43 %
+  und 99.7 % aus.
 * **Bandumkehr.** Bei ε = 1.5 hat das Teilchenband bei k ≈ 0.87 ein Maximum:
   `v_g` kippt dort von +0.459 (k=0.80) über +0.056 (k=0.87) auf −0.278
   (k=0.90). Jenseits davon läuft der Zustand rückwärts und „gegenläufig"

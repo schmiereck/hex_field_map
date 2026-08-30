@@ -79,3 +79,55 @@ def dirac_reference(k, m, c=np.sqrt(3.0)):
     """
     E = np.sqrt(c ** 2 * k ** 2 + m ** 2)
     return m / E
+
+
+# ─── the kinematic bound: no internal space can beat 1/gamma ─────────────────
+
+def overlap_bound(beta):
+    """
+    Universal upper bound on the exchange overlap of two states moving at +v
+    and -v, valid for ANY lattice and ANY internal space:
+
+        |<u(+v)|u(-v)>|  <=  sqrt(1 - beta^2)  =  1/gamma ,   beta = v/c
+
+    Proof.  Write a_d = sqrt(p_d), b_d = sqrt(q_d) for the heading marginals and
+    c_d = n_d . v_hat, so |c_d| <= 1 and
+
+        sum a^2 = sum b^2 = 1,   sum c_d a_d^2 = +beta,   sum c_d b_d^2 = -beta,
+        F = sum a_d b_d  >=  |<u|v>|          (Cauchy-Schwarz per direction)
+
+    Then
+        2 beta = sum c_d (a_d - b_d)(a_d + b_d)
+               <= max|c_d| sqrt(sum (a-b)^2) sqrt(sum (a+b)^2)
+               <= sqrt(2 - 2F) sqrt(2 + 2F) = 2 sqrt(1 - F^2),
+    hence beta^2 <= 1 - F^2, i.e. F <= sqrt(1 - beta^2).
+
+    Equality needs max|c_d| = 1, i.e. lattice directions exactly along +-v.
+    The 2D triangular lattice along an axis reaches it (verified to 9e-13); FCC
+    along x does not, because no FCC direction points that way.
+
+    The continuum Dirac spinor SATURATES the bound: u^dag(k,s) u(-k,s) = m/E =
+    1/gamma.  So Dirac is optimal, and every lattice model here falls short of
+    it — by 0.3 % at beta = 0.05 and by 57 % at beta = 0.73.
+
+    Consequence for the exchange interference: a passive flavour label
+    contributes a factor <chi|chi> = 1 and changes nothing (verified to 10
+    digits); no enlargement of the internal space can raise the ceiling,
+    because the bound depends only on the heading marginals, which the velocity
+    pins down.  The full Mott zero exists only in the limit v -> 0.
+    """
+    b = np.asarray(beta, dtype=float)
+    return np.sqrt(np.maximum(0.0, 1.0 - b ** 2))
+
+
+def flavour_overlap(k, eps, n_flavour, alpha=0.0):
+    """
+    Overlap with a passive flavour label of dimension n_flavour: the coin is
+    C (x) 1_f, so u(k) (x) chi factorises and the flavour contributes 1.
+    """
+    _, V1, _ = h_bands(k, 0.0, eps, alpha)
+    _, V2, _ = h_bands(-k, 0.0, eps, alpha)
+    u1 = V1[:, -1] / np.linalg.norm(V1[:, -1])
+    u2 = V2[:, -1] / np.linalg.norm(V2[:, -1])
+    chi = np.zeros(n_flavour); chi[0] = 1.0
+    return abs(np.vdot(np.kron(u1, chi), np.kron(u2, chi)))
