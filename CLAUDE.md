@@ -88,6 +88,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_two_particle_figs.py` | Report + figure for the two-particle work |
 | `quantum_scatter_2d.py` | **2+1D deflection scattering** (relative-coordinate reduction) |
 | `quantum_scatter_2d_figs.py` | Report + figure for the scattering work |
+| `quantum_helicity_test.py` | **Does spin lift the exchange ceiling?** (overlap diagnostics) |
 
 ### Result Files
 
@@ -105,6 +106,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_FCC_3D_de.md` | German — 3+1D FCC walker: spin becomes rigid, Kramers automatic |
 | `RESULTS_TwoParticle_de.md` | German — two-particle space: Pauli hole, bound states, colour singlet |
 | `RESULTS_Scatter_2D_de.md` | German — 2+1D deflection scattering, Mott interference, helicity ceiling |
+| `RESULTS_Helicity_de.md` | German — spin does not lift the ceiling; the non-relativistic limit does |
 
 ### Generated Figures (2+1D)
 
@@ -339,7 +341,16 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   are partly distinguishable; at **α=1/2 the overlap is exactly 0 and no exchange
   interference exists at all**.  This same fact has now appeared four times (3.7e-16 in
   the 2D two-packet test, 0.009 on FCC, in step 3, and here) and is a central property of
-  this model class.  Two analysis traps recorded: the contrast dephases with radius (a
+  this model class.  **Followed up** in `quantum_helicity_test.py` (see
+  `RESULTS_Helicity_de.md`): a momentum-independent spin does NOT lift the ceiling — in
+  FCC both Kramers singular values are equal and lie below the heading fidelity, and
+  spin 0 overlaps better than spin 1/2 (0.692 vs 0.416 at k=0.2), so the spinor makes it
+  worse.  The bottleneck is that the internal index IS the direction of motion.  What
+  does recover the full Mott zero is the non-relativistic limit: at overlap 0.965 the
+  contrast is 0.9937 and the fermionic cross section at 90° is 0.37 % of the bosonic one.
+  The Dirac guess |⟨u(k)|u(−k)⟩| = m/E = 1/γ was tested and FAILS (ratio falls from 0.98
+  to 0.18) — the lattice overlap decays faster.  Correction to the wording of step 4: the
+  overlap is a scaling guide, not a strict cap (measured contrast/overlap 0.78 … 1.12).  Two analysis traps recorded: the contrast dephases with radius (a
   broad annulus gave +0.28 instead of +0.75), and the mirror partner of angular bin i is
   71−i, not 72−i (which faked a 29 % asymmetry where there is 8.4 %).
 
