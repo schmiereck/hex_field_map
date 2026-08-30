@@ -84,6 +84,8 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_hex_su3_mc_figs.py` | Report + figure for the Monte Carlo |
 | `quantum_fcc_3d.py` | **3+1D FCC walker with an SU(2) coin** (spin 0 vs spin 1/2) |
 | `quantum_fcc_3d_figs.py` | Report + figure for the 3+1D walker |
+| `quantum_two_particle.py` | **Two-particle Hilbert space** — exclusion, statistics, collisions |
+| `quantum_two_particle_figs.py` | Report + figure for the two-particle work |
 
 ### Result Files
 
@@ -99,6 +101,7 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `ROADMAP_QCD_3D_de.md` | German — why spin needs 3D, and what QCD needs (with measurements) |
 | `RESULTS_SU3_MC_de.md` | German — SU(3) Wilson-action Monte Carlo: area law vs perimeter law |
 | `RESULTS_FCC_3D_de.md` | German — 3+1D FCC walker: spin becomes rigid, Kramers automatic |
+| `RESULTS_TwoParticle_de.md` | German — two-particle space: Pauli hole, bound states, colour singlet |
 
 ### Generated Figures (2+1D)
 
@@ -306,6 +309,20 @@ Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
   discovering confinement; the same measurement first says something nontrivial in 3+1D.
   Real QCD additionally needs 3+1D (asymptotic freedom), unquenching, and — the hardest
   barrier — real-time evolution has a sign problem.
+
+- **Two-particle space** (built, see `RESULTS_TwoParticle_de.md`): for a non-interacting
+  pair everything factorises into two evolved orbitals, so the pair correlation is exact
+  and cheap.  Measured in the 3+1D FCC model: Ψ ≡ 0 for two fermions in the same orbital
+  (1.9e-9); coincidence ratio exactly 0 (fermion) and 2 (boson) at full internal overlap;
+  a Pauli hole along x₁=x₂ against a bosonic ridge.  Caveat: head-on packets have nearly
+  orthogonal internal states (0.009 on FCC, 3.7e-16 in 2D) and show NO exchange effect.
+  With a genuine contact interaction (full two-particle wavefunction, 1+1D): 1D contact
+  scattering is integrable — only a phase shift, max|ΔP| = 2.4e-5 — and a contact acting
+  on the full coincidence (x,d) leaves fermions **exactly** unchanged (6e-17) at any
+  strength.  Bound states verified by exact diagonalisation in the relative coordinate
+  (reduction checked against the full evolution to 5.2e-15): a site contact binds both
+  species, a full-coincidence contact binds only bosons.  Gauge averaging keeps only the
+  colour singlet (norm 1.000000) and annihilates the octet.
 
 - **Turning phase — open points**: (a) exclusion/collisions need either a two-particle
   Hilbert space on pairs of directed edges (exact, expensive) or a nonlinear

@@ -182,5 +182,10 @@ offen — es wäre aber der erste Ort, an dem ich nachsehen würde.
    m = 8ε bzw. 4√3·ε exakt; Dispersion relativistisch auf 0.8–4.7 %.
    Gefundene Einschränkung: keine Teilchen-Antiteilchen-Symmetrie, weil der
    Kuboktaeder nicht bipartit ist.
-3. **Zwei-Teilchen-Raum** — löst Ausschließlichkeit *und* Farbsingulett in einem.
+3. ~~**Zwei-Teilchen-Raum**~~ — **erledigt**, siehe `RESULTS_TwoParticle_de.md`.
+   Pauli-Loch und Bunching exakt gemessen (Koinzidenzverhältnis 0 : 2);
+   ein Koinzidenz-Kontakt lässt Fermionen exakt unberührt (6e-17);
+   Bindungszustände per exakter Diagonalisierung; nur das Farbsingulett
+   überlebt die Eichmittelung.  Offen: Deflexionsstöße brauchen ≥ 2
+   Raumdimensionen, in 1+1D ist Kontaktstreuung integrabel.
 4. Erst danach: unquenched, Vorzeichenproblem, echte QCD-Observablen.
