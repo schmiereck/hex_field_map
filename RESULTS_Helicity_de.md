@@ -1,6 +1,6 @@
 # Hebt echter Spin die Deckelung der Austauschinterferenz auf?
 
-*Dateien:* `quantum_helicity_test.py`
+*Dateien:* `quantum_helicity_test.py`, `quantum_helicity_test_figs.py`
 *Anschluss an:* `RESULTS_Scatter_2D_de.md`
 *Abbildung:* `helicity_test.png`
 
@@ -99,9 +99,18 @@ isotrop. Getestet mit einem echten Streulauf bei ε = 1.5, k = 0.3, wo der
 | Kontrast bei 90° | **+0.9926** | +0.9937 | +0.9932 | +0.9917 | +0.9896 | +0.9854 |
 
 ```
-bester Kontrast 0.9937   bei Ueberlapp 0.9650
-Fermion-Querschnitt bei 90 Grad = 0.37 % des bosonischen
+bester Kontrast 0.9937   bei Ueberlapp 0.9650   (Norm 0.997 erhalten)
+Fermion-Querschnitt bei 90 Grad = 0.32 % des bosonischen
 ```
+
+Der Kontrast ist über alle Radien stabil — anders als im Fall mit niedrigem
+Überlapp, wo er mit dem Radius dephasierte. Zum Vergleich im selben Lauf, mit
+sauberer Norm gemessen:
+
+| | Überlapp | Kontrast | Verhältnis | Norm |
+|---|---|---|---|---|
+| ε = 1.5, k = 0.3 | 0.9650 | **0.9937** | 1.030 | 0.997 |
+| ε = 0.5, k = 0.3 | 0.7943 | 0.7893 | 0.994 | 0.951 |
 
 **Das ist die volle Mott-Nullstelle.** Sie wird nicht durch zusätzlichen Spin
 erreicht, sondern durch den nichtrelativistischen Grenzfall.
@@ -119,7 +128,7 @@ In `RESULTS_Scatter_2D_de.md` steht, der Kontrast sei durch den Überlapp
 Kontrast/Überlapp sind:
 
 ```
-0.95   0.88   0.78   1.12   1.03   1.07
+0.95   0.88   0.78   1.12   0.99   1.03
 ```
 
 Sie streuen um 1 und überschreiten sie mehrfach. Richtig ist: **der Kontrast
@@ -134,7 +143,7 @@ folgt dem Überlapp als Skalierungsgesetz**, nicht als strenge Schranke.
 | Ist die Deckelung einfach Relativistik (1/γ)? | Nein — der Überlapp fällt schneller |
 | Hebt ein impulsunabhängiger Spin sie auf? | **Nein** — Spin ½ ist schlechter als Spin 0 |
 | Woran liegt es dann? | Der innere Index *ist* die Bewegungsrichtung |
-| Gibt es die volle Mott-Nullstelle? | **Ja**, im nichtrelativistischen Grenzfall: Kontrast 0.9937 |
+| Gibt es die volle Mott-Nullstelle? | **Ja**, im nichtrelativistischen Grenzfall: Kontrast 0.9937, Fermion bei 90° = 0.32 % des Bosons |
 | Bei α = ½? | Nie — Überlapp exakt 0 bei jedem k |
 
 ---
@@ -146,7 +155,13 @@ folgt dem Überlapp als Skalierungsgesetz**, nicht als strenge Schranke.
   „Flavour"-Zustand bei entgegengesetztem Impuls tragen können. Ob das eine
   konsistente unitäre Dynamik ergibt oder nur ein Etikett ohne Wirkung ist,
   wurde nicht geprüft.
-* **Randverlust.** Der Referenzlauf in diesem Test verlor 60 % der Norm über
-  den Gitterrand (die Kontrastwerte bleiben konsistent, aber die absoluten
-  Querschnitte sind dort unbrauchbar). Absorbierende Ränder wären der nächste
-  technische Schritt.
+* **Bandumkehr.** Bei ε = 1.5 hat das Teilchenband bei k ≈ 0.87 ein Maximum:
+  `v_g` kippt dort von +0.459 (k=0.80) über +0.056 (k=0.87) auf −0.278
+  (k=0.90). Jenseits davon läuft der Zustand rückwärts und „gegenläufig"
+  verliert seinen Sinn; die Überlappkurven sind in der Abbildung dort
+  abgeschnitten (Dreieck-Marker). Das ist keine Bandkreuzung — der Abstand zum
+  nächsten Band bleibt konstant bei 3.24.
+* **Randverlust.** Ein früherer Referenzlauf verlor 60 % der Norm über den
+  Gitterrand; die hier angegebenen Zahlen stammen aus Läufen mit 0.997 bzw.
+  0.951 erhaltener Norm. Absorbierende Ränder wären der nächste technische
+  Schritt.
