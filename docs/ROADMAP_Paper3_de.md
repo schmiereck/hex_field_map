@@ -61,7 +61,47 @@ die Experimente fest.*
 
 ## 2. Experimente
 
-### Experiment 1: Gravitation als Rechenzeit (Priorität 1)
+### Experiment S: Spin-Wirbel aus Phasen-Bits (Hauptfokus)
+
+Leitfrage: **Lassen sich „Spin-Wirbel“ aus Phasen-Bits tatsächlich sehen?**
+
+Die korrigierte Version der Idee aus dem Thread: Ein Walker trägt neben seiner
+Richtung d ∈ Z₆ ein Phasen-Bit p ∈ Z₄. Bei einer Drehung um n·60° gilt p → p + n.
+Gerade weiter lässt p unverändert. Von (d, p) = (0, 0) aus sind nur die Paare mit
+d ≡ N (mod 6) und p ≡ N (mod 4) erreichbar, wobei N der Netto-Drehzähler ist. Das
+sind 12 Zustände, also Z₁₂, die **Doppelüberlagerung** der 6 Richtungen. Das ist
+das diskrete Gegenstück zu SU(2) → SO(3). Nach einer vollen 360°-Drehung ist die
+Richtung wieder dieselbe, aber das Phasen-Bit ist um i⁶ = −1 gekippt. Erst nach
+720° ist alles wieder wie zu Beginn.
+
+Der „Spin-Wirbel“ ist damit ein **Halbquanten-Wirbel im Richtungsraum**: ein
+Phasenmuster um die 6 Kanten eines Knotens, das sich bei einem Umlauf um π statt
+um 2π windet. Analytisch ist das das α = ½-Spinor-Ergebnis des Turning-Modells
+(Phase ×i pro 60° entspricht α = 3/2, und α zählt nur mod 1). Neu wäre, es als
+reinen Ganzzahl-Automaten zu bauen und den Wirbel direkt sichtbar zu machen.
+Gemini hatte ihn falsch platziert, als Z₄-Windung auf einem 4er-Ring.
+
+| Stufe | Inhalt | Prüfgröße | Status |
+|-------|--------|-----------|--------|
+| S1 | 2D-Phasen-Bit-Automat mit **ganzzahligen** Pfadzahlen N[x, d, p, T] | exakte Übereinstimmung mit dem Fließkomma-Turning-Modell (bis auf die Eichung); Vorzeichen −1 nach 360°, +1 nach 720°; Wirbelmuster der Kramers-Moden | offen |
+| S2 | Dynamik: Wirbel als Wellenpaket, ruhend und bewegt | bleibt die Halbwindung stabil? v < c? Zitterbewegung im Richtungsraum sichtbar? | offen |
+| S3 | 3D mit **endlichem** Spin-Register: binäre Oktaedergruppe 2O (48 Elemente, Clifford-Gruppe) statt kontinuierlicher SU(2) im FCC-Walker | −1 für die L = 6-Schleife? Kramers-Verdopplung? Vergleich mit `quantum_fcc_3d.py` | offen, Ausgang unklar |
+
+Zu S3: Die 60°-Drehungen zwischen benachbarten Kuboktaeder-Richtungen liegen
+**nicht** in der Oktaedergruppe O. Ein Element von O, das d auf d′ abbildet,
+existiert immer (z. B. eine 120°-Drehung um eine Raumdiagonale), aber es ist nicht
+die minimale Drehung. Ob ein solcher endlicher Transport trotzdem ein
+konsistentes Spin-½ ergibt, ist die eigentliche offene Frage. Wenn ja, gäbe es
+Spin ½ aus einem endlichen Phasen-Bit-Register auch in 3D.
+
+### Experiment 1: Gravitation als Rechenzeit (Nebenlinie)
+
+Ursprüngliche Idee: Jeder Knoten hat ein **begrenztes Rechenbudget**. Sind dort
+viele Felder aktiv, laufen **alle** Berechnungen langsamer, auch die Ausbreitung.
+Eine Welle, die an einer stark belasteten Zone vorbeiläuft, wird daher abgelenkt.
+In der Stufenfolge unten sind das 1b (alles langsamer) und 1d (Verlangsamung aus
+der lokalen Last). 1a hat gezeigt, dass es **nicht** reicht, nur das Abbiegen zu
+verlangsamen. Das stützt die Idee, dass auch die Ausbreitung mitbetroffen sein muss.
 
 Leitfrage: **Welche Art von „langsamer rechnen“ reproduziert die Gravitation?**
 Die Stufen sind so gewählt, dass jede eine historisch konkurrierende Theorie
@@ -93,7 +133,7 @@ das Nordström-Verhalten.
   aus Paper 1 (relativistisch angepasst, aber nicht unitär) und der FCC-Walker mit
   SU(2)-Münze.
 
-### Experiment 2: Ganzzahlige Formulierung (Priorität 2)
+### Experiment 2: Ganzzahlige Formulierung (geht in S1 auf)
 
 - Propagatoren exakt über ganzzahlige Pfadzahlen N_T(x,t) rechnen (memoisiert,
   siehe `NOTES_Caching_de.md`).
