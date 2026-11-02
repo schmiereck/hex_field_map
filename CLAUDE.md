@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + S4 open points done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + two rounds of S4 open points done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -123,6 +123,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_mass_s4_figs.py` | Figure for Exp. S4 (`phase_bit_mass_s4.png`) |
 | `phase_bit_s4_open.py` | **Paper 3, S4 open points** — T vs PT, exact lattice chirality H, 2D Kramers protection, background compensation, exact k-patch dynamics (`Patch` class) |
 | `phase_bit_s4_open_figs.py` | Figure for the S4 open points (`phase_bit_s4_open.png`) |
+| `phase_bit_s4_open2.py` | **Paper 3, S4 open points round 2** — 2O + lambda* W90 (no background, E<->-E), theta with H-breaking mass, mass domain walls in a z-slab (`slab_T`), ZB amplitude via band projectors |
+| `phase_bit_s4_open2_figs.py` | Figure for round 2 (`phase_bit_s4_open2.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -155,6 +157,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S3_de.md` | German — Exp. S3: spin 1/2 in 3D from a finite 2O register; sign-convention issue in quantum_fcc_3d |
 | `RESULTS_PhaseBit_S4_de.md` | German — Exp. S4: T-preserving mass for the 3D spin vortex (mu·Pi = lattice beta) |
 | `RESULTS_PhaseBit_S4_Open_de.md` | German — S4 open points: Theta is PT, chirality H, 2D no-go, background compensation, Dirac-regime dynamics |
+| `RESULTS_PhaseBit_S4_Open2_de.md` | German — round 2: 2O without background, theta observable, domain-wall Dirac cones, ZB amplitude |
 
 ### Generated Figures (2+1D)
 
@@ -489,6 +492,24 @@ All work is merged into `main` (default branch). Create feature branches from `m
   Dirac regime ε=0.3, μ=0.03, σ=40: compensated v = 0.124/0.231/0.369/0.425 vs Dirac
   0.135/0.250/0.400/0.512 at k = 0.025…0.2 (plain 0.105…0.308); upper doublet now moves
   along +k; ZB 0.1275 vs band 0.1248.
+  **Round 2** (`RESULTS_PhaseBit_S4_Open2_de.md`): only one 2O-valued coupling keeps
+  P, T, PT, H and E<->-E: W90 (90° pairs, quarter turn about the cube axis); it commutes
+  with G_2O and just shifts its levels.  The Dirac-quartet background is second-order
+  repulsion from the two 8-fold levels (velocity weights 2 and 6, zero to the opposite
+  quartet) → cancels at lambda = −5 (second order), −4.979 exact for eps→0; residual
+  O(eps²) (αε 2.3e-3 at eps=0.1), retuned lambda*(eps) = −4.556 (0.1), −3.204 (0.3).
+  No doubling (quartets at G = ±4.21).  At eps=0.3 the massive band is Dirac to
+  −0.3 %/−1.0 % (μ/ε=0.1) and −0.6 %/−2.0 % (μ/ε=0.5) at k=0.2/0.4, isotropic,
+  max|v_g| 0.80–0.87.  Trap: at lambda=−2 the two quartets meet at E=0; only the
+  flavour average is background-free (per flavour centre +0.021 at k=0.4).
+  theta: with an H-breaking spin-identity mass (projects to Π) the gap is
+  4μ|1+e^{iθ}| to 1e-14.  Domain walls (z-slab, `slab_T`, 120 layers, compensated
+  SU(2), eps 0.3, mu 0.05): sign flip μΠ→−μΠ gives a massless 2D Dirac cone per wall
+  (zero mode −6e-4, slope ≈ c/3), chiral rotation 0→π gives gapped wall states
+  (≈0.07 vs bulk 0.2) → 2D spin vortex = boundary state of the 3D one (TI / axion θ=π).
+  Floquet bands at |k|>1 overlap the gap energy in ~17 % of the BZ (no global gap).
+  ZB amplitude with a well-defined helicity +1 spinor: sim vs band-projector theory
+  rms 0.003 of 0.556, vs Dirac 4x4 0.010.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,

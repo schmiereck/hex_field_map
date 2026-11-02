@@ -185,8 +185,11 @@ Modell ohne Kompensation (unterster Punkt) und das kompensierte (innerer Punkt).
 
 ## Offene Punkte
 
-- Ein innerer, kompensierbarer Dirac-Punkt im 2O-Register fehlt. Gibt es eine
-  2O-Variante (andere Transportwahl, Zusatzterme) mit E ↔ −E *und* α = 0?
-- Kopplungen, die H brechen (z. B. ortsabhängige Terme), würden θ beobachtbar
-  machen: eine Gitterversion der chiralen Anomalie?
-- Die Amplitude der Zitterbewegung ist noch nicht mit der Dirac-Theorie verglichen.
+Alle drei Punkte sind in
+[`RESULTS_PhaseBit_S4_Open2_de.md`](RESULTS_PhaseBit_S4_Open2_de.md) beantwortet:
+- 2O mit E ↔ −E und α = 0 gelingt mit λ*·ε·W₉₀, λ* ≈ −5, ohne Verdopplung.
+- θ wird neben einer helizitätsbrechenden Masse beobachtbar (Lücke 4μ|1 + e^{iθ}|). Ein
+  Sprung θ = 0 → π trägt einen T-geschützten 2D-Dirac-Kegel.
+- Die Amplitude der Zitterbewegung folgt der Bandtheorie auf 0.6 %. Der Anfangsspinor
+  war hier nicht eindeutig gewählt, die Amplituden in Abschnitt 4 sind deshalb
+  basisabhängig.
