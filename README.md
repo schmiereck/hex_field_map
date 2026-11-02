@@ -74,6 +74,7 @@ Discrete states, phase bits and **gravity as computation time**: [`ROADMAP_Paper
 | Topic | Result | Notes |
 |-------|--------|-------|
 | Exp. S1: spin vortices from phase bits | Integer path counts N[x,d,p,T] with a Z₄ phase bit; 12 of 24 labels reachable (Z₁₂ double cover); bit = −1 exactly for odd winding; half-quantum vortices in heading space form Kramers doublets | [`RESULTS_PhaseBit_S1_de.md`](docs/RESULTS_PhaseBit_S1_de.md) |
+| Exp. S2: vortex dynamics | Spin sector exactly protected (superselection, 8e-16); massless without reversal (ring at c/2); chiral 180° reversal gives mass 8μ at the cost of Kramers; v < c; Zitterbewegung j=7↔5 at the band splitting | [`RESULTS_PhaseBit_S2_de.md`](docs/RESULTS_PhaseBit_S2_de.md) |
 | Exp. 1a: lapse on the internal clock (ε → ε·N) | Universal free fall (O(ε²) lattice violation) but R = m₀/(m\*c²) = 2; moving particles decouple ∝ 1/γ² → Nordström-type scalar gravity, no light bending | [`RESULTS_Gravity_Lapse_de.md`](docs/RESULTS_Gravity_Lapse_de.md) |
 
 ---

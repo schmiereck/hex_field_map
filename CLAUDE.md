@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md` | in preparation (main focus: spin vortices from phase bits; S1 done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md` | in preparation (main focus: spin vortices from phase bits; S1+S2 done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -115,6 +115,8 @@ The tables below list bare file names; find them in the directory above.
 | `quantum_gravity_lapse_figs.py` | Figure for Exp. 1a (`gravity_lapse.png`) |
 | `phase_bit_automaton.py` | **Paper 3, Exp. S1** — integer phase-bit automaton N[x,y,d,p,T]; Z12 double cover, spinor sign, vortex modes |
 | `phase_bit_automaton_figs.py` | Figure for Exp. S1 (`phase_bit_automaton.png`) |
+| `phase_bit_vortex_dynamics.py` | **Paper 3, Exp. S2** — unitary Z12 phase-bit walker, superselection, mass by chiral reversal, Zitterbewegung |
+| `phase_bit_vortex_dynamics_figs.py` | Figure for Exp. S2 (`phase_bit_vortex_dynamics.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -143,6 +145,7 @@ The tables below list bare file names; find them in the directory above.
 | `SOURCE_Paper3_Gemini_Thread_de.md` | German — unverified source idea (Gemini export), kept verbatim |
 | `RESULTS_Gravity_Lapse_de.md` | German — Exp. 1a: internal-clock lapse = Nordström-type gravity, R = 2 |
 | `RESULTS_PhaseBit_S1_de.md` | German — Exp. S1: spin vortices from phase bits (integer automaton) |
+| `RESULTS_PhaseBit_S2_de.md` | German — Exp. S2: dynamics of spin vortices (massless/massive, Zitterbewegung) |
 
 ### Generated Figures (2+1D)
 
@@ -425,3 +428,12 @@ All work is merged into `main` (default branch). Create feature branches from `m
   Kramers doublets), selected by the spin readout; even j by the boson readout.
   Counts grow 1.79 bits/step → no finite-state exact automaton.  Next: S2 (moving
   vortex packet), S3 (3D with finite binary-octahedral spin register).
+  **S2** (`RESULTS_PhaseBit_S2_de.md`): unitary walker directly on Z12 labels,
+  C = expm(i(eps·G0 + mu·G3)), G0 = S+S⁻¹, G3 = i(S³−S⁻³) (180° reversal always counted
+  as a left turn).  R6: N→N+6 commutes with everything → spin/boson superselection,
+  drift 8e-16 even with random eps(r).  mu=0 equals alpha=1/2 (7e-15); the vortex
+  doublet j=5/7 is a massless Kramers cone (slope c/2): a k=0 vortex becomes a ring at
+  c/2.  mu>0 splits it by exactly 8·mu (j=7 up) → massive, rests, v < c; costs Kramers
+  (T broken; 2+1D parity anomaly).  Zitterbewegung: pure j=7 with k0=0.3 oscillates
+  j=7↔5 and in transverse CoM at 0.598 vs band splitting 0.595; damping = band
+  separation (sigma/dv).
