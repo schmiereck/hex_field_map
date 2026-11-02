@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S3 done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -119,6 +119,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_vortex_dynamics_figs.py` | Figure for Exp. S2 (`phase_bit_vortex_dynamics.png`) |
 | `phase_bit_fcc_2O.py` | **Paper 3, Exp. S3** — FCC walker with a finite 2O (binary octahedral) spin register |
 | `phase_bit_fcc_2O_figs.py` | Figure for Exp. S3 (`phase_bit_fcc_2O.png`) |
+| `phase_bit_mass_s4.py` | **Paper 3, Exp. S4** — mass-term scan at the 3D Dirac point, mu·Pi mass, 3+1D dynamics |
+| `phase_bit_mass_s4_figs.py` | Figure for Exp. S4 (`phase_bit_mass_s4.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -149,6 +151,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S1_de.md` | German — Exp. S1: spin vortices from phase bits (integer automaton) |
 | `RESULTS_PhaseBit_S2_de.md` | German — Exp. S2: dynamics of spin vortices (massless/massive, Zitterbewegung) |
 | `RESULTS_PhaseBit_S3_de.md` | German — Exp. S3: spin 1/2 in 3D from a finite 2O register; sign-convention issue in quantum_fcc_3d |
+| `RESULTS_PhaseBit_S4_de.md` | German — Exp. S4: T-preserving mass for the 3D spin vortex (mu·Pi = lattice beta) |
 
 ### Generated Figures (2+1D)
 
@@ -453,6 +456,18 @@ All work is merged into `main` (default branch). Create feature branches from `m
   ±4√2ε, and **exact E ↔ −E symmetry** (3.6e-15; minimal SU(2): 0.217) — the
   non-bipartite limitation was the continuous curvature, not the geometry.  Price:
   more anisotropy (17 % vs 8 % at k=0.3).
+  **S4** (`RESULTS_PhaseBit_S4_de.md`): at the 4-fold Dirac point
+  H_eff = E0 + Σ k_i Γ_i, {Γ_i,Γ_j} = 2(c/3)²δ (2e-15).  A term V opens a gap iff the
+  traceless part of P†VP anticommutes with all Γ_i; T-safe iff [V,Θ]=0.  Scan: all
+  couplings with the spin transported only shift (∝1); with the spin NOT rotated
+  (identity, i n·σ) → Π-even masses; i u_d·σ (K+K†) → Π-odd masses; on-site u·σ and
+  i(K−K†)·u_d·σ split the cone and break T.  The 180° reversal without spin rotation
+  IS the inversion Π (= lattice β): [Π,G]=0, gap exactly 4μ, Kramers at every k; with
+  2O also E ↔ −E exact (4e-15).  The massive quartet = E_c(k) ± Δ(k), Δ Dirac with
+  c/3 at small k, plus a common background −αk², αε ≈ 0.125 → clean Dirac regime
+  μ ≪ ε.  3+1D (81³, ε=0.3, μ=0.15): rest packet stays (drift 1e-8), boosted |v| ≪ c
+  (upper doublet runs against k at μ/ε = 0.5), Zitterbewegung in transverse CoM
+  0.645 vs band splitting 0.653.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
