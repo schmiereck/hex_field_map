@@ -22,7 +22,9 @@ T-Bruch).
 2. **Bedingung für eine Masse.** Ein Term V im Generator, C = expm(i(εG + μV)),
    öffnet genau dann eine Lücke, wenn der spurfreie Teil von P†VP mit **allen**
    Γᵢ antivertauscht. Vertauscht er mit ihnen, spaltet er den Kegel nur auf.
-3. **Zeitumkehr.** V muss mit Θ = (1 ⊗ iσ_y)K vertauschen.
+3. **Kramers.** V muss mit Θ = (1 ⊗ iσ_y)K vertauschen. *Korrektur (Folgeuntersuchung):*
+   Θ lässt k fest und ist daher **PT**, nicht T. Die echte Zeitumkehr ist T = Π·Θ,
+   siehe [`RESULTS_PhaseBit_S4_Open_de.md`](RESULTS_PhaseBit_S4_Open_de.md).
 4. **Parität.** Die Inversion Π : d → −d (Spinor unverändert) unterscheidet eine
    gewöhnliche Dirac-Masse (Π-gerade, „β“) von einer paritätsungeraden
    („iβγ₅“).
@@ -36,19 +38,19 @@ Spin-Faktoren *Transport*, *Identität*, i·u_d·σ (Achse der Ausgangsrichtung)
 i·n·σ (Normale), jeweils symmetrisch (K+K†) und antisymmetrisch (i(K−K†)),
 dazu der Knotenterm u_d·σ:
 
-| Term | Wirkung am Dirac-Punkt | Π | Θ |
+| Term | Wirkung am Dirac-Punkt | Π | Θ = PT |
 |------|------------------------|---|---|
 | 60°/90°/120° mit **Spin-Transport** | nur Verschiebung (∝ 1) | + | erhalten |
 | 60°/90°/120° mit **Spin-Identität** | **Masse** | + | erhalten |
 | 60°/90°/120° mit i·n·σ | **Masse** | + | erhalten |
 | **180° mit Spin-Identität = Π** | **Masse** | + | erhalten |
-| 60°/90°/120°/180° mit i·u_d·σ (K+K†) | **Masse** (paritätsungerade) | − | erhalten |
+| 60°/90°/120°/180° mit i·u_d·σ (K+K†) | **Masse** (paritätsungerade; bricht T = ΠΘ) | − | erhalten |
 | … mit i·u_d·σ, i(K−K†) | spaltet den Kegel | − | **gebrochen** |
-| Knoten u_d·σ (Helizität) | spaltet den Kegel | − | **gebrochen** |
+| Knoten u_d·σ (Helizität) | spaltet den Kegel (erhält T = ΠΘ) | − | **gebrochen** |
 | alle übrigen i(K−K†) | keine Wirkung | | |
 
-Es gibt also eine ganze Familie T-erhaltender Massen, gewöhnliche (Π-gerade) und
-paritätsungerade. Gemeinsam ist ihnen: **Der Spin wird beim Richtungswechsel
+Es gibt also eine ganze Familie Kramers-erhaltender (PT-erhaltender) Massen,
+gewöhnliche (Π-gerade, auch T-erhaltend) und paritätsungerade (brechen P und T). Gemeinsam ist ihnen: **Der Spin wird beim Richtungswechsel
 nicht mitgedreht** (oder um die falsche Achse). Terme, die den Spin korrekt
 transportieren, sind am Dirac-Punkt nur eine Konstante (der 60°-Transportterm ist
 der Generator G selbst). Masse entsteht, wo die Kopplung von Spin und Richtung
@@ -131,7 +133,7 @@ Der gesuchte Term existiert und ist sehr einfach: **μ·Π, die Umkehr der Richt
 ohne Drehung des Spins.** Er ist die Gitterversion von m·β, öffnet den
 Dirac-Punkt mit einer Lücke von exakt 4μ und erhält die Zeitumkehr (Kramers bei
 jedem k). Im 2O-Register bleibt außerdem die Teilchen-Antiteilchen-Symmetrie
-exakt erhalten. Daneben gibt es weitere T-erhaltende Massen (gewöhnliche und
+exakt erhalten. Daneben gibt es weitere Kramers-erhaltende Massen (gewöhnliche und
 paritätsungerade). Gemeinsam ist ihnen, dass sie die Kopplung von Spin und
 Richtung lockern.
 
@@ -141,12 +143,8 @@ Symmetrie. Ein einziger zusätzlicher Term (μΠ) liefert die Masse.
 
 ## Offene Punkte
 
-- **Untergrund −αk².** Lässt er sich durch einen zusätzlichen Term kompensieren,
-  analog zum Wilson-Term der Gitter-QCD, sodass auch das obere Dublett bei
-  größerem μ/ε ein normales massives Band wird?
-- **Dynamik im Dirac-Regime μ ≪ ε** braucht größere Gitter (σ ≳ 3/m). Möglich wären
-  Ausnutzen der FCC-Parität oder eine k-Raum-Formulierung.
-- **Paritätsungerade Masse** (i u_d·σ): Was unterscheidet sie physikalisch von μΠ?
-  Eine Kombination beider ergibt eine chirale Phase der Masse (θ-Winkel).
-- **2D-Gegenstück:** Warum gibt es dort keine T-erhaltende Masse? Vermutlich, weil
-  der 2D-Kramers-Kegel nur zweikomponentig ist (2+1D-Paritätsanomalie).
+Alle vier hier ursprünglich offenen Punkte (Untergrund, Dirac-Regime,
+paritätsungerade Masse, 2D-Gegenstück) sind in
+[`RESULTS_PhaseBit_S4_Open_de.md`](RESULTS_PhaseBit_S4_Open_de.md) beantwortet. Dort steht
+auch die Korrektur: Θ ist PT. μΠ erhält P, T und PT. Die paritätsungerade Masse
+bricht P und T (wie ψ̄iγ₅ψ) und ist exakt die chiral gedrehte Form von μΠ.

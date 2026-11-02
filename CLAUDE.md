@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + S4 open points done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -121,6 +121,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_fcc_2O_figs.py` | Figure for Exp. S3 (`phase_bit_fcc_2O.png`) |
 | `phase_bit_mass_s4.py` | **Paper 3, Exp. S4** — mass-term scan at the 3D Dirac point, mu·Pi mass, 3+1D dynamics |
 | `phase_bit_mass_s4_figs.py` | Figure for Exp. S4 (`phase_bit_mass_s4.png`) |
+| `phase_bit_s4_open.py` | **Paper 3, S4 open points** — T vs PT, exact lattice chirality H, 2D Kramers protection, background compensation, exact k-patch dynamics (`Patch` class) |
+| `phase_bit_s4_open_figs.py` | Figure for the S4 open points (`phase_bit_s4_open.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -152,6 +154,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S2_de.md` | German — Exp. S2: dynamics of spin vortices (massless/massive, Zitterbewegung) |
 | `RESULTS_PhaseBit_S3_de.md` | German — Exp. S3: spin 1/2 in 3D from a finite 2O register; sign-convention issue in quantum_fcc_3d |
 | `RESULTS_PhaseBit_S4_de.md` | German — Exp. S4: T-preserving mass for the 3D spin vortex (mu·Pi = lattice beta) |
+| `RESULTS_PhaseBit_S4_Open_de.md` | German — S4 open points: Theta is PT, chirality H, 2D no-go, background compensation, Dirac-regime dynamics |
 
 ### Generated Figures (2+1D)
 
@@ -458,7 +461,8 @@ All work is merged into `main` (default branch). Create feature branches from `m
   more anisotropy (17 % vs 8 % at k=0.3).
   **S4** (`RESULTS_PhaseBit_S4_de.md`): at the 4-fold Dirac point
   H_eff = E0 + Σ k_i Γ_i, {Γ_i,Γ_j} = 2(c/3)²δ (2e-15).  A term V opens a gap iff the
-  traceless part of P†VP anticommutes with all Γ_i; T-safe iff [V,Θ]=0.  Scan: all
+  traceless part of P†VP anticommutes with all Γ_i; Kramers-safe iff [V,Θ]=0
+  (Θ = (1⊗iσ_y)K keeps k, so it is PT; true T = Π·Θ — see open points below).  Scan: all
   couplings with the spin transported only shift (∝1); with the spin NOT rotated
   (identity, i n·σ) → Π-even masses; i u_d·σ (K+K†) → Π-odd masses; on-site u·σ and
   i(K−K†)·u_d·σ split the cone and break T.  The 180° reversal without spin rotation
@@ -468,6 +472,23 @@ All work is merged into `main` (default branch). Create feature branches from `m
   μ ≪ ε.  3+1D (81³, ε=0.3, μ=0.15): rest packet stays (drift 1e-8), boosted |v| ≪ c
   (upper doublet runs against k at μ/ε = 0.5), Zitterbewegung in transverse CoM
   0.645 vs band splitting 0.653.
+  **S4 open points** (`RESULTS_PhaseBit_S4_Open_de.md`): true time reversal T = Π·Θ
+  (symmetric frame W = C^½ ph C^½: T W(k)* T⁻¹ = W(−k)⁻¹ to 8e-16).  μΠ keeps P, T, PT;
+  the parity-odd mass = Π·(iH) breaks P and T (keeps PT) like ψ̄iγ5ψ; on-site helicity
+  H = Σ|d⟩⟨d|⊗u_d·σ keeps T, breaks PT.  H commutes with the massless step (exact lattice
+  chirality, spin transport keeps helicity), {Π,H}=0, exp(iθH/2) rotates μΠ into
+  μ(cosθ Π + sinθ Π iH): spectrum θ-independent to 5e-15.  Weyl nodes per helicity
+  sector: partner of opposite chirality at the same k=0 but another quasi-energy.
+  2D: T = S³K, T² = R6 = −1; Dirac point = one Kramers pair at k=0 → no T-even mass
+  (500 random T-even terms: splitting ≤ 3e-15; T-odd ≥ 6e-3).  Background: fixed sign
+  at the extremal (lowest) Dirac level (αε 0.13 min SU(2), 0.196 2O); at the interior
+  4-fold Dirac level (E/ε=+2.309, min SU(2)) exactly cancelled by λ*·ε·W90 (90° pairs,
+  spin transport), λ* = −0.40827, ε-independent, all symmetries kept, gap 4μ.
+  Exact k-patch method (`Patch`: step ψ̂ ← ph(k)·Cψ̂ on the packet's k support,
+  envelope by IFFT) reproduces the 81³ runs (0.0508/−0.0875/0.6450) with < 1 GB.
+  Dirac regime ε=0.3, μ=0.03, σ=40: compensated v = 0.124/0.231/0.369/0.425 vs Dirac
+  0.135/0.250/0.400/0.512 at k = 0.025…0.2 (plain 0.105…0.308); upper doublet now moves
+  along +k; ZB 0.1275 vs band 0.1248.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
