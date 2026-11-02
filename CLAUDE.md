@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md` | in preparation (Exp. 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md` | in preparation (main focus: spin vortices from phase bits; S1 done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -113,6 +113,8 @@ The tables below list bare file names; find them in the directory above.
 | `experiment_box_3d.py` | Box states in 3D (symmetry breaking by confinement) |
 | `quantum_gravity_lapse.py` | **Paper 3, Exp. 1a** — lapse on the internal clock eps(r)=eps0·N(r), free fall, EP ratio R, coupling kappa(k) |
 | `quantum_gravity_lapse_figs.py` | Figure for Exp. 1a (`gravity_lapse.png`) |
+| `phase_bit_automaton.py` | **Paper 3, Exp. S1** — integer phase-bit automaton N[x,y,d,p,T]; Z12 double cover, spinor sign, vortex modes |
+| `phase_bit_automaton_figs.py` | Figure for Exp. S1 (`phase_bit_automaton.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -140,6 +142,7 @@ The tables below list bare file names; find them in the directory above.
 | `ROADMAP_Paper3_de.md` | German — Paper 3 roadmap: critical review of the Gemini thread, experiments 1–4 |
 | `SOURCE_Paper3_Gemini_Thread_de.md` | German — unverified source idea (Gemini export), kept verbatim |
 | `RESULTS_Gravity_Lapse_de.md` | German — Exp. 1a: internal-clock lapse = Nordström-type gravity, R = 2 |
+| `RESULTS_PhaseBit_S1_de.md` | German — Exp. S1: spin vortices from phase bits (integer automaton) |
 
 ### Generated Figures (2+1D)
 
@@ -410,3 +413,15 @@ All work is merged into `main` (default branch). Create feature branches from `m
   Nordström-type scalar gravity, no light bending.  Next: 1b (full lapse incl.
   propagation, expect Einstein-1911 half deflection), 1c (spatial metric), and find a
   band with R = 1.
+
+- **Spin vortices from phase bits** (Paper 3 main focus, `RESULTS_PhaseBit_S1_de.md`):
+  walker label (d in Z6, phase bit p in Z4, turn count T); a turn by n does
+  d+=n, p+=n, T+=|n|; the state is a table of non-negative integer path counts,
+  numbers enter only at readout A = sum N·eps^T·i^(a p + b T).  Integer vs float
+  3e-11; (a,b)=(1,1) = graded alpha=3/2 ≡ alpha=1/2 (spectra 5e-15).  Exactly 12 of
+  24 (d,p) labels reachable (d ≡ p mod 2) = Z12 double cover.  Closed walks: bit −1
+  exactly for odd winding (integer match with enumeration up to L=9).  k=0 modes on
+  Z12 are vortices e^{2 pi i j N/12}; odd j = half-quantum vortices (spin 1/2,
+  Kramers doublets), selected by the spin readout; even j by the boson readout.
+  Counts grow 1.79 bits/step → no finite-state exact automaton.  Next: S2 (moving
+  vortex packet), S3 (3D with finite binary-octahedral spin register).

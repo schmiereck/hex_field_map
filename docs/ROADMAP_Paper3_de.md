@@ -83,7 +83,7 @@ Gemini hatte ihn falsch platziert, als Z₄-Windung auf einem 4er-Ring.
 
 | Stufe | Inhalt | Prüfgröße | Status |
 |-------|--------|-----------|--------|
-| S1 | 2D-Phasen-Bit-Automat mit **ganzzahligen** Pfadzahlen N[x, d, p, T] | exakte Übereinstimmung mit dem Fließkomma-Turning-Modell (bis auf die Eichung); Vorzeichen −1 nach 360°, +1 nach 720°; Wirbelmuster der Kramers-Moden | offen |
+| S1 | 2D-Phasen-Bit-Automat mit **ganzzahligen** Pfadzahlen N[x, d, p, T] | exakte Übereinstimmung mit dem Fließkomma-Turning-Modell (bis auf die Eichung); Vorzeichen −1 nach 360°, +1 nach 720°; Wirbelmuster der Kramers-Moden | **erledigt**, siehe [`RESULTS_PhaseBit_S1_de.md`](RESULTS_PhaseBit_S1_de.md) |
 | S2 | Dynamik: Wirbel als Wellenpaket, ruhend und bewegt | bleibt die Halbwindung stabil? v < c? Zitterbewegung im Richtungsraum sichtbar? | offen |
 | S3 | 3D mit **endlichem** Spin-Register: binäre Oktaedergruppe 2O (48 Elemente, Clifford-Gruppe) statt kontinuierlicher SU(2) im FCC-Walker | −1 für die L = 6-Schleife? Kramers-Verdopplung? Vergleich mit `quantum_fcc_3d.py` | offen, Ausgang unklar |
 
