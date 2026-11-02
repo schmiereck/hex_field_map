@@ -12,9 +12,10 @@
 
 A discrete path-integral model on a **1+1D equilateral triangular lattice** and its **2+1D hexagonal extension** in which all relativistic structure emerges purely from lattice geometry.
 
-**README**: [`README1_lattice_geometry.md`](README1_lattice_geometry.md)  
-LaTeX version: [`paper.tex`](paper.tex)  
-PDF version: [`paper.pdf`](paper.pdf)
+**README**: [`README1_lattice_geometry.md`](docs/README1_lattice_geometry.md)  
+LaTeX version: [`paper.tex`](papers/paper.tex)  
+PDF version: [`paper.pdf`](papers/paper.pdf)  
+German version: [`paper_de.tex`](papers/paper_de.tex) / [`paper_de.pdf`](papers/paper_de.pdf)
 
 ---
 
@@ -32,10 +33,49 @@ and the speed of light c = √3 from geometry alone. Here we analyse the
 in 2+1D and in a natural 3+1D tetrahedral-octahedral (cuboctahedron)
 extension.
 
-follow-up to [`paper.tex`](paper.tex) / [`paper.pdf`](paper.pdf) / [`README1_lattice_geometry.md`](README1_lattice_geometry.md)
+follow-up to [`paper.tex`](papers/paper.tex) / [`paper.pdf`](papers/paper.pdf) / [`README1_lattice_geometry.md`](docs/README1_lattice_geometry.md)
 
-**README**: [`README2_internal_structure.md`](README2_internal_structure.md)  
-LaTeX version: [`paper2_internal_structure.tex`](paper2_internal_structure.tex)  
-PDF version: [`paper2_internal_structure.pdf`](paper2_internal_structure.pdf)
+**README**: [`README2_internal_structure.md`](docs/README2_internal_structure.md)  
+LaTeX version: [`paper2_internal_structure.tex`](papers/paper2_internal_structure.tex)  
+PDF version: [`paper2_internal_structure.pdf`](papers/paper2_internal_structure.pdf)
 
 ---
+
+## Further Investigations (work in progress, notes in German)
+
+Building on the 2+1D hexagonal model, a **turning-phase model** replaces the
+amplitude rule by the *sum of turning angles*, scaled by a parameter α:
+`w_path = ∏ a(|n|) · exp(i·α·60°·n)`. For every closed walk the angle sum is
+exactly 360°·w (discrete Whitney theorem), so α acts as an Aharonov–Bohm flux
+in heading space; α = ½ gives the spinor double cover. The coin operator is
+exactly unitary.
+
+| Topic | Result | Notes |
+|-------|--------|-------|
+| Turning-phase model (2+1D) | Exact unitarity, Kramers doubling at α = ½, massless cone with slope c/2 | [`RESULTS_Turning_2D_de.md`](docs/RESULTS_Turning_2D_de.md) |
+| Magnetic field (Peierls phase) | Cyclotron orbits, chirality families, Onsager quantisation | [`RESULTS_Magnetic_2D_de.md`](docs/RESULTS_Magnetic_2D_de.md) |
+| 3D spin and QCD roadmap | Why spin needs 3D (no winding number on S²), what QCD needs | [`ROADMAP_QCD_3D_de.md`](docs/ROADMAP_QCD_3D_de.md) |
+| SU(3) Wilson-action Monte Carlo | Area law vs perimeter law on the triangular lattice | [`RESULTS_SU3_MC_de.md`](docs/RESULTS_SU3_MC_de.md) |
+| 3+1D FCC walker with SU(2) coin | α disappears: spin 0 or spin ½ only, Kramers automatic | [`RESULTS_FCC_3D_de.md`](docs/RESULTS_FCC_3D_de.md) |
+| Two-particle Hilbert space | Pauli hole, bound states, colour singlet | [`RESULTS_TwoParticle_de.md`](docs/RESULTS_TwoParticle_de.md) |
+| 2+1D deflection scattering | Mott interference, capped by the helicity-like band eigenvector | [`RESULTS_Scatter_2D_de.md`](docs/RESULTS_Scatter_2D_de.md) |
+| Helicity test | Internal spin does not lift the cap; the non-relativistic limit does | [`RESULTS_Helicity_de.md`](docs/RESULTS_Helicity_de.md) |
+| Caching on the regular lattice | Memoised walk enumeration | [`NOTES_Caching_de.md`](docs/NOTES_Caching_de.md) |
+
+---
+
+## Repository Layout
+
+| Directory | Content |
+|-----------|---------|
+| [`papers/`](papers) | LaTeX sources and PDFs of the papers, `PAPER_SUMMARY.md` |
+| [`docs/`](docs) | Paper READMEs, result write-ups (`RESULTS_*.md`), notes, interactive HTML |
+| [`src/`](src) | Python simulations and figure scripts |
+| [`figures/`](figures) | Generated figures and animations |
+| [`data/`](data) | Numerical results (`.npz`) |
+
+Scripts can be run from any directory, e.g. `python src/quantum_hex_2d.py`;
+output paths are resolved by [`src/paths.py`](src/paths.py).
+The papers are built from inside `papers/` (`pdflatex paper.tex`) and take
+their figures from `../figures/`.
+Dependencies: [`requirements.txt`](requirements.txt).

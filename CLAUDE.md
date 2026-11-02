@@ -69,6 +69,12 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 
 ## Files
 
+Layout: `src/` (all `.py`), `figures/` (`.png/.gif/.mp4`), `data/` (`.npz`),
+`docs/` (`RESULTS_*.md`, notes, paper READMEs, HTML), `papers/` (`.tex/.pdf`).
+Scripts write output via `src/paths.py` (`fig_path`, `data_path`, `docs_path`) —
+use these for every new output file. Papers use `\graphicspath{{../figures/}}`.
+The tables below list bare file names; find them in the directory above.
+
 ### Python Scripts
 
 | File | Description |
