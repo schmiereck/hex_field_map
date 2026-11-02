@@ -40,7 +40,8 @@ follow-up to [`paper.tex`](papers/paper.tex) / [`paper.pdf`](papers/paper.pdf) /
 
 **README**: [`README2_internal_structure.md`](docs/README2_internal_structure.md)  
 LaTeX version: [`paper2_internal_structure.tex`](papers/paper2_internal_structure.tex)  
-PDF version: [`paper2_internal_structure.pdf`](papers/paper2_internal_structure.pdf)
+PDF version: [`paper2_internal_structure.pdf`](papers/paper2_internal_structure.pdf)  
+DOI: [10.5281/zenodo.23888331](https://doi.org/10.5281/zenodo.23888331) (release v2.0.0, see [Citation](#citation))
 
 ---
 
@@ -87,7 +88,9 @@ Dependencies: [`requirements.txt`](requirements.txt).
 
 ## Citation
 
-Paper 1 is archived on Zenodo as release v1.0.0 of this repository:
+Both papers are archived on Zenodo as releases of this repository.
+
+**Paper 1** (release v1.0.0):
 
 > Schmiereck, T. (2026). *Relativistic Quantum Mechanics from Lattice Geometry:
 > Emergent Speed of Light, Mass, and Time Dilation on an Equilateral Triangular
@@ -105,6 +108,27 @@ Paper 1 is archived on Zenodo as release v1.0.0 of this repository:
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.22178585},
   url       = {https://doi.org/10.5281/zenodo.22178585}
+}
+```
+
+**Paper 2** (release v2.0.0):
+
+> Schmiereck, T. (2026). *Internal Structure of the Equilateral Lattice Path
+> Integral: Crystal Angular Momentum, Emergent Vector Ground State, and Symmetry
+> Breaking by Confinement* (v2.0.0). Zenodo. https://doi.org/10.5281/zenodo.23888331
+
+```bibtex
+@software{schmiereck_2026_paper2,
+  author    = {Schmiereck, Thomas},
+  title     = {Internal Structure of the Equilateral Lattice Path Integral:
+               Crystal Angular Momentum, Emergent Vector Ground State,
+               and Symmetry Breaking by Confinement},
+  year      = {2026},
+  month     = nov,
+  version   = {v2.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23888331},
+  url       = {https://doi.org/10.5281/zenodo.23888331}
 }
 ```
 

@@ -26,3 +26,16 @@ preferred-citation:
     name: Zenodo
   doi: 10.5281/zenodo.22178585
   url: "https://doi.org/10.5281/zenodo.22178585"
+references:
+  - type: generic
+    title: "Internal Structure of the Equilateral Lattice Path Integral: Crystal Angular Momentum, Emergent Vector Ground State, and Symmetry Breaking by Confinement"
+    authors:
+      - family-names: Schmiereck
+        given-names: Thomas
+        email: thomas@schmiereck.de
+    version: v2.0.0
+    date-released: 2026-11-02
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.23888331
+    url: "https://doi.org/10.5281/zenodo.23888331"

@@ -11,7 +11,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 | Paper | Files | Status |
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
-| 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | release `v2.0.0` (Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
+| 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
