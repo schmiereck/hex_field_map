@@ -1,5 +1,7 @@
 # Triangular Lattice Geometry
 
+[![DOI](https://zenodo.org/badge/1201004719.svg)](https://doi.org/10.5281/zenodo.22178584)
+
 *Thomas Schmiereck — thomas@schmiereck.de*
 
 ---
@@ -15,7 +17,8 @@ A discrete path-integral model on a **1+1D equilateral triangular lattice** and 
 **README**: [`README1_lattice_geometry.md`](docs/README1_lattice_geometry.md)  
 LaTeX version: [`paper.tex`](papers/paper.tex)  
 PDF version: [`paper.pdf`](papers/paper.pdf)  
-German version: [`paper_de.tex`](papers/paper_de.tex) / [`paper_de.pdf`](papers/paper_de.pdf)
+German version: [`paper_de.tex`](papers/paper_de.tex) / [`paper_de.pdf`](papers/paper_de.pdf)  
+DOI: [10.5281/zenodo.22178585](https://doi.org/10.5281/zenodo.22178585) (release v1.0.0, see [Citation](#citation))
 
 ---
 
@@ -79,3 +82,33 @@ output paths are resolved by [`src/paths.py`](src/paths.py).
 The papers are built from inside `papers/` (`pdflatex paper.tex`) and take
 their figures from `../figures/`.
 Dependencies: [`requirements.txt`](requirements.txt).
+
+---
+
+## Citation
+
+Paper 1 is archived on Zenodo as release v1.0.0 of this repository:
+
+> Schmiereck, T. (2026). *Relativistic Quantum Mechanics from Lattice Geometry:
+> Emergent Speed of Light, Mass, and Time Dilation on an Equilateral Triangular
+> Lattice* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.22178585
+
+```bibtex
+@software{schmiereck_2026_paper1,
+  author    = {Schmiereck, Thomas},
+  title     = {Relativistic Quantum Mechanics from Lattice Geometry:
+               Emergent Speed of Light, Mass, and Time Dilation
+               on an Equilateral Triangular Lattice},
+  year      = {2026},
+  month     = aug,
+  version   = {v1.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22178585},
+  url       = {https://doi.org/10.5281/zenodo.22178585}
+}
+```
+
+To cite the repository as a whole (always resolving to the latest release), use
+the concept DOI [10.5281/zenodo.22178584](https://doi.org/10.5281/zenodo.22178584).
+Citation metadata is also provided in [`CITATION.cff`](CITATION.cff)
+(GitHub: *Cite this repository*).

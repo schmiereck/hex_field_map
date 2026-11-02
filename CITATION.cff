@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "hex_field_map: Discrete quantum path-integral models on triangular lattices"
+authors:
+  - family-names: Schmiereck
+    given-names: Thomas
+    email: thomas@schmiereck.de
+doi: 10.5281/zenodo.22178584
+repository-code: "https://github.com/schmiereck/hex_field_map"
+license: CC-BY-4.0
+keywords:
+  - lattice path integral
+  - Dirac equation
+  - triangular lattice
+  - emergent relativity
+preferred-citation:
+  type: generic
+  title: "Relativistic Quantum Mechanics from Lattice Geometry: Emergent Speed of Light, Mass, and Time Dilation on an Equilateral Triangular Lattice"
+  authors:
+    - family-names: Schmiereck
+      given-names: Thomas
+      email: thomas@schmiereck.de
+  version: v1.0.0
+  date-released: 2026-08-30
+  publisher:
+    name: Zenodo
+  doi: 10.5281/zenodo.22178585
+  url: "https://doi.org/10.5281/zenodo.22178585"
