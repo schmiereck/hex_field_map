@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md` | in preparation (main focus: spin vortices from phase bits; S1+S2 done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S3 done, gravity 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -117,6 +117,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_automaton_figs.py` | Figure for Exp. S1 (`phase_bit_automaton.png`) |
 | `phase_bit_vortex_dynamics.py` | **Paper 3, Exp. S2** — unitary Z12 phase-bit walker, superselection, mass by chiral reversal, Zitterbewegung |
 | `phase_bit_vortex_dynamics_figs.py` | Figure for Exp. S2 (`phase_bit_vortex_dynamics.png`) |
+| `phase_bit_fcc_2O.py` | **Paper 3, Exp. S3** — FCC walker with a finite 2O (binary octahedral) spin register |
+| `phase_bit_fcc_2O_figs.py` | Figure for Exp. S3 (`phase_bit_fcc_2O.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -146,6 +148,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_Gravity_Lapse_de.md` | German — Exp. 1a: internal-clock lapse = Nordström-type gravity, R = 2 |
 | `RESULTS_PhaseBit_S1_de.md` | German — Exp. S1: spin vortices from phase bits (integer automaton) |
 | `RESULTS_PhaseBit_S2_de.md` | German — Exp. S2: dynamics of spin vortices (massless/massive, Zitterbewegung) |
+| `RESULTS_PhaseBit_S3_de.md` | German — Exp. S3: spin 1/2 in 3D from a finite 2O register; sign-convention issue in quantum_fcc_3d |
 
 ### Generated Figures (2+1D)
 
@@ -437,3 +440,18 @@ All work is merged into `main` (default branch). Create feature branches from `m
   (T broken; 2+1D parity anomaly).  Zitterbewegung: pure j=7 with k0=0.3 oscillates
   j=7↔5 and in transverse CoM at 0.598 vs band splitting 0.595; damping = band
   separation (sigma/dv).
+  **S3** (`RESULTS_PhaseBit_S3_de.md`): FCC transport replaced by 2O: for each 60°
+  heading pair the unique closest rotation in O is a 90° quarter turn about a cube
+  axis, Q = (1 + i n·σ)/√2.  Only 48 of 576 (d, g) labels reachable (Z4 bit per
+  heading); integer table read out with 2O irreps = float walk (2e-15).  Holonomy
+  quantised: heading triangle π, square 2π (minimal SU(2): 0.551, 1.360 rad); closed
+  walks up to L=8 all −1.  Kramers at every k (6e-15), causal, rest levels ±2√2ε,
+  ±4√2ε, and **exact E ↔ −E symmetry** (3.6e-15; minimal SU(2): 0.217) — the
+  non-bipartite limitation was the continuous curvature, not the geometry.  Price:
+  more anisotropy (17 % vs 8 % at k=0.3).
+- **Known issue (found in S3, not yet fixed):** `quantum_fcc_3d.su2_transport`
+  returns cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism; spinor
+  does not follow the heading).  Spectra differ from the consistent convention
+  exp(−iθ n·σ/2) (`phase_bit_fcc_2O.su2_min`).  Affects spectral results of
+  RESULTS_FCC_3D, FCC parts of RESULTS_TwoParticle and RESULTS_Helicity; belt_trick
+  (quaternions) is fine.

@@ -85,7 +85,7 @@ Gemini hatte ihn falsch platziert, als Z₄-Windung auf einem 4er-Ring.
 |-------|--------|-----------|--------|
 | S1 | 2D-Phasen-Bit-Automat mit **ganzzahligen** Pfadzahlen N[x, d, p, T] | exakte Übereinstimmung mit dem Fließkomma-Turning-Modell (bis auf die Eichung); Vorzeichen −1 nach 360°, +1 nach 720°; Wirbelmuster der Kramers-Moden | **erledigt**, siehe [`RESULTS_PhaseBit_S1_de.md`](RESULTS_PhaseBit_S1_de.md) |
 | S2 | Dynamik: Wirbel als Wellenpaket, ruhend und bewegt | Halbwindung exakt erhalten (Superauswahl, 8e-16); ohne Umkehr masselos (Ring mit c/2); chirale Umkehr gibt Masse 8μ (bricht Kramers); v < c; Zitterbewegung j=7↔5 bei ω = Bandabstand (0.5 %) | **erledigt**, siehe [`RESULTS_PhaseBit_S2_de.md`](RESULTS_PhaseBit_S2_de.md) |
-| S3 | 3D mit **endlichem** Spin-Register: binäre Oktaedergruppe 2O (48 Elemente, Clifford-Gruppe) statt kontinuierlicher SU(2) im FCC-Walker | −1 für die L = 6-Schleife? Kramers-Verdopplung? Vergleich mit `quantum_fcc_3d.py` | offen, Ausgang unklar |
+| S3 | 3D mit **endlichem** Spin-Register: binäre Oktaedergruppe 2O (48 Elemente, Clifford-Gruppe) statt kontinuierlicher SU(2) im FCC-Walker | Vierteldrehung um Würfelachse pro 60°-Kurve; 48 von 576 Labels (Z₄-Bit pro Richtung); Holonomie Dreieck π, Quadrat 2π; Kramers bei jedem k (6e-15); **E ↔ −E-Symmetrie exakt** (neu); mehr Anisotropie | **erledigt**, siehe [`RESULTS_PhaseBit_S3_de.md`](RESULTS_PhaseBit_S3_de.md) |
 
 Zu S3: Die 60°-Drehungen zwischen benachbarten Kuboktaeder-Richtungen liegen
 **nicht** in der Oktaedergruppe O. Ein Element von O, das d auf d′ abbildet,
