@@ -12,6 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md` | in preparation (Exp. 1a done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -110,6 +111,8 @@ The tables below list bare file names; find them in the directory above.
 | `experiment_double_slit_square.py` | Double slit, square-lattice comparison |
 | `experiment_farfield_slit.py` | Double slit, far-field (Fraunhofer) |
 | `experiment_box_3d.py` | Box states in 3D (symmetry breaking by confinement) |
+| `quantum_gravity_lapse.py` | **Paper 3, Exp. 1a** — lapse on the internal clock eps(r)=eps0·N(r), free fall, EP ratio R, coupling kappa(k) |
+| `quantum_gravity_lapse_figs.py` | Figure for Exp. 1a (`gravity_lapse.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -134,6 +137,9 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_Experiments_en.md` | English — double slit and box states |
 | `RESULTS_Farfield_en.md` | English — far-field double slit |
 | `NOTES_Caching_de.md` | German — memoised walk enumeration, lattice caching assessment |
+| `ROADMAP_Paper3_de.md` | German — Paper 3 roadmap: critical review of the Gemini thread, experiments 1–4 |
+| `SOURCE_Paper3_Gemini_Thread_de.md` | German — unverified source idea (Gemini export), kept verbatim |
+| `RESULTS_Gravity_Lapse_de.md` | German — Exp. 1a: internal-clock lapse = Nordström-type gravity, R = 2 |
 
 ### Generated Figures (2+1D)
 
@@ -393,3 +399,14 @@ All work is merged into `main` (default branch). Create feature branches from `m
   measured; a magnetic unit cell at rational flux would give the full Hofstadter
   spectrum on this lattice.  (c) Chirality separation requires selecting one band —
   a bare excited edge populates all six equally and its circulation cancels exactly.
+
+- **Gravity as computation time** (Paper 3, see `ROADMAP_Paper3_de.md`,
+  `RESULTS_Gravity_Lapse_de.md`): Exp. 1a slows only the internal clock,
+  eps(r) = eps0·N(r), with the shift untouched (exactly unitary).  Free fall is
+  universal as eps→0 (EP violation O(eps²): R = 1.998 at 0.1, 1.917 at 0.7) but
+  R = (m0/m*)/c² → **2** (α=0), 2.548 (α=1/4) instead of the GR value 1, because the
+  turning band has m* = m0/(2c²).  Lattice vs semiclassics with the exact band agree
+  to 1e-3.  Moving particles couple with kappa = eps·dE/deps/E ≈ 1.5–1.7/γ² →
+  Nordström-type scalar gravity, no light bending.  Next: 1b (full lapse incl.
+  propagation, expect Einstein-1911 half deflection), 1c (spatial metric), and find a
+  band with R = 1.

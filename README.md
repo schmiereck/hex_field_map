@@ -66,6 +66,15 @@ exactly unitary.
 | Helicity test | Internal spin does not lift the cap; the non-relativistic limit does | [`RESULTS_Helicity_de.md`](docs/RESULTS_Helicity_de.md) |
 | Caching on the regular lattice | Memoised walk enumeration | [`NOTES_Caching_de.md`](docs/NOTES_Caching_de.md) |
 
+### Paper 3 (in preparation, notes in German)
+
+Discrete states, phase bits and **gravity as computation time**: [`ROADMAP_Paper3_de.md`](docs/ROADMAP_Paper3_de.md)
+(source idea: [`SOURCE_Paper3_Gemini_Thread_de.md`](docs/SOURCE_Paper3_Gemini_Thread_de.md)).
+
+| Topic | Result | Notes |
+|-------|--------|-------|
+| Exp. 1a: lapse on the internal clock (ε → ε·N) | Universal free fall (O(ε²) lattice violation) but R = m₀/(m\*c²) = 2; moving particles decouple ∝ 1/γ² → Nordström-type scalar gravity, no light bending | [`RESULTS_Gravity_Lapse_de.md`](docs/RESULTS_Gravity_Lapse_de.md) |
+
 ---
 
 ## Repository Layout
