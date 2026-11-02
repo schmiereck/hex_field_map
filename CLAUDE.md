@@ -6,6 +6,13 @@ Implementation and analysis of **discrete quantum path-integral models** on vari
 Core question: Which lattice geometry reproduces relativistic quantum mechanics
 (Dirac equation) with correct speed of light c, physical mass m ∝ ε, and causality?
 
+### Papers
+
+| Paper | Files | Status |
+|-------|-------|--------|
+| 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`) |
+| 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | follow-up to Paper 1 |
+
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
 - Direction change → factor **iε** (ε is the mass parameter)
@@ -89,6 +96,15 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `quantum_scatter_2d.py` | **2+1D deflection scattering** (relative-coordinate reduction) |
 | `quantum_scatter_2d_figs.py` | Report + figure for the scattering work |
 | `quantum_helicity_test.py` | **Does spin lift the exchange ceiling?** (overlap diagnostics) |
+| `quantum_3d.py` | **3+1D tetrahedral-octahedral (cuboctahedron) lattice** (Paper 2) |
+| `quantum_spin_structure.py` | Internal / spin structure of the physical band (Paper 2) |
+| `quantum_spin_cluster.py` | Spin-cluster analysis of the degenerate k=0 band |
+| `quantum_mzero_check.py` | Chirality and m=0 exclusion check |
+| `experiment_double_slit.py` | Double slit on the hex lattice |
+| `experiment_double_slit_square.py` | Double slit, square-lattice comparison |
+| `experiment_farfield_slit.py` | Double slit, far-field (Fraunhofer) |
+| `experiment_box_3d.py` | Box states in 3D (symmetry breaking by confinement) |
+| `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
 
@@ -107,6 +123,11 @@ State lives on **directed edges** (node + heading) — the same `amp[x,y,d]` as 
 | `RESULTS_TwoParticle_de.md` | German — two-particle space: Pauli hole, bound states, colour singlet |
 | `RESULTS_Scatter_2D_de.md` | German — 2+1D deflection scattering, Mott interference, helicity ceiling |
 | `RESULTS_Helicity_de.md` | German — spin does not lift the ceiling; the non-relativistic limit does |
+| `RESULTS_3D_en.md` | English — 3+1D tetrahedral-octahedral lattice |
+| `RESULTS_Spin_Structure.md` | Spin / internal structure of the physical band |
+| `RESULTS_Experiments_en.md` | English — double slit and box states |
+| `RESULTS_Farfield_en.md` | English — far-field double slit |
+| `NOTES_Caching_de.md` | German — memoised walk enumeration, lattice caching assessment |
 
 ### Generated Figures (2+1D)
 
@@ -254,7 +275,7 @@ first appears at L=6 (24 of 74 walks).  w=±3 first appears at L=9.
 
 ## Development Branch
 
-Current work runs on: `claude/hexagonal-lattice-wave-model-kjg71o`
+All work is merged into `main` (default branch). Create feature branches from `main`.
 
 ---
 
