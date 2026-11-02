@@ -110,7 +110,7 @@ durch ihren inneren Zustand unterscheidbar, so wie zwei Teilchen
 entgegengesetzter Helizität es sind.
 
 Das ist derselbe Sachverhalt, der schon viermal zugeschlagen hatte: 3.7·10⁻¹⁶
-im 2D-Zweipaket-Test, 0.009 auf FCC, in Schritt 3 beim Austauschterm, und
+im 2D-Zweipaket-Test, 0.009 auf FCC (nach Korrektur des Spin-Transports exakt 0), in Schritt 3 beim Austauschterm, und
 jetzt hier. Er verdient es, als **zentrale Eigenschaft dieser Modellklasse**
 festgehalten zu werden und nicht als wiederkehrende Störung.
 

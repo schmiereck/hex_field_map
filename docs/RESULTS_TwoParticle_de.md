@@ -51,8 +51,12 @@ Bei t = 0 ist das Verhältnis Fermion/unterscheidbar exakt **0** und
 Boson/unterscheidbar exakt **2** — vollständige Pauli-Vertiefung bzw.
 vollständiges Bunching. Im Lauf der Zeit werden die inneren Zustände an einem
 gegebenen Ort verschieden (das eine Paket kam von links, das andere von
-rechts), und die Vertiefung wird partiell: das Verhältnis pendelt sich bei
-etwa 0.65 (Fermion) und 1.35 (Boson) ein.
+rechts), und die Vertiefung wird partiell: das Verhältnis liegt nach
+24 Schritten bei etwa 0.73 (Fermion) und 1.27 (Boson).
+
+*(Korrektur 2. Nov. 2026: neu gerechnet nach dem Vorzeichenfehler im
+FCC-Spin-Transport, siehe `RESULTS_FCC_3D_de.md`. Vorher 0.65 und 1.35. Die
+Werte bei t = 0, Pauli-Prinzip und Bunching, sind unverändert exakt.)*
 
 Die Paarkorrelationskarte zeigt es direkt: entlang der Diagonale x₁ = x₂ hat
 das Fermion ein Loch, das Boson einen Grat.
@@ -61,7 +65,8 @@ das Fermion ein Loch, das Boson einen Grat.
 
 **Der Austauschterm braucht überlappende innere Zustände.** Zwei frontal
 aufeinander zulaufende Pakete gleicher Energie haben nahezu orthogonale innere
-Zustände — gemessen 0.009 auf FCC und 3.7·10⁻¹⁶ im 2D-Modell — und zeigen
+Zustände — auf FCC (Spin ½) nach der Korrektur des Spin-Transports **exakt 0**
+(Dirac-Kegel, entgegengesetzte Helizität; vorher 0.009 gemessen) und 3.7·10⁻¹⁶ im 2D-Modell — und zeigen
 deshalb **überhaupt keinen** Austauscheffekt. Das ist eine Eigenschaft des
 Modells, nicht der Statistik. Alle Messungen oben benutzen deshalb entweder
 ruhende, ineinander zerfließende Pakete (innerer Überlapp 1.0) oder eine

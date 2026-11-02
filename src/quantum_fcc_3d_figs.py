@@ -106,10 +106,18 @@ def main():
         m1 = abs(bands(np.zeros(3), eps, 0.5)[0][0])
         print("  %.2f   %9.5f  %6.3f   %11.5f  %6.3f"
               % (eps, m0, m0 / eps, m1, m1 / eps))
-    print("  => m = 8*eps (spin 0) and m = 4*sqrt(3)*eps = %.4f*eps (spin 1/2), exactly"
-          % (4 * np.sqrt(3)))
+    print("  => lowest level 8*eps (spin 0, massive band) and 4*sqrt(3)*eps = %.4f*eps"
+          " (spin 1/2), exactly" % (4 * np.sqrt(3)))
+    print("  spin 1/2: the lowest level is 4-fold and splits LINEARLY (massless Dirac cone):")
+    for nd in ([1, 0, 0], [1, 1, 0], [1, 1, 1], [1, 2, 3]):
+        v = np.array(nd, float) / np.linalg.norm(nd)
+        E0 = bands(np.zeros(3), EPS, 0.5)[0][:4]
+        E1 = bands(1e-4 * v, EPS, 0.5)[0][:4]
+        print("     dir %-10s slopes (E-E0)/k = %s   (c/3 = %.5f)"
+              % (nd, np.round((E1 - E0) / 1e-4, 5), C_LIGHT / 3))
     m = 4 * np.sqrt(3) * EPS
-    print("  massive branch vs sqrt(c^2 k^2 + m^2), spin 1/2, eps=%.1f:" % EPS)
+    print("  lowest branch vs a massive sqrt(c^2 k^2 + m^2) (it is NOT massive), eps=%.1f:"
+          % EPS)
     for k in (0.05, 0.1, 0.2, 0.4, 0.8):
         E = abs(bands(np.array([k, 0, 0]), EPS, 0.5)[0][0])
         Er = np.sqrt(C_LIGHT**2 * k**2 + m**2)
@@ -191,12 +199,12 @@ def figure(spec, ksplit, kk, bl, iso, tracks, fname=fig_path("fcc_3d_spin.png"))
     Eb = np.array([bands(k * nhat, EPS, 0.5)[0] for k in ks])
     for j in range(Eb.shape[1]):
         a.plot(ks, Eb[:, j], lw=1.0, color='0.65')
-    a.plot(ks, Eb[:, 0], lw=2.2, color='C3', label="massive branch (Kramers pair)")
+    a.plot(ks, Eb[:, 0], lw=2.2, color='C3', label="lowest branch (Kramers pair)")
     m = 4 * np.sqrt(3) * EPS
-    a.plot(ks, -np.sqrt(C_LIGHT**2 * ks**2 + m**2), 'k--', lw=1,
-           label="$-\\sqrt{c^2k^2+m^2}$")
+    a.plot(ks, -m - C_LIGHT / 3 * ks, 'k--', lw=1, label="$-m \\mp (c/3)|k|$")
+    a.plot(ks, -m + C_LIGHT / 3 * ks, 'k--', lw=1)
     a.set_xlabel("$|k|$ along a generic direction"); a.set_ylabel("$E$")
-    a.set_title("24 bands, spin ½; the band bottom is\nmassive and nearly relativistic",
+    a.set_title("24 bands, spin ½; the band bottom is a\nmassless Dirac cone (slope c/3)",
                 fontsize=9)
     a.legend(fontsize=7); a.grid(alpha=.3)
 
@@ -226,7 +234,7 @@ def figure(spec, ksplit, kk, bl, iso, tracks, fname=fig_path("fcc_3d_spin.png"))
         tr = r['r']
         a.plot(tr[:, 0], tr[:, 1], tr[:, 2], '-o', ms=3,
                label=f"$k\\parallel${kdir}, err {ang:.1f}°")
-    a.set_title("centre-of-mass tracks in 3D\n(spin ½, massive branch)", fontsize=9)
+    a.set_title("centre-of-mass tracks in 3D\n(spin ½, lowest branch)", fontsize=9)
     a.set_xlabel("x"); a.set_ylabel("y"); a.set_zlabel("z")
     a.legend(fontsize=6)
 

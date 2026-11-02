@@ -11,9 +11,10 @@ because the band eigenvector is locked to k (helicity-like).  The obvious
 question: does a genuine spin — an internal degree of freedom that is NOT the
 direction of motion, as in the 3+1D FCC model — remove that limit?
 
-Answer, measured here: NO.  In the FCC model the massive branch is a Kramers
-doublet, both singular values of the +k / -k overlap matrix are equal, and they
-lie BELOW the classical fidelity of the two heading distributions.  Spin 0
+Answer, measured here: NO.  In the FCC model the lowest spin-1/2 branch is a
+Kramers doublet on a massless Dirac cone (after the Nov 2026 fix of the spin
+transport sign); both singular values of the +k / -k overlap matrix are EXACTLY 0,
+although the classical fidelity of the two heading distributions is finite.  Spin 0
 (heading only) has a HIGHER overlap than spin 1/2 at the same parameters, so
 the spinor makes it worse, not better.  The bottleneck is that the internal
 index IS the direction of motion, and no extra label repairs that.
@@ -44,7 +45,7 @@ def overlap_2d(k, eps, alpha=0.0):
 
 def overlap_fcc(k, eps, spin=0.5):
     """
-    For spin 1/2 the massive branch is a Kramers doublet, so the meaningful
+    For spin 1/2 the lowest branch is a Kramers doublet, so the meaningful
     quantity is the singular values of the 2x2 overlap matrix between the
     doublet at +k and at -k.  Returns (singular values, heading fidelity).
 

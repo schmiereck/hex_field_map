@@ -334,8 +334,12 @@ All work is merged into `main` (default branch). Create feature branches from `m
   of the cuboctahedron — exactly unitary (4e-16), and the 180° reversal never occurs.
   Kramers doubling is automatic and holds at **every** k (splitting ~1e-15), only for
   spin 1/2.  The belt trick is measured directly: the shortest closed heading loop
-  (L=6) returns the spinor with −1, and +1 first appears at L=12.  m = 8ε (boson),
-  4√3·ε (fermion), exactly linear.  Causality structural: max |v_g| = 1.7223 < c = √3.
+  (L=6) returns the spinor with −1, and +1 first appears at L=12.  m = 8ε (boson).
+  **Spin 1/2 is massless:** the lowest level −4√3·ε is 4-fold and splits linearly
+  into two Kramers doublets ±(c/3)|k|, isotropic and ε-independent — a massless 3D
+  Dirac cone (2D analogue: Kramers cone c/2 at α=1/2).  (Corrected Nov 2026: the
+  earlier "m = 4√3ε, relativistic to 0.8–4.7 %" came from a sign error in
+  su2_transport, now exp(−iθ n·σ/2).)  Causality structural: max |v_g| = 1.7224 < c.
   Limitation found: no particle–antiparticle symmetry, because the cuboctahedron
   contains triangles and is therefore not bipartite (the 2D 6-cycle was).
 
@@ -362,7 +366,7 @@ All work is merged into `main` (default branch). Create feature branches from `m
   and cheap.  Measured in the 3+1D FCC model: Ψ ≡ 0 for two fermions in the same orbital
   (1.9e-9); coincidence ratio exactly 0 (fermion) and 2 (boson) at full internal overlap;
   a Pauli hole along x₁=x₂ against a bosonic ridge.  Caveat: head-on packets have nearly
-  orthogonal internal states (0.009 on FCC, 3.7e-16 in 2D) and show NO exchange effect.
+  orthogonal internal states (exactly 0 on FCC spin 1/2 after the transport fix, 3.7e-16 in 2D) and show NO exchange effect.
   With a genuine contact interaction (full two-particle wavefunction, 1+1D): 1D contact
   scattering is integrable — only a phase shift, max|ΔP| = 2.4e-5 — and a contact acting
   on the full coincidence (x,d) leaves fermions **exactly** unchanged (6e-17) at any
@@ -382,12 +386,12 @@ All work is merged into `main` (default branch). Create feature branches from `m
   the band eigenvector is locked to k (helicity-like), so counter-propagating particles
   are partly distinguishable; at **α=1/2 the overlap is exactly 0 and no exchange
   interference exists at all**.  This same fact has now appeared four times (3.7e-16 in
-  the 2D two-packet test, 0.009 on FCC, in step 3, and here) and is a central property of
+  the 2D two-packet test, exactly 0 on FCC (was 0.009 before the transport fix), in step 3, and here) and is a central property of
   this model class.  **Followed up** in `quantum_helicity_test.py` (see
   `RESULTS_Helicity_de.md`): a momentum-independent spin does NOT lift the ceiling — in
-  FCC both Kramers singular values are equal and lie below the heading fidelity, and
-  spin 0 overlaps better than spin 1/2 (0.692 vs 0.416 at k=0.2), so the spinor makes it
-  worse.  The bottleneck is that the internal index IS the direction of motion.  What
+  FCC both Kramers singular values are EXACTLY 0 (massless Dirac cone, opposite
+  helicity; corrected Nov 2026, previously 0.416 at k=0.2) while the heading fidelity is
+  finite, and spin 0 overlaps better (0.692 at k=0.2), so the spinor makes it worse.  The bottleneck is that the internal index IS the direction of motion.  What
   does recover the full Mott zero is the non-relativistic limit: at overlap 0.965 the
   contrast is 0.9937 and the fermionic cross section at 90° is 0.37 % of the bosonic one.
   The Dirac guess |⟨u(k)|u(−k)⟩| = m/E = 1/γ was tested and FAILS (ratio falls from 0.98
@@ -449,9 +453,8 @@ All work is merged into `main` (default branch). Create feature branches from `m
   ±4√2ε, and **exact E ↔ −E symmetry** (3.6e-15; minimal SU(2): 0.217) — the
   non-bipartite limitation was the continuous curvature, not the geometry.  Price:
   more anisotropy (17 % vs 8 % at k=0.3).
-- **Known issue (found in S3, not yet fixed):** `quantum_fcc_3d.su2_transport`
-  returns cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism; spinor
-  does not follow the heading).  Spectra differ from the consistent convention
-  exp(−iθ n·σ/2) (`phase_bit_fcc_2O.su2_min`).  Affects spectral results of
-  RESULTS_FCC_3D, FCC parts of RESULTS_TwoParticle and RESULTS_Helicity; belt_trick
-  (quaternions) is fine.
+- **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
+  cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
+  exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
+  not massive), RESULTS_Helicity (FCC doublet overlaps exactly 0), RESULTS_TwoParticle
+  (late-time ratios 0.73/1.27 instead of 0.65/1.35).  Belt trick and spin 0 unchanged.

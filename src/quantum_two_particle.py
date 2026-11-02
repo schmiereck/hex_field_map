@@ -33,7 +33,7 @@ the Pauli hole.  For bosons it is enhanced: bunching.
 
 IMPORTANT: the exchange term needs the internal states to OVERLAP.  Two
 counter-propagating packets of the same energy have nearly orthogonal internal
-states (measured: 0.009 on FCC, 3.7e-16 in the 2D model), so they show no
+states (exactly 0 on FCC spin 1/2 after the transport sign fix, 3.7e-16 in the 2D model), so they show no
 exchange effect at all — a fact of the model, not of the statistics.
 
 Part B — a real collision

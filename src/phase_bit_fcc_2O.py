@@ -83,11 +83,10 @@ def axis_angle(R):
 
 
 def su2_min(u, v):
-    """Minimal SU(2) transport u -> v in the consistent convention U(R) = exp(-i th n.s/2),
-    i.e. U sigma.w U^dag = sigma.(R w).  quantum_fcc_3d.su2_transport is its Hermitian
-    conjugate (an anti-homomorphism); spectra are identical (G^T is unitarily
-    equivalent), which is checked in main()."""
-    return su2_transport(u, v).conj().T
+    """Minimal SU(2) transport u -> v, U(R) = exp(-i th n.s/2), i.e.
+    U sigma.w U^dag = sigma.(R w).  Identical to quantum_fcc_3d.su2_transport since
+    its sign fix; the old (anti-homomorphic) convention is kept as 'legacy' below."""
+    return su2_transport(u, v)
 
 
 def su2_from_axis(n, ang):
@@ -206,8 +205,8 @@ def generator(Q, irrep='E1/2', minimal=False):
     G = np.zeros((N_D * dim, N_D * dim), dtype=complex)
     for (d, dp), q in Q.items():
         if minimal:
-            if minimal == 'legacy':
-                blk = su2_transport(FCC_UNIT[d], FCC_UNIT[dp])
+            if minimal == 'legacy':           # old quantum_fcc_3d convention
+                blk = su2_transport(FCC_UNIT[d], FCC_UNIT[dp]).conj().T
             else:
                 blk = su2_min(FCC_UNIT[d], FCC_UNIT[dp])
         else:
@@ -425,7 +424,7 @@ def main():
                 kram = max(kram, np.abs(E[1::2] - E[0::2]).max())
             vmax = max(vmax, max(np.linalg.norm(group_velocity(V[:, j], dim)) for j in range(len(E))))
         name = irrep + {False: ' (2O)', True: ' (minimal SU(2))',
-                        'legacy': ' (quantum_fcc_3d convention)'}[minimal]
+                        'legacy': ' (old quantum_fcc_3d convention)'}[minimal]
         print(f"5. {name}: unitarity {unit:.1e}; rest levels E/eps (mult): "
               + ", ".join(f"{lv/eps:+.4f}({m})" for lv, m in zip(levels, mult))
               + (f"; Kramers splitting over 40 random k: {kram:.1e}" if DOUBLE_VALUED[irrep] else "")

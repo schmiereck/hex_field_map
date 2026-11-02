@@ -4,6 +4,13 @@
 *Anschluss an:* `RESULTS_Scatter_2D_de.md`
 *Abbildung:* `helicity_test.png`
 
+> **Korrektur (2. Nov. 2026).** Die FCC-Zahlen in Abschnitt 3 und in der Tabelle
+> zur 1/γ-Schranke stammten aus `quantum_fcc_3d.py` mit falschem Vorzeichen im
+> Spin-Transport (siehe `RESULTS_FCC_3D_de.md`). Neu gerechnet: Der Spin-½-Zweig
+> ist ein masseloser Dirac-Kegel, und die Dublett-Überlappe sind bei jedem k
+> **exakt 0**. Die Schlussfolgerung „Spin hilft nicht“ wird dadurch schärfer,
+> nicht schwächer. Die 2D-Ergebnisse und die Streuläufe sind nicht betroffen.
+
 ---
 
 ## 1. Die Frage
@@ -55,7 +62,7 @@ Bestätigt wird nur der masselose Endpunkt: bei α = ½ (Dirac-Kegel, m = 0) ist
 
 ## 3. Der eigentliche Test: hilft Spin?
 
-Im FCC-Modell ist der massive Zweig ein **Kramers-Dublett** bei jedem k. Die
+Im FCC-Modell ist der unterste Spin-½-Zweig ein **Kramers-Dublett** bei jedem k. Die
 richtige Größe sind deshalb die Singulärwerte der 2×2-Überlappmatrix zwischen
 dem Dublett bei +k und bei −k. Zum Vergleich die **Heading-Fidelity**
 `Σ_d √(p_d(+k)·p_d(−k))` — der klassische Überlapp der beiden
@@ -65,23 +72,26 @@ Richtungsverteilungen mit ausgespurtem Spinor.
 
 | k | Dublett-Singulärwerte | Heading-Fidelity | FCC Spin 0 | 2D-Vergleich |
 |---|---|---|---|---|
-| 0.05 | 0.8897, 0.8897 | 0.9114 | 0.9699 | 0.9924 |
-| 0.10 | 0.6927, 0.6927 | 0.7497 | — | 0.9705 |
-| 0.20 | 0.4158, 0.4158 | 0.5078 | 0.6921 | 0.8938 |
-| 0.40 | 0.1949, 0.1949 | 0.2834 | — | 0.6922 |
-| 0.80 | 0.0723, 0.0723 | 0.1283 | 0.1675 | 0.3855 |
+| 0.05 | 0, 0 | 0.7126 | 0.9699 | 0.9924 |
+| 0.10 | 0, 0 | 0.6267 | 0.8922 | 0.9705 |
+| 0.20 | 0, 0 | 0.4844 | 0.6921 | 0.8938 |
+| 0.40 | 0, 0 | 0.3028 | 0.3992 | 0.6922 |
+| 0.80 | 0, 0 | 0.1455 | 0.1675 | 0.3855 |
 
 Drei Befunde:
 
-1. **Beide Singulärwerte sind gleich** (Kramers-Entartung). Es gibt also
-   keinen „guten" und keinen „schlechten" Kanal im Dublett — man kann sich
-   keinen hochüberlappenden Spinzustand aussuchen.
-2. **Die Singulärwerte liegen unter der Heading-Fidelity.** Der Flaschenhals
-   ist die Richtungsverteilung, und der Spinor verschlechtert das Ergebnis
-   zusätzlich, weil er beim Transport mitgedreht wird.
-3. **Spin 0 hat durchweg höheren Überlapp als Spin ½** (0.692 gegen 0.416 bei
+1. **Beide Singulärwerte sind exakt 0** (bei jedem k, beide Kramers-Kanäle). Der
+   Spin-½-Zweig ist ein masseloser Dirac-Kegel (Steigung c/3), und gegenläufige
+   Zustände desselben Zweigs haben entgegengesetzte Helizität. Das ist genau der
+   masselose Endpunkt aus Abschnitt 2 (2D, α = ½: ebenfalls exakt 0).
+2. **Die Heading-Fidelity ist dabei endlich** (0.71 bis 0.15). Die Richtungs-
+   verteilungen überlappen also, aber der Spinor macht die Zustände orthogonal.
+3. **Spin 0 hat durchweg höheren Überlapp als Spin ½** (0.692 gegen 0 bei
    k = 0.2). Der zusätzliche Freiheitsgrad macht es also **schlechter**, nicht
    besser.
+
+*(Vor der Korrektur standen hier Singulärwerte von 0.89 bis 0.07, die unter der
+Heading-Fidelity lagen. Die Richtung des Befunds war dieselbe.)*
 
 Der Grund ist strukturell und nicht reparierbar: **der innere Index *ist* die
 Bewegungsrichtung.** Kein zusätzliches Etikett ändert daran etwas.
@@ -204,7 +214,7 @@ sondern der *maximal mögliche*, und die Gittermodelle bleiben darunter.
 | 2D, ε=1.5 | 0.046 | 0.9960 | 0.9989 | 0.997 |
 | 2D, ε=0.5 | 0.166 | 0.9705 | 0.9862 | 0.984 |
 | FCC Spin 0 | 0.255 | 0.8889 | 0.9669 | 0.919 |
-| FCC Spin ½ | 0.381 | 0.6896 | 0.9247 | 0.746 |
+| FCC Spin ½ (k = 0.1) | 0.450 | 0 | 0.8930 | 0 |
 | 2D, ε=0.5 | 0.731 | 0.2910 | 0.6824 | 0.426 |
 
 Keine einzige Messung verletzt die Schranke.

@@ -179,7 +179,7 @@ offen — es wäre aber der erste Ort, an dem ich nachsehen würde.
 2. ~~**3+1D FCC-Walker** mit `SU(2)`-Münze~~ — **erledigt**, siehe
    `RESULTS_FCC_3D_de.md`. Kramers-Verdopplung automatisch und bei jedem k
    (Aufspaltung ~1e-15); Gürteltrick direkt gemessen (L=6 gibt −1, L=12 gibt +1);
-   m = 8ε bzw. 4√3·ε exakt; Dispersion relativistisch auf 0.8–4.7 %.
+   m = 8ε (Boson); Spin ½ nach Korrektur des Transport-Vorzeichens (Nov. 2026) ein masseloser Dirac-Kegel bei −4√3·ε mit Steigung c/3.
    Gefundene Einschränkung: keine Teilchen-Antiteilchen-Symmetrie, weil der
    Kuboktaeder nicht bipartit ist.
 3. ~~**Zwei-Teilchen-Raum**~~ — **erledigt**, siehe `RESULTS_TwoParticle_de.md`.

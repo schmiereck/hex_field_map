@@ -65,6 +65,11 @@ def su2_transport(u, v):
     """
     2x2 SU(2) matrix of the minimal rotation taking heading u to heading v.
     Only called for 60 deg pairs, so the axis is always well defined.
+
+    Convention: U(R) = exp(-i th n.sigma/2), so that U (sigma.w) U^dag =
+    sigma.(R w) and U(R1) U(R2) = U(R1 R2): the spinor follows the heading.
+    (Until Nov 2026 this returned exp(+i th n.sigma/2), which rotates by -th —
+    an anti-homomorphism.  Found in Paper 3, Exp. S3; results recomputed.)
     """
     c = float(np.dot(u, v))
     if c > 1 - 1e-12:
@@ -76,7 +81,7 @@ def su2_transport(u, v):
     sy = np.array([[0, -1j], [1j, 0]], dtype=complex)
     sz = np.array([[1, 0], [0, -1]], dtype=complex)
     ns = n[0] * sx + n[1] * sy + n[2] * sz
-    return math.cos(th / 2) * np.eye(2) + 1j * math.sin(th / 2) * ns
+    return math.cos(th / 2) * np.eye(2) - 1j * math.sin(th / 2) * ns
 
 
 def generator(spin=0.5):

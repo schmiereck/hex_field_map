@@ -108,9 +108,11 @@ Das obere Band ist richtungsabhängiger. Gemessen wurde die Spreizung von E − 
 | minimale SU(2) | 7.9 % | 13.4 % | 20.5 % |
 
 Bei k = 0 ist das obere Niveau vierfach entartet, die Zuordnung „oberes Band“ ist
-dort also nur grob. Weder 2O noch minimale SU(2) ergeben ein relativistisches Band
-mit m* = m₀/c² (2O: 1/m* = 26.4 gegenüber c²/m₀ = 5.30; minimal: 44.1 gegenüber
-7.13). Das ist dieselbe Lücke wie in Experiment 1a (R ≠ 1).
+dort also nur grob. Die Spreizung bei kleinem k kommt aus der Krümmung, nicht aus
+dem Kegel selbst: Die vierfachen Niveaus (oben und unten) sind in **beiden**
+Modellen masselose Dirac-Kegel mit der isotropen Steigung **c/3** (2O: ±0.5774 in
+[100], [111] und [123] bei k = 10⁻⁴). Ein massives Spin-½-Band gibt es in keiner
+der beiden Varianten (siehe `RESULTS_FCC_3D_de.md`, Abschnitt 6).
 
 ## Antwort
 
@@ -125,7 +127,7 @@ Damit ist die Idee aus dem Thread („Phasen-Bits auf dem Kuboktaeder“) in kor
 Form tragfähig. Das Bit sitzt nicht auf den Knoten eines 4er-Rings, sondern im
 Richtungsraum, als Gruppenelement des Transports.
 
-## Nebenbefund: Vorzeichenkonvention in `quantum_fcc_3d.py`
+## Nebenbefund: Vorzeichenkonvention in `quantum_fcc_3d.py` (inzwischen behoben)
 
 `su2_transport(u, v)` liefert cos(θ/2) + i·sin(θ/2)·n·σ. Unter U σ·w U† dreht dieses
 Element um **−θ**, also von v weg (geprüft: |R(Q)u − v| = 1.414 statt 0). Die
@@ -144,8 +146,13 @@ konsistenten Konvention und ist **nicht** betroffen. Betroffen sind die
 spektralen Aussagen in `RESULTS_FCC_3D_de.md` (Massen, Bänder) und die darauf
 aufbauenden FCC-Teile von `RESULTS_TwoParticle_de.md` und `RESULTS_Helicity_de.md`
 (Skripte `quantum_fcc_3d.py`, `quantum_fcc_3d_figs.py`, `quantum_two_particle_figs.py`,
-`quantum_helicity_test.py`). Diese Dateien sind **noch nicht korrigiert**. In S3 wird
-durchgehend die konsistente Konvention verwendet (`su2_min`).
+`quantum_helicity_test.py`).
+
+**Behoben (2. Nov. 2026):** `su2_transport` liefert jetzt exp(−iθ n·σ/2). Alle
+betroffenen Ergebnisse sind neu gerechnet und die Dokumente korrigiert. Die
+wichtigste Änderung: Der Spin-½-Zweig des FCC-Walkers ist ein **masseloser
+Dirac-Kegel** (Steigung c/3), kein massives Band. Gegenläufige Dublett-Zustände
+haben deshalb exakt den Überlapp 0.
 
 ## Offene Punkte
 
@@ -154,4 +161,6 @@ durchgehend die konsistente Konvention verwendet (`su2_min`).
 - Gibt es eine Wahl in 2O, die die Anisotropie senkt? Mit der Bedingung
   „Transport bildet d auf d′ ab“ gibt es pro Kante nur zwei Kandidaten. Eine
   gemischte Wahl würde die Inversionssymmetrie brechen.
-- Masse: ein relativistisches Band (m* = m₀/c²) fehlt in allen bisherigen 3D-Varianten.
+- Masse: Ein Term, der den Dirac-Punkt öffnet (in 3D auch T-erhaltend möglich), fehlt
+  noch, sowohl mit 2O als auch mit minimaler SU(2). In 2D liefert die chirale
+  Umkehr Masse (S2), dort aber nur unter Bruch der Zeitumkehr.

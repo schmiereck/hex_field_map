@@ -4,6 +4,17 @@
 *Schritt 2 aus:* `ROADMAP_QCD_3D_de.md`
 *Abbildung:* `fcc_3d_spin.png`
 
+> **Korrektur (2. Nov. 2026).** `su2_transport` hatte das falsche Vorzeichen:
+> cos(θ/2) + i·sin(θ/2)·n·σ dreht den Spinor um −θ, also von der neuen Richtung
+> weg (gefunden in Paper 3, Experiment S3). Jetzt gilt U(R) = exp(−iθ n·σ/2). Alle
+> Zahlen unten sind mit dem korrigierten Code neu gerechnet. Unverändert bleiben
+> Unitarität, Kramers bei jedem k, Gürteltrick (Quaternionen, war schon korrekt),
+> die Spin-0-Werte und die Kausalität. **Grundlegend geändert hat sich der
+> Spin-½-Zweig:** Er ist kein massives Band, sondern ein **masseloser Dirac-Kegel**
+> (vierfach entartet bei k = 0, Steigung exakt c/3). Die Aussage
+> „m = 4√3·ε, Dispersion relativistisch auf 0.8–4.7 %“ war ein Artefakt der
+> falschen Konvention.
+
 ---
 
 ## 1. Worum es geht
@@ -61,7 +72,7 @@ mit der Dreh*phase* ersetzt durch die Dreh*ung*.
 | | Dimension | Unitaritätsfehler | G hermitesch |
 |---|---|---|---|
 | Spin 0 | 12 | 5.6·10⁻¹⁶ | 0.0 |
-| Spin ½ | 24 | 4.4·10⁻¹⁶ | 0.0 |
+| Spin ½ | 24 | 6.7·10⁻¹⁶ | 0.0 |
 
 ---
 
@@ -71,12 +82,10 @@ Ruhespektrum bei ε = 0.1 (Vielfachheiten in Klammern):
 
 | Spin 0 (Boson) | Spin ½ (Fermion) |
 |---|---|
-| +0.4000 (×5) | +0.4619 (×6) |
-| 0.0000 (×3) | +0.3009 (×4) |
-| −0.4000 (×3) | 0.0000 (×6) |
-| −0.8000 (×1) | −0.2309 (×2) |
-| | −0.5318 (×4) |
-| | −0.6928 (×2) |
+| +0.4000 (×5) | +0.4210 (×8) |
+| 0.0000 (×3) | +0.2309 (×4) |
+| −0.4000 (×3) | −0.1900 (×8) |
+| −0.8000 (×1) | −0.6928 (×4) |
 
 **Bei Spin ½ sind alle Vielfachheiten gerade. Bei Spin 0 nicht.** Das ist die
 Kramers-Entartung — und sie musste hier *nicht eingestellt* werden.
@@ -85,10 +94,8 @@ Kramers-Entartung — und sie musste hier *nicht eingestellt* werden.
 
 | |k| | 0.0 | 0.1 | 0.3 | 0.6 |
 |---|---|---|---|---|
-| Aufspaltung des untersten Paares (Spin ½) | 5.6·10⁻¹⁶ | 6.7·10⁻¹⁶ | 1.1·10⁻¹⁵ | 2.7·10⁻¹⁵ |
-
-Über den ganzen gescannten Bereich |k| ≤ 1.2 bleibt die Aufspaltung auf
-Maschinengenauigkeit. Bei Spin 0 ist der entsprechende Abstand von Ordnung 1.
+Über den ganzen gescannten Bereich |k| ≤ 1.2 bleibt die Aufspaltung des
+untersten Paares (Spin ½) auf Maschinengenauigkeit (max 5.1·10⁻¹⁵). Bei Spin 0 ist der entsprechende Abstand von Ordnung 1.
 
 Das ist der scharfe Fermion-Boson-Unterschied: bei Spin ½ ist **jeder** Zustand
 ein Kramers-Dublett. Im 2D-Modell gab es die Verdopplung nur bei k = 0 und nur
@@ -121,32 +128,37 @@ genau wie in `ROADMAP_QCD_3D_de.md` gezeigt. Nur die ℤ₂-Klasse überlebt.
 
 ---
 
-## 6. Masse, Dispersion, Kausalität
+## 6. Spin ½ ist masselos: ein Dirac-Kegel mit c/3
 
-### Masse exakt linear in ε
+### Ruheniveaus linear in ε
 
 | ε | 0.02 | 0.05 | 0.10 | 0.20 | 0.40 |
 |---|---|---|---|---|---|
-| m/ε, Spin 0 | 8.000 | 8.000 | 8.000 | 8.000 | 8.000 |
-| m/ε, Spin ½ | 6.928 | 6.928 | 6.928 | 6.928 | 6.928 |
+| unterstes Niveau / ε, Spin 0 | −8.000 | −8.000 | −8.000 | −8.000 | −8.000 |
+| unterstes Niveau / ε, Spin ½ | −6.928 | −6.928 | −6.928 | −6.928 | −6.928 |
+
+Für Spin 0 ist das ein massives Band mit Minimum bei k = 0 (m = 8ε). Für Spin ½
+ist das unterste Niveau dagegen **vierfach entartet** und spaltet **linear** auf:
 
 ```
-m = 8*eps        (Spin 0)
-m = 4*sqrt(3)*eps = 6.9282*eps   (Spin 1/2)
+E(k) = −4√3·ε ± (c/3)·|k| + O(k²)        (zwei Kramers-Dubletts)
 ```
 
-Exakt über einen Faktor 20 in ε.
+Gemessen bei k = 10⁻⁴ in den Richtungen [100], [110], [111] und [123]:
+Steigungen −0.57748/+0.57722 (ε = 0.1). Der Mittelwert ist c/3 = 0.57735, für
+ε = 0.05 und 0.3 ebenso. Der Kegel ist also **isotrop und unabhängig von ε**.
+Das ist ein masseloses vierkomponentiges Dirac-Teilchen bei der versetzten
+Energie −4√3·ε, das genaue 3D-Gegenstück zum Kramers-Kegel des 2D-Modells bei
+α = ½ (Steigung c/2, siehe `RESULTS_PhaseBit_S2_de.md`).
 
-### Der massive Zweig ist näherungsweise relativistisch
+Vergleich mit √(c²k² + m²) und m = 0.69282 (ε = 0.1): Die Abweichung beträgt
++3.8 % bei k = 0.05, +6.6 % bei 0.10, +9.2 % bei 0.20, +6.3 % bei 0.40 und −4.6 %
+bei 0.80. Das ist kein relativistisches massives Band, sondern ein Kegel.
 
-Spin ½, ε = 0.1, m = 0.69282, c = √3:
-
-| k | 0.05 | 0.10 | 0.20 | 0.40 | 0.80 |
-|---|---|---|---|---|---|
-| rel. Abw. von √(c²k²+m²) | +0.8 % | +2.4 % | +4.7 % | +2.8 % | −6.5 % |
-
-Das ist deutlich besser als beim unitären 2D-Modell, wo die Abweichung schon
-bei kleinem k etwa 16 % betrug.
+**Folgerung:** In 3D liefert die SU(2)-Münze automatisch Spin ½, aber **keine
+Masse**. Für ein massives Fermion braucht man einen zusätzlichen Term, der den
+Dirac-Punkt öffnet. In 3D ist das, anders als in 2D, auch unter Erhaltung der
+Zeitumkehr möglich. Das ist offen.
 
 ### Kausalität und Isotropie
 
@@ -155,7 +167,7 @@ bei kleinem k etwa 16 % betrug.
 300 zufällige k und alle 24 Bänder:
 
 ```
-max |v_g| = 1.72231   <   c = 1.73205
+max |v_g| = 1.72239   <   c = 1.73205
 ```
 
 Isotropie von |v_g| über zufällige 3D-Richtungen:
@@ -163,7 +175,7 @@ Isotropie von |v_g| über zufällige 3D-Richtungen:
 | Spin | \|k\|=0.2 | \|k\|=0.5 |
 |---|---|---|
 | 0 | 8.6 % | 19.7 % |
-| ½ | 10.3 % | 21.5 % |
+| ½ | 9.0 % | 20.8 % |
 
 Das ist **schlechter als in 2D** (dort 3.5 % bei |k|=0.3). Die kubische
 Anisotropie des FCC-Gitters ist stärker als die sechszählige Welligkeit des
@@ -173,20 +185,18 @@ Dreiecksgitters. Für kleine k verschwindet sie wie erwartet.
 
 ## 7. Ausbreitung in beliebige 3D-Richtungen
 
-Gaußsches Paket auf dem FCC-Untergitter, Spin ½, massiver Zweig, ε = 0.1,
+Gaußsches Paket auf dem FCC-Untergitter, Spin ½, unterster Zweig (Kegel), ε = 0.1,
 |k| = 0.5, 24 Schritte:
 
 | k ∥ | σ | \|v_g(k₀)\| | \|v\| gemessen | Winkelfehler | Norm |
 |---|---|---|---|---|---|
-| (1,0,0) | 4 | 1.0796 | 0.9566 | 1.65° | 0.99994 |
-| (1,1,1) | 4 | 1.2872 | 1.0767 | 0.71° | 0.99994 |
-| (1,2,3) | 6 | 1.3043 | 1.1802 | 2.54° | 0.99970 |
+| (1,0,0) | 4 | 1.0696 | 0.9522 | 0.00° | 0.99995 |
+| (1,1,1) | 4 | 1.2599 | 1.0544 | 0.00° | 0.99995 |
+| (1,2,3) | 6 | 1.2702 | 1.1511 | 2.19° | 0.99974 |
 
-Die Norm bleibt erhalten. Der Betragsunterschied ist die **k-Mittelung des
-Pakets** — nachgewiesen, nicht behauptet: das über die Gaußsche
-k-Verteilung gemittelte `⟨v_g⟩` beträgt 0.9323 / 1.0421 / 1.1609 und trifft
-die Messung auf 2–4 %. Mit wachsendem σ konvergiert alles gegen `v_g(k₀)`,
-und der Winkelfehler fällt (bei (1,2,3): 3.7° bei σ=4 auf 0.68° bei σ=6).
+Die Norm bleibt erhalten. Der Betragsunterschied ist die k-Mittelung des
+Pakets. Entlang der Symmetrieachsen ist der Winkelfehler jetzt exakt 0 (vorher
+1.65° und 0.71°, eine Folge des inkonsistenten Transports).
 
 Die Winkelfehler sind größer als die 0.07° des 2D-Modells — Folge der
 stärkeren FCC-Anisotropie und der kürzeren Läufe (24 statt 120 Schritte, weil
@@ -205,11 +215,13 @@ symmetrisch, wenn der Graph **bipartit** ist. Der Richtungsgraph des
 symmetrisch. Der Kuboktaeder enthält **Dreiecke** und ist damit nicht
 bipartit.
 
-Das ist kein Fehler, aber eine echte Einschränkung: ein Dirac-Operator mit
-sauberer Ladungskonjugation bräuchte einen anderen Generator — etwa mit
-zusätzlichen 90°/120°-Kopplungen mit passenden Vorzeichen, oder einen
-Chiralitätsoperator, der die Bipartitheit künstlich herstellt. Das ist der
-naheliegende nächste Verbesserungspunkt.
+Das gilt auch nach der Korrektur (max |E(k) − (−E)(k)| = 0.217).
+
+**Gelöst in Paper 3, Experiment S3** (`RESULTS_PhaseBit_S3_de.md`): Ersetzt man
+den kontinuierlichen Transport durch Vierteldrehungen aus der binären
+Oktaedergruppe 2O, trägt jedes Richtungs-Dreieck die Holonomie π (spurlos), und
+das Spektrum wird bei jedem k exakt symmetrisch (3.6·10⁻¹⁵). Die Grenze lag also
+nicht an der Geometrie, sondern an der kontinuierlichen Verteilung der Krümmung.
 
 ---
 
@@ -222,9 +234,8 @@ naheliegende nächste Verbesserungspunkt.
 | 180°-Umkehr | Konvention nötig | kommt nicht vor |
 | Windungszahl | w ∈ ℤ | existiert nicht; nur ℤ₂ |
 | 2π-Drehung | (−1)^w bei α=½ | −1, direkt gemessen (L=6) |
-| Masse | 4ε·cos(πδ/3) | 8ε (Boson), 4√3·ε (Fermion) |
-| relativistische Dispersion | ~16 % Abweichung | 0.8–4.7 % |
-| Isotropie bei \|k\|≈0.2–0.3 | 3.5 % | 8.6–10.3 % |
+| Masse | 4ε·cos(πδ/3), masselos bei α=½ (Kegel c/2) | 8ε (Boson); Fermion **masselos** (Dirac-Kegel c/3) |
+| Isotropie bei \|k\|≈0.2–0.3 | 3.5 % | 8.6–9.0 % |
 
 **Der Kern: In 2D musste Spin ½ gewählt werden. In 3D bleibt nichts anderes
 übrig.** Das war die Vermutung, und das Modell macht sie jetzt konstruktiv —
@@ -234,8 +245,9 @@ nicht nur als topologisches Argument, sondern als lauffähige Zeitentwicklung.
 
 ## 10. Offene Punkte
 
-* **Ladungskonjugation** (Abschnitt 8): der Generator müsste bipartisiert
-  werden, sonst gibt es keine Antiteilchen.
+* **Masse für Spin ½** (Abschnitt 6): Ein Term, der den Dirac-Punkt öffnet und
+  T erhält, fehlt noch.
+* **Ladungskonjugation** (Abschnitt 8): gelöst mit dem 2O-Register (Paper 3, S3).
 * **Speicher.** Ein 3D-Gitter mit 121³ Plätzen × 24 Komponenten wären 800 MB
   in complex64. Längere Läufe brauchen entweder Streaming, ein Ausnutzen der
   FCC-Parität (nur die Hälfte der Plätze ist besetzt) oder eine
