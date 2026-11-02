@@ -1,0 +1,32 @@
+{
+  "title": "Internal Structure of the Equilateral Lattice Path Integral: Crystal Angular Momentum, Emergent Vector Ground State, and Symmetry Breaking by Confinement",
+  "version": "v2.0.0",
+  "description": "<p>In a previous paper (doi:10.5281/zenodo.22178585) we showed that an equilateral triangular (1+1D) and hexagonal (2+1D) path-integral lattice with the single amplitude rule \"direction change = i&epsilon;\" reproduces relativistic dispersion, exact isotropy, and the speed of light c = &radic;3 from geometry alone. Here we analyse the internal structure of the physical propagating band of the same model, in 2+1D and in a natural 3+1D tetrahedral-octahedral extension.</p><p>In 2+1D the physical band is exactly 5-fold degenerate and decomposes under C<sub>6v</sub> as E<sub>1</sub> &oplus; E<sub>2</sub> &oplus; B, carrying crystal angular momenta m &isin; {&plusmn;1, &plusmn;2, +3} modulo 6; the s-wave is excluded by a factor-6 spectral gap in the local coupling matrix. In 3+1D the band is exactly 11-fold degenerate and decomposes under O<sub>h</sub> as E<sub>g</sub> &oplus; T<sub>2g</sub> &oplus; T<sub>1u</sub> &oplus; T<sub>2u</sub>; the exclusion factor is 12. A general law follows: for N lightlike diagonal directions the band has dimension N&minus;1 and the s-wave eigenvalue of the coupling matrix is 1+Ni&epsilon;. A numerical double-slit experiment shows that a free wave packet is 98% T<sub>1u</sub> (vector). A 3+1D box-state calculation with hard walls places T<sub>1u</sub> consistently lowest in energy, with the T<sub>1u</sub>&ndash;E<sub>g</sub> gap following 1/L<sup>2</sup> to within 2%. Vector physics emerges geometrically as the preferred ground state of the lattice.</p><p>The paper (LaTeX and PDF) is in <code>papers/paper2_internal_structure.*</code>; the repository also contains all simulation code and further investigations.</p>",
+  "creators": [
+    {
+      "name": "Schmiereck, Thomas"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Claude (Anthropic)",
+      "type": "Other"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "keywords": [
+    "lattice path integral",
+    "Dirac equation",
+    "triangular lattice",
+    "hexagonal lattice",
+    "crystal angular momentum",
+    "emergent relativity"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22178585",
+      "relation": "continues",
+      "scheme": "doi"
+    }
+  ]
+}
