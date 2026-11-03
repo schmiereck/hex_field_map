@@ -215,6 +215,8 @@ entgegengesetzt.
 
 ## Offene Punkte
 
+*Bearbeitet in der fünften Runde: [`RESULTS_PhaseBit_S4_Open5_de.md`](RESULTS_PhaseBit_S4_Open5_de.md). Korrektur: Ein Puffer reicht für alle 0 < N ≤ 1 (a > π/2), mehrere Puffer sind nicht nötig.*
+
 - **Exp. 1d:** Der Lapse kommt bisher von außen. Nächster Schritt wäre ein Lapse aus der
   lokalen Last, also N(x) aus der Teilchendichte (Rückwirkung, Poisson-Gleichung?).
   Mit dem Puffer ist das jetzt eine lokale Regel: Der Mischwinkel a(x) hängt von der

@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + four rounds of S4 open points done, gravity 1a–1c done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + five rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -129,6 +129,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open3_figs.py` | Figure for round 3 (`phase_bit_s4_open3.png`) |
 | `phase_bit_s4_open4.py` | **Paper 3, round 4 / Exp. 1c** — local full lapse by a wait buffer (`f_dwell`, `dwell_k`), spatial metric, counterterm offset scan, E∥B pumping in time; run parts via `python phase_bit_s4_open4.py [A] [B] [C]` |
 | `phase_bit_s4_open4_figs.py` | Figure for round 4 (`phase_bit_s4_open4.png`) |
+| `phase_bit_s4_open5.py` | **Paper 3, round 5 / Exp. 1d** — strong/time-dependent buffer lapse, horizon approach, lapse sourced by the local load (two-packet Hartree, `chain_T`, `Buffered`), anisotropic metric via heading-dependent coin couplings, GW interferometer, periodic magnetic chain (det winding); run parts via `python phase_bit_s4_open5.py [A] [B] [C] [D]` |
+| `phase_bit_s4_open5_figs.py` | Figure for round 5 (`phase_bit_s4_open5.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -164,6 +166,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_Open2_de.md` | German — round 2: 2O without background, theta observable, domain-wall Dirac cones, ZB amplitude |
 | `RESULTS_PhaseBit_S4_Open3_de.md` | German — round 3: gravity (Exp. 1b) on the clean particle, Z2 wall test, gauge field and anomaly |
 | `RESULTS_PhaseBit_S4_Open4_de.md` | German — round 4: local full lapse (wait buffer), spatial metric (Exp. 1c), origin of the counterterm, interior-node chiral branch |
+| `RESULTS_PhaseBit_S4_Open5_de.md` | German — round 5: one buffer for all N, horizon = mirror, lapse from the local load (Exp. 1d), anisotropic metric / GW, Landau det winding |
 
 ### Generated Figures (2+1D)
 
@@ -551,6 +554,23 @@ All work is merged into `main` (default branch). Create feature branches from `m
   dE/dk_z = −0.988/−0.992 c' (lower) vs +0.698/+0.851 c' (interior) at B = 0.05/0.035;
   interior < c' because its Weyl range is small (4-fold levels 0.57 away).  Long sweeps
   delocalise (open orbits), so the global connection of the branches is not traced.
+  **Round 5** (`RESULTS_PhaseBit_S4_Open5_de.md`, also Exp. 1d): one buffer covers
+  0 < N <= 1 (a > pi/2 allowed; round-4 claim N >= 1/2 was wrong); for ANY local wait
+  scheme the lapse = active weight of the vacuum fixed vector (Hellmann-Feynman, random
+  two-buffer schemes to 1e-3).  Horizon approach (N 0.9 -> 0.04): coordinate speed c'N,
+  k = E'/(N c') blueshifts until the band maximum at k = pi/a, then the photon turns back
+  at f_N(E_max) = E' (N = 0.089) -> mirror, not horizon; exact-band ray matches.  Uniform
+  N(t) ramp: leakage ~T^-3, phase = sum N E dt.  Exp. 1d: load e(x) = Re psi^+ i(U psi - psi)/dt
+  (local, vacuum 0) sources Phi'' = kappa e (1D Green fn, Hartree without self-term):
+  sim vs packet semiclassics 0.4 %, third law to 1.9 % (= per-species EP factors 0.965/0.978),
+  moving source pulls with E (3.02/5.69 vs E ratio 3.04/5.74), not GR's E(1+v^2).  Trap:
+  N clipped at 1 in packet tails faked 7 %.  Heading-dependent waits only give the mean
+  lapse 1/<1/N_d> (velocity numerator unchanged); heading-dependent coin weights
+  s_d s_d' (s_d = 1 + u_d^T S u_d) give an exact ellipsoidal cone, response E_g -1.81,
+  T_2g -1.11, any traceless g^-1 to first order, vacuum shift O(h^2).  GW interferometer:
+  x-y phase = GR for k -> 0 (0.9 % at k = 0.03, error linear in k).  Periodic chain with one
+  flux quantum (B = 2 pi/(Nx a^2)): det U(k_z) winding 0 at B = 0.1 and 0.05 -> no Floquet
+  flow across the zone edge; tracing the single branch failed (dense LL spectrum).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
