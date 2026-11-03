@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md`, `RESULTS_Gravity3D_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -145,6 +145,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open11_figs.py` | Figure for causal g0i (`phase_bit_s4_open11.png`) |
 | `phase_bit_exp3_isotropy.py` | **Paper 3, Exp. 3** — anisotropy power C_l (l = 4, 6, 8) of the cuboctahedral shells, of the walker's long-time direction distribution (`bz_velocities`, Hellmann-Feynman), smooth sources (Fibonacci x Gauss quadrature), 3D point source (`step3`, symmetrised over 24 rotations), front speed; run parts via `python phase_bit_exp3_isotropy.py [A] [B] [C] [D]` |
 | `phase_bit_exp3_isotropy_figs.py` | Figure for Exp. 3 (`phase_bit_exp3_isotropy.png`) |
+| `phase_bit_s4_open12.py` | **Paper 3, gravity in 3D** — 3D Poisson / causal wave equation for Phi (1/r, no secular growth), full 3D walker `Walker3D` (W or H2 gates, lambda(N) coins in N bins, periodic box, complex64), `packet3d` (band-projected massless packet), light deflection by a point mass; run parts via `python phase_bit_s4_open12.py [A] [B]` (B: ~45 min) |
+| `phase_bit_s4_open12_figs.py` | Figure for 3D gravity (`phase_bit_s4_open12.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -187,6 +189,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_G0i_Gravitomagnetism_de.md` | German — g0i: drag hop from the momentum current; parallel light beams do not attract, co-moving sheets obey 1/gamma^3 |
 | `RESULTS_G0i_Causal_de.md` | German — causal g0i: Phi and b as wave equations; parallel light beams feel nothing at any time only if both travel together |
 | `RESULTS_Exp3_Isotropy_de.md` | German — Exp. 3: shells never isotropic (C_4 = 3.2e-3), particle isotropic with C_4 ~ sigma^-4, front at 0.5 c inside the shell |
+| `RESULTS_Gravity3D_de.md` | German — 3D: 1/r field (causal, no growth), light deflection H2/W = 2.07 in the full 3D walker; observer inside the lattice sees spheres via his own signals |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -669,6 +672,16 @@ All work is merged into `main` (default branch). Create feature branches from `m
   99 % front at r/t 0.89/0.86/0.92, weight on the geometric shell (graph dist >= 0.8 n) < 1e-3.
   Traps: offset k grid with a Gaussian weight picks the 8 [111] points near 0 (fake C_l ~ 0.3) -> isotropic
   quadrature; random sampling has a 1/N floor.
+  **Gravity 3D** (`RESULTS_Gravity3D_de.md`): Poisson on 96^3 gives -kappa/(4 pi r) to 0-2 % (r 6-12,
+  periodic images beyond); causal 3D wave equation: pulse at the front (switched-on source), then the
+  static value, centre Phi constant (-0.0319 at t = 22 and 43) -> no 1D-type growth.  Full 3D walker
+  112x88x80 (788k sites, 4 registers complex64, coins in 48 N bins), U = GM/sqrt(r^2+rc^2), GM 0.25,
+  rc 2, N = exp(-U); massless packet k0 0.6, sigma 5, both Kramers partners identical (no spin force):
+  delta k_y W/H2 = -0.0217/-0.0450 (b 7.35), -0.0191/-0.0393 (b 12.25): H2/W = 2.071/2.058 at equal
+  time (straight ray per path 1.99/1.98); local force n_s N^n_s c' <|k|> dU/dy from the density matches
+  to <= 2.7 % (with <k_x> instead of <|k|>: 5.5 % low); thin straight ray fails at b ~ sigma (0.64).
+  Observer question: spheres are defined by the observer's own signals; testable is only agreement
+  between probes, (a/lambda)^2 for the quartet.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,

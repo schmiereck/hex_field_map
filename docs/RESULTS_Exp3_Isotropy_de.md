@@ -133,6 +133,8 @@ Echte Zeitentwicklung bis n = 64 Schritte:
 
 ## Offene Punkte
 
+*Weiter mit Gravitation in 3D: [`RESULTS_Gravity3D_de.md`](RESULTS_Gravity3D_de.md).*
+
 - 3D-Feldgleichungen für Φ und b mit 1/r (Speicher: ein Feld ist billig, das
   Testteilchen braucht den k-Patch-Ansatz aus den S4-Runden).
 - Lense–Thirring in 3D: rotierende Quelle, Präzession eines Spins.
