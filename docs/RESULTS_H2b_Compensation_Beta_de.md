@@ -151,6 +151,8 @@ konsistente Metriktheorie.
 
 ## Offene Punkte
 
+*Weiter mit g₀ᵢ: [`RESULTS_G0i_Gravitomagnetism_de.md`](RESULTS_G0i_Gravitomagnetism_de.md).*
+
 - **g₀ᵢ:** ein Verschiebungsfeld (Shift) aus dem Impulsstrom der Rechenlast. Lokal
   etwa als richtungsabhängiges Bleiben in Bewegungsrichtung der Quelle.
 - Massenabhängigen Untergrund bei μ/ε = 0.5 mit N² skalieren, etwa mit λ(N, μ) oder

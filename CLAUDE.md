@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -139,6 +139,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open8_figs.py` | Figure for H2 (`phase_bit_s4_open8.png`) |
 | `phase_bit_s4_open9.py` | **Paper 3, H2 continued** — lambda(N) compensation of the stay-gate background (`Xl(lam)`, `band_alpha`, sparse `shift_chain` with per-layer coins), x-chain deflection, beta_PPN from the composition of two loads (`U_compose`: linear / parallel / nested), source redshift; run parts via `python phase_bit_s4_open9.py [A] [B] [C]` |
 | `phase_bit_s4_open9_figs.py` | Figure for H2b (`phase_bit_s4_open9.png`) |
+| `phase_bit_s4_open10.py` | **Paper 3, g0i** — gravitomagnetism: heading-dependent stay gate (rejected) vs heading-independent drag hop b sin(k_y l)cos(k_z l)/l, two moving sheets on the x-chain (`Chain`, `make_packet`, force from d<k_x>/dt, ideal-GR packet semiclassics); run parts via `python phase_bit_s4_open10.py [A] [B]` |
+| `phase_bit_s4_open10_figs.py` | Figure for g0i (`phase_bit_s4_open10.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -178,6 +180,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_H1_Antimatter_ProperTime_de.md` | German — H1: antimatter gravitates normally only in the hole picture; proper time = mass load / m |
 | `RESULTS_H2_BudgetRule_de.md` | German — H2: wait buffers are always a pure lapse; wait + stay gate (clock 1 node, hop 2) gives A = 1/N, gamma_PPN = 1 |
 | `RESULTS_H2b_Compensation_Beta_de.md` | German — H2b: lambda(N) removes the stay-gate background; beta_PPN = 1 from nested gates (N = N1 N2) |
+| `RESULTS_G0i_Gravitomagnetism_de.md` | German — g0i: drag hop from the momentum current; parallel light beams do not attract, co-moving sheets obey 1/gamma^3 |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -629,6 +632,19 @@ All work is merged into `main` (default branch). Create feature branches from `m
   source E(1+v^2) and the product rule g00 = -1 + 2U* - 2U*^2 + 3 Phi1* - 2 Phi2* = GR 1PN in the
   conserved density rho*.  Coupling must be N = N0 exp(Phi), not N0 (1 + Phi).  g0i (gravitomagnetism)
   is missing: only scalars N, A.
+  **g0i** (`RESULTS_G0i_Gravitomagnetism_de.md`): heading-dependent stay gate N_h(1 + u_d.w) gives
+  a linear term but splits Kramers pairs (1.4e-4 at w = k = 0.02, k perp w) and shifts the vacuum
+  (-0.74 w^2) -> rejected (the internal index IS the direction of motion).  Drag hop: every state,
+  any heading, handed on along y: phase exp(-i dt b sin(k_y l)cos(k_z l)/l) per layer, l = 0.612;
+  exact scalar (5e-15).  b = -4 c'^2 N0^4 (kappa/2)|x| * (k_s rho_s) (4 = GR / relativity principle,
+  N0^4 = lattice vs physical coordinates around N0, A0 = 1/N0).  Two sheets, N0 0.6, sigma 32, 640
+  layers, force F = d<k_x>/dt (ZB at 2E fitted), mean over both Kramers partners: lapse force vs
+  ideal-GR packet semiclassics 0.996-1.002; with/without g0i: light parallel 0.019/0.053 (packet GR
+  0.022/0.055, beams 0), antiparallel 1.99/1.96; massive 0.378/0.088 par., 1.626/1.921 antipar.;
+  co-moving a(k,k)/a(0,0) = 0.669/0.319 vs packet GR 0.675/0.339 (1/gamma^3 0.655/0.292; without
+  g0i 1.77/3.63).  Traps: single Kramers partner has a spin-dependent force (+-8 %); CoM fit biased
+  by ZB at 2E; notch filter (U - e^{iE dt}) reweights the packet; packets < 4 sigma from the open
+  chain end give up to 20 % too much force.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
