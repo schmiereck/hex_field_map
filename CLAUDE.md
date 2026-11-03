@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -143,6 +143,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open10_figs.py` | Figure for g0i (`phase_bit_s4_open10.png`) |
 | `phase_bit_s4_open11.py` | **Paper 3, causal g0i** — Phi and b as leapfrog wave equations (c_g = c' N0^2), `DynChain` (coin lookup table in N, fields updated every tick), variants instant / inst_nob / causal / mixed / nob, light-cone prediction |
 | `phase_bit_s4_open11_figs.py` | Figure for causal g0i (`phase_bit_s4_open11.png`) |
+| `phase_bit_exp3_isotropy.py` | **Paper 3, Exp. 3** — anisotropy power C_l (l = 4, 6, 8) of the cuboctahedral shells, of the walker's long-time direction distribution (`bz_velocities`, Hellmann-Feynman), smooth sources (Fibonacci x Gauss quadrature), 3D point source (`step3`, symmetrised over 24 rotations), front speed; run parts via `python phase_bit_exp3_isotropy.py [A] [B] [C] [D]` |
+| `phase_bit_exp3_isotropy_figs.py` | Figure for Exp. 3 (`phase_bit_exp3_isotropy.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -184,6 +186,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_H2b_Compensation_Beta_de.md` | German — H2b: lambda(N) removes the stay-gate background; beta_PPN = 1 from nested gates (N = N1 N2) |
 | `RESULTS_G0i_Gravitomagnetism_de.md` | German — g0i: drag hop from the momentum current; parallel light beams do not attract, co-moving sheets obey 1/gamma^3 |
 | `RESULTS_G0i_Causal_de.md` | German — causal g0i: Phi and b as wave equations; parallel light beams feel nothing at any time only if both travel together |
+| `RESULTS_Exp3_Isotropy_de.md` | German — Exp. 3: shells never isotropic (C_4 = 3.2e-3), particle isotropic with C_4 ~ sigma^-4, front at 0.5 c inside the shell |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -656,6 +659,16 @@ All work is merged into `main` (default branch). Create feature branches from `m
   beside retarded lapse = superluminal repulsion; parallel light at t = 400: -57 vs -1612 (Phi only).
   Traps: missing /dx (fields x0.612), too strong gradient (<k_x> changes 0.4 > k_y), spreading packet
   reaches the open end at 400 layers, constant instead of time-resolved static force in the prediction.
+  **Exp. 3** (`RESULTS_Exp3_Isotropy_de.md`): C_l = 4pi/(2l+1) sum_m |a_lm|^2 (0 isotropic, 1 point);
+  O_h sets are 3-designs, so l = 4, 6, 8 test.  Shell n nodes: C_4 = 3.220e-3, C_6 = 1.006e-3,
+  C_8 = 1.19e-4 from n ~ 8 = cuboctahedron surface limit (face densities 1/sqrt3 {111}, 1/2 {100})
+  -> never isotropic.  2O* walker: point source long-time limit (all 24 modes) C_4 ~ 9e-4; smooth
+  source of width sigma: Dirac quartet C_4 = 1.06e-4/7.5e-6/4.7e-7/3.0e-8/2.1e-9 at sigma 2..32
+  (~ sigma^-4), other 20 modes saturate at 2.3e-3 (warping of degenerate multiplets).  Front max v.n
+  0.94/0.87/0.94 ([100]/[110]/[111]); 3D point source to n = 64 (131^3, complex64, 108 s): C_4 -> 8.9e-4,
+  99 % front at r/t 0.89/0.86/0.92, weight on the geometric shell (graph dist >= 0.8 n) < 1e-3.
+  Traps: offset k grid with a Gaussian weight picks the 8 [111] points near 0 (fake C_l ~ 0.3) -> isotropic
+  quadrature; random sampling has a 1/N floor.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,

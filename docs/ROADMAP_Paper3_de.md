@@ -98,6 +98,7 @@ Gemini hatte ihn falsch platziert, als Z₄-Windung auf einem 4er-Ring.
 | H2b / β_PPN | Untergrund des Bleibe-Gatters kompensieren; β_PPN | λ(N) (Δλ ≈ 3.3(1 − N), bis N ≈ 0.4) hebt −αk² auf: Licht γ = 1.00 ± 0.007 bei allen k, Dirac-Bereich γ = 0.99–1.00; β aus dem Kompositionsgesetz zweier Lasten: linear 1/2, Warteschlange 3/2, verschachtelt (N = N₁N₂) exakt 1 auch im starken Feld; mit Quelle T₀₀ + T_ii und Last ∝ N folgt die 1PN-Metrik g₀₀ der ART; g₀ᵢ fehlt | **erledigt**, siehe [`RESULTS_H2b_Compensation_Beta_de.md`](RESULTS_H2b_Compensation_Beta_de.md) |
 | g₀ᵢ / Gravitomagnetismus | Shift aus dem Impulsstrom der Rechenlast | richtungsunabhängiger Mitnahme-Sprung = exakt b·p (Bandebene 5·10⁻¹⁵), Vakuum und Kramers unberührt; richtungsabhängiges Gatter verworfen (Kramers-Spaltung, Vakuum-Verschiebung); Kette: parallele Lichtstrahlen 0.019 (Paket-ART 0.022), antiparallel 1.99, Mitnahme-Kraft ≤ 1.2 %; mitbewegte Schichten 0.669/0.319 gegen 1/γ³-Paket-ART 0.675/0.339 (ohne g₀ᵢ 1.8/3.6) | **erledigt**, siehe [`RESULTS_G0i_Gravitomagnetism_de.md`](RESULTS_G0i_Gravitomagnetism_de.md) |
 | g₀ᵢ kausal | Φ und b als lokale Wellengleichungen (c_g = c′N₀²) | Testkraft = statische Kraft × Lichtkegel-Anteil (rms 0.5–2.5 %); parallele Lichtstrahlen spüren zu keiner Zeit etwas (+0.01 vor Ankunft), mit instantanem b dagegen Abstoßung vor Ankunft des Lapse (+1030); Fallen: Faktor Δx in der Quelle, Kettenrand, zeitaufgelöste statische Kraft | **erledigt**, siehe [`RESULTS_G0i_Causal_de.md`](RESULTS_G0i_Causal_de.md) |
+| Exp. 3 / Isotropie | Kuboktaeder-Schalen als Bloch-Kugel; Isotropie der Walker-Front | Schalen: C₄ = 3.22·10⁻³ ab n ≈ 8 = Polyeder-Grenzwert, nie isotrop (nur 3-Design); Walker-Teilchen (Dirac-Quartett) isotrop mit C₄ ∝ σ⁻⁴; übrige 20 Moden bleiben verzerrt (2.3·10⁻³); 3D-Punktquelle bis n = 64 läuft gegen die Langzeitgrenze; Front bei r/t ≈ 0.86–0.92 (≈ 0.5 c), auf der Schale praktisch nichts | **erledigt**, siehe [`RESULTS_Exp3_Isotropy_de.md`](RESULTS_Exp3_Isotropy_de.md) |
 
 Zu S3: Die 60°-Drehungen zwischen benachbarten Kuboktaeder-Richtungen liegen
 **nicht** in der Oktaedergruppe O. Ein Element von O, das d auf d′ abbildet,
@@ -161,6 +162,10 @@ das Nordström-Verhalten.
   O_h-Darstellungen zerlegen.
 - Messen, wie schnell die Anisotropie ab l ≥ 4 mit n abnimmt. Das ist die
   quantitative Antwort auf die ursprüngliche Bloch-Kugel-Frage.
+- **Erledigt**, siehe [`RESULTS_Exp3_Isotropy_de.md`](RESULTS_Exp3_Isotropy_de.md): Die Schalen
+  werden nie isotrop (C₄ = 3.22·10⁻³ ab n ≈ 8, Kuboktaeder-Grenzwert); das Teilchen
+  (Dirac-Quartett) wird dynamisch isotrop mit C₄ ∝ (a/σ)⁴; auf der Schale selbst liegt praktisch
+  keine Wahrscheinlichkeit (Front bei 0.5 c, Schale = Gitter-Lichtkegel c).
 
 ### Experiment 4: Feldabstrahlung und 1/r (zurückgestellt)
 
