@@ -142,6 +142,8 @@ nimmt. Der Punkt ist damit abgeschlossen.
 
 ## Offene Punkte
 
+*Weiter mit der Hypothese H1 und der Eigenzeit: [`RESULTS_H1_Antimatter_ProperTime_de.md`](RESULTS_H1_Antimatter_ProperTime_de.md).*
+
 - **3D:** Die lokale Feldgleichung in drei Dimensionen (1/r-Potential, keine linear
   wachsende Konstante) mit der Quelle s = 2e − e_M. Damit erst ein echter Test von Newton
   plus Retardierung. Der Speicher ist der Engpass: Ein 3D-Gitter mit 48 Zuständen pro

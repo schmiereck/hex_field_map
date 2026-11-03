@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -133,6 +133,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open5_figs.py` | Figure for round 5 (`phase_bit_s4_open5.png`) |
 | `phase_bit_s4_open6.py` | **Paper 3, round 6** — GR source 2e − e_M (`make_runner`: two-packet Hartree, Green or local wave equation for Phi), causal gravity, lattice mirror for massive particles, band structure of the helicity sector; run parts via `python phase_bit_s4_open6.py [A] [B] [C] [D]` |
 | `phase_bit_s4_open6_figs.py` | Figure for round 6 (`phase_bit_s4_open6.png`) |
+| `phase_bit_s4_open7.py` | **Paper 3, hypothesis H1 + proper time** — loads of particle/antiparticle, pair runaway (single-particle) vs hole picture, mass load = m dtau/dt (`Walker` class); run parts via `python phase_bit_s4_open7.py [A] [B]` |
+| `phase_bit_s4_open7_figs.py` | Figure for H1 / proper time (`phase_bit_s4_open7.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -169,6 +171,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_Open3_de.md` | German — round 3: gravity (Exp. 1b) on the clean particle, Z2 wall test, gauge field and anomaly |
 | `RESULTS_PhaseBit_S4_Open4_de.md` | German — round 4: local full lapse (wait buffer), spatial metric (Exp. 1c), origin of the counterterm, interior-node chiral branch |
 | `RESULTS_PhaseBit_S4_Open5_de.md` | German — round 5: one buffer for all N, horizon = mirror, lapse from the local load (Exp. 1d), anisotropic metric / GW, Landau det winding |
+| `RESULTS_H1_Antimatter_ProperTime_de.md` | German — H1: antimatter gravitates normally only in the hole picture; proper time = mass load / m |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -585,6 +588,16 @@ All work is merged into `main` (default branch). Create feature branches from `m
   sector +1 (no field): 12 bands cover the whole quasi-energy circle, neighbouring bands
   touch (min gap <= 6e-3, also across the zone edge) -> only the net flow (0) is topological;
   a Weyl census with Berry-flux chirality failed (nodal lines, multi-fold points).
+  **H1 + proper time** (`RESULTS_H1_Antimatter_ProperTime_de.md`): loads e, e_M of the
+  lower band are negative (-|E|); passive fall normal (R' 0.997).  Pair particle +
+  antiparticle, single-particle sources: both accelerate the same way (CoM -1.85e-4,
+  momentum not conserved) -> excluded; hole picture (source = -load of the missing state)
+  attracts exactly like two particles (+-1.858e-4).  Price: the sea load must be normal
+  ordered (lattice form of the cosmological-constant problem).  Mass load Q_M/m = dtau/dt =
+  N A m/sqrt(k^2 c'^2 + A^2 m^2) = N sqrt(1 - v_phys^2): 40 cases (N 0.4-1, A 0.9-1.1, k_y to
+  0.6) match the lattice band to 0.9 % (moving), Dirac to 2 % at k <= 0.3; E = m dtau/dt + p.v,
+  clock share 1/gamma^2; space-time integral of e_M = m tau = -S; equals Paper 1's
+  tau_quantum = T m <1/E>.  Next: H2 (one budget rule giving N and A, check gamma_PPN = 1).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
