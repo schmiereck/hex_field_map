@@ -226,6 +226,8 @@ B = 2π/(N_x a²), also ein Flussquant pro Zelle; Helizitätssektor +1; minimale
 
 ## Offene Punkte
 
+*Bearbeitet in der sechsten Runde: [`RESULTS_PhaseBit_S4_Open6_de.md`](RESULTS_PhaseBit_S4_Open6_de.md).*
+
 - **Quelle der ART:** Die Last e(x) ist skalar. Für E(1 + v²) und die doppelte Wirkung
   von Licht muss die Quelle den Impulsfluss enthalten, und die räumliche Metrik A muss
   mit angetrieben werden. Gesucht ist eine lokale Größe des Walkers für T_ii.

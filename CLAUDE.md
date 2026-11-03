@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + five rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -131,6 +131,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open4_figs.py` | Figure for round 4 (`phase_bit_s4_open4.png`) |
 | `phase_bit_s4_open5.py` | **Paper 3, round 5 / Exp. 1d** — strong/time-dependent buffer lapse, horizon approach, lapse sourced by the local load (two-packet Hartree, `chain_T`, `Buffered`), anisotropic metric via heading-dependent coin couplings, GW interferometer, periodic magnetic chain (det winding); run parts via `python phase_bit_s4_open5.py [A] [B] [C] [D]` |
 | `phase_bit_s4_open5_figs.py` | Figure for round 5 (`phase_bit_s4_open5.png`) |
+| `phase_bit_s4_open6.py` | **Paper 3, round 6** — GR source 2e − e_M (`make_runner`: two-packet Hartree, Green or local wave equation for Phi), causal gravity, lattice mirror for massive particles, band structure of the helicity sector; run parts via `python phase_bit_s4_open6.py [A] [B] [C] [D]` |
+| `phase_bit_s4_open6_figs.py` | Figure for round 6 (`phase_bit_s4_open6.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -167,6 +169,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_Open3_de.md` | German — round 3: gravity (Exp. 1b) on the clean particle, Z2 wall test, gauge field and anomaly |
 | `RESULTS_PhaseBit_S4_Open4_de.md` | German — round 4: local full lapse (wait buffer), spatial metric (Exp. 1c), origin of the counterterm, interior-node chiral branch |
 | `RESULTS_PhaseBit_S4_Open5_de.md` | German — round 5: one buffer for all N, horizon = mirror, lapse from the local load (Exp. 1d), anisotropic metric / GW, Landau det winding |
+| `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
 
@@ -571,6 +574,17 @@ All work is merged into `main` (default branch). Create feature branches from `m
   x-y phase = GR for k -> 0 (0.9 % at k = 0.03, error linear in k).  Periodic chain with one
   flux quantum (B = 2 pi/(Nx a^2)): det U(k_z) winding 0 at B = 0.1 and 0.05 -> no Floquet
   flow across the zone edge; tracing the single branch failed (dense LL spectrum).
+  **Round 6** (`RESULTS_PhaseBit_S4_Open6_de.md`): source s = 2e - e_M with the mass load
+  e_M = mu Re[i (U psi)^+ (dU/dmu psi)]/dt (local; = mu dE/dmu) gives T00 + T_ii: ratio to the
+  load source 1.887/1.964 vs 1 + v^2 = 1.892/1.970, light 1.991/1.990.  Local wave equation
+  for Phi (leapfrog, c_g = c', Courant 0.47): test particle starts falling only after D/c'
+  (sharp-onset fit 245 vs 276; prediction a*P(|dx| < c't) from the initial densities rms 0.12);
+  1D retarded field grows ~c't, so Phi is referenced at each particle.  Lattice mirror for
+  mass: mu = 0.15 falls from rest, turns at -30.2 (pred. -30.5), bounces back to +18.8 of +20;
+  mu = 0.03 has f_Nmin(E_max) < E' -> no turning, runs into the low-N region.  Helicity
+  sector +1 (no field): 12 bands cover the whole quasi-energy circle, neighbouring bands
+  touch (min gap <= 6e-3, also across the zone edge) -> only the net flow (0) is topological;
+  a Weyl census with Berry-flux chirality failed (nodal lines, multi-fold points).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
