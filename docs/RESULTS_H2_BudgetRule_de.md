@@ -165,6 +165,8 @@ Hypothese.
 
 ## Offene Punkte
 
+*Weiter mit Kompensation und β_PPN: [`RESULTS_H2b_Compensation_Beta_de.md`](RESULTS_H2b_Compensation_Beta_de.md).*
+
 - **Untergrund kompensieren:** Wie beim Hintergrund des Dirac-Quartetts (λ*·W₉₀,
   Runde 2) könnte eine N-abhängige Nachstimmung von λ den Term −α k² aufheben. Oder ein
   Gatter, dessen Bleibe-Anteil nicht von der Schrittphase abhängt.
