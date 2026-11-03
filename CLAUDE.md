@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + two rounds of S4 open points done, gravity 1a done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + three rounds of S4 open points done, gravity 1a + 1b done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -125,6 +125,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open_figs.py` | Figure for the S4 open points (`phase_bit_s4_open.png`) |
 | `phase_bit_s4_open2.py` | **Paper 3, S4 open points round 2** — 2O + lambda* W90 (no background, E<->-E), theta with H-breaking mass, mass domain walls in a z-slab (`slab_T`), ZB amplitude via band projectors |
 | `phase_bit_s4_open2_figs.py` | Figure for round 2 (`phase_bit_s4_open2.png`) |
+| `phase_bit_s4_open3.py` | **Paper 3, round 3 / Exp. 1b** — gravity on 2O* (vacuum counterterm, clock vs full lapse on an x-chain), Z2 wall test (parts `B2`), theta in a B field (`C2`), Landau levels; run parts via `python phase_bit_s4_open3.py [main] [B2] [C2]` |
+| `phase_bit_s4_open3_figs.py` | Figure for round 3 (`phase_bit_s4_open3.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -158,6 +160,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_de.md` | German — Exp. S4: T-preserving mass for the 3D spin vortex (mu·Pi = lattice beta) |
 | `RESULTS_PhaseBit_S4_Open_de.md` | German — S4 open points: Theta is PT, chirality H, 2D no-go, background compensation, Dirac-regime dynamics |
 | `RESULTS_PhaseBit_S4_Open2_de.md` | German — round 2: 2O without background, theta observable, domain-wall Dirac cones, ZB amplitude |
+| `RESULTS_PhaseBit_S4_Open3_de.md` | German — round 3: gravity (Exp. 1b) on the clean particle, Z2 wall test, gauge field and anomaly |
 
 ### Generated Figures (2+1D)
 
@@ -510,6 +513,23 @@ All work is merged into `main` (default branch). Create feature branches from `m
   Floquet bands at |k|>1 overlap the gap energy in ~17 % of the BZ (no global gap).
   ZB amplitude with a well-defined helicity +1 spinor: sim vs band-projector theory
   rms 0.003 of 0.556, vs Dirac 4x4 0.010.
+  **Round 3** (`RESULTS_PhaseBit_S4_Open3_de.md`, also Exp. 1b): a lapse scales the
+  quasi-energy, so the Floquet offset of the Dirac quartet gravitates (2O*: E_c=+1.02 vs
+  m=0.06 → 18x too strong) → vacuum counterterm −eps·lv·1 puts the Dirac point at E=0.
+  Then R' = E0/(m* c'^2) (c'=c/3) = 0.997/0.997 (2O*, μ/ε=0.1), 0.979 (SU(2) comp),
+  0.73/1.20 particle/antiparticle without compensation (background breaks the EP).
+  x-chain (160 layers, Bloch y,z, N=1+gx, g=2e-3, μ=0.15, σ=8), a_x/(−g c'^2):
+  clock lapse 0.89/0.65/0.32 (rest, k=0.3, 0.6) and ≈0 for massless beams (Nordström,
+  κ ≈ (m/E)^2 now without the 1.5–1.7 prefactor of 1a); full lapse ½{N,H} (Floquet H
+  smoothly projected to |E|<1.2) 0.86/0.85/0.79 and 0.73/0.88 for massless beams
+  (Einstein 1911); semiclassics with the exact band agrees to 2–3 % (15 % for the
+  narrow massless beam).  Z2 test (z-slab, random T-even term at one wall): single
+  quartet → central branches touch at k=0 (6e-15), cone survives; two quartets
+  (λ=−2) → avoided crossing, min spacing 4.3e-3/4.9e-3 (1.2μ/2.4μ).  Gauge field:
+  [H, W_B] = 3.5e-16 for any Peierls field → theta unobservable even with B
+  (3.4e-14; 0.26 with an H-breaking mass).  Landau levels (B=0.05): lowest node has
+  one chiral branch per helicity, slopes −0.549/+0.590 (≈∓c/3); interior node branch
+  not separable.  H is not the anomalous axial charge; node chirality is.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,

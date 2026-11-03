@@ -150,9 +150,9 @@ Sie gilt nicht für Pakete.
 
 ## Offene Punkte
 
-- Ein strenger Z₂-Index für den Floquet-Walker. Wegen der überlappenden Bänder ist
-  ein Floquet-Index nötig (Rudner–Levin-artig).
-- Ein 3D-Eichfeld (SU(2) oder U(1)) auf dem FCC-Walker, um die chirale Anomalie
-  (θ ↔ F F̃) zu testen.
-- Gravitation (Exp. 1b) auf dem neuen 2O-Teilchen: Gilt für den sauberen Dirac-Zweig
-  R = 1 statt 2?
+Beantwortet in [`RESULTS_PhaseBit_S4_Open3_de.md`](RESULTS_PhaseBit_S4_Open3_de.md):
+- **Gravitation:** Mit Vakuum-Gegenterm gilt R′ = 0.997 für Teilchen und Antiteilchen.
+  Der Uhren-Lapse ist Nordström, der volle Lapse ist Einstein 1911.
+- **Z₂ praktisch:** Ein Kramers-Paar an der Wand ist robust, zwei Paare bekommen eine Lücke.
+- **Eichfeld:** [H, W_B] = 0 exakt, θ bleibt unbeobachtbar. Die Anomalie betrifft die
+  Knoten-Chiralität.
