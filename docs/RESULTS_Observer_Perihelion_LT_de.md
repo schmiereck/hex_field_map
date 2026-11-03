@@ -157,6 +157,8 @@ er H ⊃ b·κ(k) mit κ ≈ k.
 
 ## Offene Punkte
 
+*Weiter mit dem Gravitationsatom: [`RESULTS_GravAtom_de.md`](RESULTS_GravAtom_de.md).*
+
 - **Gravitationsatom:** Die Quantenversion der Periheldrehung ist die Aufspaltung der
   l-Entartung im 1/r-Potential. Messbar über Zeitbereichs-Spektroskopie wie bei den
   Landau-Niveaus.
