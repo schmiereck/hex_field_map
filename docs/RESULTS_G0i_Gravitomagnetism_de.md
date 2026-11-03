@@ -156,6 +156,8 @@ Bezugssystem.
 
 ## Offene Punkte
 
+*Weiter mit kausalem g₀ᵢ: [`RESULTS_G0i_Causal_de.md`](RESULTS_G0i_Causal_de.md).*
+
 - **Kausales g₀ᵢ:** Wellengleichung für b mit der Impulsdichte als Quelle. Dann ist
   auch eine Gravitationswelle (Quadrupol aus T_ij) in Reichweite, zusammen mit den
   anisotropen Coin-Gewichten aus Runde 5.

@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -141,6 +141,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open9_figs.py` | Figure for H2b (`phase_bit_s4_open9.png`) |
 | `phase_bit_s4_open10.py` | **Paper 3, g0i** — gravitomagnetism: heading-dependent stay gate (rejected) vs heading-independent drag hop b sin(k_y l)cos(k_z l)/l, two moving sheets on the x-chain (`Chain`, `make_packet`, force from d<k_x>/dt, ideal-GR packet semiclassics); run parts via `python phase_bit_s4_open10.py [A] [B]` |
 | `phase_bit_s4_open10_figs.py` | Figure for g0i (`phase_bit_s4_open10.png`) |
+| `phase_bit_s4_open11.py` | **Paper 3, causal g0i** — Phi and b as leapfrog wave equations (c_g = c' N0^2), `DynChain` (coin lookup table in N, fields updated every tick), variants instant / inst_nob / causal / mixed / nob, light-cone prediction |
+| `phase_bit_s4_open11_figs.py` | Figure for causal g0i (`phase_bit_s4_open11.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -181,6 +183,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_H2_BudgetRule_de.md` | German — H2: wait buffers are always a pure lapse; wait + stay gate (clock 1 node, hop 2) gives A = 1/N, gamma_PPN = 1 |
 | `RESULTS_H2b_Compensation_Beta_de.md` | German — H2b: lambda(N) removes the stay-gate background; beta_PPN = 1 from nested gates (N = N1 N2) |
 | `RESULTS_G0i_Gravitomagnetism_de.md` | German — g0i: drag hop from the momentum current; parallel light beams do not attract, co-moving sheets obey 1/gamma^3 |
+| `RESULTS_G0i_Causal_de.md` | German — causal g0i: Phi and b as wave equations; parallel light beams feel nothing at any time only if both travel together |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -645,6 +648,14 @@ All work is merged into `main` (default branch). Create feature branches from `m
   g0i 1.77/3.63).  Traps: single Kramers partner has a spin-dependent force (+-8 %); CoM fit biased
   by ZB at 2E; notch filter (U - e^{iE dt}) reweights the packet; packets < 4 sigma from the open
   chain end give up to 20 % too much force.
+  **Causal g0i** (`RESULTS_G0i_Causal_de.md`): Phi_tt = c_g^2 (Phi_xx - kappa s/dx), same for b with
+  kappa_b p/dx (the /dx makes the static limit equal the Green-function SUM; round 6 had it as
+  lam2*(lap - kappa*LAT_A*q)), c_g = c' N0^2.  Two sheets at +-46, N0 0.8, sigma 16, gradient 3e-4,
+  640 layers, 800 ticks: force = time-resolved static force x light-cone fraction P (rms 0.5-2.5 %);
+  before arrival causal +0.01 vs mixed (b instantaneous) +1030 (1e-3 kappa) -> instantaneous shift
+  beside retarded lapse = superluminal repulsion; parallel light at t = 400: -57 vs -1612 (Phi only).
+  Traps: missing /dx (fields x0.612), too strong gradient (<k_x> changes 0.4 > k_y), spreading packet
+  reaches the open end at 400 layers, constant instead of time-resolved static force in the prediction.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
