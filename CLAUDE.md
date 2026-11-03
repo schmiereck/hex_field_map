@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md`, `RESULTS_Gravity3D_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md`, `RESULTS_Gravity3D_de.md`, `RESULTS_Observer_Perihelion_LT_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -147,6 +147,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_exp3_isotropy_figs.py` | Figure for Exp. 3 (`phase_bit_exp3_isotropy.png`) |
 | `phase_bit_s4_open12.py` | **Paper 3, gravity in 3D** — 3D Poisson / causal wave equation for Phi (1/r, no secular growth), full 3D walker `Walker3D` (W or H2 gates, lambda(N) coins in N bins, periodic box, complex64), `packet3d` (band-projected massless packet), light deflection by a point mass; run parts via `python phase_bit_s4_open12.py [A] [B]` (B: ~45 min) |
 | `phase_bit_s4_open12_figs.py` | Figure for 3D gravity (`phase_bit_s4_open12.png`) |
+| `phase_bit_s4_open13.py` | **Paper 3, observer / perihelion / Lense-Thirring** — Michelson-Morley in the lattice (group velocities over 2000 directions), 3D walker force law (`packet3d_m`), classical orbits of the lattice metric (perihelion, Lense-Thirring nodes), gravitomagnetic dipole, local 3D drag hop (`drag3d`, brick wall of bond rotations), internal rotation generator `J_int` = (2i/pi) log R90; run parts via `python phase_bit_s4_open13.py [A] [B1] [B2] [C1] [C2]` |
+| `phase_bit_s4_open13_figs.py` | Figure (`phase_bit_s4_open13.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -190,6 +192,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_G0i_Causal_de.md` | German — causal g0i: Phi and b as wave equations; parallel light beams feel nothing at any time only if both travel together |
 | `RESULTS_Exp3_Isotropy_de.md` | German — Exp. 3: shells never isotropic (C_4 = 3.2e-3), particle isotropic with C_4 ~ sigma^-4, front at 0.5 c inside the shell |
 | `RESULTS_Gravity3D_de.md` | German — 3D: 1/r field (causal, no growth), light deflection H2/W = 2.07 in the full 3D walker; observer inside the lattice sees spheres via his own signals |
+| `RESULTS_Observer_Perihelion_LT_de.md` | German — Michelson-Morley in the lattice ((ka)^2), Newton in the 3D walker, perihelion (2+2g-b)/3, Lense-Thirring and the gyroscope rule |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -682,6 +685,20 @@ All work is merged into `main` (default branch). Create feature branches from `m
   to <= 2.7 % (with <k_x> instead of <|k|>: 5.5 % low); thin straight ray fails at b ~ sigma (0.64).
   Observer question: spheres are defined by the observer's own signals; testable is only agreement
   between probes, (a/lambda)^2 for the quartet.
+  **Observer / perihelion / LT** (`RESULTS_Observer_Perihelion_LT_de.md`): light speed over 2000 directions:
+  direction spread 1.9e-5/1.1e-4/3.6e-4 at k 0.02/0.05/0.1 (~k^1.83, k^3 Y4 term; extremes swap near
+  k 0.3), energy dependence 1 - 0.42 (ka)^2 (aniso +-0.048).  3D walker (64^3, mu 0.15, sigma 5, mass
+  may lie outside the box since U is analytic): sim / local metric force 1.034 ... 0.989 (W), 1.010 ... 0.998
+  (H2); above Newton by 8 %/28 % because the packet's k spread (v^2 ~ 0.18) gravitates; H2/W 1.18.
+  Wave-packet orbit impossible (L = m r v/c'^2 ~ 1 hbar, spreading << period) -> classical orbits of
+  H = N sqrt(m^2 + c'^2 p^2/A^2): advance/PPN 1.0106/1.0026 (H2, a 400/1600), 1.0042/1.0011 (W = 1/3 GR),
+  1.016/1.004 (linear lapse = 7/6 GR).  Rotating ball: b = 2c'^2 (kappa/4pi) J x r/r^3 (0.991 at r 8);
+  classical node precession / LT = 1.001 (use the measured a, e: 1.04 with the Newtonian start values).
+  drag3d: bond (x, x+s) rotation angle dt (b.s)/(8 l^2), brick wall over 6 directions x 2 parities
+  (m = (x.s)//2 mod 2, box multiple of 4).  Rigid b = Omega z x r (Omega 0.004): orbit 0.00406, spin
+  0.00026 without rule, 0.00399 with exp(-i dt (1/2) curl b . J).  J_a = (2i/pi) logm(R90_a), R90 =
+  heading permutation (right-handed +90 deg, Rodrigues) x exp(-i pi/4 sigma_a), commutes with C; g = 1 on
+  both rest doublets.  Bare spin index P(1 x sigma/2)P: g = -1/3 (particle), +1 (antiparticle).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,

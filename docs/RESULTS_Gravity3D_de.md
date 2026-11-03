@@ -138,6 +138,8 @@ die anderen Moden bei niedriger Energie angeregt werden können, ist eine offene
 
 ## Offene Punkte
 
+*Weiter mit Michelson–Morley, Periheldrehung und Lense–Thirring: [`RESULTS_Observer_Perihelion_LT_de.md`](RESULTS_Observer_Perihelion_LT_de.md).*
+
 - Selbstkonsistent: Feld aus der Last eines 3D-Teilchens (Feld billig, Teilchen teuer).
 - Bahn eines massiven Teilchens um die Masse: 1/r²-Gesetz, mit genug Laufzeit auch die
   Periheldrehung (2 + 2γ − β)/3 = 1. Braucht lange Läufe.
