@@ -148,6 +148,8 @@ innerhalb der Quasienergie-Zone und nicht zwischen den Helizitäten.
 
 ## Offene Punkte
 
+*Alle vier Punkte sind in der vierten Runde bearbeitet, siehe [`RESULTS_PhaseBit_S4_Open4_de.md`](RESULTS_PhaseBit_S4_Open4_de.md).*
+
 - **Exp. 1c:** räumliche Metrik, also auch die Schrittlänge oder Hüpfamplitude über N
   ändern, für den vollen ART-Faktor 2 der Lichtablenkung.
 - **Lokaler voller Lapse:** Der volle Lapse wurde hier über den globalen

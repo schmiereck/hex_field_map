@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + three rounds of S4 open points done, gravity 1a + 1b done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + four rounds of S4 open points done, gravity 1a–1c done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -127,6 +127,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open2_figs.py` | Figure for round 2 (`phase_bit_s4_open2.png`) |
 | `phase_bit_s4_open3.py` | **Paper 3, round 3 / Exp. 1b** — gravity on 2O* (vacuum counterterm, clock vs full lapse on an x-chain), Z2 wall test (parts `B2`), theta in a B field (`C2`), Landau levels; run parts via `python phase_bit_s4_open3.py [main] [B2] [C2]` |
 | `phase_bit_s4_open3_figs.py` | Figure for round 3 (`phase_bit_s4_open3.png`) |
+| `phase_bit_s4_open4.py` | **Paper 3, round 4 / Exp. 1c** — local full lapse by a wait buffer (`f_dwell`, `dwell_k`), spatial metric, counterterm offset scan, E∥B pumping in time; run parts via `python phase_bit_s4_open4.py [A] [B] [C]` |
+| `phase_bit_s4_open4_figs.py` | Figure for round 4 (`phase_bit_s4_open4.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -161,6 +163,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_Open_de.md` | German — S4 open points: Theta is PT, chirality H, 2D no-go, background compensation, Dirac-regime dynamics |
 | `RESULTS_PhaseBit_S4_Open2_de.md` | German — round 2: 2O without background, theta observable, domain-wall Dirac cones, ZB amplitude |
 | `RESULTS_PhaseBit_S4_Open3_de.md` | German — round 3: gravity (Exp. 1b) on the clean particle, Z2 wall test, gauge field and anomaly |
+| `RESULTS_PhaseBit_S4_Open4_de.md` | German — round 4: local full lapse (wait buffer), spatial metric (Exp. 1c), origin of the counterterm, interior-node chiral branch |
 
 ### Generated Figures (2+1D)
 
@@ -530,6 +533,24 @@ All work is merged into `main` (default branch). Create feature branches from `m
   (3.4e-14; 0.26 with an H-breaking mass).  Landau levels (B=0.05): lowest node has
   one chiral branch per helicity, slopes −0.549/+0.590 (≈∓c/3); interior node branch
   not separable.  H is not the anomalous axial charge; node chirality is.
+  **Round 4** (`RESULTS_PhaseBit_S4_Open4_de.md`, also Exp. 1c): strictly local full
+  lapse = wait buffer per directed-edge state, tick U = R(a)·[S C ⊕ (−1)],
+  R(a) = cos a + i sin a σ_x (active↔buffer, same site).  Exact: eigenphase
+  f_a(θ) = θ/2 + arcsin(cos a sin(θ/2)) (vs 48x48: 4e-15), slope N = (1+cos a)/2 at 0,
+  buffer weight 1−N, Kramers and E<->-E kept; only buffer phase π keeps E = 0 fixed
+  (otherwise the vacuum energy depends on N and gravitates); range N ≥ 1/2 per buffer.
+  x-chain (N0 = 0.75, g = 2e-3, 120 ticks): a/(−g N0² c'²) = 0.86/0.85/0.79/0.72/0.88 =
+  the global full lapse of round 3 (Einstein 1911), semiclassics f_{a(x)}(θ(k)) 1–4 %.
+  Exp. 1c: buffer lapse N/A plus mass μ·A (A = 1 − gx) -> H = (N/A)K + N M; ratio 1c/1b
+  = 1.999/1.989 for light, 0.97 at rest, 1.24/1.58 moving vs GR 1 + (pc'/E)² = 1.25/1.57
+  (worse with the lattice group velocity: 1.20/1.43).  Counterterm forced: residual
+  offset δ gives R' = 1 ± δ/m for particle/antiparticle (lattice to 3 digits), and the
+  vacuum must be the fixed point of the buffer rule; no lattice symmetry pins a single
+  quartet (E<->-E swaps ±E_c; only the doubled λ = −2 point sits at 0).  E∥B in time
+  (k_z ramp 2e-4/tick, helicity +1): both nodes isotropic Weyl with v = c'; LLL pumped
+  dE/dk_z = −0.988/−0.992 c' (lower) vs +0.698/+0.851 c' (interior) at B = 0.05/0.035;
+  interior < c' because its Weyl range is small (4-fold levels 0.57 away).  Long sweeps
+  delocalise (open orbits), so the global connection of the branches is not traced.
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
