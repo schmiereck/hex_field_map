@@ -130,6 +130,8 @@ gravitative Quelle.
 
 ## Offene Punkte
 
+*Weiter mit der Hypothese H2: [`RESULTS_H2_BudgetRule_de.md`](RESULTS_H2_BudgetRule_de.md).*
+
 - **See-Last:** Kann der gefüllte See selbst ein Fixpunkt der Warte-Regel sein
   (Gesamtphase pro Takt null), sodass die Normalordnung nicht gefordert, sondern
   erzwungen ist? Das wäre ein Gitterargument zur kosmologischen Konstante.

@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -135,6 +135,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open6_figs.py` | Figure for round 6 (`phase_bit_s4_open6.png`) |
 | `phase_bit_s4_open7.py` | **Paper 3, hypothesis H1 + proper time** — loads of particle/antiparticle, pair runaway (single-particle) vs hole picture, mass load = m dtau/dt (`Walker` class); run parts via `python phase_bit_s4_open7.py [A] [B]` |
 | `phase_bit_s4_open7_figs.py` | Figure for H1 / proper time (`phase_bit_s4_open7.png`) |
+| `phase_bit_s4_open8.py` | **Paper 3, hypothesis H2** — one budget rule per node: wait gate vs stay gate (`Scheme` class, Bloch and chain), no-go for wait buffers, gamma_PPN from the band, stay-gate background, x-chain deflection vs 1b; run parts via `python phase_bit_s4_open8.py [A] [B]` |
+| `phase_bit_s4_open8_figs.py` | Figure for H2 (`phase_bit_s4_open8.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -172,6 +174,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_PhaseBit_S4_Open4_de.md` | German — round 4: local full lapse (wait buffer), spatial metric (Exp. 1c), origin of the counterterm, interior-node chiral branch |
 | `RESULTS_PhaseBit_S4_Open5_de.md` | German — round 5: one buffer for all N, horizon = mirror, lapse from the local load (Exp. 1d), anisotropic metric / GW, Landau det winding |
 | `RESULTS_H1_Antimatter_ProperTime_de.md` | German — H1: antimatter gravitates normally only in the hole picture; proper time = mass load / m |
+| `RESULTS_H2_BudgetRule_de.md` | German — H2: wait buffers are always a pure lapse; wait + stay gate (clock 1 node, hop 2) gives A = 1/N, gamma_PPN = 1 |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -597,7 +600,21 @@ All work is merged into `main` (default branch). Create feature branches from `m
   N A m/sqrt(k^2 c'^2 + A^2 m^2) = N sqrt(1 - v_phys^2): 40 cases (N 0.4-1, A 0.9-1.1, k_y to
   0.6) match the lattice band to 0.9 % (moving), Dirac to 2 % at k <= 0.3; E = m dtau/dt + p.v,
   clock share 1/gamma^2; space-time integral of e_M = m tau = -S; equals Paper 1's
-  tau_quantum = T m <1/E>.  Next: H2 (one budget rule giving N and A, check gamma_PPN = 1).
+  tau_quantum = T m <1/E>.
+  **H2** (`RESULTS_H2_BudgetRule_de.md`): any combination of wait buffers (also separate
+  ones for shift and coin) is a pure lapse: both see the active weight of the joint fixed
+  vector, 1/(1/N1 + 1/N2 - 1), so gamma = 0.  Stay gate R(b)[S C (+) -C] (hop refused, coin
+  still applied, phase pi keeps E = 0) slows only the hop.  Rule "every process needs each
+  node it involves to be free" (clock 1 node, hop 2): U = W(a)[H(b)(SC (+) -C) (+) -1] with
+  N_w = N_h = N gives gap = N m, v = N^2 c' -> H = N^2 K + N M = Exp. 1c with A = 1/N,
+  gamma = 1.0000 (band, k -> 0 extrapolated) for N = 0.3 ... 0.95.  Price: extra background
+  -alpha k^2 with alpha = 0.245 N_h (1 - N_h) (mass-independent, O(dt); relative to the
+  kinetic term ~ m dt or k dt).  x-chain (N0 0.75, g 2e-3, sigma 16): (a_H2/N0^2)/a_1b =
+  1.986/1.922/1.860 for light k = 0.1/0.2/0.4 (gamma 0.99-1.03 after the background);
+  'GR gamma = 1 plus measured alpha' matches the lattice semiclassics to <= 0.011 in all 8
+  cases (incl. mu = 0.15, where alpha dominates: 0.717 at rest).  Traps: broad packets need
+  the GR prediction with the same k distribution (rest is not 1 since A0 = 1/N0); FD
+  curvature at small mu has a quartic error -> compare with exact Dirac E(k).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
