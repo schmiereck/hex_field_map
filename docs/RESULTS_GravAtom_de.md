@@ -118,3 +118,5 @@ Radialgleichung für l = 0…3, exakt diagonalisiert:
   Damit wäre die Feinstruktur des Gravitationsatoms vorhergesagt.
 - Ein kleines 3D-Gitteratom (1s, 2p) mit einer harmonischen Inversion statt FFT, um mit
   weniger Takten auszukommen. Das wäre die direkte Prüfung der 3D-Ordnung.
+
+*Weiter mit der gravitativen Spin-Bahn-Kopplung: [`RESULTS_GravSpinOrbit_de.md`](RESULTS_GravSpinOrbit_de.md).*

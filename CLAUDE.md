@@ -12,7 +12,7 @@ Core question: Which lattice geometry reproduces relativistic quantum mechanics
 |-------|-------|--------|
 | 1 — Relativistic QM from Lattice Geometry | `paper.tex/pdf`, `paper_de.tex/pdf`, `README1_lattice_geometry.md`, `PAPER_SUMMARY.md` | published (tag `v1.0.0`, DOI 10.5281/zenodo.22178585; concept DOI …584; see `CITATION.cff`) |
 | 2 — Internal Structure of the Lattice Path Integral | `paper2_internal_structure.tex/pdf`, `README2_internal_structure.md` | published (tag `v2.0.0`, DOI 10.5281/zenodo.23888331; Zenodo metadata in `.zenodo.json` — update title/version/description before each new release) |
-| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md`, `RESULTS_Gravity3D_de.md`, `RESULTS_Observer_Perihelion_LT_de.md`, `RESULTS_GravAtom_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
+| 3 — Discrete states / gravity as computation time | `ROADMAP_Paper3_de.md`, `SOURCE_Paper3_Gemini_Thread_de.md`, `RESULTS_Gravity_Lapse_de.md`, `RESULTS_PhaseBit_S1_de.md`, `RESULTS_PhaseBit_S2_de.md`, `RESULTS_PhaseBit_S3_de.md`, `RESULTS_PhaseBit_S4_de.md`, `RESULTS_PhaseBit_S4_Open_de.md`, `RESULTS_PhaseBit_S4_Open2_de.md`, `RESULTS_PhaseBit_S4_Open3_de.md`, `RESULTS_PhaseBit_S4_Open4_de.md`, `RESULTS_PhaseBit_S4_Open5_de.md`, `RESULTS_PhaseBit_S4_Open6_de.md`, `RESULTS_H1_Antimatter_ProperTime_de.md`, `RESULTS_H2_BudgetRule_de.md`, `RESULTS_H2b_Compensation_Beta_de.md`, `RESULTS_G0i_Gravitomagnetism_de.md`, `RESULTS_G0i_Causal_de.md`, `RESULTS_Exp3_Isotropy_de.md`, `RESULTS_Gravity3D_de.md`, `RESULTS_Observer_Perihelion_LT_de.md`, `RESULTS_GravAtom_de.md`, `RESULTS_GravSpinOrbit_de.md` | in preparation (main focus: spin vortices from phase bits; S1–S4 + six rounds of S4 open points done, gravity 1a–1d done) |
 
 ### Amplitude Rule (all models)
 - Same direction as previous step → factor **1**
@@ -151,6 +151,8 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open13_figs.py` | Figure (`phase_bit_s4_open13.png`) |
 | `phase_bit_s4_open14.py` | **Paper 3, gravitational atom** — 1D lattice atom on the x-chain (levels from the time signal, `spectrum_peaks` with Blackman-Harris) vs the effective Hamiltonian (`eff_levels_1d`), 3D radial effective atom (`eff_levels_radial`, Newtonian reference) for H2 / W / linear lapse; run parts via `python phase_bit_s4_open14.py [A] [B]` |
 | `phase_bit_s4_open14_figs.py` | Figure (`phase_bit_s4_open14.png`) |
+| `phase_bit_s4_open15.py` | **Paper 3, gravitational spin-orbit coupling** — 2D radial Dirac reference in the metric (`dirac_radial`, staggered grid, kappa = +-j, optional lattice Wilson term r_b), 2D gravitational atom in a slab of `Walker3D` (C4-projected 2p start with J_z = +-1/2, signal checkpoint every 1000 ticks), filter diagonalisation from the autocorrelation (`fdm`); run parts via `python phase_bit_s4_open15.py [A] [B variant spin] [C]` (B: 1.2-2.6 h per run) |
+| `phase_bit_s4_open15_figs.py` | Figure (`phase_bit_s4_open15.png`) |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
@@ -196,6 +198,7 @@ The tables below list bare file names; find them in the directory above.
 | `RESULTS_Gravity3D_de.md` | German — 3D: 1/r field (causal, no growth), light deflection H2/W = 2.07 in the full 3D walker; observer inside the lattice sees spheres via his own signals |
 | `RESULTS_Observer_Perihelion_LT_de.md` | German — Michelson-Morley in the lattice ((ka)^2), Newton in the 3D walker, perihelion (2+2g-b)/3, Lense-Thirring and the gyroscope rule |
 | `RESULTS_GravAtom_de.md` | German — gravitational atom: l-splitting = quantum perihelion (ratios -> 1/3, 7/6), 1D lattice atom validates the effective Hamiltonian |
+| `RESULTS_GravSpinOrbit_de.md` | German — gravitational spin-orbit coupling: fine structure ~ 2 gamma + 1 (de Sitter), 2D atom in the 3D walker matches Dirac in the metric to 0.8-1.5 % |
 | `RESULTS_PhaseBit_S4_Open6_de.md` | German — round 6: GR source T00 + T_ii from the load, causal gravity (local wave equation), mirror for massive particles, no global gap in the helicity sector |
 
 ### Generated Figures (2+1D)
@@ -710,6 +713,14 @@ All work is merged into `main` (default branch). Create feature branches from `m
   70 a0, rc = 0.1 a0, Newtonian softening splitting subtracted): relativistic l-splitting positive, W/H2
   0.22/0.28/0.31 (l 0-1/1-2/2-3) -> 1/3, linear/H2 1.16-1.18 -> 7/6, ~ GM^4, vs omega_p = 3GM^4/(L^2 n^3)
   factor 1.1-1.25 at n <= 4.  No spin (fine structure open).
+  **Gravitational spin-orbit** (`RESULTS_GravSpinOrbit_de.md`): Dirac in the metric H = beta m N + (c'/2){N/A, alpha.p}, FW term
+  (2 gamma + 1) c'^2/(4m)(1/r)U' sigma.L -> fine structure E(2p3/2) - E(2p1/2) A=N : W : H2 : linear = -1 : 1 : 3 : 3 (weak field,
+  radial 2D Dirac -0.978 : 1 : 2.997 : 3.011), 1 : 3.64 : 4.50 at alpha_f = 0.3.  Lattice: 2D atom in a 340x340x2 slab of Walker3D
+  (mu 0.1, alpha_f 0.3, a0 9.62, rc a0/2, 8000 ticks), start = reference 2p x e^{i phi} x rest spinor J_z = +-1/2, projected on the
+  exact C4 sector; levels by filter diagonalisation of <psi0|psi(t)> (FFT resolution 4-15x too coarse).  Fine structure 1.0715/3.9928/
+  4.9590e-4 vs Dirac + lattice Wilson term (r_b = -0.037, beta r_b c'^2/2m N^1/2 Pi^2 N^1/2) 1.0881/3.9621/4.9009e-4: ratio 0.985/1.008/
+  1.012 (pure Dirac 1.058/1.082/1.089); 2p3/2 above 2p1/2; absolute levels 0.3-1.1 % deeper (spin-independent).  Traps: kappa < 0
+  needs the r=0-regular component on the half grid and P = 0 at the wall; three parallel runs hit the memory limit (checkpointing).
 - **Fixed (Nov 2026, found in S3):** `quantum_fcc_3d.su2_transport` returned
   cos(θ/2) + i sin(θ/2) n·σ, which rotates by −θ (anti-homomorphism).  Now
   exp(−iθ n·σ/2).  Recomputed: RESULTS_FCC_3D (spin 1/2 = massless Dirac cone c/3,
