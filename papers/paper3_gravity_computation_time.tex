@@ -298,10 +298,11 @@ The clock (coin, mass rotation) involves one node; a hop involves two,
 departure and arrival.
 We postulate: \emph{a node is free with weight $N$, and every process needs all
 nodes it involves to be free.}
-Two local gates implement this:
+Two local gates implement this, a wait gate $W$ (a busy node idles) and a
+stay gate $H$ (the hop is refused, the coin still acts):
 \begin{align}
-  W(a) &= R(a)\,[\,V\oplus(-1)\,] &\quad \text{(busy: idle)}\nonumber\\
-  H(b) &= R(b)\,[\,SC\oplus(-C)\,] &\quad \text{(hop refused)}\nonumber\\
+  W(a) &= R(a)\,[\,V\oplus(-1)\,] ,\nonumber\\
+  H(b) &= R(b)\,[\,SC\oplus(-C)\,] ,\nonumber\\
   U &= W(a)\,\big[\,H(b)\,(SC\oplus -C)\oplus(-1)\,\big] .
 \end{align}
 With $N_w=N_h=N$ the stay gate slows only the hop, the wait gate slows both,
