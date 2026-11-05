@@ -39,3 +39,15 @@ references:
       name: Zenodo
     doi: 10.5281/zenodo.23888331
     url: "https://doi.org/10.5281/zenodo.23888331"
+  - type: generic
+    title: "Gravity as Computation Time: A Local Budget Rule on a Spin-1/2 Phase-Bit Lattice and its Post-Newtonian Limit"
+    authors:
+      - family-names: Schmiereck
+        given-names: Thomas
+        email: thomas@schmiereck.de
+    version: v3.0.0
+    date-released: 2026-11-05
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.23982020
+    url: "https://doi.org/10.5281/zenodo.23982020"

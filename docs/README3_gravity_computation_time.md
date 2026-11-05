@@ -8,7 +8,8 @@ follow-up to [`paper2_internal_structure.pdf`](../papers/paper2_internal_structu
 and [`paper.pdf`](../papers/paper.pdf) / [`README1_lattice_geometry.md`](README1_lattice_geometry.md)
 
 LaTeX version: [`paper3_gravity_computation_time.tex`](../papers/paper3_gravity_computation_time.tex)  
-PDF version: [`paper3_gravity_computation_time.pdf`](../papers/paper3_gravity_computation_time.pdf)
+PDF version: [`paper3_gravity_computation_time.pdf`](../papers/paper3_gravity_computation_time.pdf)  
+DOI: [10.5281/zenodo.23982020](https://doi.org/10.5281/zenodo.23982020) (release v3.0.0)
 
 ![Light passing a point mass on the phase-bit lattice](../figures/paper3_lead.png)
 

@@ -74,6 +74,7 @@ follow-up to [`paper2_internal_structure.pdf`](papers/paper2_internal_structure.
 **README**: [`README3_gravity_computation_time.md`](docs/README3_gravity_computation_time.md)  
 LaTeX version: [`paper3_gravity_computation_time.tex`](papers/paper3_gravity_computation_time.tex)  
 PDF version: [`paper3_gravity_computation_time.pdf`](papers/paper3_gravity_computation_time.pdf)  
+DOI: [10.5281/zenodo.23982020](https://doi.org/10.5281/zenodo.23982020) (release v3.0.0, see [Citation](#citation))  
 Research notes behind every number (German): see [Paper 3 notes](#paper-3-research-notes-in-german) below
 
 ---
@@ -151,8 +152,7 @@ Dependencies: [`requirements.txt`](requirements.txt).
 
 ## Citation
 
-The papers are archived on Zenodo as releases of this repository
-(Paper 3: release v3.0.0, DOI follows with the release).
+The papers are archived on Zenodo as releases of this repository.
 
 **Paper 1** (release v1.0.0):
 
@@ -193,6 +193,27 @@ The papers are archived on Zenodo as releases of this repository
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23888331},
   url       = {https://doi.org/10.5281/zenodo.23888331}
+}
+```
+
+**Paper 3** (release v3.0.0):
+
+> Schmiereck, T. (2026). *Gravity as Computation Time: A Local Budget Rule on a
+> Spin-1/2 Phase-Bit Lattice and its Post-Newtonian Limit* (v3.0.0). Zenodo.
+> https://doi.org/10.5281/zenodo.23982020
+
+```bibtex
+@software{schmiereck_2026_paper3,
+  author    = {Schmiereck, Thomas},
+  title     = {Gravity as Computation Time: A Local Budget Rule
+               on a Spin-1/2 Phase-Bit Lattice
+               and its Post-Newtonian Limit},
+  year      = {2026},
+  month     = nov,
+  version   = {v3.0.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23982020},
+  url       = {https://doi.org/10.5281/zenodo.23982020}
 }
 ```
 
