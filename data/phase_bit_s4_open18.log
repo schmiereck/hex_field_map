@@ -1,0 +1,57 @@
+A. static uniform responses of the photon (H2c, N0 = 0.75, lambda = -2.6270): lattice / GR
+   bond map delta -> h (k -> 0): singular values 1.415, 0.708, 0.708, 0.708, 0.708, 0.708
+   lapse h00     k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 1.0000 [1.0000,1.0000]  k=0.2: 1.0000 [1.0000,1.0000]  k=0.3: 1.0000 [1.0000,1.0000]
+   drag h0x      k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 0.9996 [0.9995,0.9999]  k=0.2: 0.9984 [0.9982,0.9994]  k=0.3: 0.9965 [0.9960,0.9985]
+   drag h0(111)  k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 0.9997 [0.9995,0.9999]  k=0.2: 0.9986 [0.9982,0.9994]  k=0.3: 0.9969 [0.9960,0.9985]
+   bond trace    k=0.01: 1.0013 [1.0013,1.0013]  k=0.03: 1.0057 [1.0056,1.0057]  k=0.1: 1.0203 [1.0199,1.0206]  k=0.2: 1.0399 [1.0382,1.0407]  k=0.3: 1.0577 [1.0545,1.0594]
+   bond E_g      k=0.01: 1.0013 [1.0013,1.0013]  k=0.03: 1.0057 [1.0056,1.0057]  k=0.1: 1.0205 [1.0199,1.0208]  k=0.2: 1.0404 [1.0382,1.0414]  k=0.3: 1.0584 [1.0545,1.0604]
+   bond T_2g     k=0.01: 1.0013 [1.0013,1.0013]  k=0.03: 1.0057 [1.0057,1.0057]  k=0.1: 1.0206 [1.0205,1.0206]  k=0.2: 1.0407 [1.0406,1.0407]  k=0.3: 1.0593 [1.0590,1.0594]
+   [11s]
+B. gravitational wave along n: TT signal vs gauge residual for the co-moving photon
+   n = [1. 0. 0.], |k| = 0.01: TT transverse -0.50066 (GR -0.5), along n +7.6e-08; gauge xi_0 +1.9e-06, xi_n +2.6e-03 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.03: TT transverse -0.50281 (GR -0.5), along n +4.3e-08; gauge xi_0 -1.3e-05, xi_n +1.1e-02 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.1: TT transverse -0.50994 (GR -0.5), along n +4.9e-08; gauge xi_0 -2.6e-04, xi_n +3.9e-02 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.2: TT transverse -0.51912 (GR -0.5), along n +4.4e-08; gauge xi_0 -1.2e-03, xi_n +7.5e-02 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.3: TT transverse -0.52726 (GR -0.5), along n +4.4e-08; gauge xi_0 -2.9e-03, xi_n +1.1e-01 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.01: TT transverse -0.50066 (GR -0.5), along n -1.8e-06; gauge xi_0 -3.1e-06, xi_n +2.6e-03 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.03: TT transverse -0.50285 (GR -0.5), along n -1.4e-05; gauge xi_0 -5.7e-05, xi_n +1.1e-02 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.1: TT transverse -0.51033 (GR -0.5), along n -1.3e-04; gauge xi_0 -7.3e-04, xi_n +4.1e-02 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.2: TT transverse -0.52049 (GR -0.5), along n -4.1e-04; gauge xi_0 -2.9e-03, xi_n +8.1e-02 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.3: TT transverse -0.52984 (GR -0.5), along n -6.8e-04; gauge xi_0 -6.4e-03, xi_n +1.2e-01 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.01: TT transverse -0.50066 (GR -0.5), along n -5.9e-09; gauge xi_0 -4.7e-06, xi_n +2.6e-03 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.03: TT transverse -0.50284 (GR -0.5), along n -2.2e-08; gauge xi_0 -7.2e-05, xi_n +1.1e-02 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.1: TT transverse -0.51031 (GR -0.5), along n -1.1e-08; gauge xi_0 -8.8e-04, xi_n +4.1e-02 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.2: TT transverse -0.52042 (GR -0.5), along n -1.4e-08; gauge xi_0 -3.5e-03, xi_n +8.2e-02 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.3: TT transverse -0.52972 (GR -0.5), along n -1.2e-08; gauge xi_0 -7.6e-03, xi_n +1.2e-01 (relative to TT)
+   [3s]
+C. real time: uniform h_+(t) = h0 sin(W t) (wave along x: h_yy = -h_zz), half a period
+   |k| = 0.03: phase x -8.663e-05, y +4.030e-04 (GR +4.871e-04, ratio 0.8273), z -5.767e-04 (GR -4.871e-04, ratio 1.1839); (y - z)/GR 1.0056; x / y -2.1e-01; leakage 7.5e-12  [3s]
+   |k| = 0.1: phase x -8.603e-05, y +1.569e-03 (GR +1.623e-03, ratio 0.9665), z -1.742e-03 (GR -1.623e-03, ratio 1.0733); (y - z)/GR 1.0199; x / y -5.5e-02; leakage 4.6e-11  [6s]
+   |k| = 0.3: phase x -8.447e-05, y +5.030e-03 (GR +4.851e-03, ratio 1.0368), z -5.202e-03 (GR -4.851e-03, ratio 1.0723); (y - z)/GR 1.0545; x / y -1.7e-02; leakage 3.8e-11  [9s]
+D. bond-local lambda retuning (W90 pair (d, d') at lambda(sqrt(N_d N_d'))): A and B repeated
+A. static uniform responses of the photon (H2c, N0 = 0.75, lambda = -2.6270): lattice / GR
+   bond map delta -> h (k -> 0): singular values 1.414, 0.707, 0.707, 0.292, 0.292, 0.292
+   lapse h00     k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 1.0000 [1.0000,1.0000]  k=0.2: 1.0000 [1.0000,1.0000]  k=0.3: 1.0000 [1.0000,1.0000]
+   drag h0x      k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 0.9996 [0.9995,0.9999]  k=0.2: 0.9984 [0.9982,0.9994]  k=0.3: 0.9965 [0.9960,0.9985]
+   drag h0(111)  k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0000 [1.0000,1.0000]  k=0.1: 0.9997 [0.9995,0.9999]  k=0.2: 0.9986 [0.9982,0.9994]  k=0.3: 0.9969 [0.9960,0.9985]
+   bond trace    k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0001 [1.0001,1.0001]  k=0.1: 0.9998 [0.9998,0.9998]  k=0.2: 0.9981 [0.9981,0.9981]  k=0.3: 0.9947 [0.9946,0.9951]
+   bond E_g      k=0.01: 1.0000 [1.0000,1.0000]  k=0.03: 1.0001 [1.0001,1.0002]  k=0.1: 1.0005 [0.9998,1.0008]  k=0.2: 1.0007 [0.9981,1.0020]  k=0.3: 1.0006 [0.9951,1.0034]
+   bond T_2g     k=0.01: 1.0048 [1.0048,1.0048]  k=0.03: 1.0207 [1.0206,1.0207]  k=0.1: 1.0761 [1.0759,1.0762]  k=0.2: 1.1548 [1.1539,1.1553]  k=0.3: 1.2325 [1.2302,1.2337]
+   [11s]
+B. gravitational wave along n: TT signal vs gauge residual for the co-moving photon
+   n = [1. 0. 0.], |k| = 0.01: TT transverse -0.50001 (GR -0.5), along n -3.4e-07; gauge xi_0 +1.9e-06, xi_n +5.2e-05 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.03: TT transverse -0.50004 (GR -0.5), along n -3.6e-07; gauge xi_0 -1.3e-05, xi_n +1.7e-04 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.1: TT transverse -0.49989 (GR -0.5), along n -3.5e-07; gauge xi_0 -2.7e-04, xi_n -1.9e-04 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.2: TT transverse -0.49905 (GR -0.5), along n -3.5e-07; gauge xi_0 -1.2e-03, xi_n -2.6e-03 (relative to TT)
+   n = [1. 0. 0.], |k| = 0.3: TT transverse -0.49754 (GR -0.5), along n -3.5e-07; gauge xi_0 -3.0e-03, xi_n -6.8e-03 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.01: TT transverse -0.50120 (GR -0.5), along n +2.4e-03; gauge xi_0 -3.1e-06, xi_n +4.8e-03 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.03: TT transverse -0.50520 (GR -0.5), along n +1.0e-02; gauge xi_0 -5.7e-05, xi_n +2.1e-02 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.1: TT transverse -0.51918 (GR -0.5), along n +3.6e-02; gauge xi_0 -7.2e-04, xi_n +7.4e-02 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.2: TT transverse -0.53898 (GR -0.5), along n +7.0e-02; gauge xi_0 -2.8e-03, xi_n +1.5e-01 (relative to TT)
+   n = [0.707 0.707 0.   ], |k| = 0.3: TT transverse -0.55841 (GR -0.5), along n +1.0e-01; gauge xi_0 -6.1e-03, xi_n +2.1e-01 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.01: TT transverse -0.50160 (GR -0.5), along n +1.0e-07; gauge xi_0 -4.7e-06, xi_n +6.4e-03 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.03: TT transverse -0.50691 (GR -0.5), along n -7.9e-08; gauge xi_0 -7.1e-05, xi_n +2.7e-02 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.1: TT transverse -0.52544 (GR -0.5), along n -1.3e-07; gauge xi_0 -8.6e-04, xi_n +9.7e-02 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.2: TT transverse -0.55164 (GR -0.5), along n -1.4e-07; gauge xi_0 -3.3e-03, xi_n +1.9e-01 (relative to TT)
+   n = [0.577 0.577 0.577], |k| = 0.3: TT transverse -0.57731 (GR -0.5), along n -1.5e-07; gauge xi_0 -7.0e-03, xi_n +2.7e-01 (relative to TT)
+   [3s]
