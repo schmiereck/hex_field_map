@@ -214,5 +214,7 @@ Box wie das Gitter.
   (E_c-Untergrund, Anisotropie).
 - Feinstruktur bei kleinerem α_f, um das Verhältnis 1 : 3 : 3 direkt im Gitter zu sehen.
   Das wäre mit harmonischer Inversion und kürzeren Signalen eventuell machbar.
-- Spin-Spin-Kopplung (gravitative Hyperfeinstruktur) über das gravitomagnetische Feld
-  eines rotierenden Zentralkörpers, mit dem `drag3d` aus Runde 13.
+- ~~Spin-Spin-Kopplung (gravitative Hyperfeinstruktur) über das gravitomagnetische Feld
+  eines rotierenden Zentralkörpers, mit dem `drag3d` aus Runde 13.~~ **Erledigt**, siehe
+  [`RESULTS_GravHyperfine_de.md`](RESULTS_GravHyperfine_de.md): Gitter / Referenz
+  1.027–1.035, Verhältnis 2p3/2 : 2p1/2 = 0.564 gegen 0.560.

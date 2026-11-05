@@ -63,12 +63,13 @@ def params(mu=MU, af=AF, rcf=RCF):
 
 
 # ═════════════════════════════════════════════════════════════════════════════
-def dirac_radial(kap, m, Nf, Ff, R, n, Etarget, k=4, rb=0.0, nexp=0):
+def dirac_radial(kap, m, Nf, Ff, R, n, Etarget, k=4, rb=0.0, nexp=0, extraP=None, extraQ=None):
     """2D radial Dirac in the metric: E P = mN P + c'(sqF d sqF + F kap/r) Q ;
     E Q = -mN Q + c'(-sqF d sqF + F kap/r) P.  P = sqrt(r) x large component (orbital m_l),
     Q = small component; kap = j for the spin-up block, -j for spin down.  The component that is
     ~ r^1/2 at the origin sits on the half grid.  rb: Wilson-like term beta rb c'^2/(2m) N^1/2 Pi^2 N^1/2
-    on the large component (Pi^2 = N^(n/2)(-div N^n grad)N^(n/2), orbital m_l of P)."""
+    on the large component (Pi^2 = N^(n/2)(-div N^n grad)N^(n/2), orbital m_l of P).
+    extraP / extraQ: optional diagonal potentials f(r) added to the P / Q blocks."""
     h = R / n
     s = (np.arange(n) + 0.5) * h
     r = (np.arange(n) + 1.0) * h
@@ -96,7 +97,12 @@ def dirac_radial(kap, m, Nf, Ff, R, n, Etarget, k=4, rb=0.0, nexp=0):
             + sp.diags(w * (ml ** 2 - 0.25) / gP ** 2 + wp / (2 * gP))
         sc = sp.diags(Nf(gP) ** ((nexp + 1) / 2))
         HPP = HPP + rb * CP ** 2 / (2 * m) * (sc @ L @ sc)
-    H = sp.bmat([[HPP, CP * D], [CP * D.T, sp.diags(-m * Nf(gQ))]]).tocsc()
+    HQQ = sp.diags(-m * Nf(gQ))
+    if extraP is not None:
+        HPP = HPP + sp.diags(extraP(gP))
+    if extraQ is not None:
+        HQQ = HQQ + sp.diags(extraQ(gQ))
+    H = sp.bmat([[HPP, CP * D], [CP * D.T, HQQ]]).tocsc()
     w_, v = eigsh(H, k=k, sigma=Etarget, which='LM')
     o = np.argsort(w_)
     return w_[o], v[:, o], gP, gQ
@@ -176,7 +182,8 @@ def rotate_c4(v, n, Rint):
     return a @ Rint.T
 
 
-def part_B(variant, spin):
+def setup_B(variant, spin):
+    """walker, pre-filtered C4-projected 2p start state (registers) and reference target for one run."""
     from phase_bit_s4_open12 import Walker3D
     from phase_bit_s4_open13 import R90_int, J_int
     from phase_bit_mass_s4 import bands_C
@@ -236,6 +243,13 @@ def part_B(variant, spin):
         st = [(a + ph * b) / 2 for a, b in zip(st, st2)]
     nrm = np.sqrt(sum(np.vdot(a, a).real for a in st))
     st = [a / nrm for a in st]
+    return dict(wk=wk, st=st, Et=Et, m=m, comm=comm, shape=shape, rb=rb, X=X, Y=Y, rc=rc, t0=t0)
+
+
+def part_B(variant, spin):
+    from quantum_fcc_3d import DT_HALF
+    g = setup_B(variant, spin)
+    wk, st, Et, m, comm, rb, t0, n = g['wk'], g['st'], g['Et'], g['m'], g['comm'], g['rb'], g['t0'], NBOX
     s0 = [a.copy() for a in st]
     sig = np.empty(NTICK + 1, complex)
     for it in range(NTICK + 1):
