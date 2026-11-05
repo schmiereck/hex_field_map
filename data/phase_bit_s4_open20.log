@@ -1,0 +1,24 @@
+A1/A2. deterministic busy patterns (Floquet over one period)
+   every  [0, 0, 1]                  p = 0.333: gap/(2 mu) = 0.5000, v/c' = 0.5000 (overlap 0.71/0.71);  1 - p = 0.6667
+   every  [0, 0, 0, 1]               p = 0.250: gap/(2 mu) = 1.5353, v/c' = 84.1695 (overlap 0.00/0.00);  1 - p = 0.7500
+   every  [1]                        p = 1.000: gap/(2 mu) = 0.5000, v/c' = 0.5000 (overlap 0.71/0.71);  1 - p = 0.0000
+   every  [0, 1]                     p = 0.500: gap/(2 mu) = 25.6799, v/c' = 271.5699 (overlap -1.00/-1.00);  1 - p = 0.5000
+   every  [0, 0, 1, 1]               p = 0.500: gap/(2 mu) = 0.7500, v/c' = 0.7500 (overlap 1.00/1.00);  1 - p = 0.5000
+   every  [0, 1, 1, 1]               p = 0.750: gap/(2 mu) = 7.6232, v/c' = 85.1695 (overlap 0.00/0.00);  1 - p = 0.2500
+   every  [0, 0, 0, 0, 0, 0, 0, 1]   p = 0.125: gap/(2 mu) = 7.0450, v/c' = 68.5175 (overlap 0.71/0.71);  1 - p = 0.8750
+   every  [0, 0, 1, 1, 1, 1]         p = 0.667: gap/(2 mu) = 0.6667, v/c' = 0.6667 (overlap 1.00/1.00);  1 - p = 0.3333
+   every  [0, 0, 0, 1, 1, 1, 1, 1]   p = 0.625: gap/(2 mu) = 7.0450, v/c' = 68.5175 (overlap 0.71/0.71);  1 - p = 0.3750
+   toggle [0, 0, 1]                  p = 0.333: gap/(2 mu) = 0.6667, v/c' = 0.6667 (overlap 0.00/0.00);  1 - p = 0.6667
+   toggle [0, 0, 0, 1]               p = 0.250: gap/(2 mu) = 0.2500, v/c' = 0.2500 (overlap 1.00/1.00);  1 - p = 0.7500
+   toggle [0, 1]                     p = 0.500: gap/(2 mu) = 0.5000, v/c' = 0.5000 (overlap 1.00/1.00);  1 - p = 0.5000
+   toggle [0, 0, 1, 1]               p = 0.500: gap/(2 mu) = 25.6799, v/c' = 94.6778 (overlap -1.00/-1.00);  1 - p = 0.5000
+   toggle [0, 1, 1, 1]               p = 0.750: gap/(2 mu) = 0.7500, v/c' = 0.7500 (overlap 1.00/1.00);  1 - p = 0.2500
+   toggle [0, 0, 0, 0, 0, 0, 0, 1]   p = 0.125: gap/(2 mu) = 0.1250, v/c' = 0.1250 (overlap 1.00/1.00);  1 - p = 0.8750
+   toggle [0, 0, 1, 1, 1, 1]         p = 0.667: gap/(2 mu) = 0.7137, v/c' = 14.6778 (overlap 0.00/0.00);  1 - p = 0.3333
+   toggle [0, 0, 0, 1, 1, 1, 1, 1]   p = 0.625: gap/(2 mu) = 0.6250, v/c' = 0.6250 (overlap 1.00/1.00);  1 - p = 0.3750
+A3. random independent bits: averaged one-tick map (coherent part)
+   p = 0.02: coherent gap/(2 mu) = 0.9999, v/c' = 0.9999 (continuous gate with tan a = p/(1-p): N = 0.9999; 1 - p = 0.98); |lambda| per tick 0.9802; node-node coherence per tick 0.9608
+   p = 0.05: coherent gap/(2 mu) = 0.9993, v/c' = 0.9993 (continuous gate with tan a = p/(1-p): N = 0.9993; 1 - p = 0.95); |lambda| per tick 0.9513; node-node coherence per tick 0.9050
+   p =  0.1: coherent gap/(2 mu) = 0.9969, v/c' = 0.9969 (continuous gate with tan a = p/(1-p): N = 0.9969; 1 - p = 0.90); |lambda| per tick 0.9055; node-node coherence per tick 0.8200
+   p = 0.25: coherent gap/(2 mu) = 0.9743, v/c' = 0.9743 (continuous gate with tan a = p/(1-p): N = 0.9743; 1 - p = 0.75); |lambda| per tick 0.7906; node-node coherence per tick 0.6250
+   p =  0.5: coherent gap/(2 mu) = 0.8535, v/c' = 0.8535 (continuous gate with tan a = p/(1-p): N = 0.8536; 1 - p = 0.50); |lambda| per tick 0.7071; node-node coherence per tick 0.5000
