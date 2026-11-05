@@ -1,0 +1,28 @@
+A. Bloch: wait (W) and stay (H) toggles, periodic patterns starting free (1 = event)
+   W [1, 0, 0, 0]               H [0, 0, 0, 0]              : gap/(2 mu) = 0.7500 (pred 0.7500), v/c' = 0.7500 (pred 0.7500), overlap 1.00/1.00
+   W [0, 0, 0, 0]               H [1, 0, 0, 0]              : gap/(2 mu) = 1.0000 (pred 1.0000), v/c' = 0.7503 (pred 0.7500), overlap 1.00/1.00
+   W [1, 0, 0, 0]               H [0, 0, 1, 0]              : gap/(2 mu) = 0.7500 (pred 0.7500), v/c' = 0.5018 (pred 0.5000), overlap 1.00/1.00
+   W [1, 0, 0, 0, 0]            H [0, 0, 1, 0, 0]           : gap/(2 mu) = 0.8000 (pred 0.8000), v/c' = 0.6003 (pred 0.6000), overlap 1.00/1.00
+   W [1, 0, 0, 0, 0, 0, 0, 0]   H [0, 0, 0, 0, 1, 0, 0, 0]  : gap/(2 mu) = 0.8750 (pred 0.8750), v/c' = 0.7499 (pred 0.7500), overlap 1.00/1.00
+   W [1, 0, 0, 0, 0, 0]         H [0, 0, 1, 0, 1, 0]        : gap/(2 mu) = 0.8333 (pred 0.8333), v/c' = 0.4970 (pred 0.5000), overlap 1.00/1.00
+   W [1, 0, 0, 0]               H [0, 1, 0, 0]              : gap/(2 mu) = 0.7500 (pred 0.7500), v/c' = 0.3746 (pred 0.5000), overlap 0.71/0.71
+   W [1, 0, 0, 0]               H [1, 0, 0, 0]              : gap/(2 mu) = 0.7500 (pred 0.7500), v/c' = 0.3746 (pred 0.5000), overlap 0.71/0.71
+   W [1, 0, 0, 0]               H [0, 0, 0, 1]              : gap/(2 mu) = 1.3978 (pred 0.7500), v/c' = 58.7359 (pred 0.5000), overlap 0.00/0.00
+B. x-chain, wait toggle: bit schedules vs continuous 1b (N0 = 0.75, g = 0.002, sigma 16.0, 160 ticks)
+   schedule common phase: busy fraction at x = 0 0.250 (p 0.250); neighbour mismatch per tick: t < 40 0.0362, t >= 120 0.2575
+   schedule random phase: busy fraction at x = 0 0.250 (p 0.250); neighbour mismatch per tick: t < 40 0.3845, t >= 120 0.3840
+   schedule nested      : busy fraction at x = 0 0.250 (p 0.250); neighbour mismatch per tick: t < 40 0.0010, t >= 120 0.0010
+   mu=0.03, rest      continuous 1b / semicl 0.855;  ideal skip phase (nested) 0.990;  common phase: +0.388 (leak t=40 0.267, max 0.416);  random phase: -0.221 (leak t=40 0.385, max 0.448);  nested: +0.569 (leak t=40 0.014, max 0.047)  [0s]
+   mu=0.03, k_y=0.2   continuous 1b / semicl 0.961;  ideal skip phase (nested) 0.991;  common phase: +0.420 (leak t=40 0.268, max 0.412);  random phase: +0.254 (leak t=40 0.380, max 0.448);  nested: +0.632 (leak t=40 0.014, max 0.045)  [1s]
+   mu=0.15, rest      continuous 1b / semicl 0.989;  ideal skip phase (nested) 0.985;  common phase: +0.108 (leak t=40 0.252, max 0.425);  random phase: +0.221 (leak t=40 0.389, max 0.467);  nested: +0.824 (leak t=40 0.014, max 0.048)  [1s]
+   massless, k_y=0.2  continuous 1b / semicl 0.952;  ideal skip phase (nested) 0.992;  common phase: +0.371 (leak t=40 0.269, max 0.412);  random phase: +0.149 (leak t=40 0.380, max 0.446);  nested: +0.646 (leak t=40 0.014, max 0.045)  [2s]
+   massless, k_y=0.4  continuous 1b / semicl 0.984;  ideal skip phase (nested) 0.971;  common phase: +0.046 (leak t=40 0.263, max 0.412);  random phase: -0.294 (leak t=40 0.376, max 0.451);  nested: +0.792 (leak t=40 0.014, max 0.049)  [2s]
+   B2  nested schedule: other sequences u_k, packet width, gradient (mu = 0.03 rest / massless k_y = 0.2)
+      golden, u0 0   : bit 0.569 / 0.646, ideal skip phase 0.990 / 0.992, leakage max 0.047 / 0.045  [3s]
+      golden, u0 0.5 : bit 0.547 / 0.583, ideal skip phase 0.957 / 0.987, leakage max 0.049 / 0.049  [3s]
+      sqrt2, u0 0    : bit 0.608 / 0.660, ideal skip phase 0.985 / 1.000, leakage max 0.047 / 0.049  [4s]
+      pi, u0 0.5     : bit 0.496 / 0.722, ideal skip phase 0.833 / 0.751, leakage max 0.048 / 0.050  [4s]
+      sigma 8        : bit 0.398 / 0.610, ideal skip phase 1.007 / 1.001, leakage max 0.047 / 0.045  [4s]
+      sigma 32       : bit 0.629 / 0.661, ideal skip phase 0.995 / 0.991, leakage max 0.047 / 0.045  [5s]
+      g 1e-3         : bit 0.684 / 0.730, ideal skip phase 0.996 / 0.977, leakage max 0.024 / 0.025  [5s]
+saved data/phase_bit_s4_open21.npz
