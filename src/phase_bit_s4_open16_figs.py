@@ -47,22 +47,22 @@ def main():
             t = 0.5 * np.arange(n)
             ph = -np.unwrap(np.angle(s[:n] * np.conj(s0[:n])))
             a.plot(t, ph * 1e3, ls, color=COL[spin], alpha=1.0 if rule == 'rule' else 0.45, lw=2,
-                   label=f"{NAME[spin]}, {'Bahn + Spin' if rule == 'rule' else 'nur Bahn'}")
+                   label=f"{NAME[spin]}, {'orbit + spin' if rule == 'rule' else 'orbit only'}")
             kap = 1.5 if spin == 'up' else -0.5
             row = C[(C[:, 0] == (rule == 'rule')) & (C[:, 1] == kap)]
             if len(row):
                 ref_full = row[0, 3] + (row[0, 5] if row[0, 7] else 0)   # E(+J) - E(0) of the reference
                 a.plot(t, ref_full * t * 1e3, '--', color=INK, lw=1)
-    a.plot([], [], '--', color=INK, lw=1, label='Steigung der Referenz')
-    a.set_xlabel('Zeit t (Takte × 0.5)')
-    a.set_ylabel('Phase −arg(c_J(t) c_0(t)*)  (10⁻³ rad)')
-    title(a, '(a) Phase des Laufs mit Drehimpuls J gegen J = 0\n(Steigung = Lense-Thirring-Verschiebung)')
+    a.plot([], [], '--', color=INK, lw=1, label='slope of the reference')
+    a.set_xlabel('time t (ticks × 0.5)')
+    a.set_ylabel('phase −arg(c_J(t) c_0(t)*)  (10⁻³ rad)')
+    title(a, '(a) phase of the run with angular momentum J against J = 0\n(slope = Lense-Thirring shift)')
     a.legend(loc='upper left', fontsize=8)
 
     # (b) shifts lattice vs reference
     b = ax[0, 1]
     labs, lat, ref, cols, alph = [], [], [], [], []
-    for rl, rlab in ((0, 'nur Bahn'), (1, 'Bahn + Spin')):
+    for rl, rlab in ((0, 'orbit only'), (1, 'orbit + spin')):
         for spin, kap in (('up', 1.5), ('dn', -0.5)):
             row = C[(C[:, 0] == rl) & (C[:, 1] == kap)]
             if not len(row):
@@ -70,14 +70,14 @@ def main():
             labs.append(f'{NAME[spin]}\n{rlab}')
             lat.append(row[0, 2]); ref.append(row[0, 3]); cols.append(COL[spin]); alph.append(0.5 + 0.5 * rl)
     x = np.arange(len(labs))
-    b.bar(x - 0.2, np.array(lat) * 1e5, 0.38, color=cols, label='Gitter (3D-Walker mit Mitführ-Hop)')
-    b.bar(x + 0.2, np.array(ref) * 1e5, 0.38, color='none', edgecolor=cols, lw=1.8, label='Dirac in der Metrik + b-Terme')
+    b.bar(x - 0.2, np.array(lat) * 1e5, 0.38, color=cols, label='lattice (3D walker with drag hop)')
+    b.bar(x + 0.2, np.array(ref) * 1e5, 0.38, color='none', edgecolor=cols, lw=1.8, label='Dirac in the metric + b terms')
     for xi, l_, r_ in zip(x, lat, ref):
         b.text(xi - 0.2, l_ * 1e5 + 0.12, f'{l_/r_:.3f}', ha='center', fontsize=8, color=INK)
     b.set_xticks(x); b.set_xticklabels(labs, fontsize=8)
-    b.set_ylabel('Verschiebung durch J  (10⁻⁵)')
-    title(b, f'(b) Lense-Thirring-Verschiebung der 2p-Niveaus (B_J = {bj}, r_c,b = {rcbf} a0)\n'
-             '(Zahl über dem Balken: Gitter / Referenz)')
+    b.set_ylabel('shift due to J  (10⁻⁵)')
+    title(b, f'(b) Lense-Thirring shift of the 2p levels (B_J = {bj}, r_c,b = {rcbf} a0)\n'
+             '(number above the bar: lattice / reference)')
     b.legend(loc='upper left', fontsize=8)
 
     # (c) spin part = (orbit + spin) - orbit
@@ -96,17 +96,17 @@ def main():
     fo = {1.5: A[0, 6], -0.5: A[1, 6]}
     if sl:
         x = np.arange(len(sl))
-        c.bar(x - 0.2, np.array(sl) * 1e6, 0.38, color=[COL[s] for s in ('up', 'dn')][:len(sl)], label='Gitter (Spinregel)')
+        c.bar(x - 0.2, np.array(sl) * 1e6, 0.38, color=[COL[s] for s in ('up', 'dn')][:len(sl)], label='lattice (spin rule)')
         c.bar(x + 0.2, np.array(sr) * 1e6, 0.38, color='none', edgecolor=[COL[s] for s in ('up', 'dn')][:len(sl)], lw=1.8,
-              label='Referenz (exakt in B_J, ungerader Anteil)')
-        c.plot(x + 0.2, np.array([fo[1.5], fo[-0.5]][:len(sl)]) * 1e6, 'D', color=INK, ms=7, label='Referenz, 1. Ordnung')
+              label='reference (exact in B_J, odd part)')
+        c.plot(x + 0.2, np.array([fo[1.5], fo[-0.5]][:len(sl)]) * 1e6, 'D', color=INK, ms=7, label='reference, first order')
         for xi, l_, r_ in zip(x, sl, sr):
             c.text(xi - 0.2, l_ * 1e6 + (0.4 if l_ > 0 else -1.0), f'{l_/r_:.3f}', ha='center', fontsize=8, color=INK)
         c.set_xticks(x); c.set_xticklabels(nm)
         c.axhline(0, color=MUTED, lw=0.8)
         c.legend(loc='upper left', fontsize=8)
-    c.set_ylabel('Spinanteil (Bahn + Spin) − Bahn  (10⁻⁶)')
-    title(c, '(c) Spinanteil ½ (rot b)·J_int: Vorzeichen folgt s_z\n(gyrogravitomagnetischer Faktor 1)')
+    c.set_ylabel('spin part (orbit + spin) − orbit  (10⁻⁶)')
+    title(c, '(c) spin part ½ (curl b)·J_int: sign follows s_z\n(gyrogravitomagnetic factor 1)')
 
     # (d) radial profiles of the two couplings, scaled by rho^3 / B_J, with the 2p densities
     dd = ax[1, 1]
@@ -116,8 +116,8 @@ def main():
     m, GM, a0, rc = o15.params()
     rcb = rcbf * a0
     r = np.linspace(0.02, 6 * a0, 800)
-    dd.plot(r / a0, o16.b_phi(r, bj, rcb) * r ** 2 / bj, color=S3, label='Bahn: (b_φ/ρ)·ρ³/B_J  (Fernfeld 1)')
-    dd.plot(r / a0, o16.curl_z(r, bj, rcb) / 2 * r ** 3 / bj, color=S4, label='Spin: ½ (rot b)_z·ρ³/B_J  (Fernfeld −½)')
+    dd.plot(r / a0, o16.b_phi(r, bj, rcb) * r ** 2 / bj, color=S3, label='orbit: (b_φ/ρ)·ρ³/B_J  (far field 1)')
+    dd.plot(r / a0, o16.curl_z(r, bj, rcb) / 2 * r ** 3 / bj, color=S4, label='spin: ½ (curl b)_z·ρ³/B_J  (far field −½)')
     for yv in (1, -0.5):
         dd.axhline(yv, color=MUTED, lw=0.8, ls='--')
     dd.axhline(0, color=MUTED, lw=0.8)
@@ -131,20 +131,20 @@ def main():
                                         8000, Et, k=3, rb=o15.lattice_rb(o15.MU), nexp=nexp or 0)
         i0 = np.argmin(np.abs(w - Et))
         P = v[:len(gP), i0]
-        d2.plot(gP / a0, P ** 2 / np.diff(gP).mean(), ':', color=COL[spin], lw=1.5, label=f'Dichte P² {NAME[spin]}')
+        d2.plot(gP / a0, P ** 2 / np.diff(gP).mean(), ':', color=COL[spin], lw=1.5, label=f'density P² {NAME[spin]}')
     d2.set_ylim(bottom=0)
-    d2.set_ylabel('radiale Dichte P²', color=MUTED)
+    d2.set_ylabel('radial density P²', color=MUTED)
     d2.grid(False)
     d2.spines['right'].set_visible(True)
     dd.set_xlim(0, 6)
     dd.set_ylim(-0.7, 1.15)
     dd.set_xlabel('ρ / a0')
-    dd.set_ylabel('Kopplung × ρ³ / B_J')
-    title(dd, f'(d) Radiale Profile (r_c,b = {rcbf} a0) und 2p-Dichten:\nim Kern sind beide unterdrückt, rot b kehrt das Vorzeichen um')
+    dd.set_ylabel('coupling × ρ³ / B_J')
+    title(dd, f'(d) radial profiles (r_c,b = {rcbf} a0) and 2p densities:\nboth are suppressed in the core, curl b changes sign')
     h1, l1 = dd.get_legend_handles_labels(); h2, l2 = d2.get_legend_handles_labels()
     dd.legend(h1 + h2, l1 + l2, loc='lower right', fontsize=8)
 
-    fig.suptitle('Gravitative Hyperfeinstruktur: Lense-Thirring-Kopplung des 2p-Atoms an den Drehimpuls J',
+    fig.suptitle('Gravitational hyperfine structure: Lense-Thirring coupling of the 2p atom to the angular momentum J',
                  color=INK, fontsize=12)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
     fig.savefig(fig_path('phase_bit_s4_open16.png'), dpi=120)
