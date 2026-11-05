@@ -157,6 +157,7 @@ The tables below list bare file names; find them in the directory above.
 | `phase_bit_s4_open16.py` | **Paper 3, gravitational hyperfine structure** — Lense-Thirring coupling of the 2p atom to the central body's J: radial Dirac reference with the diagonal terms m_l b_phi/rho + s_z (curl b)_z/2 per component (`reference`, exact and first order), lattice drag hop on the slab as gather/scatter bond lists (`drag_ops`, in-plane brick-wall parity, every DRAGK = 4 ticks), spin rule exp(-i dt (1/2) curl b . J_int) on row vectors; run parts via `python phase_bit_s4_open16.py [A] [B spin +-1 rule|norule] [C]` (B: ~4.9 h per run) |
 | `phase_bit_s4_open16_figs.py` | Figure (`phase_bit_s4_open16.png`) |
 | `paper3_ladder_fig.py` | **Paper 3 overview figure** (`paper3_ladder.png`): the ladder clock lapse -> wait buffer -> budget rule -> product rule / drag hop, measured light deflection per rung, PPN gamma-beta plane with perihelion lines (numbers quoted from the RESULTS docs, sources in the docstring) |
+| `paper3_lead_fig.py` | **Paper 3 lead figure** (`paper3_lead.png`, Fig. 1): z = 0 lattice plane shaded by the busy fraction 1 − N around a point mass, z-projected density of a massless packet in the full 3D walker (budget rule) at three times, W vs H2 track; `python paper3_lead_fig.py run` reruns the open12 B setup (b = 12, one Kramers member, ~10 min, ~2 GB) into `paper3_lead.npz` |
 | `create_animation.py` | Hex lattice wave animation (`animation.gif/mp4`) |
 
 ### Result Files
