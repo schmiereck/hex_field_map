@@ -1,0 +1,31 @@
+A. bond-resolved stay gate: does the budget rule carry a tensor?
+   A0  bond axes: 6; dyad matrix rank 6, singular values 1.4142, 0.7071, 0.7071, 0.7071, 0.7071, 0.7071 (condition 2.000)
+   A1  isotropic N_h = 0.75: M = [0.562495 0.562495 0.562495] (N_h^2 = 0.562500), off-diagonal 1.2e-13, Dirac point +1.5e-16, Kramers/quartet 3.5e-15, fit residual 9.7e-08
+       S = trace (0.01): dM/M0 = [[ 0.0201,-0.    ,-0.    ], [-0.    , 0.0201, 0.    ], [-0.    , 0.    , 0.0201]], Dirac point +8.2e-16, Kramers 4.0e-15, ellipsoid residual 1.3e-07
+       S = E_g (0.01): dM/M0 = [[ 5.e-03,-0.e+00,-0.e+00], [-0.e+00,-5.e-03,-0.e+00], [-0.e+00,-0.e+00,-2.e-05]], Dirac point +3.7e-05, Kramers 1.7e-12, ellipsoid residual 9.7e-08
+       S = T_2g (0.01): dM/M0 = [[ 7.0e-05, 1.0e-02,-0.0e+00], [ 1.0e-02, 7.0e-05,-0.0e+00], [-0.0e+00,-0.0e+00,-4.5e-04]], Dirac point -1.7e-04, Kramers 6.0e-08, ellipsoid residual 3.2e-06
+       response per unit S: trace +2.0100 (2 = M ~ N_h^2), E_g +0.5000, T_2g +1.0000
+   A2  |h| = 0.0005: |M - N0^2 g^-1|/N0^2 = 2.1e-06 (relative to 2|h|: 0.002), Dirac point 1.6e-06, Kramers 1.1e-08
+   A2  |h| = 0.001: |M - N0^2 g^-1|/N0^2 = 1.7e-05 (relative to 2|h|: 0.009), Dirac point 8.9e-06, Kramers 3.1e-08
+   A2  |h| = 0.002: |M - N0^2 g^-1|/N0^2 = 7.7e-05 (relative to 2|h|: 0.019), Dirac point 3.5e-05, Kramers 1.0e-07
+   A2  |h| = 0.005: |M - N0^2 g^-1|/N0^2 = 2.4e-04 (relative to 2|h|: 0.024), Dirac point 2.7e-04, Kramers 3.6e-07
+   A2  |h| = 0.01: |M - N0^2 g^-1|/N0^2 = 7.4e-04 (relative to 2|h|: 0.037), Dirac point 4.1e-04, Kramers 9.0e-07
+   A2  |h| = 0.02: |M - N0^2 g^-1|/N0^2 = 4.9e-03 (relative to 2|h|: 0.123), Dirac point 4.5e-03, Kramers 5.5e-06
+   A3  bond-local law: M vs sum over headings w(N_d) u_d u_d^T / 4
+       trace w = N^2: |dM_lattice - dM_law| / |dM_lattice| = 0.000
+       trace w = N  : |dM_lattice - dM_law| / |dM_lattice| = 0.502
+       E_g   w = N^2: |dM_lattice - dM_law| / |dM_lattice| = 0.009
+       E_g   w = N  : |dM_lattice - dM_law| / |dM_lattice| = 0.500
+       T_2g  w = N^2: |dM_lattice - dM_law| / |dM_lattice| = 0.045
+       T_2g  w = N  : |dM_lattice - dM_law| / |dM_lattice| = 0.500
+   [0s]
+B. source: bond load dE/d ln N_a vs the stress tensor (N^2/2) u_a^T T u_a, T^ij = c'^2 p^i p^j / E
+   mu =  0.0: |k| = 0.02: max |L - u T u| / max|u T u| = 4.4e-03, sum L / sum u T u = 1.0043 ... 1.0044
+   mu =  0.0: |k| = 0.05: max |L - u T u| / max|u T u| = 1.1e-02, sum L / sum u T u = 1.0104 ... 1.0107
+   mu =  0.0: |k| =  0.1: max |L - u T u| / max|u T u| = 2.1e-02, sum L / sum u T u = 1.0198 ... 1.0207
+   mu =  0.0: |k| =  0.2: max |L - u T u| / max|u T u| = 3.9e-02, sum L / sum u T u = 1.0353 ... 1.0386
+   mu = 0.03: |k| = 0.02: max |L - u T u| / max|u T u| = 2.9e-02, sum L / sum u T u = 1.0287 ... 1.0288
+   mu = 0.03: |k| = 0.05: max |L - u T u| / max|u T u| = 3.0e-02, sum L / sum u T u = 1.0299 ... 1.0301
+   mu = 0.03: |k| =  0.1: max |L - u T u| / max|u T u| = 3.4e-02, sum L / sum u T u = 1.0334 ... 1.0343
+   mu = 0.03: |k| =  0.2: max |L - u T u| / max|u T u| = 4.6e-02, sum L / sum u T u = 1.0429 ... 1.0460
+   [0s]
