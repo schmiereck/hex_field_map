@@ -1,7 +1,7 @@
 {
-  "title": "Internal Structure of the Equilateral Lattice Path Integral: Crystal Angular Momentum, Emergent Vector Ground State, and Symmetry Breaking by Confinement",
-  "version": "v2.0.0",
-  "description": "<p>In a previous paper (doi:10.5281/zenodo.22178585) we showed that an equilateral triangular (1+1D) and hexagonal (2+1D) path-integral lattice with the single amplitude rule \"direction change = i&epsilon;\" reproduces relativistic dispersion, exact isotropy, and the speed of light c = &radic;3 from geometry alone. Here we analyse the internal structure of the physical propagating band of the same model, in 2+1D and in a natural 3+1D tetrahedral-octahedral extension.</p><p>In 2+1D the physical band is exactly 5-fold degenerate and decomposes under C<sub>6v</sub> as E<sub>1</sub> &oplus; E<sub>2</sub> &oplus; B, carrying crystal angular momenta m &isin; {&plusmn;1, &plusmn;2, +3} modulo 6; the s-wave is excluded by a factor-6 spectral gap in the local coupling matrix. In 3+1D the band is exactly 11-fold degenerate and decomposes under O<sub>h</sub> as E<sub>g</sub> &oplus; T<sub>2g</sub> &oplus; T<sub>1u</sub> &oplus; T<sub>2u</sub>; the exclusion factor is 12. A general law follows: for N lightlike diagonal directions the band has dimension N&minus;1 and the s-wave eigenvalue of the coupling matrix is 1+Ni&epsilon;. A numerical double-slit experiment shows that a free wave packet is 98% T<sub>1u</sub> (vector). A 3+1D box-state calculation with hard walls places T<sub>1u</sub> consistently lowest in energy, with the T<sub>1u</sub>&ndash;E<sub>g</sub> gap following 1/L<sup>2</sup> to within 2%. Vector physics emerges geometrically as the preferred ground state of the lattice.</p><p>The paper (LaTeX and PDF) is in <code>papers/paper2_internal_structure.*</code>; the repository also contains all simulation code and further investigations.</p>",
+  "title": "Gravity as Computation Time: A Local Budget Rule on a Spin-1/2 Phase-Bit Lattice and its Post-Newtonian Limit",
+  "version": "v3.0.0",
+  "description": "<p>We ask whether gravity can be modelled as a local limit on how fast each node of a discrete quantum lattice can compute. The test particle is a unitary quantum walker on the face-centred-cubic lattice whose spin is carried by a finite register, the binary octahedral group 2O: every 60&deg; turn rotates the spinor by a quarter turn about a cube axis. This gives spin 1/2 with Kramers degeneracy at every momentum, the belt-trick sign, and exact particle&ndash;antiparticle symmetry; a single extra amplitude, &ldquo;reverse the heading without rotating the spin&rdquo;, is the lattice Dirac mass (gap exactly 4&mu;).</p><p>Slowing down only the internal clock gives Nordstr&ouml;m gravity; a local wait buffer per node gives Einstein's 1911 theory (half light bending). A single node rule &mdash; every process needs each node it involves to be free, one node for the clock and two for a hop &mdash; produces H = N<sup>2</sup>K + NM, i.e. a spatial metric A = 1/N and &gamma;<sub>PPN</sub> = 1. Combining loads at a node as independent occupations (N = &prod; N<sub>i</sub>) gives &beta;<sub>PPN</sub> = 1 even in the strong field, and a direction-independent drag hop supplies g<sub>0i</sub> with the coefficient the relativity principle demands. In the full 3+1D walker light is deflected 2.07 times more strongly than with waiting alone (GR: 2), the classical orbits of the lattice metric give the general-relativistic perihelion advance, and a lattice gravitational atom reproduces the fine structure &prop; 2&gamma;+1 (de Sitter) and the Lense&ndash;Thirring hyperfine shifts of the Dirac equation in the corresponding metric to 1&ndash;4%. The field equations for lapse and shift, a vacuum counterterm and the gyroscope rule are imposed and stated as such; the tensor sector (gravitational waves) is the decisive open question.</p><p>The paper (LaTeX and PDF) is in <code>papers/paper3_gravity_computation_time.*</code>; the repository also contains all simulation code, stored data and the result documents behind every number.</p>",
   "creators": [
     {
       "name": "Schmiereck, Thomas"
@@ -16,16 +16,23 @@
   "license": "cc-by-4.0",
   "keywords": [
     "lattice path integral",
-    "Dirac equation",
-    "triangular lattice",
-    "hexagonal lattice",
-    "crystal angular momentum",
-    "emergent relativity"
+    "quantum walk",
+    "emergent gravity",
+    "post-Newtonian limit",
+    "PPN parameters",
+    "spin 1/2",
+    "binary octahedral group",
+    "Dirac equation"
   ],
   "related_identifiers": [
     {
-      "identifier": "10.5281/zenodo.22178585",
+      "identifier": "10.5281/zenodo.23888331",
       "relation": "continues",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.22178585",
+      "relation": "references",
       "scheme": "doi"
     }
   ]

@@ -45,6 +45,39 @@ DOI: [10.5281/zenodo.23888331](https://doi.org/10.5281/zenodo.23888331) (release
 
 ---
 
+## Paper 3: Gravity as Computation Time
+
+**A Local Budget Rule on a Spin-½ Phase-Bit Lattice and its Post-Newtonian Limit**
+
+![Light passing a point mass on the phase-bit lattice](figures/paper3_lead.png)
+
+### Abstract
+
+Can gravity be modelled as a local limit on how fast each node of a discrete
+quantum lattice can compute? The test particle is a unitary quantum walker on
+the FCC lattice whose spin ½ is carried by a **finite register** (the binary
+octahedral group 2O); reversing the heading without rotating the spin is the
+lattice Dirac mass. Slowing only the internal clock gives Nordström gravity, a
+local wait buffer gives Einstein's 1911 theory, and a single node rule —
+**every process needs each node it involves to be free** (one node for the
+clock, two for a hop) — gives the spatial metric A = 1/N and **γ = β = 1**.
+In the full 3+1D walker light is deflected **2.07×** more strongly than with
+waiting alone (GR: 2), the lattice metric gives the GR perihelion advance and
+Lense–Thirring precession, and a lattice gravitational atom reproduces the
+gravitational fine structure (∝ 2γ + 1) and hyperfine shifts of the Dirac
+equation in the metric to 1–4 %. What is imposed (field equations, vacuum
+counterterm, gyroscope rule) is stated explicitly; the tensor sector
+(gravitational waves) is the open question.
+
+follow-up to [`paper2_internal_structure.pdf`](papers/paper2_internal_structure.pdf) / [`README2_internal_structure.md`](docs/README2_internal_structure.md)
+
+**README**: [`README3_gravity_computation_time.md`](docs/README3_gravity_computation_time.md)  
+LaTeX version: [`paper3_gravity_computation_time.tex`](papers/paper3_gravity_computation_time.tex)  
+PDF version: [`paper3_gravity_computation_time.pdf`](papers/paper3_gravity_computation_time.pdf)  
+Research notes behind every number (German): see [Paper 3 notes](#paper-3-research-notes-in-german) below
+
+---
+
 ## Further Investigations (work in progress, notes in German)
 
 Building on the 2+1D hexagonal model, a **turning-phase model** replaces the
@@ -66,7 +99,7 @@ exactly unitary.
 | Helicity test | Internal spin does not lift the cap; the non-relativistic limit does | [`RESULTS_Helicity_de.md`](docs/RESULTS_Helicity_de.md) |
 | Caching on the regular lattice | Memoised walk enumeration | [`NOTES_Caching_de.md`](docs/NOTES_Caching_de.md) |
 
-### Paper 3 (in preparation, notes in German)
+### Paper 3: research notes (in German)
 
 Discrete states, phase bits and **gravity as computation time**: [`ROADMAP_Paper3_de.md`](docs/ROADMAP_Paper3_de.md)
 (source idea: [`SOURCE_Paper3_Gemini_Thread_de.md`](docs/SOURCE_Paper3_Gemini_Thread_de.md)).
@@ -118,7 +151,8 @@ Dependencies: [`requirements.txt`](requirements.txt).
 
 ## Citation
 
-Both papers are archived on Zenodo as releases of this repository.
+The papers are archived on Zenodo as releases of this repository
+(Paper 3: release v3.0.0, DOI follows with the release).
 
 **Paper 1** (release v1.0.0):
 
