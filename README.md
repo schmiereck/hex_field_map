@@ -147,6 +147,14 @@ Run `python src/phase_bit_s4_open22.py`.
 See [`RESULTS_Bit3_HiddenLayers_de.md`](docs/RESULTS_Bit3_HiddenLayers_de.md)
 and [`phase_bit_s4_open22.json`](data/phase_bit_s4_open22.json).
 
+The next diagnostic finds **eight unintended additive linear charges** in that
+collision rule. Eight conservative four-bit scatterings remove them while keeping
+24 bits per node, exact reversibility, number conservation, and four-dimensional
+lattice-momentum conservation. Microscopic half-filled runs show sound-like density signals and
+short-lived kinetic correlations; the measured probes do not establish a massive
+collective branch. See [`RESULTS_Bit4_CollectiveModes_de.md`](docs/RESULTS_Bit4_CollectiveModes_de.md).
+Run `python src/phase_bit_s4_open23.py` and `python src/phase_bit_s4_open23_figs.py`.
+
 ## Repository Layout
 
 | Directory | Content |
