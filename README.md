@@ -155,6 +155,14 @@ short-lived kinetic correlations; the measured probes do not establish a massive
 collective branch. See [`RESULTS_Bit4_CollectiveModes_de.md`](docs/RESULTS_Bit4_CollectiveModes_de.md).
 Run `python src/phase_bit_s4_open23.py` and `python src/phase_bit_s4_open23_figs.py`.
 
+Resolving the compact direction (periods 16, 32, 64) yields a positive spectral
+diagnostic: selected classical density waves have a visible frequency gap and
+approximately `omega^2 = (k^2 + q^2)/2`, consistent with compactified 4D sound.
+All 19 homogeneous linear kinetic directions are tested on held-out runs. A local
+FCC-slice detector and wave-packet group velocity remain untested; this is not a
+derivation of quantum mass. See [`RESULTS_Bit5_HiddenModes_de.md`](docs/RESULTS_Bit5_HiddenModes_de.md).
+Run `python src/phase_bit_s4_open24.py` and `python src/phase_bit_s4_open24_figs.py`.
+
 ## Repository Layout
 
 | Directory | Content |
