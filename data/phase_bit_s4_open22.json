@@ -1,0 +1,271 @@
+{
+  "schema": 1,
+  "geometry": [
+    {
+      "lattice": "D3/FCC",
+      "dimension": 3,
+      "neighbors": 12,
+      "coordinate_scale": 1,
+      "M1111_over_M1122": "2",
+      "moments": {
+        "2": {
+          "isotropic": true,
+          "components_checked": 6,
+          "first_failure": null
+        },
+        "4": {
+          "isotropic": false,
+          "components_checked": 15,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            8,
+            "48/5"
+          ]
+        },
+        "6": {
+          "isotropic": false,
+          "components_checked": 28,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            8,
+            "96/7"
+          ]
+        }
+      }
+    },
+    {
+      "lattice": "D4",
+      "dimension": 4,
+      "neighbors": 24,
+      "coordinate_scale": 1,
+      "M1111_over_M1122": "3",
+      "moments": {
+        "2": {
+          "isotropic": true,
+          "components_checked": 10,
+          "first_failure": null
+        },
+        "4": {
+          "isotropic": true,
+          "components_checked": 35,
+          "first_failure": null
+        },
+        "6": {
+          "isotropic": false,
+          "components_checked": 84,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            12,
+            "15"
+          ]
+        }
+      }
+    },
+    {
+      "lattice": "D5",
+      "dimension": 5,
+      "neighbors": 40,
+      "coordinate_scale": 1,
+      "M1111_over_M1122": "4",
+      "moments": {
+        "2": {
+          "isotropic": true,
+          "components_checked": 15,
+          "first_failure": null
+        },
+        "4": {
+          "isotropic": false,
+          "components_checked": 70,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            16,
+            "96/7"
+          ]
+        },
+        "6": {
+          "isotropic": false,
+          "components_checked": 210,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            16,
+            "320/21"
+          ]
+        }
+      }
+    },
+    {
+      "lattice": "D8",
+      "dimension": 8,
+      "neighbors": 112,
+      "coordinate_scale": 1,
+      "M1111_over_M1122": "7",
+      "moments": {
+        "2": {
+          "isotropic": true,
+          "components_checked": 36,
+          "first_failure": null
+        },
+        "4": {
+          "isotropic": false,
+          "components_checked": 330,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0
+            ],
+            28,
+            "84/5"
+          ]
+        },
+        "6": {
+          "isotropic": false,
+          "components_checked": 1716,
+          "first_failure": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            28,
+            "14"
+          ]
+        }
+      }
+    },
+    {
+      "lattice": "E8",
+      "dimension": 8,
+      "neighbors": 240,
+      "coordinate_scale": 2,
+      "M1111_over_M1122": "3",
+      "moments": {
+        "2": {
+          "isotropic": true,
+          "components_checked": 36,
+          "first_failure": null
+        },
+        "4": {
+          "isotropic": true,
+          "components_checked": 330,
+          "first_failure": null
+        },
+        "6": {
+          "isotropic": true,
+          "components_checked": 1716,
+          "first_failure": null
+        }
+      }
+    }
+  ],
+  "gate": {
+    "local_states_exhausted": 64,
+    "bijective": true,
+    "particle_number_exact": true,
+    "opposite_pair_momentum_exact": true
+  },
+  "dynamics": {
+    "initial_states": 32,
+    "forward_ticks_checked": 512,
+    "bit_exact_round_trips": 32,
+    "particle_number_error": 0,
+    "momentum_error": 0,
+    "proof": "composition of exhaustive local bijections and directional translations"
+  },
+  "projection": {
+    "same_initial_macrostate": true,
+    "hidden_initial_states_enumerated": 4,
+    "distinct_next_macrostates": 2,
+    "exact_outcome_counts": [
+      2,
+      2
+    ],
+    "uniform_initial_ensemble_fractions": [
+      "1/2",
+      "1/2"
+    ],
+    "closed_deterministic_macro_rule": false,
+    "free_stream_projection_closes": true,
+    "heading_sector_exchange": {
+      "input_axis": 0,
+      "hidden_heading_count_before": 2,
+      "hidden_heading_count_after": 0
+    },
+    "history_samples": 252,
+    "first_order_memory_witness": null
+  },
+  "single_particle": {
+    "directions_checked": 24,
+    "collision_inactive": true,
+    "one_edge_ballistic_transport": true,
+    "emergent_mass_demonstrated": false
+  },
+  "minimal_feedback_memory": {
+    "separate_minimal_circuit": true,
+    "states_exhausted": 8,
+    "bijective_and_number_conserving": true,
+    "stationary_uniform_ensemble": true,
+    "conditional_counts": [
+      {
+        "condition": "Y1=1",
+        "next_one_count": 2,
+        "total": 4,
+        "fraction": "1/2"
+      },
+      {
+        "condition": "Y0=0,Y1=1",
+        "next_one_count": 0,
+        "total": 2,
+        "fraction": "0"
+      },
+      {
+        "condition": "Y0=1,Y1=1",
+        "next_one_count": 2,
+        "total": 2,
+        "fraction": "1"
+      }
+    ],
+    "first_order_markov": false,
+    "microscopic_random_draws": 0
+  },
+  "physical_nodes": 128,
+  "bits_per_node": 24,
+  "spatial_dimensions": 4,
+  "time": "separate discrete tick",
+  "scope": "classical Boolean projection diagnostic; no QM or gravity claim"
+}

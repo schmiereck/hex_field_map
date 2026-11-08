@@ -132,6 +132,21 @@ Discrete states, phase bits and **gravity as computation time**: [`ROADMAP_Paper
 
 ---
 
+### Hidden-layer bit dynamics (research)
+
+An independent classical Boolean diagnostic explores a 3D view of a reversible
+four-spatial-dimensional D4 lattice gas: 24 bits per node, exact particle-number
+and lattice-momentum conservation, and no amplitudes or probabilistic updates.
+The projected heading counts do not determine their own next state. A separate
+exhaustively checked three-bit feedback circuit exhibits non-Markovian observed
+histories under a stationary finite ensemble. Exact root-shell moments compare
+D3/FCC, D4, D5, D8, and E8. These are architecture and geometry tests, not a
+derivation of quantum mechanics, massive dispersion, or gravity.
+
+Run `python src/phase_bit_s4_open22.py`.
+See [`RESULTS_Bit3_HiddenLayers_de.md`](docs/RESULTS_Bit3_HiddenLayers_de.md)
+and [`phase_bit_s4_open22.json`](data/phase_bit_s4_open22.json).
+
 ## Repository Layout
 
 | Directory | Content |
