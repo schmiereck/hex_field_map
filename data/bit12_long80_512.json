@@ -1,0 +1,604 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "seed": 3112,
+  "occupation": 12,
+  "forward_ticks": 80,
+  "reverse_ticks": 80,
+  "reference_comparison": false,
+  "all_bitwise_equal_to_unbounded": false,
+  "exact_roundtrip": true,
+  "number_and_four_momenta_conserved": true,
+  "padding_zero": true,
+  "engine_cache": {
+    "capacity_entries": 256,
+    "current_entries": 256,
+    "hits": 0,
+    "misses": 81920,
+    "evictions": 81664,
+    "exact_evaluations": 81920
+  },
+  "maxrss_kib_linux": 128924,
+  "inner_collide_lru": {
+    "hits": 16925,
+    "misses": 64995,
+    "maxsize": 100000,
+    "currsize": 64995
+  },
+  "inner_preference_lru": {
+    "hits": 48376,
+    "misses": 79539,
+    "maxsize": 100000,
+    "currsize": 79539
+  },
+  "reference_cache_entries": null,
+  "forward_elapsed_seconds": 4.444,
+  "reverse_elapsed_seconds": 0.069,
+  "timeline": [
+    {
+      "tick": 1,
+      "seconds": 0.068721,
+      "entries": 256,
+      "evictions": 256,
+      "engine_misses": 512
+    },
+    {
+      "tick": 2,
+      "seconds": 0.063212,
+      "entries": 256,
+      "evictions": 768,
+      "engine_misses": 1024
+    },
+    {
+      "tick": 3,
+      "seconds": 0.056136,
+      "entries": 256,
+      "evictions": 1280,
+      "engine_misses": 1536
+    },
+    {
+      "tick": 4,
+      "seconds": 0.053327,
+      "entries": 256,
+      "evictions": 1792,
+      "engine_misses": 2048
+    },
+    {
+      "tick": 5,
+      "seconds": 0.056698,
+      "entries": 256,
+      "evictions": 2304,
+      "engine_misses": 2560
+    },
+    {
+      "tick": 6,
+      "seconds": 0.059261,
+      "entries": 256,
+      "evictions": 2816,
+      "engine_misses": 3072
+    },
+    {
+      "tick": 7,
+      "seconds": 0.05557,
+      "entries": 256,
+      "evictions": 3328,
+      "engine_misses": 3584
+    },
+    {
+      "tick": 8,
+      "seconds": 0.051759,
+      "entries": 256,
+      "evictions": 3840,
+      "engine_misses": 4096
+    },
+    {
+      "tick": 9,
+      "seconds": 0.056774,
+      "entries": 256,
+      "evictions": 4352,
+      "engine_misses": 4608
+    },
+    {
+      "tick": 10,
+      "seconds": 0.059111,
+      "entries": 256,
+      "evictions": 4864,
+      "engine_misses": 5120
+    },
+    {
+      "tick": 11,
+      "seconds": 0.058447,
+      "entries": 256,
+      "evictions": 5376,
+      "engine_misses": 5632
+    },
+    {
+      "tick": 12,
+      "seconds": 0.073266,
+      "entries": 256,
+      "evictions": 5888,
+      "engine_misses": 6144
+    },
+    {
+      "tick": 13,
+      "seconds": 0.059963,
+      "entries": 256,
+      "evictions": 6400,
+      "engine_misses": 6656
+    },
+    {
+      "tick": 14,
+      "seconds": 0.050614,
+      "entries": 256,
+      "evictions": 6912,
+      "engine_misses": 7168
+    },
+    {
+      "tick": 15,
+      "seconds": 0.049693,
+      "entries": 256,
+      "evictions": 7424,
+      "engine_misses": 7680
+    },
+    {
+      "tick": 16,
+      "seconds": 0.049803,
+      "entries": 256,
+      "evictions": 7936,
+      "engine_misses": 8192
+    },
+    {
+      "tick": 17,
+      "seconds": 0.053636,
+      "entries": 256,
+      "evictions": 8448,
+      "engine_misses": 8704
+    },
+    {
+      "tick": 18,
+      "seconds": 0.051584,
+      "entries": 256,
+      "evictions": 8960,
+      "engine_misses": 9216
+    },
+    {
+      "tick": 19,
+      "seconds": 0.051901,
+      "entries": 256,
+      "evictions": 9472,
+      "engine_misses": 9728
+    },
+    {
+      "tick": 20,
+      "seconds": 0.052289,
+      "entries": 256,
+      "evictions": 9984,
+      "engine_misses": 10240
+    },
+    {
+      "tick": 21,
+      "seconds": 0.053497,
+      "entries": 256,
+      "evictions": 10496,
+      "engine_misses": 10752
+    },
+    {
+      "tick": 22,
+      "seconds": 0.05305,
+      "entries": 256,
+      "evictions": 11008,
+      "engine_misses": 11264
+    },
+    {
+      "tick": 23,
+      "seconds": 0.063078,
+      "entries": 256,
+      "evictions": 11520,
+      "engine_misses": 11776
+    },
+    {
+      "tick": 24,
+      "seconds": 0.060869,
+      "entries": 256,
+      "evictions": 12032,
+      "engine_misses": 12288
+    },
+    {
+      "tick": 25,
+      "seconds": 0.056232,
+      "entries": 256,
+      "evictions": 12544,
+      "engine_misses": 12800
+    },
+    {
+      "tick": 26,
+      "seconds": 0.057012,
+      "entries": 256,
+      "evictions": 13056,
+      "engine_misses": 13312
+    },
+    {
+      "tick": 27,
+      "seconds": 0.063628,
+      "entries": 256,
+      "evictions": 13568,
+      "engine_misses": 13824
+    },
+    {
+      "tick": 28,
+      "seconds": 0.053937,
+      "entries": 256,
+      "evictions": 14080,
+      "engine_misses": 14336
+    },
+    {
+      "tick": 29,
+      "seconds": 0.05415,
+      "entries": 256,
+      "evictions": 14592,
+      "engine_misses": 14848
+    },
+    {
+      "tick": 30,
+      "seconds": 0.053008,
+      "entries": 256,
+      "evictions": 15104,
+      "engine_misses": 15360
+    },
+    {
+      "tick": 31,
+      "seconds": 0.050882,
+      "entries": 256,
+      "evictions": 15616,
+      "engine_misses": 15872
+    },
+    {
+      "tick": 32,
+      "seconds": 0.054624,
+      "entries": 256,
+      "evictions": 16128,
+      "engine_misses": 16384
+    },
+    {
+      "tick": 33,
+      "seconds": 0.053007,
+      "entries": 256,
+      "evictions": 16640,
+      "engine_misses": 16896
+    },
+    {
+      "tick": 34,
+      "seconds": 0.052665,
+      "entries": 256,
+      "evictions": 17152,
+      "engine_misses": 17408
+    },
+    {
+      "tick": 35,
+      "seconds": 0.050666,
+      "entries": 256,
+      "evictions": 17664,
+      "engine_misses": 17920
+    },
+    {
+      "tick": 36,
+      "seconds": 0.054669,
+      "entries": 256,
+      "evictions": 18176,
+      "engine_misses": 18432
+    },
+    {
+      "tick": 37,
+      "seconds": 0.057199,
+      "entries": 256,
+      "evictions": 18688,
+      "engine_misses": 18944
+    },
+    {
+      "tick": 38,
+      "seconds": 0.052252,
+      "entries": 256,
+      "evictions": 19200,
+      "engine_misses": 19456
+    },
+    {
+      "tick": 39,
+      "seconds": 0.058214,
+      "entries": 256,
+      "evictions": 19712,
+      "engine_misses": 19968
+    },
+    {
+      "tick": 40,
+      "seconds": 0.053796,
+      "entries": 256,
+      "evictions": 20224,
+      "engine_misses": 20480
+    },
+    {
+      "tick": 41,
+      "seconds": 0.055465,
+      "entries": 256,
+      "evictions": 20736,
+      "engine_misses": 20992
+    },
+    {
+      "tick": 42,
+      "seconds": 0.056757,
+      "entries": 256,
+      "evictions": 21248,
+      "engine_misses": 21504
+    },
+    {
+      "tick": 43,
+      "seconds": 0.055234,
+      "entries": 256,
+      "evictions": 21760,
+      "engine_misses": 22016
+    },
+    {
+      "tick": 44,
+      "seconds": 0.055762,
+      "entries": 256,
+      "evictions": 22272,
+      "engine_misses": 22528
+    },
+    {
+      "tick": 45,
+      "seconds": 0.051274,
+      "entries": 256,
+      "evictions": 22784,
+      "engine_misses": 23040
+    },
+    {
+      "tick": 46,
+      "seconds": 0.053887,
+      "entries": 256,
+      "evictions": 23296,
+      "engine_misses": 23552
+    },
+    {
+      "tick": 47,
+      "seconds": 0.052073,
+      "entries": 256,
+      "evictions": 23808,
+      "engine_misses": 24064
+    },
+    {
+      "tick": 48,
+      "seconds": 0.050739,
+      "entries": 256,
+      "evictions": 24320,
+      "engine_misses": 24576
+    },
+    {
+      "tick": 49,
+      "seconds": 0.052,
+      "entries": 256,
+      "evictions": 24832,
+      "engine_misses": 25088
+    },
+    {
+      "tick": 50,
+      "seconds": 0.059993,
+      "entries": 256,
+      "evictions": 25344,
+      "engine_misses": 25600
+    },
+    {
+      "tick": 51,
+      "seconds": 0.050269,
+      "entries": 256,
+      "evictions": 25856,
+      "engine_misses": 26112
+    },
+    {
+      "tick": 52,
+      "seconds": 0.052021,
+      "entries": 256,
+      "evictions": 26368,
+      "engine_misses": 26624
+    },
+    {
+      "tick": 53,
+      "seconds": 0.051662,
+      "entries": 256,
+      "evictions": 26880,
+      "engine_misses": 27136
+    },
+    {
+      "tick": 54,
+      "seconds": 0.054213,
+      "entries": 256,
+      "evictions": 27392,
+      "engine_misses": 27648
+    },
+    {
+      "tick": 55,
+      "seconds": 0.052768,
+      "entries": 256,
+      "evictions": 27904,
+      "engine_misses": 28160
+    },
+    {
+      "tick": 56,
+      "seconds": 0.054811,
+      "entries": 256,
+      "evictions": 28416,
+      "engine_misses": 28672
+    },
+    {
+      "tick": 57,
+      "seconds": 0.058743,
+      "entries": 256,
+      "evictions": 28928,
+      "engine_misses": 29184
+    },
+    {
+      "tick": 58,
+      "seconds": 0.051164,
+      "entries": 256,
+      "evictions": 29440,
+      "engine_misses": 29696
+    },
+    {
+      "tick": 59,
+      "seconds": 0.052256,
+      "entries": 256,
+      "evictions": 29952,
+      "engine_misses": 30208
+    },
+    {
+      "tick": 60,
+      "seconds": 0.050886,
+      "entries": 256,
+      "evictions": 30464,
+      "engine_misses": 30720
+    },
+    {
+      "tick": 61,
+      "seconds": 0.050011,
+      "entries": 256,
+      "evictions": 30976,
+      "engine_misses": 31232
+    },
+    {
+      "tick": 62,
+      "seconds": 0.050899,
+      "entries": 256,
+      "evictions": 31488,
+      "engine_misses": 31744
+    },
+    {
+      "tick": 63,
+      "seconds": 0.052277,
+      "entries": 256,
+      "evictions": 32000,
+      "engine_misses": 32256
+    },
+    {
+      "tick": 64,
+      "seconds": 0.063363,
+      "entries": 256,
+      "evictions": 32512,
+      "engine_misses": 32768
+    },
+    {
+      "tick": 65,
+      "seconds": 0.052106,
+      "entries": 256,
+      "evictions": 33024,
+      "engine_misses": 33280
+    },
+    {
+      "tick": 66,
+      "seconds": 0.075147,
+      "entries": 256,
+      "evictions": 33536,
+      "engine_misses": 33792
+    },
+    {
+      "tick": 67,
+      "seconds": 0.049501,
+      "entries": 256,
+      "evictions": 34048,
+      "engine_misses": 34304
+    },
+    {
+      "tick": 68,
+      "seconds": 0.072787,
+      "entries": 256,
+      "evictions": 34560,
+      "engine_misses": 34816
+    },
+    {
+      "tick": 69,
+      "seconds": 0.051658,
+      "entries": 256,
+      "evictions": 35072,
+      "engine_misses": 35328
+    },
+    {
+      "tick": 70,
+      "seconds": 0.052402,
+      "entries": 256,
+      "evictions": 35584,
+      "engine_misses": 35840
+    },
+    {
+      "tick": 71,
+      "seconds": 0.061702,
+      "entries": 256,
+      "evictions": 36096,
+      "engine_misses": 36352
+    },
+    {
+      "tick": 72,
+      "seconds": 0.055671,
+      "entries": 256,
+      "evictions": 36608,
+      "engine_misses": 36864
+    },
+    {
+      "tick": 73,
+      "seconds": 0.055086,
+      "entries": 256,
+      "evictions": 37120,
+      "engine_misses": 37376
+    },
+    {
+      "tick": 74,
+      "seconds": 0.05207,
+      "entries": 256,
+      "evictions": 37632,
+      "engine_misses": 37888
+    },
+    {
+      "tick": 75,
+      "seconds": 0.052853,
+      "entries": 256,
+      "evictions": 38144,
+      "engine_misses": 38400
+    },
+    {
+      "tick": 76,
+      "seconds": 0.055109,
+      "entries": 256,
+      "evictions": 38656,
+      "engine_misses": 38912
+    },
+    {
+      "tick": 77,
+      "seconds": 0.056178,
+      "entries": 256,
+      "evictions": 39168,
+      "engine_misses": 39424
+    },
+    {
+      "tick": 78,
+      "seconds": 0.057901,
+      "entries": 256,
+      "evictions": 39680,
+      "engine_misses": 39936
+    },
+    {
+      "tick": 79,
+      "seconds": 0.055222,
+      "entries": 256,
+      "evictions": 40192,
+      "engine_misses": 40448
+    },
+    {
+      "tick": 80,
+      "seconds": 0.052197,
+      "entries": 256,
+      "evictions": 40704,
+      "engine_misses": 40960
+    }
+  ]
+}
