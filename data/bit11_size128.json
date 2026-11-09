@@ -1,0 +1,47 @@
+{
+  "shape": [
+    4,
+    4,
+    4,
+    4
+  ],
+  "physical_nodes": 128,
+  "occupation": 12,
+  "seed": 3011,
+  "initial_unique_states": 128,
+  "setup_seconds": 0.000726,
+  "forward": [
+    {
+      "tick": 1,
+      "elapsed_seconds": 0.012631,
+      "cache_entries_before": 0,
+      "cache_entries_after": 205,
+      "new_cache_entries": 205,
+      "unique_states_after": 128,
+      "collide_lru_misses_delta": 128,
+      "preference_lru_misses_delta": 251
+    },
+    {
+      "tick": 2,
+      "elapsed_seconds": 0.014089,
+      "cache_entries_before": 205,
+      "cache_entries_after": 407,
+      "new_cache_entries": 202,
+      "unique_states_after": 128,
+      "collide_lru_misses_delta": 128,
+      "preference_lru_misses_delta": 246
+    }
+  ],
+  "reverse_total_seconds": 0.000462,
+  "warm_initial_tick_seconds": 9.7e-05,
+  "exact_roundtrip": true,
+  "five_charges_conserved": true,
+  "padding_zero": true,
+  "final_collision_cache_entries": 407,
+  "collision_cache_hits": 384,
+  "collision_cache_misses": 256,
+  "kernel_array_bytes": 14848,
+  "cache_and_array_lower_bound_bytes": 18104,
+  "maxrss_kib": 109468,
+  "note": "maxrss is peak PROCESS RSS, includes runtime/imports; cache lower bound is not real Python dict memory."
+}
