@@ -1,0 +1,88 @@
+{
+  "shape": [
+    16,
+    4,
+    4,
+    16
+  ],
+  "nodes": 2048,
+  "ticks": 8,
+  "capacity": 256,
+  "seed": 3213,
+  "input_kind": "packet_surrogate",
+  "input_unique_words": 6,
+  "input_description": "Gaussian x envelope, x/w cosine carrier, six 12-bit masks, discrete seeded sampling",
+  "policies": {
+    "none": {
+      "capacity_entries": 0,
+      "current_entries": 0,
+      "hits": 0,
+      "misses": 28004,
+      "evictions": 0,
+      "exact_evaluations": 28004,
+      "forward_seconds": 1.198,
+      "tick_seconds": [
+        0.00131,
+        0.20056,
+        0.1715,
+        0.17307,
+        0.1587,
+        0.17328,
+        0.15791,
+        0.16086
+      ],
+      "engine_cache_entries": 0,
+      "inner_collide_cache_entries": 19582,
+      "inner_preference_cache_entries": 24019,
+      "peak_rss_kib_process_cumulative": 117156
+    },
+    "lru": {
+      "capacity_entries": 256,
+      "current_entries": 256,
+      "hits": 0,
+      "misses": 28004,
+      "evictions": 27748,
+      "exact_evaluations": 28004,
+      "forward_seconds": 1.25291,
+      "tick_seconds": [
+        0.00148,
+        0.19747,
+        0.18185,
+        0.20469,
+        0.16052,
+        0.16162,
+        0.17299,
+        0.17145
+      ],
+      "engine_cache_entries": 256,
+      "inner_collide_cache_entries": 19582,
+      "inner_preference_cache_entries": 24019,
+      "peak_rss_kib_process_cumulative": 117664
+    },
+    "hotset": {
+      "capacity_entries": 6,
+      "hits": 12,
+      "misses": 27992,
+      "policy": "static initial frequency",
+      "forward_seconds": 1.23167,
+      "tick_seconds": [
+        0.00061,
+        0.19217,
+        0.18449,
+        0.18309,
+        0.17078,
+        0.17255,
+        0.16435,
+        0.16269
+      ],
+      "engine_cache_entries": 0,
+      "inner_collide_cache_entries": 19582,
+      "inner_preference_cache_entries": 24019,
+      "peak_rss_kib_process_cumulative": 117664
+    }
+  },
+  "same_forward_final": true,
+  "same_reverse_initial": true,
+  "all_invariants_exact": true,
+  "caveat": "Process RSS cumulative across policies; timings serial with shared Python allocator and cached imported tables; not isolated benchmarks. Bit-6 physical packet preparation not yet restored."
+}
