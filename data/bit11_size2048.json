@@ -1,0 +1,47 @@
+{
+  "shape": [
+    16,
+    4,
+    4,
+    16
+  ],
+  "physical_nodes": 2048,
+  "occupation": 12,
+  "seed": 3011,
+  "initial_unique_states": 2047,
+  "setup_seconds": 0.006179,
+  "forward": [
+    {
+      "tick": 1,
+      "elapsed_seconds": 0.239494,
+      "cache_entries_before": 0,
+      "cache_entries_after": 3299,
+      "new_cache_entries": 3299,
+      "unique_states_after": 2048,
+      "collide_lru_misses_delta": 2047,
+      "preference_lru_misses_delta": 4014
+    },
+    {
+      "tick": 2,
+      "elapsed_seconds": 0.239405,
+      "cache_entries_before": 3299,
+      "cache_entries_after": 6554,
+      "new_cache_entries": 3255,
+      "unique_states_after": 2048,
+      "collide_lru_misses_delta": 2048,
+      "preference_lru_misses_delta": 3974
+    }
+  ],
+  "reverse_total_seconds": 0.002079,
+  "warm_initial_tick_seconds": 0.000566,
+  "exact_roundtrip": true,
+  "five_charges_conserved": true,
+  "padding_zero": true,
+  "final_collision_cache_entries": 6554,
+  "collision_cache_hits": 6142,
+  "collision_cache_misses": 4095,
+  "kernel_array_bytes": 237568,
+  "cache_and_array_lower_bound_bytes": 290000,
+  "maxrss_kib": 111756,
+  "note": "maxrss is peak PROCESS RSS, includes runtime/imports; cache lower bound is not real Python dict memory."
+}
