@@ -1,0 +1,1000 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "seed": 3112,
+  "occupation": 12,
+  "forward_ticks": 160,
+  "reverse_ticks": 160,
+  "reference_comparison": false,
+  "all_bitwise_equal_to_unbounded": false,
+  "exact_roundtrip": true,
+  "number_and_four_momenta_conserved": true,
+  "padding_zero": true,
+  "engine_cache": {
+    "capacity_entries": 256,
+    "current_entries": 256,
+    "hits": 0,
+    "misses": 163840,
+    "evictions": 163584,
+    "exact_evaluations": 163840
+  },
+  "maxrss_kib_linux": 153000,
+  "inner_collide_lru": {
+    "hits": 27449,
+    "misses": 136391,
+    "maxsize": 100000,
+    "currsize": 100000
+  },
+  "inner_preference_lru": {
+    "hits": 59950,
+    "misses": 207601,
+    "maxsize": 100000,
+    "currsize": 100000
+  },
+  "reference_cache_entries": null,
+  "forward_elapsed_seconds": 8.5711,
+  "reverse_elapsed_seconds": 2.6574,
+  "timeline": [
+    {
+      "tick": 1,
+      "seconds": 0.055333,
+      "entries": 256,
+      "evictions": 256,
+      "engine_misses": 512,
+      "maxrss_kib": 109204,
+      "inner_collide_cache_entries": 512,
+      "inner_preference_cache_entries": 1007
+    },
+    {
+      "tick": 2,
+      "seconds": 0.05553,
+      "entries": 256,
+      "evictions": 768,
+      "engine_misses": 1024,
+      "maxrss_kib": 109460,
+      "inner_collide_cache_entries": 1024,
+      "inner_preference_cache_entries": 2007
+    },
+    {
+      "tick": 3,
+      "seconds": 0.059339,
+      "entries": 256,
+      "evictions": 1280,
+      "engine_misses": 1536,
+      "maxrss_kib": 109844,
+      "inner_collide_cache_entries": 1536,
+      "inner_preference_cache_entries": 2997
+    },
+    {
+      "tick": 4,
+      "seconds": 0.059328,
+      "entries": 256,
+      "evictions": 1792,
+      "engine_misses": 2048,
+      "maxrss_kib": 109972,
+      "inner_collide_cache_entries": 2048,
+      "inner_preference_cache_entries": 3993
+    },
+    {
+      "tick": 5,
+      "seconds": 0.059647,
+      "entries": 256,
+      "evictions": 2304,
+      "engine_misses": 2560,
+      "maxrss_kib": 110100,
+      "inner_collide_cache_entries": 2560,
+      "inner_preference_cache_entries": 4998
+    },
+    {
+      "tick": 6,
+      "seconds": 0.05937,
+      "entries": 256,
+      "evictions": 2816,
+      "engine_misses": 3072,
+      "maxrss_kib": 110612,
+      "inner_collide_cache_entries": 3072,
+      "inner_preference_cache_entries": 5991
+    },
+    {
+      "tick": 7,
+      "seconds": 0.053322,
+      "entries": 256,
+      "evictions": 3328,
+      "engine_misses": 3584,
+      "maxrss_kib": 110740,
+      "inner_collide_cache_entries": 3583,
+      "inner_preference_cache_entries": 6998
+    },
+    {
+      "tick": 8,
+      "seconds": 0.057252,
+      "entries": 256,
+      "evictions": 3840,
+      "engine_misses": 4096,
+      "maxrss_kib": 110868,
+      "inner_collide_cache_entries": 4095,
+      "inner_preference_cache_entries": 7999
+    },
+    {
+      "tick": 9,
+      "seconds": 0.065,
+      "entries": 256,
+      "evictions": 4352,
+      "engine_misses": 4608,
+      "maxrss_kib": 110996,
+      "inner_collide_cache_entries": 4607,
+      "inner_preference_cache_entries": 8999
+    },
+    {
+      "tick": 10,
+      "seconds": 0.059743,
+      "entries": 256,
+      "evictions": 4864,
+      "engine_misses": 5120,
+      "maxrss_kib": 111124,
+      "inner_collide_cache_entries": 5119,
+      "inner_preference_cache_entries": 10002
+    },
+    {
+      "tick": 11,
+      "seconds": 0.057833,
+      "entries": 256,
+      "evictions": 5376,
+      "engine_misses": 5632,
+      "maxrss_kib": 112148,
+      "inner_collide_cache_entries": 5630,
+      "inner_preference_cache_entries": 11001
+    },
+    {
+      "tick": 12,
+      "seconds": 0.052184,
+      "entries": 256,
+      "evictions": 5888,
+      "engine_misses": 6144,
+      "maxrss_kib": 112276,
+      "inner_collide_cache_entries": 6142,
+      "inner_preference_cache_entries": 11997
+    },
+    {
+      "tick": 13,
+      "seconds": 0.056066,
+      "entries": 256,
+      "evictions": 6400,
+      "engine_misses": 6656,
+      "maxrss_kib": 112404,
+      "inner_collide_cache_entries": 6654,
+      "inner_preference_cache_entries": 13001
+    },
+    {
+      "tick": 14,
+      "seconds": 0.054902,
+      "entries": 256,
+      "evictions": 6912,
+      "engine_misses": 7168,
+      "maxrss_kib": 112532,
+      "inner_collide_cache_entries": 7166,
+      "inner_preference_cache_entries": 13991
+    },
+    {
+      "tick": 15,
+      "seconds": 0.054204,
+      "entries": 256,
+      "evictions": 7424,
+      "engine_misses": 7680,
+      "maxrss_kib": 112660,
+      "inner_collide_cache_entries": 7678,
+      "inner_preference_cache_entries": 14992
+    },
+    {
+      "tick": 16,
+      "seconds": 0.051843,
+      "entries": 256,
+      "evictions": 7936,
+      "engine_misses": 8192,
+      "maxrss_kib": 112788,
+      "inner_collide_cache_entries": 8190,
+      "inner_preference_cache_entries": 15991
+    },
+    {
+      "tick": 17,
+      "seconds": 0.056098,
+      "entries": 256,
+      "evictions": 8448,
+      "engine_misses": 8704,
+      "maxrss_kib": 113044,
+      "inner_collide_cache_entries": 8702,
+      "inner_preference_cache_entries": 16991
+    },
+    {
+      "tick": 18,
+      "seconds": 0.054555,
+      "entries": 256,
+      "evictions": 8960,
+      "engine_misses": 9216,
+      "maxrss_kib": 113172,
+      "inner_collide_cache_entries": 9214,
+      "inner_preference_cache_entries": 17983
+    },
+    {
+      "tick": 19,
+      "seconds": 0.057858,
+      "entries": 256,
+      "evictions": 9472,
+      "engine_misses": 9728,
+      "maxrss_kib": 113300,
+      "inner_collide_cache_entries": 9725,
+      "inner_preference_cache_entries": 18977
+    },
+    {
+      "tick": 20,
+      "seconds": 0.053211,
+      "entries": 256,
+      "evictions": 9984,
+      "engine_misses": 10240,
+      "maxrss_kib": 113428,
+      "inner_collide_cache_entries": 10237,
+      "inner_preference_cache_entries": 19974
+    },
+    {
+      "tick": 21,
+      "seconds": 0.056625,
+      "entries": 256,
+      "evictions": 10496,
+      "engine_misses": 10752,
+      "maxrss_kib": 113556,
+      "inner_collide_cache_entries": 10749,
+      "inner_preference_cache_entries": 20974
+    },
+    {
+      "tick": 22,
+      "seconds": 0.053842,
+      "entries": 256,
+      "evictions": 11008,
+      "engine_misses": 11264,
+      "maxrss_kib": 114964,
+      "inner_collide_cache_entries": 11260,
+      "inner_preference_cache_entries": 21973
+    },
+    {
+      "tick": 23,
+      "seconds": 0.051722,
+      "entries": 256,
+      "evictions": 11520,
+      "engine_misses": 11776,
+      "maxrss_kib": 115092,
+      "inner_collide_cache_entries": 11771,
+      "inner_preference_cache_entries": 22979
+    },
+    {
+      "tick": 24,
+      "seconds": 0.058072,
+      "entries": 256,
+      "evictions": 12032,
+      "engine_misses": 12288,
+      "maxrss_kib": 115220,
+      "inner_collide_cache_entries": 12283,
+      "inner_preference_cache_entries": 23975
+    },
+    {
+      "tick": 25,
+      "seconds": 0.049414,
+      "entries": 256,
+      "evictions": 12544,
+      "engine_misses": 12800,
+      "maxrss_kib": 115348,
+      "inner_collide_cache_entries": 12793,
+      "inner_preference_cache_entries": 24961
+    },
+    {
+      "tick": 26,
+      "seconds": 0.050757,
+      "entries": 256,
+      "evictions": 13056,
+      "engine_misses": 13312,
+      "maxrss_kib": 115476,
+      "inner_collide_cache_entries": 13304,
+      "inner_preference_cache_entries": 25963
+    },
+    {
+      "tick": 27,
+      "seconds": 0.054853,
+      "entries": 256,
+      "evictions": 13568,
+      "engine_misses": 13824,
+      "maxrss_kib": 115732,
+      "inner_collide_cache_entries": 13815,
+      "inner_preference_cache_entries": 26952
+    },
+    {
+      "tick": 28,
+      "seconds": 0.054107,
+      "entries": 256,
+      "evictions": 14080,
+      "engine_misses": 14336,
+      "maxrss_kib": 115860,
+      "inner_collide_cache_entries": 14327,
+      "inner_preference_cache_entries": 27947
+    },
+    {
+      "tick": 29,
+      "seconds": 0.051051,
+      "entries": 256,
+      "evictions": 14592,
+      "engine_misses": 14848,
+      "maxrss_kib": 115988,
+      "inner_collide_cache_entries": 14839,
+      "inner_preference_cache_entries": 28946
+    },
+    {
+      "tick": 30,
+      "seconds": 0.052806,
+      "entries": 256,
+      "evictions": 15104,
+      "engine_misses": 15360,
+      "maxrss_kib": 116116,
+      "inner_collide_cache_entries": 15351,
+      "inner_preference_cache_entries": 29937
+    },
+    {
+      "tick": 31,
+      "seconds": 0.049147,
+      "entries": 256,
+      "evictions": 15616,
+      "engine_misses": 15872,
+      "maxrss_kib": 116244,
+      "inner_collide_cache_entries": 15862,
+      "inner_preference_cache_entries": 30935
+    },
+    {
+      "tick": 32,
+      "seconds": 0.051108,
+      "entries": 256,
+      "evictions": 16128,
+      "engine_misses": 16384,
+      "maxrss_kib": 116372,
+      "inner_collide_cache_entries": 16372,
+      "inner_preference_cache_entries": 31931
+    },
+    {
+      "tick": 33,
+      "seconds": 0.050276,
+      "entries": 256,
+      "evictions": 16640,
+      "engine_misses": 16896,
+      "maxrss_kib": 116500,
+      "inner_collide_cache_entries": 16884,
+      "inner_preference_cache_entries": 32920
+    },
+    {
+      "tick": 34,
+      "seconds": 0.050201,
+      "entries": 256,
+      "evictions": 17152,
+      "engine_misses": 17408,
+      "maxrss_kib": 116628,
+      "inner_collide_cache_entries": 17396,
+      "inner_preference_cache_entries": 33909
+    },
+    {
+      "tick": 35,
+      "seconds": 0.048074,
+      "entries": 256,
+      "evictions": 17664,
+      "engine_misses": 17920,
+      "maxrss_kib": 116756,
+      "inner_collide_cache_entries": 17906,
+      "inner_preference_cache_entries": 34899
+    },
+    {
+      "tick": 36,
+      "seconds": 0.053012,
+      "entries": 256,
+      "evictions": 18176,
+      "engine_misses": 18432,
+      "maxrss_kib": 116884,
+      "inner_collide_cache_entries": 18415,
+      "inner_preference_cache_entries": 35892
+    },
+    {
+      "tick": 37,
+      "seconds": 0.048634,
+      "entries": 256,
+      "evictions": 18688,
+      "engine_misses": 18944,
+      "maxrss_kib": 117140,
+      "inner_collide_cache_entries": 18927,
+      "inner_preference_cache_entries": 36881
+    },
+    {
+      "tick": 38,
+      "seconds": 0.049642,
+      "entries": 256,
+      "evictions": 19200,
+      "engine_misses": 19456,
+      "maxrss_kib": 117268,
+      "inner_collide_cache_entries": 19438,
+      "inner_preference_cache_entries": 37880
+    },
+    {
+      "tick": 39,
+      "seconds": 0.050063,
+      "entries": 256,
+      "evictions": 19712,
+      "engine_misses": 19968,
+      "maxrss_kib": 117396,
+      "inner_collide_cache_entries": 19950,
+      "inner_preference_cache_entries": 38878
+    },
+    {
+      "tick": 40,
+      "seconds": 0.050001,
+      "entries": 256,
+      "evictions": 20224,
+      "engine_misses": 20480,
+      "maxrss_kib": 117524,
+      "inner_collide_cache_entries": 20461,
+      "inner_preference_cache_entries": 39864
+    },
+    {
+      "tick": 41,
+      "seconds": 0.048861,
+      "entries": 256,
+      "evictions": 20736,
+      "engine_misses": 20992,
+      "maxrss_kib": 117652,
+      "inner_collide_cache_entries": 20971,
+      "inner_preference_cache_entries": 40850
+    },
+    {
+      "tick": 42,
+      "seconds": 0.052502,
+      "entries": 256,
+      "evictions": 21248,
+      "engine_misses": 21504,
+      "maxrss_kib": 117780,
+      "inner_collide_cache_entries": 21483,
+      "inner_preference_cache_entries": 41855
+    },
+    {
+      "tick": 43,
+      "seconds": 0.051806,
+      "entries": 256,
+      "evictions": 21760,
+      "engine_misses": 22016,
+      "maxrss_kib": 119188,
+      "inner_collide_cache_entries": 21995,
+      "inner_preference_cache_entries": 42853
+    },
+    {
+      "tick": 44,
+      "seconds": 0.049462,
+      "entries": 256,
+      "evictions": 22272,
+      "engine_misses": 22528,
+      "maxrss_kib": 121876,
+      "inner_collide_cache_entries": 22506,
+      "inner_preference_cache_entries": 43841
+    },
+    {
+      "tick": 45,
+      "seconds": 0.052494,
+      "entries": 256,
+      "evictions": 22784,
+      "engine_misses": 23040,
+      "maxrss_kib": 122004,
+      "inner_collide_cache_entries": 23018,
+      "inner_preference_cache_entries": 44837
+    },
+    {
+      "tick": 46,
+      "seconds": 0.051212,
+      "entries": 256,
+      "evictions": 23296,
+      "engine_misses": 23552,
+      "maxrss_kib": 122260,
+      "inner_collide_cache_entries": 23528,
+      "inner_preference_cache_entries": 45835
+    },
+    {
+      "tick": 47,
+      "seconds": 0.054453,
+      "entries": 256,
+      "evictions": 23808,
+      "engine_misses": 24064,
+      "maxrss_kib": 122388,
+      "inner_collide_cache_entries": 24037,
+      "inner_preference_cache_entries": 46829
+    },
+    {
+      "tick": 48,
+      "seconds": 0.04971,
+      "entries": 256,
+      "evictions": 24320,
+      "engine_misses": 24576,
+      "maxrss_kib": 122516,
+      "inner_collide_cache_entries": 24548,
+      "inner_preference_cache_entries": 47824
+    },
+    {
+      "tick": 49,
+      "seconds": 0.052507,
+      "entries": 256,
+      "evictions": 24832,
+      "engine_misses": 25088,
+      "maxrss_kib": 122644,
+      "inner_collide_cache_entries": 25059,
+      "inner_preference_cache_entries": 48811
+    },
+    {
+      "tick": 50,
+      "seconds": 0.050522,
+      "entries": 256,
+      "evictions": 25344,
+      "engine_misses": 25600,
+      "maxrss_kib": 122772,
+      "inner_collide_cache_entries": 25570,
+      "inner_preference_cache_entries": 49807
+    },
+    {
+      "tick": 51,
+      "seconds": 0.051742,
+      "entries": 256,
+      "evictions": 25856,
+      "engine_misses": 26112,
+      "maxrss_kib": 122900,
+      "inner_collide_cache_entries": 26080,
+      "inner_preference_cache_entries": 50803
+    },
+    {
+      "tick": 52,
+      "seconds": 0.049297,
+      "entries": 256,
+      "evictions": 26368,
+      "engine_misses": 26624,
+      "maxrss_kib": 123028,
+      "inner_collide_cache_entries": 26590,
+      "inner_preference_cache_entries": 51782
+    },
+    {
+      "tick": 53,
+      "seconds": 0.050239,
+      "entries": 256,
+      "evictions": 26880,
+      "engine_misses": 27136,
+      "maxrss_kib": 123156,
+      "inner_collide_cache_entries": 27100,
+      "inner_preference_cache_entries": 52776
+    },
+    {
+      "tick": 54,
+      "seconds": 0.051693,
+      "entries": 256,
+      "evictions": 27392,
+      "engine_misses": 27648,
+      "maxrss_kib": 123284,
+      "inner_collide_cache_entries": 27611,
+      "inner_preference_cache_entries": 53774
+    },
+    {
+      "tick": 55,
+      "seconds": 0.055215,
+      "entries": 256,
+      "evictions": 27904,
+      "engine_misses": 28160,
+      "maxrss_kib": 123412,
+      "inner_collide_cache_entries": 28122,
+      "inner_preference_cache_entries": 54769
+    },
+    {
+      "tick": 56,
+      "seconds": 0.050776,
+      "entries": 256,
+      "evictions": 28416,
+      "engine_misses": 28672,
+      "maxrss_kib": 123668,
+      "inner_collide_cache_entries": 28633,
+      "inner_preference_cache_entries": 55769
+    },
+    {
+      "tick": 57,
+      "seconds": 0.054532,
+      "entries": 256,
+      "evictions": 28928,
+      "engine_misses": 29184,
+      "maxrss_kib": 123796,
+      "inner_collide_cache_entries": 29144,
+      "inner_preference_cache_entries": 56762
+    },
+    {
+      "tick": 58,
+      "seconds": 0.048789,
+      "entries": 256,
+      "evictions": 29440,
+      "engine_misses": 29696,
+      "maxrss_kib": 123924,
+      "inner_collide_cache_entries": 29653,
+      "inner_preference_cache_entries": 57744
+    },
+    {
+      "tick": 59,
+      "seconds": 0.052447,
+      "entries": 256,
+      "evictions": 29952,
+      "engine_misses": 30208,
+      "maxrss_kib": 124052,
+      "inner_collide_cache_entries": 30164,
+      "inner_preference_cache_entries": 58733
+    },
+    {
+      "tick": 60,
+      "seconds": 0.05021,
+      "entries": 256,
+      "evictions": 30464,
+      "engine_misses": 30720,
+      "maxrss_kib": 124180,
+      "inner_collide_cache_entries": 30675,
+      "inner_preference_cache_entries": 59723
+    },
+    {
+      "tick": 61,
+      "seconds": 0.04808,
+      "entries": 256,
+      "evictions": 30976,
+      "engine_misses": 31232,
+      "maxrss_kib": 124308,
+      "inner_collide_cache_entries": 31187,
+      "inner_preference_cache_entries": 60710
+    },
+    {
+      "tick": 62,
+      "seconds": 0.049501,
+      "entries": 256,
+      "evictions": 31488,
+      "engine_misses": 31744,
+      "maxrss_kib": 124436,
+      "inner_collide_cache_entries": 31699,
+      "inner_preference_cache_entries": 61707
+    },
+    {
+      "tick": 63,
+      "seconds": 0.052262,
+      "entries": 256,
+      "evictions": 32000,
+      "engine_misses": 32256,
+      "maxrss_kib": 124564,
+      "inner_collide_cache_entries": 32209,
+      "inner_preference_cache_entries": 62687
+    },
+    {
+      "tick": 64,
+      "seconds": 0.047654,
+      "entries": 256,
+      "evictions": 32512,
+      "engine_misses": 32768,
+      "maxrss_kib": 124692,
+      "inner_collide_cache_entries": 32718,
+      "inner_preference_cache_entries": 63666
+    },
+    {
+      "tick": 65,
+      "seconds": 0.050613,
+      "entries": 256,
+      "evictions": 33024,
+      "engine_misses": 33280,
+      "maxrss_kib": 124820,
+      "inner_collide_cache_entries": 33227,
+      "inner_preference_cache_entries": 64652
+    },
+    {
+      "tick": 66,
+      "seconds": 0.050811,
+      "entries": 256,
+      "evictions": 33536,
+      "engine_misses": 33792,
+      "maxrss_kib": 125076,
+      "inner_collide_cache_entries": 33739,
+      "inner_preference_cache_entries": 65642
+    },
+    {
+      "tick": 67,
+      "seconds": 0.04968,
+      "entries": 256,
+      "evictions": 34048,
+      "engine_misses": 34304,
+      "maxrss_kib": 125204,
+      "inner_collide_cache_entries": 34250,
+      "inner_preference_cache_entries": 66630
+    },
+    {
+      "tick": 68,
+      "seconds": 0.04784,
+      "entries": 256,
+      "evictions": 34560,
+      "engine_misses": 34816,
+      "maxrss_kib": 125332,
+      "inner_collide_cache_entries": 34761,
+      "inner_preference_cache_entries": 67629
+    },
+    {
+      "tick": 69,
+      "seconds": 0.051704,
+      "entries": 256,
+      "evictions": 35072,
+      "engine_misses": 35328,
+      "maxrss_kib": 125460,
+      "inner_collide_cache_entries": 35272,
+      "inner_preference_cache_entries": 68624
+    },
+    {
+      "tick": 70,
+      "seconds": 0.049496,
+      "entries": 256,
+      "evictions": 35584,
+      "engine_misses": 35840,
+      "maxrss_kib": 125588,
+      "inner_collide_cache_entries": 35783,
+      "inner_preference_cache_entries": 69615
+    },
+    {
+      "tick": 71,
+      "seconds": 0.051228,
+      "entries": 256,
+      "evictions": 36096,
+      "engine_misses": 36352,
+      "maxrss_kib": 125716,
+      "inner_collide_cache_entries": 36294,
+      "inner_preference_cache_entries": 70605
+    },
+    {
+      "tick": 72,
+      "seconds": 0.049992,
+      "entries": 256,
+      "evictions": 36608,
+      "engine_misses": 36864,
+      "maxrss_kib": 125844,
+      "inner_collide_cache_entries": 36806,
+      "inner_preference_cache_entries": 71598
+    },
+    {
+      "tick": 73,
+      "seconds": 0.050549,
+      "entries": 256,
+      "evictions": 37120,
+      "engine_misses": 37376,
+      "maxrss_kib": 125972,
+      "inner_collide_cache_entries": 37316,
+      "inner_preference_cache_entries": 72591
+    },
+    {
+      "tick": 74,
+      "seconds": 0.048848,
+      "entries": 256,
+      "evictions": 37632,
+      "engine_misses": 37888,
+      "maxrss_kib": 126100,
+      "inner_collide_cache_entries": 37826,
+      "inner_preference_cache_entries": 73581
+    },
+    {
+      "tick": 75,
+      "seconds": 0.053184,
+      "entries": 256,
+      "evictions": 38144,
+      "engine_misses": 38400,
+      "maxrss_kib": 126228,
+      "inner_collide_cache_entries": 38336,
+      "inner_preference_cache_entries": 74577
+    },
+    {
+      "tick": 76,
+      "seconds": 0.049009,
+      "entries": 256,
+      "evictions": 38656,
+      "engine_misses": 38912,
+      "maxrss_kib": 126484,
+      "inner_collide_cache_entries": 38846,
+      "inner_preference_cache_entries": 75563
+    },
+    {
+      "tick": 77,
+      "seconds": 0.050673,
+      "entries": 256,
+      "evictions": 39168,
+      "engine_misses": 39424,
+      "maxrss_kib": 126612,
+      "inner_collide_cache_entries": 39357,
+      "inner_preference_cache_entries": 76557
+    },
+    {
+      "tick": 78,
+      "seconds": 0.055081,
+      "entries": 256,
+      "evictions": 39680,
+      "engine_misses": 39936,
+      "maxrss_kib": 126740,
+      "inner_collide_cache_entries": 39869,
+      "inner_preference_cache_entries": 77548
+    },
+    {
+      "tick": 79,
+      "seconds": 0.053913,
+      "entries": 256,
+      "evictions": 40192,
+      "engine_misses": 40448,
+      "maxrss_kib": 126868,
+      "inner_collide_cache_entries": 40381,
+      "inner_preference_cache_entries": 78543
+    },
+    {
+      "tick": 80,
+      "seconds": 0.050962,
+      "entries": 256,
+      "evictions": 40704,
+      "engine_misses": 40960,
+      "maxrss_kib": 126996,
+      "inner_collide_cache_entries": 40891,
+      "inner_preference_cache_entries": 79539
+    },
+    {
+      "tick": 81,
+      "seconds": 0.055379,
+      "entries": 256,
+      "evictions": 41216,
+      "engine_misses": 41472,
+      "maxrss_kib": 127124,
+      "inner_collide_cache_entries": 41401,
+      "inner_preference_cache_entries": 80513
+    },
+    {
+      "tick": 82,
+      "seconds": 0.050108,
+      "entries": 256,
+      "evictions": 41728,
+      "engine_misses": 41984,
+      "maxrss_kib": 127252,
+      "inner_collide_cache_entries": 41912,
+      "inner_preference_cache_entries": 81505
+    },
+    {
+      "tick": 83,
+      "seconds": 0.053068,
+      "entries": 256,
+      "evictions": 42240,
+      "engine_misses": 42496,
+      "maxrss_kib": 127380,
+      "inner_collide_cache_entries": 42423,
+      "inner_preference_cache_entries": 82504
+    },
+    {
+      "tick": 84,
+      "seconds": 0.062704,
+      "entries": 256,
+      "evictions": 42752,
+      "engine_misses": 43008,
+      "maxrss_kib": 127508,
+      "inner_collide_cache_entries": 42933,
+      "inner_preference_cache_entries": 83490
+    },
+    {
+      "tick": 85,
+      "seconds": 0.064202,
+      "entries": 256,
+      "evictions": 43264,
+      "engine_misses": 43520,
+      "maxrss_kib": 127636,
+      "inner_collide_cache_entries": 43441,
+      "inner_preference_cache_entries": 84492
+    },
+    {
+      "tick": 86,
+      "seconds": 0.053349,
+      "entries": 256,
+      "evictions": 43776,
+      "engine_misses": 44032,
+      "maxrss_kib": 127892,
+      "inner_collide_cache_entries": 43953,
+      "inner_preference_cache_entries": 85481
+    },
+    {
+      "tick": 87,
+      "seconds": 0.050983,
+      "entries": 256,
+      "evictions": 44288,
+      "engine_misses": 44544,
+      "maxrss_kib": 128020,
+      "inner_collide_cache_entries": 44465,
+      "inner_preference_cache_entries": 86479
+    },
+    {
+      "tick": 88,
+      "seconds": 0.051817,
+      "entries": 256,
+      "evictions": 44800,
+      "engine_misses": 45056,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 44976,
+      "inner_preference_cache_entries": 87460
+    },
+    {
+      "tick": 89,
+      "seconds": 0.047121,
+      "entries": 256,
+      "evictions": 45312,
+      "engine_misses": 45568,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 45484,
+      "inner_preference_cache_entries": 88444
+    },
+    {
+      "tick": 90,
+      "seconds": 0.051509,
+      "entries": 256,
+      "evictions": 45824,
+      "engine_misses": 46080,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 45995,
+      "inner_preference_cache_entries": 89430
+    },
+    {
+      "tick": 91,
+      "seconds": 0.050193,
+      "entries": 256,
+      "evictions": 46336,
+      "engine_misses": 46592,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 46504,
+      "inner_preference_cache_entries": 90418
+    },
+    {
+      "tick": 92,
+      "seconds": 0.051438,
+      "entries": 256,
+      "evictions": 46848,
+      "engine_misses": 47104,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 47013,
+      "inner_preference_cache_entries": 91396
+    },
+    {
+      "tick": 93,
+      "seconds": 0.05206,
+      "entries": 256,
+      "evictions": 47360,
+      "engine_misses": 47616,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 47524,
+      "inner_preference_cache_entries": 92390
+    },
+    {
+      "tick": 94,
+      "seconds": 0.054664,
+      "entries": 256,
+      "evictions": 47872,
+      "engine_misses": 48128,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 48032,
+      "inner_preference_cache_entries": 93381
+    },
+    {
+      "tick": 95,
+      "seconds": 0.05282,
+      "entries": 256,
+      "evictions": 48384,
+      "engine_misses": 48640,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 48544,
+      "inner_preference_cache_entries": 94367
+    },
+    {
+      "tick": 96,
+      "seconds": 0.051707,
+      "entries": 256,
+      "evictions": 48896,
+      "engine_misses": 49152,
+      "maxrss_kib": 133268,
+      "inner_collide_cache_entries": 49055,
