@@ -1,0 +1,2 @@
+Temporary connector write test, 2026-11-09.
+No research data or main branch changes.
