@@ -1,0 +1,15 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "n_vectorized": 30,
+  "n_reference": 3,
+  "fast_stream_seconds_per_call": 8.031413334113798e-05,
+  "slow_stream_seconds_per_call": 0.007758131666681341,
+  "stream_speedup": 96.597340267974,
+  "bit_exact": true
+}
