@@ -1,0 +1,15 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "reference_cold_one_tick_seconds": 0.560768,
+  "vectorized_cold_one_tick_seconds": 0.054136,
+  "speedup": 10.358,
+  "same_state": true,
+  "reverse_roundtrip": true,
+  "initial_unique_states": 512
+}
