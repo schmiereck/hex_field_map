@@ -1,0 +1,156 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "seed": 3112,
+  "occupation": 12,
+  "forward_ticks": 16,
+  "reverse_ticks": 16,
+  "reference_comparison": true,
+  "all_bitwise_equal_to_unbounded": true,
+  "exact_roundtrip": true,
+  "number_and_four_momenta_conserved": true,
+  "padding_zero": true,
+  "engine_cache": {
+    "capacity_entries": 0,
+    "current_entries": 0,
+    "hits": 0,
+    "misses": 16384,
+    "evictions": 0,
+    "exact_evaluations": 16384
+  },
+  "maxrss_kib_linux": 114320,
+  "inner_collide_lru": {
+    "hits": 11415,
+    "misses": 13158,
+    "maxsize": 100000,
+    "currsize": 13158
+  },
+  "inner_preference_lru": {
+    "hits": 9941,
+    "misses": 15991,
+    "maxsize": 100000,
+    "currsize": 15991
+  },
+  "reference_cache_entries": 13158,
+  "forward_elapsed_seconds": 0.8093,
+  "reverse_elapsed_seconds": 0.0128,
+  "timeline": [
+    {
+      "tick": 1,
+      "seconds": 0.050139,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 512
+    },
+    {
+      "tick": 2,
+      "seconds": 0.051596,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 1024
+    },
+    {
+      "tick": 3,
+      "seconds": 0.0486,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 1536
+    },
+    {
+      "tick": 4,
+      "seconds": 0.049476,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 2048
+    },
+    {
+      "tick": 5,
+      "seconds": 0.050739,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 2560
+    },
+    {
+      "tick": 6,
+      "seconds": 0.050556,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 3072
+    },
+    {
+      "tick": 7,
+      "seconds": 0.049403,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 3584
+    },
+    {
+      "tick": 8,
+      "seconds": 0.04953,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 4096
+    },
+    {
+      "tick": 9,
+      "seconds": 0.055292,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 4608
+    },
+    {
+      "tick": 10,
+      "seconds": 0.049008,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 5120
+    },
+    {
+      "tick": 11,
+      "seconds": 0.046712,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 5632
+    },
+    {
+      "tick": 12,
+      "seconds": 0.047137,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 6144
+    },
+    {
+      "tick": 13,
+      "seconds": 0.049388,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 6656
+    },
+    {
+      "tick": 14,
+      "seconds": 0.051623,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 7168
+    },
+    {
+      "tick": 15,
+      "seconds": 0.049734,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 7680
+    },
+    {
+      "tick": 16,
+      "seconds": 0.050854,
+      "entries": 0,
+      "evictions": 0,
+      "engine_misses": 8192
+    }
+  ]
+}
