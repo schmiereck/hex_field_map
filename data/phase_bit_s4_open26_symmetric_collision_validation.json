@@ -1,0 +1,158 @@
+{
+  "status": "prototype finite sampling, not exhaustive over 2^24",
+  "group_size": 384,
+  "number_of_two_body_gate_types": 282,
+  "samples_checked": 2745,
+  "symmetry_generators_checked": [
+    "inversion",
+    "mirror_0",
+    "mirror_1",
+    "mirror_2",
+    "mirror_3",
+    "swap_0_1",
+    "swap_1_2",
+    "swap_2_3"
+  ],
+  "collision_is_involution_on_samples": true,
+  "number_and_four_momenta_preserved_on_samples": true,
+  "per_occupation": {
+    "0": {
+      "tested": 1,
+      "moving": 0
+    },
+    "1": {
+      "tested": 24,
+      "moving": 0
+    },
+    "2": {
+      "tested": 276,
+      "moving": 0
+    },
+    "3": {
+      "tested": 2024,
+      "moving": 480
+    },
+    "4": {
+      "tested": 20,
+      "moving": 1
+    },
+    "6": {
+      "tested": 20,
+      "moving": 0
+    },
+    "8": {
+      "tested": 20,
+      "moving": 0
+    },
+    "10": {
+      "tested": 100,
+      "moving": 0
+    },
+    "12": {
+      "tested": 100,
+      "moving": 0
+    },
+    "14": {
+      "tested": 100,
+      "moving": 0
+    },
+    "16": {
+      "tested": 20,
+      "moving": 0
+    },
+    "18": {
+      "tested": 20,
+      "moving": 0
+    },
+    "20": {
+      "tested": 20,
+      "moving": 1
+    }
+  },
+  "moving_sample_difference_rank": 19,
+  "exact_charge_dimension_proof": {
+    "independent_collision_differences": 19,
+    "witnesses": [
+      {
+        "state": 37,
+        "target": 1081376
+      },
+      {
+        "state": 69,
+        "target": 1120
+      },
+      {
+        "state": 25,
+        "target": 592
+      },
+      {
+        "state": 73,
+        "target": 589888
+      },
+      {
+        "state": 1041,
+        "target": 321
+      },
+      {
+        "state": 2081,
+        "target": 641
+      },
+      {
+        "state": 4129,
+        "target": 1049120
+      },
+      {
+        "state": 65569,
+        "target": 1049089
+      },
+      {
+        "state": 524321,
+        "target": 33281
+      },
+      {
+        "state": 8388641,
+        "target": 33312
+      },
+      {
+        "state": 8257,
+        "target": 525376
+      },
+      {
+        "state": 4194369,
+        "target": 66624
+      },
+      {
+        "state": 1064961,
+        "target": 327681
+      },
+      {
+        "state": 2129921,
+        "target": 655361
+      },
+      {
+        "state": 22,
+        "target": 400
+      },
+      {
+        "state": 134,
+        "target": 393344
+      },
+      {
+        "state": 8210,
+        "target": 2097424
+      },
+      {
+        "state": 4194322,
+        "target": 16656
+      },
+      {
+        "state": 4132,
+        "target": 1048736
+      }
+    ],
+    "upper_bound_from_five_exact_charges": 5,
+    "conclusion": "exactly five additive linear invariants of the full collision"
+  },
+  "max_possible_change_rank": 19,
+  "caveat": "Formal full-space involution, B4 equivariance and conservation follow from the construction; 19 explicit nonzero collision witnesses establish exactly 5 additive linear invariants. Long-time transport and packet spectra are NOT established."
+}
