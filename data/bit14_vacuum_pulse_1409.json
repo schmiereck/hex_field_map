@@ -1,0 +1,923 @@
+{
+  "experiment": "Bit14 radial shell decomposition of exact Bit8 gas",
+  "kind": "vacuum_pulse",
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "physical_nodes": 512,
+  "seed": 1409,
+  "ticks": 4,
+  "center": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "microscopic_collision": "unchanged Bit8 (vectorized Bit10 implementation)",
+  "cache": "engine disabled; bounded internal lru_cache 100000",
+  "quantity": "local particle-density difference against identical background",
+  "shell_basis": "orthogonal radius^2 bins in periodic 4D shortest-distance metric at fixed center",
+  "visible_detector": "single w=0 slice, no hidden w Fourier filter",
+  "baseline": "vacuum",
+  "random_control": "same number of added particles, spatially dispersed",
+  "initial_particle_numbers": [
+    0,
+    24,
+    24
+  ],
+  "all_five_charges_conserved": true,
+  "exact_forward_backward_roundtrip": true,
+  "history": [
+    {
+      "tick": 0,
+      "pulse": {
+        "energy": 576.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 1,
+        "full_radial_energy_retained": 1.0,
+        "full_radial_relative_l2_error": 0.0,
+        "k_shells": {
+          "1": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "2": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "4": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "8": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          }
+        },
+        "dominant_r2": [
+          0
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 1.0,
+          "effective_linear_parameters": 16,
+          "selected_r2": [
+            0,
+            30,
+            26,
+            24
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 1.0,
+          "effective_linear_parameters": 43,
+          "selected_r2": [
+            0,
+            22,
+            20,
+            18
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 1,
+        "visible_w0_slice": {
+          "energy": 576.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 1.0,
+          "full_radial_relative_l2_error": 0.0,
+          "k_shells": {
+            "1": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "2": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "4": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "8": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            }
+          },
+          "dominant_r2": [
+            0
+          ]
+        }
+      },
+      "random_control": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 8,
+        "full_radial_energy_retained": 0.0704809240896701,
+        "full_radial_relative_l2_error": 0.9641156963302329,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.022058823529411797,
+            "relative_l2_error": 0.9889090840267311
+          },
+          "2": {
+            "energy_retained": 0.038725490196078405,
+            "relative_l2_error": 0.980446076948611
+          },
+          "4": {
+            "energy_retained": 0.056086601307189565,
+            "relative_l2_error": 0.9715520566046939
+          },
+          "8": {
+            "energy_retained": 0.0704809240896701,
+            "relative_l2_error": 0.9641156963302329
+          }
+        },
+        "dominant_r2": [
+          18,
+          22,
+          14,
+          2,
+          6,
+          12,
+          8,
+          10
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.13000205765527237,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            18,
+            2,
+            22,
+            8
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.2594384197101377,
+          "effective_linear_parameters": 56,
+          "selected_r2": [
+            18,
+            22,
+            2,
+            14
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 1.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 0.08333333333333348,
+          "full_radial_relative_l2_error": 0.957427107756338,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.08333333333333348,
+              "relative_l2_error": 0.957427107756338
+            },
+            "2": {
+              "energy_retained": 0.08333333333333348,
+              "relative_l2_error": 0.957427107756338
+            },
+            "4": {
+              "energy_retained": 0.08333333333333348,
+              "relative_l2_error": 0.957427107756338
+            },
+            "8": {
+              "energy_retained": 0.08333333333333348,
+              "relative_l2_error": 0.957427107756338
+            }
+          },
+          "dominant_r2": [
+            2
+          ]
+        }
+      },
+      "collision_changed_sites_before_next_tick": {
+        "background": 0,
+        "pulse": 0,
+        "random_control": 0
+      }
+    },
+    {
+      "tick": 1,
+      "pulse": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 1,
+        "full_radial_energy_retained": 1.0,
+        "full_radial_relative_l2_error": 0.0,
+        "k_shells": {
+          "1": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "2": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "4": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          },
+          "8": {
+            "energy_retained": 1.0,
+            "relative_l2_error": 0.0
+          }
+        },
+        "dominant_r2": [
+          2
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 1.0000000000000002,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            2,
+            30,
+            26,
+            24
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 1.0000000000000002,
+          "effective_linear_parameters": 56,
+          "selected_r2": [
+            2,
+            22,
+            20,
+            18
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 12.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 1.0,
+          "full_radial_relative_l2_error": 0.0,
+          "k_shells": {
+            "1": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "2": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "4": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "8": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            }
+          },
+          "dominant_r2": [
+            2
+          ]
+        }
+      },
+      "random_control": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 11,
+        "full_radial_energy_retained": 0.07303216716311722,
+        "full_radial_relative_l2_error": 0.9627916871457101,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.022058823529411797,
+            "relative_l2_error": 0.9889090840267311
+          },
+          "2": {
+            "energy_retained": 0.035764963880288936,
+            "relative_l2_error": 0.9819547016638349
+          },
+          "4": {
+            "energy_retained": 0.0555566305469557,
+            "relative_l2_error": 0.9718247627288802
+          },
+          "8": {
+            "energy_retained": 0.06890890327422827,
+            "relative_l2_error": 0.9649306175709069
+          }
+        },
+        "dominant_r2": [
+          18,
+          10,
+          28,
+          22,
+          6,
+          24,
+          26,
+          4
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.10477800870243671,
+          "effective_linear_parameters": 18,
+          "selected_r2": [
+            18,
+            10,
+            24,
+            28
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.18722196107838054,
+          "effective_linear_parameters": 41,
+          "selected_r2": [
+            18,
+            10,
+            28,
+            24
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 0.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 0,
+          "full_radial_energy_retained": 1.0,
+          "full_radial_relative_l2_error": 0.0,
+          "k_shells": {
+            "1": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "2": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "4": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "8": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            }
+          },
+          "dominant_r2": []
+        }
+      },
+      "collision_changed_sites_before_next_tick": {
+        "background": 0,
+        "pulse": 0,
+        "random_control": 0
+      }
+    },
+    {
+      "tick": 2,
+      "pulse": {
+        "energy": 52.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 1,
+        "full_radial_energy_retained": 0.8520710059171597,
+        "full_radial_relative_l2_error": 0.38461538461538464,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.8520710059171597,
+            "relative_l2_error": 0.38461538461538464
+          },
+          "2": {
+            "energy_retained": 0.8520710059171597,
+            "relative_l2_error": 0.38461538461538464
+          },
+          "4": {
+            "energy_retained": 0.8520710059171597,
+            "relative_l2_error": 0.38461538461538464
+          },
+          "8": {
+            "energy_retained": 0.8520710059171597,
+            "relative_l2_error": 0.38461538461538464
+          }
+        },
+        "dominant_r2": [
+          8
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.9890109890109895,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            8,
+            30,
+            26,
+            24
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 1.0000000000000004,
+          "effective_linear_parameters": 54,
+          "selected_r2": [
+            8,
+            22,
+            20,
+            18
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 13,
+        "visible_w0_slice": {
+          "energy": 32.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 0.9,
+          "full_radial_relative_l2_error": 0.31622776601683794,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.9,
+              "relative_l2_error": 0.31622776601683794
+            },
+            "2": {
+              "energy_retained": 0.9,
+              "relative_l2_error": 0.31622776601683794
+            },
+            "4": {
+              "energy_retained": 0.9,
+              "relative_l2_error": 0.31622776601683794
+            },
+            "8": {
+              "energy_retained": 0.9,
+              "relative_l2_error": 0.31622776601683794
+            }
+          },
+          "dominant_r2": [
+            8
+          ]
+        }
+      },
+      "random_control": {
+        "energy": 28.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 9,
+        "full_radial_energy_retained": 0.06252924814263827,
+        "full_radial_relative_l2_error": 0.9682307327581384,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.03361344537815125,
+            "relative_l2_error": 0.9830496196132974
+          },
+          "2": {
+            "energy_retained": 0.04154995331465927,
+            "relative_l2_error": 0.9790046203595469
+          },
+          "4": {
+            "energy_retained": 0.05264017887856909,
+            "relative_l2_error": 0.9733241089798561
+          },
+          "8": {
+            "energy_retained": 0.06171755983094995,
+            "relative_l2_error": 0.9686498026475048
+          }
+        },
+        "dominant_r2": [
+          18,
+          6,
+          10,
+          22,
+          24,
+          14,
+          26,
+          20
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.12394703934442435,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            18,
+            22,
+            24,
+            10
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.208441097774377,
+          "effective_linear_parameters": 51,
+          "selected_r2": [
+            18,
+            22,
+            24,
+            6
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 22,
+        "visible_w0_slice": {
+          "energy": 1.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 0.125,
+          "full_radial_relative_l2_error": 0.9354143466934853,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "2": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "4": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "8": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            }
+          },
+          "dominant_r2": [
+            14
+          ]
+        }
+      },
+      "collision_changed_sites_before_next_tick": {
+        "background": 0,
+        "pulse": 0,
+        "random_control": 1
+      }
+    },
+    {
+      "tick": 3,
+      "pulse": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 3,
+        "full_radial_energy_retained": 0.17793257653938765,
+        "full_radial_relative_l2_error": 0.9066793388296727,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.14035087719298234,
+            "relative_l2_error": 0.9271726499455307
+          },
+          "2": {
+            "energy_retained": 0.16812865497076024,
+            "relative_l2_error": 0.9120698136816281
+          },
+          "4": {
+            "energy_retained": 0.17793257653938765,
+            "relative_l2_error": 0.9066793388296727
+          },
+          "8": {
+            "energy_retained": 0.17793257653938765,
+            "relative_l2_error": 0.9066793388296727
+          }
+        },
+        "dominant_r2": [
+          10,
+          2,
+          18
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.25352858335100925,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            10,
+            2,
+            18,
+            30
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.45174114132045357,
+          "effective_linear_parameters": 56,
+          "selected_r2": [
+            10,
+            2,
+            18,
+            22
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 12.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 2,
+          "full_radial_energy_retained": 0.7777777777777778,
+          "full_radial_relative_l2_error": 0.4714045207910317,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.6666666666666667,
+              "relative_l2_error": 0.5773502691896257
+            },
+            "2": {
+              "energy_retained": 0.7777777777777778,
+              "relative_l2_error": 0.4714045207910317
+            },
+            "4": {
+              "energy_retained": 0.7777777777777778,
+              "relative_l2_error": 0.4714045207910317
+            },
+            "8": {
+              "energy_retained": 0.7777777777777778,
+              "relative_l2_error": 0.4714045207910317
+            }
+          },
+          "dominant_r2": [
+            10,
+            2
+          ]
+        }
+      },
+      "random_control": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 8,
+        "full_radial_energy_retained": 0.06836256739870317,
+        "full_radial_relative_l2_error": 0.9652136719925266,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.01627604166666663,
+            "relative_l2_error": 0.9918285932223034
+          },
+          "2": {
+            "energy_retained": 0.03159466911764708,
+            "relative_l2_error": 0.9840758765879555
+          },
+          "4": {
+            "energy_retained": 0.0512705950435729,
+            "relative_l2_error": 0.9740274148895539
+          },
+          "8": {
+            "energy_retained": 0.06836256739870317,
+            "relative_l2_error": 0.9652136719925266
+          }
+        },
+        "dominant_r2": [
+          14,
+          18,
+          30,
+          6,
+          20,
+          22,
+          12,
+          10
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.09307981235838936,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            18,
+            30,
+            6,
+            14
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.16589952019561338,
+          "effective_linear_parameters": 53,
+          "selected_r2": [
+            18,
+            20,
+            30,
+            14
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 2.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 1,
+          "full_radial_energy_retained": 0.125,
+          "full_radial_relative_l2_error": 0.9354143466934853,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "2": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "4": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            },
+            "8": {
+              "energy_retained": 0.125,
+              "relative_l2_error": 0.9354143466934853
+            }
+          },
+          "dominant_r2": [
+            6
+          ]
+        }
+      },
+      "collision_changed_sites_before_next_tick": {
+        "background": 0,
+        "pulse": 0,
+        "random_control": 0
+      }
+    },
+    {
+      "tick": 4,
+      "pulse": {
+        "energy": 160.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 3,
+        "full_radial_energy_retained": 0.46666666666666656,
+        "full_radial_relative_l2_error": 0.7302967433402215,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.2666666666666666,
+            "relative_l2_error": 0.8563488385776753
+          },
+          "2": {
+            "energy_retained": 0.3666666666666666,
+            "relative_l2_error": 0.7958224257542215
+          },
+          "4": {
+            "energy_retained": 0.46666666666666656,
+            "relative_l2_error": 0.7302967433402215
+          },
+          "8": {
+            "energy_retained": 0.46666666666666656,
+            "relative_l2_error": 0.7302967433402215
+          }
+        },
+        "dominant_r2": [
+          16,
+          0,
+          32
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 1.0000000000000004,
+          "effective_linear_parameters": 11,
+          "selected_r2": [
+            16,
+            32,
+            0,
+            30
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 1.0000000000000007,
+          "effective_linear_parameters": 22,
+          "selected_r2": [
+            16,
+            0,
+            32,
+            22
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 4,
+        "visible_w0_slice": {
+          "energy": 80.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 2,
+          "full_radial_energy_retained": 1.0,
+          "full_radial_relative_l2_error": 0.0,
+          "k_shells": {
+            "1": {
+              "energy_retained": 0.8,
+              "relative_l2_error": 0.4472135954999579
+            },
+            "2": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "4": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "8": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            }
+          },
+          "dominant_r2": [
+            16,
+            0
+          ]
+        }
+      },
+      "random_control": {
+        "energy": 24.0,
+        "radial_bands": 20,
+        "nonzero_radial_bands": 11,
+        "full_radial_energy_retained": 0.06272743867437158,
+        "full_radial_relative_l2_error": 0.9681283806012653,
+        "k_shells": {
+          "1": {
+            "energy_retained": 0.016666666666666607,
+            "relative_l2_error": 0.9916316520429012
+          },
+          "2": {
+            "energy_retained": 0.025438596491227927,
+            "relative_l2_error": 0.9871987659578856
+          },
+          "4": {
+            "energy_retained": 0.04071637426900587,
+            "relative_l2_error": 0.9794302556746928
+          },
+          "8": {
+            "energy_retained": 0.057593377474133844,
+            "relative_l2_error": 0.9707762989102413
+          }
+        },
+        "dominant_r2": [
+          22,
+          10,
+          26,
+          2,
+          14,
+          6,
+          8,
+          30
+        ],
+        "angular_degree1_k4": {
+          "energy_retained": 0.10542095059613044,
+          "effective_linear_parameters": 20,
+          "selected_r2": [
+            10,
+            2,
+            22,
+            26
+          ],
+          "model": "radial shells with degree <= 1 4D angular polynomials"
+        },
+        "angular_degree2_k4": {
+          "energy_retained": 0.22808859112619181,
+          "effective_linear_parameters": 55,
+          "selected_r2": [
+            22,
+            2,
+            10,
+            26
+          ],
+          "model": "radial shells with degree <= 2 4D angular polynomials"
+        },
+        "total_signed_density_deviation": 24,
+        "absolute_density_deviation": 24.0,
+        "active_delta_density_sites": 24,
+        "visible_w0_slice": {
+          "energy": 0.0,
+          "radial_bands": 12,
+          "nonzero_radial_bands": 0,
+          "full_radial_energy_retained": 1.0,
+          "full_radial_relative_l2_error": 0.0,
+          "k_shells": {
+            "1": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "2": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "4": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            },
+            "8": {
+              "energy_retained": 1.0,
+              "relative_l2_error": 0.0
+            }
+          },
+          "dominant_r2": []
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "density only, not full 24-bit exact representation",
+    "fixed shell center, periodized distance",
+    "finite deterministic samples, no ensemble uncertainties",
+    "shell dictionary optimistically selects its best radius bins"
+  ]
+}
