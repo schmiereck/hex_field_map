@@ -1,0 +1,82 @@
+{
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "nodes": 512,
+  "ticks": 6,
+  "capacity": 256,
+  "seed": 3213,
+  "input_kind": "packet_surrogate",
+  "input_unique_words": 6,
+  "input_description": "Gaussian x envelope, x/w cosine carrier, six 12-bit masks, discrete seeded sampling",
+  "policies": {
+    "none": {
+      "capacity_entries": 0,
+      "current_entries": 0,
+      "hits": 0,
+      "misses": 5084,
+      "evictions": 0,
+      "exact_evaluations": 5084,
+      "forward_seconds": 0.24861,
+      "tick_seconds": [
+        0.0027,
+        0.05175,
+        0.05115,
+        0.04729,
+        0.04698,
+        0.04815
+      ],
+      "engine_cache_entries": 0,
+      "inner_collide_cache_entries": 3858,
+      "inner_preference_cache_entries": 4805,
+      "peak_rss_kib_process_cumulative": 110864
+    },
+    "lru": {
+      "capacity_entries": 256,
+      "current_entries": 256,
+      "hits": 0,
+      "misses": 5084,
+      "evictions": 4828,
+      "exact_evaluations": 5084,
+      "forward_seconds": 0.27706,
+      "tick_seconds": [
+        0.00096,
+        0.05367,
+        0.05995,
+        0.06054,
+        0.05051,
+        0.05066
+      ],
+      "engine_cache_entries": 256,
+      "inner_collide_cache_entries": 3858,
+      "inner_preference_cache_entries": 4805,
+      "peak_rss_kib_process_cumulative": 110864
+    },
+    "hotset": {
+      "capacity_entries": 6,
+      "hits": 8,
+      "misses": 5076,
+      "policy": "static initial frequency",
+      "forward_seconds": 0.25051,
+      "tick_seconds": [
+        0.00024,
+        0.05303,
+        0.05195,
+        0.04861,
+        0.0478,
+        0.04827
+      ],
+      "engine_cache_entries": 0,
+      "inner_collide_cache_entries": 3858,
+      "inner_preference_cache_entries": 4805,
+      "peak_rss_kib_process_cumulative": 110864
+    }
+  },
+  "same_forward_final": true,
+  "same_reverse_initial": true,
+  "all_invariants_exact": true,
+  "caveat": "Process RSS cumulative across policies; timings serial with shared Python allocator and cached imported tables; not isolated benchmarks. Bit-6 physical packet preparation not yet restored."
+}
