@@ -1,0 +1,197 @@
+{
+  "status": "independent_recovery_check_not_original_Bit6_dataset",
+  "upstream_commit": "e2b1e02995e5ad0a18798c223d721311eaaedd91",
+  "states_exhausted": 2325,
+  "particle_number_and_four_momenta_conserved": true,
+  "collision_reversible_on_tested_states": true,
+  "extra_repair_gates": [
+    [
+      13,
+      23,
+      15,
+      21
+    ],
+    [
+      13,
+      23,
+      17,
+      19
+    ],
+    [
+      3,
+      23,
+      9,
+      21
+    ],
+    [
+      3,
+      23,
+      11,
+      19
+    ],
+    [
+      1,
+      23,
+      7,
+      21
+    ],
+    [
+      1,
+      23,
+      11,
+      17
+    ],
+    [
+      5,
+      21,
+      7,
+      19
+    ],
+    [
+      0,
+      23,
+      5,
+      19
+    ]
+  ],
+  "symmetries": {
+    "inversion": {
+      "failures": 522,
+      "first_witness": {
+        "input": [
+          0,
+          22
+        ],
+        "collide_after_transform": [
+          7,
+          21
+        ],
+        "transform_after_collide": [
+          1,
+          23
+        ]
+      }
+    },
+    "mirror_0": {
+      "failures": 648,
+      "first_witness": {
+        "input": [
+          0,
+          12
+        ],
+        "collide_after_transform": [
+          5,
+          19
+        ],
+        "transform_after_collide": [
+          0,
+          23
+        ]
+      }
+    },
+    "mirror_1": {
+      "failures": 596,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          4,
+          5
+        ],
+        "transform_after_collide": [
+          10,
+          11
+        ]
+      }
+    },
+    "mirror_2": {
+      "failures": 443,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          6,
+          7
+        ],
+        "transform_after_collide": [
+          10,
+          11
+        ]
+      }
+    },
+    "mirror_3": {
+      "failures": 377,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          6,
+          7
+        ],
+        "transform_after_collide": [
+          4,
+          5
+        ]
+      }
+    },
+    "swap_0_1": {
+      "failures": 595,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          4,
+          5
+        ],
+        "transform_after_collide": [
+          14,
+          15
+        ]
+      }
+    },
+    "swap_1_2": {
+      "failures": 568,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          10,
+          11
+        ],
+        "transform_after_collide": [
+          4,
+          5
+        ]
+      }
+    },
+    "swap_2_3": {
+      "failures": 429,
+      "first_witness": {
+        "input": [
+          0,
+          1
+        ],
+        "collide_after_transform": [
+          4,
+          5
+        ],
+        "transform_after_collide": [
+          6,
+          7
+        ]
+      }
+    }
+  },
+  "reported_two_bit_inversion_witness_verified": true,
+  "limitations": "No Bit 6 packet campaign or numeric dataset recreated."
+}
