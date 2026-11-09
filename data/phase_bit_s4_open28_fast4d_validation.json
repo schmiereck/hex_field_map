@@ -1,0 +1,31 @@
+{
+  "rule": "Bit8 unchanged",
+  "seed": 2909,
+  "shape": [
+    4,
+    4,
+    4,
+    4
+  ],
+  "physical_nodes": 128,
+  "occupation_per_initial_node": 12,
+  "forward_ticks": 3,
+  "backward_ticks": 3,
+  "exact_reference_forward_and_reverse": true,
+  "roundtrip": true,
+  "number_and_four_momenta_conserved": true,
+  "padding_bits_zero": true,
+  "forward_tick_seconds": [
+    0.220057,
+    0.145016,
+    0.145488
+  ],
+  "warm_collision_seconds": [
+    5e-05,
+    3.6e-05
+  ],
+  "distinct_cached_words": 607,
+  "collision_cache_hits": 640,
+  "collision_cache_misses": 384,
+  "caveat": "Cold collision evaluation is not accelerated; no packet physics claim."
+}
