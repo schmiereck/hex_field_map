@@ -1,0 +1,49 @@
+{
+  "algorithm": "batched uint32 B4 orbit transform + precomputed swap-mask classes",
+  "same_microscopic_rule_as_bit8": true,
+  "unique_half_filling_states": 300,
+  "cold_reference_seconds": 0.426071,
+  "cold_vectorized_seconds": 0.054454,
+  "cold_speedup": 7.82,
+  "exact_audit": {
+    "tested": 86,
+    "moving": 39,
+    "exact_match": true,
+    "involution": true,
+    "charge_conservation": true,
+    "eight_generator_symmetry": true
+  },
+  "4d_validation": [
+    {
+      "shape": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "nodes": 128,
+      "forward_ticks": 3,
+      "backward_ticks": 3,
+      "matches_bit8_at_each_step": true,
+      "roundtrip": true,
+      "conserves_five_charges": true,
+      "combined_forward_comparison_seconds": 0.630603
+    },
+    {
+      "shape": [
+        8,
+        4,
+        4,
+        8
+      ],
+      "nodes": 512,
+      "forward_ticks": 2,
+      "backward_ticks": 2,
+      "matches_bit8_at_each_step": true,
+      "roundtrip": true,
+      "conserves_five_charges": true,
+      "combined_forward_comparison_seconds": 1.673691
+    }
+  ],
+  "caveat": "Hardware-specific timing; warm-cache replay not included; full 65,536-node packet campaign still untested."
+}
