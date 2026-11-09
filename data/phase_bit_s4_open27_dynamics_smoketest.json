@@ -1,0 +1,37 @@
+{
+  "seed": 2809,
+  "sample_n": 512,
+  "occupation": 12,
+  "moving": 316,
+  "moving_fraction": 0.6171875,
+  "symmetry_generators_checked": [
+    "inversion",
+    "mirror_0",
+    "mirror_1",
+    "mirror_2",
+    "mirror_3",
+    "swap_0_1",
+    "swap_1_2",
+    "swap_2_3"
+  ],
+  "invariant_count": 5,
+  "group_size": 384,
+  "lattice_shape": [
+    4,
+    4,
+    4,
+    4
+  ],
+  "physical_nodes": 128,
+  "forward_ticks": 3,
+  "reverse_ticks": 3,
+  "exact_full_lattice_roundtrip": true,
+  "exact_total_number_and_momenta": true,
+  "seconds_half_density_screening": 4.89,
+  "forward_tick_seconds": [
+    0.172,
+    0.242,
+    0.27
+  ],
+  "note": "Finite sample and small-box check; no phase-packet or long-time mixing result."
+}
