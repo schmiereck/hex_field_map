@@ -998,3 +998,1281 @@
           0,
           4296
         ],
+        [
+          24,
+          5388
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 23,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 9.899494936611665,
+      "r10": 9.899494936611665,
+      "r50": 9.899494936611665,
+      "r90": 9.899494936611665,
+      "outer_radius": 9.899494936611665,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          24,
+          6144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 24,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 6,
+      "outgoing_direction_bits": 24,
+      "active_sites": 6,
+      "active_direction_bits": 24,
+      "mean_r": 11.313708498984761,
+      "r10": 11.313708498984761,
+      "r50": 11.313708498984761,
+      "r90": 11.313708498984761,
+      "outer_radius": 11.313708498984761,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          0,
+          5720
+        ],
+        [
+          0,
+          5400
+        ],
+        [
+          6,
+          3606
+        ]
+      ],
+      "support_fraction": 0.00018310546875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 25,
+      "seconds": 6e-05,
+      "collision_evaluation_sites": 6,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 9.899494936611665,
+      "r10": 9.899494936611665,
+      "r50": 9.899494936611665,
+      "r90": 9.899494936611665,
+      "outer_radius": 9.899494936611665,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          24,
+          6144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 26,
+      "seconds": 0.00021,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 8.48528137423857,
+      "r10": 8.48528137423857,
+      "r50": 8.48528137423857,
+      "r90": 8.48528137423857,
+      "outer_radius": 8.48528137423857,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          24,
+          5388
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 27,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 7.0710678118654755,
+      "r10": 7.0710678118654755,
+      "r50": 7.0710678118654755,
+      "r90": 7.0710678118654755,
+      "outer_radius": 7.0710678118654755,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          24,
+          4316
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 28,
+      "seconds": 8e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 5.656854249492381,
+      "r10": 5.656854249492381,
+      "r50": 5.656854249492381,
+      "r90": 5.656854249492381,
+      "outer_radius": 5.656854249492381,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          24,
+          1872
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 29,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 4.242640687119285,
+      "r10": 4.242640687119285,
+      "r50": 4.242640687119285,
+      "r90": 4.242640687119285,
+      "outer_radius": 4.242640687119285,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          24,
+          864
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 30,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 2.8284271247461903,
+      "r10": 2.8284271247461903,
+      "r50": 2.8284271247461903,
+      "r90": 2.8284271247461903,
+      "outer_radius": 2.8284271247461903,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          24,
+          144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 31,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 1.4142135623730951,
+      "r10": 1.4142135623730951,
+      "r50": 1.4142135623730951,
+      "r90": 1.4142135623730951,
+      "outer_radius": 1.4142135623730951,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          24,
+          48
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 32,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 1,
+      "outgoing_direction_bits": 24,
+      "active_sites": 1,
+      "active_direction_bits": 24,
+      "mean_r": 0.0,
+      "r10": 0.0,
+      "r50": 0.0,
+      "r90": 0.0,
+      "outer_radius": 0.0,
+      "inner_half_ball_fraction": 1.0,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ]
+      ],
+      "support_fraction": 3.0517578125e-05,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 33,
+      "seconds": 2e-05,
+      "collision_evaluation_sites": 1,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 1.4142135623730951,
+      "r10": 1.4142135623730951,
+      "r50": 1.4142135623730951,
+      "r90": 1.4142135623730951,
+      "outer_radius": 1.4142135623730951,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          24,
+          48
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 34,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 2.8284271247461903,
+      "r10": 2.8284271247461903,
+      "r50": 2.8284271247461903,
+      "r90": 2.8284271247461903,
+      "outer_radius": 2.8284271247461903,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          24,
+          144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 35,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 4.242640687119285,
+      "r10": 4.242640687119285,
+      "r50": 4.242640687119285,
+      "r90": 4.242640687119285,
+      "outer_radius": 4.242640687119285,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          24,
+          864
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 36,
+      "seconds": 9e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 5.656854249492381,
+      "r10": 5.656854249492381,
+      "r50": 5.656854249492381,
+      "r90": 5.656854249492381,
+      "outer_radius": 5.656854249492381,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          24,
+          1872
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 37,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 7.0710678118654755,
+      "r10": 7.0710678118654755,
+      "r50": 7.0710678118654755,
+      "r90": 7.0710678118654755,
+      "outer_radius": 7.0710678118654755,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          24,
+          4316
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 38,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 8.48528137423857,
+      "r10": 8.48528137423857,
+      "r50": 8.48528137423857,
+      "r90": 8.48528137423857,
+      "outer_radius": 8.48528137423857,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          24,
+          5388
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 39,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 9.899494936611665,
+      "r10": 9.899494936611665,
+      "r50": 9.899494936611665,
+      "r90": 9.899494936611665,
+      "outer_radius": 9.899494936611665,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          24,
+          6144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 40,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 6,
+      "outgoing_direction_bits": 24,
+      "active_sites": 6,
+      "active_direction_bits": 24,
+      "mean_r": 11.313708498984761,
+      "r10": 11.313708498984761,
+      "r50": 11.313708498984761,
+      "r90": 11.313708498984761,
+      "outer_radius": 11.313708498984761,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          0,
+          5720
+        ],
+        [
+          0,
+          5400
+        ],
+        [
+          6,
+          3606
+        ]
+      ],
+      "support_fraction": 0.00018310546875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 41,
+      "seconds": 2e-05,
+      "collision_evaluation_sites": 6,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 9.899494936611665,
+      "r10": 9.899494936611665,
+      "r50": 9.899494936611665,
+      "r90": 9.899494936611665,
+      "outer_radius": 9.899494936611665,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          0,
+          5388
+        ],
+        [
+          24,
+          6144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 42,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 8.48528137423857,
+      "r10": 8.48528137423857,
+      "r50": 8.48528137423857,
+      "r90": 8.48528137423857,
+      "outer_radius": 8.48528137423857,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          0,
+          4296
+        ],
+        [
+          24,
+          5388
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 43,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 7.0710678118654755,
+      "r10": 7.0710678118654755,
+      "r50": 7.0710678118654755,
+      "r90": 7.0710678118654755,
+      "outer_radius": 7.0710678118654755,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          0,
+          1560
+        ],
+        [
+          0,
+          2664
+        ],
+        [
+          24,
+          4316
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 44,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 5.656854249492381,
+      "r10": 5.656854249492381,
+      "r50": 5.656854249492381,
+      "r90": 5.656854249492381,
+      "outer_radius": 5.656854249492381,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          0,
+          864
+        ],
+        [
+          24,
+          1872
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 45,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 4.242640687119285,
+      "r10": 4.242640687119285,
+      "r50": 4.242640687119285,
+      "r90": 4.242640687119285,
+      "outer_radius": 4.242640687119285,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          144
+        ],
+        [
+          0,
+          432
+        ],
+        [
+          24,
+          864
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 46,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 2.8284271247461903,
+      "r10": 2.8284271247461903,
+      "r50": 2.8284271247461903,
+      "r90": 2.8284271247461903,
+      "outer_radius": 2.8284271247461903,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          24,
+          144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 47,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 1.4142135623730951,
+      "r10": 1.4142135623730951,
+      "r50": 1.4142135623730951,
+      "r90": 1.4142135623730951,
+      "outer_radius": 1.4142135623730951,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          24,
+          48
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 48,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 1,
+      "outgoing_direction_bits": 24,
+      "active_sites": 1,
+      "active_direction_bits": 24,
+      "mean_r": 0.0,
+      "r10": 0.0,
+      "r50": 0.0,
+      "r90": 0.0,
+      "outer_radius": 0.0,
+      "inner_half_ball_fraction": 1.0,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ]
+      ],
+      "support_fraction": 3.0517578125e-05,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 49,
+      "seconds": 2e-05,
+      "collision_evaluation_sites": 1,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 1.4142135623730951,
+      "r10": 1.4142135623730951,
+      "r50": 1.4142135623730951,
+      "r90": 1.4142135623730951,
+      "outer_radius": 1.4142135623730951,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          24,
+          48
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 50,
+      "seconds": 3e-05,
+      "collision_evaluation_sites": 24,
+      "nonlinear_source_sites": 0,
+      "nonlinear_source_bits": 0,
+      "outgoing_active_sites": 24,
+      "outgoing_direction_bits": 24,
+      "active_sites": 24,
+      "active_direction_bits": 24,
+      "mean_r": 2.8284271247461903,
+      "r10": 2.8284271247461903,
+      "r50": 2.8284271247461903,
+      "r90": 2.8284271247461903,
+      "outer_radius": 2.8284271247461903,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          24,
+          144
+        ]
+      ],
+      "support_fraction": 0.000732421875,
+      "nonwrapped_geometry": false
+    }
+  ]
+}
