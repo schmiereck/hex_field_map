@@ -1,0 +1,88 @@
+{
+  "experiment": "Bit15 lossless ray-front baseline plus collision residual",
+  "shape": [
+    16,
+    4,
+    4,
+    16
+  ],
+  "kind": "background_pulse",
+  "seed": 1509,
+  "ticks": 2,
+  "encoder_is_exact": true,
+  "reverse_microdynamics_exact": true,
+  "results": {
+    "pulse": {
+      "ray_initial_bytes": 47,
+      "ray_initial_zlib_bytes": 47,
+      "ray_count": 12,
+      "times": [
+        {
+          "tick": 0,
+          "raw_zlib_bytes": 34,
+          "residual_sites": 0,
+          "residual_changed_bits": 0,
+          "residual_bytes": 11,
+          "residual_zlib_bytes": 17
+        },
+        {
+          "tick": 1,
+          "raw_zlib_bytes": 69,
+          "residual_sites": 4,
+          "residual_changed_bits": 4,
+          "residual_bytes": 31,
+          "residual_zlib_bytes": 39
+        },
+        {
+          "tick": 2,
+          "raw_zlib_bytes": 87,
+          "residual_sites": 14,
+          "residual_changed_bits": 20,
+          "residual_bytes": 81,
+          "residual_zlib_bytes": 78
+        }
+      ],
+      "total_raw_zlib_bytes": 190,
+      "total_rays_plus_residual_zlib_bytes": 181
+    },
+    "random_control": {
+      "ray_initial_bytes": 47,
+      "ray_initial_zlib_bytes": 55,
+      "ray_count": 12,
+      "times": [
+        {
+          "tick": 0,
+          "raw_zlib_bytes": 70,
+          "residual_sites": 0,
+          "residual_changed_bits": 0,
+          "residual_bytes": 11,
+          "residual_zlib_bytes": 17
+        },
+        {
+          "tick": 1,
+          "raw_zlib_bytes": 93,
+          "residual_sites": 16,
+          "residual_changed_bits": 16,
+          "residual_bytes": 91,
+          "residual_zlib_bytes": 87
+        },
+        {
+          "tick": 2,
+          "raw_zlib_bytes": 148,
+          "residual_sites": 43,
+          "residual_changed_bits": 48,
+          "residual_bytes": 226,
+          "residual_zlib_bytes": 171
+        }
+      ],
+      "total_raw_zlib_bytes": 311,
+      "total_rays_plus_residual_zlib_bytes": 330
+    }
+  },
+  "scope": "XOR perturbation relative to simultaneously evolved baseline; does not encode baseline",
+  "limitations": [
+    "each correction requires truth evolution",
+    "ray predictor is not an autonomous nonlinear algorithm",
+    "zlib data rates do not include complete shape and software specification overhead"
+  ]
+}
