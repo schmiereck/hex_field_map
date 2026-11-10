@@ -1,0 +1,951 @@
+{
+  "experiment": "Bit16 exact D4 connected correction fronts",
+  "kind": "vacuum_pulse",
+  "seed": 1601,
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "physical_nodes": 512,
+  "ticks": 8,
+  "elapsed_seconds": 0.027,
+  "exact_microdynamics_roundtrip": true,
+  "exact_non_linear_source_identity": true,
+  "exact_component_encode_decode": true,
+  "reference_background_excluded_from_compression": true,
+  "limitations": [
+    "clusters are formed offline after exact collision calculation",
+    "cluster format uses sparse indices; grouping alone adds metadata and may cost bytes",
+    "cluster count alone is not information-theoretic compressibility",
+    "the predicted directed rays are not a spherical basis or autonomous simulator"
+  ],
+  "results": {
+    "pulse": {
+      "initial_ray_bytes": 83,
+      "initial_ray_zlib_bytes": 59,
+      "times": [
+        {
+          "tick": 0,
+          "delta": {
+            "sites": 1,
+            "changed_direction_bits": 24,
+            "components": 1,
+            "largest_component": 1,
+            "singleton_components": 1,
+            "top_component_sizes": [
+              1
+            ],
+            "cluster_bytes": 20,
+            "cluster_zlib_bytes": 24,
+            "sparse_bytes": 16,
+            "sparse_zlib_bytes": 24,
+            "dense_zlib_bytes": 22
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 1,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 1,
+            "largest_component": 24,
+            "singleton_components": 0,
+            "top_component_sizes": [
+              24
+            ],
+            "cluster_bytes": 135,
+            "cluster_zlib_bytes": 115,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 110,
+            "dense_zlib_bytes": 74
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 2,
+          "delta": {
+            "sites": 13,
+            "changed_direction_bits": 24,
+            "components": 13,
+            "largest_component": 1,
+            "singleton_components": 13,
+            "top_component_sizes": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 128,
+            "cluster_zlib_bytes": 88,
+            "sparse_bytes": 76,
+            "sparse_zlib_bytes": 75,
+            "dense_zlib_bytes": 67
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 3,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 12,
+            "largest_component": 4,
+            "singleton_components": 8,
+            "top_component_sizes": [
+              4,
+              4,
+              4,
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 179,
+            "cluster_zlib_bytes": 126,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 106,
+            "dense_zlib_bytes": 81
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 4,
+          "delta": {
+            "sites": 4,
+            "changed_direction_bits": 24,
+            "components": 4,
+            "largest_component": 1,
+            "singleton_components": 4,
+            "top_component_sizes": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 47,
+            "cluster_zlib_bytes": 41,
+            "sparse_bytes": 31,
+            "sparse_zlib_bytes": 38,
+            "dense_zlib_bytes": 32
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 5,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 12,
+            "largest_component": 4,
+            "singleton_components": 8,
+            "top_component_sizes": [
+              4,
+              4,
+              4,
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 179,
+            "cluster_zlib_bytes": 127,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 107,
+            "dense_zlib_bytes": 81
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 6,
+          "delta": {
+            "sites": 13,
+            "changed_direction_bits": 24,
+            "components": 13,
+            "largest_component": 1,
+            "singleton_components": 13,
+            "top_component_sizes": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 128,
+            "cluster_zlib_bytes": 89,
+            "sparse_bytes": 76,
+            "sparse_zlib_bytes": 75,
+            "dense_zlib_bytes": 67
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 7,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 1,
+            "largest_component": 24,
+            "singleton_components": 0,
+            "top_component_sizes": [
+              24
+            ],
+            "cluster_bytes": 135,
+            "cluster_zlib_bytes": 110,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 113,
+            "dense_zlib_bytes": 74
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 8,
+          "delta": {
+            "sites": 1,
+            "changed_direction_bits": 24,
+            "components": 1,
+            "largest_component": 1,
+            "singleton_components": 1,
+            "top_component_sizes": [
+              1
+            ],
+            "cluster_bytes": 20,
+            "cluster_zlib_bytes": 24,
+            "sparse_bytes": 16,
+            "sparse_zlib_bytes": 24,
+            "dense_zlib_bytes": 22
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        }
+      ],
+      "total_direct_dense_zlib_bytes": 520,
+      "total_ray_plus_sparse_corrections_zlib_bytes": 212,
+      "total_ray_plus_cluster_corrections_zlib_bytes": 212
+    },
+    "random_control": {
+      "initial_ray_bytes": 83,
+      "initial_ray_zlib_bytes": 91,
+      "times": [
+        {
+          "tick": 0,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 17,
+            "largest_component": 4,
+            "singleton_components": 13,
+            "top_component_sizes": [
+              4,
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 199,
+            "cluster_zlib_bytes": 141,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 120,
+            "dense_zlib_bytes": 73
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 1,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 15,
+            "largest_component": 4,
+            "singleton_components": 9,
+            "top_component_sizes": [
+              4,
+              3,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 191,
+            "cluster_zlib_bytes": 138,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 120,
+            "dense_zlib_bytes": 76
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 2,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 14,
+            "largest_component": 6,
+            "singleton_components": 9,
+            "top_component_sizes": [
+              6,
+              3,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 187,
+            "cluster_zlib_bytes": 134,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 117,
+            "dense_zlib_bytes": 76
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 3,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 12,
+            "largest_component": 4,
+            "singleton_components": 4,
+            "top_component_sizes": [
+              4,
+              3,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 179,
+            "cluster_zlib_bytes": 137,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 122,
+            "dense_zlib_bytes": 75
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 4,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 16,
+            "largest_component": 5,
+            "singleton_components": 12,
+            "top_component_sizes": [
+              5,
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 195,
+            "cluster_zlib_bytes": 140,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 121,
+            "dense_zlib_bytes": 76
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 5,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 10,
+            "largest_component": 9,
+            "singleton_components": 7,
+            "top_component_sizes": [
+              9,
+              6,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 171,
+            "cluster_zlib_bytes": 134,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 122,
+            "dense_zlib_bytes": 77
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 6,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 9,
+            "largest_component": 7,
+            "singleton_components": 3,
+            "top_component_sizes": [
+              7,
+              4,
+              3,
+              3,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 167,
+            "cluster_zlib_bytes": 129,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 116,
+            "dense_zlib_bytes": 76
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 7,
+          "delta": {
+            "sites": 23,
+            "changed_direction_bits": 24,
+            "components": 14,
+            "largest_component": 4,
+            "singleton_components": 9,
+            "top_component_sizes": [
+              4,
+              4,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 182,
+            "cluster_zlib_bytes": 136,
+            "sparse_bytes": 126,
+            "sparse_zlib_bytes": 118,
+            "dense_zlib_bytes": 79
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          },
+          "nonlinear_source_next_tick": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        },
+        {
+          "tick": 8,
+          "delta": {
+            "sites": 24,
+            "changed_direction_bits": 24,
+            "components": 17,
+            "largest_component": 4,
+            "singleton_components": 13,
+            "top_component_sizes": [
+              4,
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "cluster_bytes": 199,
+            "cluster_zlib_bytes": 141,
+            "sparse_bytes": 131,
+            "sparse_zlib_bytes": 120,
+            "dense_zlib_bytes": 73
+          },
+          "ray_residual": {
+            "sites": 0,
+            "changed_direction_bits": 0,
+            "components": 0,
+            "largest_component": 0,
+            "singleton_components": 0,
+            "top_component_sizes": [],
+            "cluster_bytes": 11,
+            "cluster_zlib_bytes": 17,
+            "sparse_bytes": 11,
+            "sparse_zlib_bytes": 17,
+            "dense_zlib_bytes": 20
+          }
+        }
+      ],
+      "total_direct_dense_zlib_bytes": 681,
+      "total_ray_plus_sparse_corrections_zlib_bytes": 244,
+      "total_ray_plus_cluster_corrections_zlib_bytes": 244
+    }
+  }
+}
