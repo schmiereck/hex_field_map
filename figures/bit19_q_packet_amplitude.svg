@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+<title id="title">Bit19: Kohärente Mode-Amplituden im verborgenen Fourierkanal</title>
+<desc id="desc">Normierte Amplituden für Ruhe-, positiven und negativen Träger, exakt symmetrische Kollision durchgezogen und freier Transport gestrichelt.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="75" y="20" font-size="16" font-family="sans-serif" fill="#222">4D-Bitfeld: Kohärente q-Trägeramplitude</text>
+<line x1="85" y1="368.0" x2="706" y2="368.0" stroke="#e6e9ee"/>
+<text x="73" y="372.0" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">0.00</text>
+<line x1="85" y1="288.7" x2="706" y2="288.7" stroke="#e6e9ee"/>
+<text x="73" y="292.7" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">0.25</text>
+<line x1="85" y1="209.4" x2="706" y2="209.4" stroke="#e6e9ee"/>
+<text x="73" y="213.4" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">0.50</text>
+<line x1="85" y1="130.1" x2="706" y2="130.1" stroke="#e6e9ee"/>
+<text x="73" y="134.1" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">0.75</text>
+<line x1="85" y1="50.9" x2="706" y2="50.9" stroke="#e6e9ee"/>
+<text x="73" y="54.9" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">1.00</text>
+<text x="85.0" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">0</text>
+<text x="188.5" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">4</text>
+<text x="292.0" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">8</text>
+<text x="395.5" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">12</text>
+<text x="499.0" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">16</text>
+<text x="602.5" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">20</text>
+<text x="706.0" y="390" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#333">24</text>
+<polyline points="85.00,50.86 110.88,51.77 136.75,58.40 162.62,75.93 188.50,108.81 214.38,158.31 240.25,221.74 266.12,292.73 292.00,347.18 317.88,296.10 343.75,242.11 369.62,203.19 395.50,181.00 421.38,173.74 447.25,176.67 473.12,183.01 499.00,186.11 524.88,183.08 550.75,176.86 576.62,174.08 602.50,181.46 628.38,203.65 654.25,242.40 680.12,295.88 706.00,345.21" fill="none" stroke="#7b58be" stroke-width="2.5" opacity="0.85" stroke-dasharray="7 4"/>
+<polyline points="85.00,50.86 110.88,51.80 136.75,58.42 162.62,75.01 188.50,104.78 214.38,148.61 240.25,203.75 266.12,262.99 292.00,307.82 317.88,297.56 343.75,258.00 369.62,225.29 395.50,207.69 421.38,205.10 447.25,213.09 473.12,224.47 499.00,231.36 524.88,229.67 550.75,222.92 576.62,218.45 602.50,221.95 628.38,236.22 654.25,260.76 680.12,291.54 706.00,319.02" fill="none" stroke="#7b58be" stroke-width="2.5" opacity="0.85"/>
+<polyline points="85.00,50.86 110.88,53.68 136.75,70.03 162.62,109.35 188.50,166.68 214.38,224.03 240.25,263.65 266.12,282.09 292.00,289.36 317.88,289.56 343.75,276.91 369.62,252.39 395.50,226.21 421.38,206.18 447.25,194.14 473.12,188.35 499.00,186.77 524.88,188.73 550.75,195.06 576.62,207.72 602.50,228.15 628.38,254.26 654.25,278.34 680.12,290.72 706.00,290.58" fill="none" stroke="#198b91" stroke-width="2.5" opacity="0.85" stroke-dasharray="7 4"/>
+<polyline points="85.00,50.86 110.88,53.65 136.75,67.12 162.62,95.65 188.50,134.94 214.38,174.85 240.25,206.21 266.12,226.29 292.00,238.07 317.88,245.24 343.75,248.97 369.62,249.39 395.50,248.03 421.38,246.45 447.25,244.59 473.12,243.22 499.00,244.35 524.88,248.53 550.75,255.20 576.62,262.27 602.50,268.02 628.38,272.01 654.25,274.20 680.12,274.72 706.00,275.05" fill="none" stroke="#198b91" stroke-width="2.5" opacity="0.85"/>
+<polyline points="85.00,50.86 110.88,52.84 136.75,68.06 162.62,107.61 188.50,166.28 214.38,224.65 240.25,263.82 266.12,281.05 292.00,287.84 317.88,288.67 343.75,276.80 369.62,252.14 395.50,225.29 421.38,204.77 447.25,192.61 473.12,186.83 499.00,185.13 524.88,186.75 550.75,192.65 576.62,204.92 602.50,225.19 628.38,251.49 654.25,275.85 680.12,288.00 706.00,287.42" fill="none" stroke="#d4882f" stroke-width="2.5" opacity="0.85" stroke-dasharray="7 4"/>
+<polyline points="85.00,50.86 110.88,52.14 136.75,64.22 162.62,93.66 188.50,135.27 214.38,177.26 240.25,209.22 266.12,227.98 292.00,235.87 317.88,238.61 343.75,240.85 369.62,244.43 395.50,249.05 421.38,252.96 447.25,253.60 473.12,252.02 499.00,250.08 524.88,249.37 550.75,251.61 576.62,257.42 602.50,265.60 628.38,271.83 654.25,272.79 680.12,270.28 706.00,266.79" fill="none" stroke="#d4882f" stroke-width="2.5" opacity="0.85"/>
+<text x="395.5" y="416" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333">Tick</text>
+<text x="20" y="201.5" font-size="12" font-family="sans-serif" fill="#333" transform="rotate(-90 20 201.5)" text-anchor="middle">Trägeramplitude / Anfang</text>
+<line x1="170" y1="395" x2="195" y2="395" stroke="#7b58be" stroke-width="3"/>
+<text x="202" y="399" font-family="sans-serif" font-size="12" fill="#333">k=0</text>
+<line x1="345" y1="395" x2="370" y2="395" stroke="#198b91" stroke-width="3"/>
+<text x="377" y="399" font-family="sans-serif" font-size="12" fill="#333">k=+π/8</text>
+<line x1="520" y1="395" x2="545" y2="395" stroke="#d4882f" stroke-width="3"/>
+<text x="552" y="399" font-family="sans-serif" font-size="12" fill="#333">k=−π/8</text>
+<text x="505" y="49" font-size="11" fill="#333" font-family="sans-serif">durchgezogen: Bit8 · gestrichelt: frei</text>
+</svg>
