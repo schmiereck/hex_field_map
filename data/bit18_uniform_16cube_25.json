@@ -1,0 +1,1000 @@
+{
+  "test": "Bit18 long duration exact sparse D4 active-region geometry",
+  "shape": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "nodes": 32768,
+  "requested_ticks": 25,
+  "completed_ticks": 25,
+  "kind": "uniform_half",
+  "full_dense_comparison_ticks": 2,
+  "exact_roundtrip": true,
+  "shortest_period": 16,
+  "periodic_wrap_warning_at_tick": 8,
+  "elapsed_seconds": 1.7287,
+  "records": [
+    {
+      "tick": 1,
+      "seconds": 0.00036,
+      "collision_evaluation_sites": 1,
+      "nonlinear_source_sites": 1,
+      "nonlinear_source_bits": 8,
+      "outgoing_active_sites": 16,
+      "outgoing_direction_bits": 16,
+      "active_sites": 16,
+      "active_direction_bits": 16,
+      "mean_r": 1.4142135623730951,
+      "r10": 1.4142135623730951,
+      "r50": 1.4142135623730951,
+      "r90": 1.4142135623730951,
+      "outer_radius": 1.4142135623730951,
+      "inner_half_ball_fraction": 0.0,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          16,
+          48
+        ]
+      ],
+      "support_fraction": 0.00048828125,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 2,
+      "seconds": 0.00182,
+      "collision_evaluation_sites": 16,
+      "nonlinear_source_sites": 8,
+      "nonlinear_source_bits": 48,
+      "outgoing_active_sites": 58,
+      "outgoing_direction_bits": 64,
+      "active_sites": 58,
+      "active_direction_bits": 64,
+      "mean_r": 2.231331597050811,
+      "r10": 1.4142135623730951,
+      "r50": 2.449489742783178,
+      "r90": 2.8284271247461903,
+      "outer_radius": 2.8284271247461903,
+      "inner_half_ball_fraction": 0.48,
+      "radial_shell_occupancy": [
+        [
+          0,
+          1
+        ],
+        [
+          12,
+          24
+        ],
+        [
+          46,
+          144
+        ]
+      ],
+      "support_fraction": 0.00177001953125,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 3,
+      "seconds": 0.00189,
+      "collision_evaluation_sites": 58,
+      "nonlinear_source_sites": 38,
+      "nonlinear_source_bits": 284,
+      "outgoing_active_sites": 186,
+      "outgoing_direction_bits": 282,
+      "active_sites": 186,
+      "active_direction_bits": 282,
+      "mean_r": 2.8400532190380314,
+      "r10": 2.0,
+      "r50": 2.8284271247461903,
+      "r90": 3.7416573867739413,
+      "outer_radius": 4.242640687119285,
+      "inner_half_ball_fraction": 0.68,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          77,
+          144
+        ],
+        [
+          77,
+          432
+        ],
+        [
+          15,
+          864
+        ]
+      ],
+      "support_fraction": 0.00567626953125,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 4,
+      "seconds": 0.00183,
+      "collision_evaluation_sites": 186,
+      "nonlinear_source_sites": 71,
+      "nonlinear_source_bits": 548,
+      "outgoing_active_sites": 441,
+      "outgoing_direction_bits": 658,
+      "active_sites": 441,
+      "active_direction_bits": 658,
+      "mean_r": 3.4771981419288283,
+      "r10": 2.0,
+      "r50": 3.4641016151377544,
+      "r90": 4.69041575982343,
+      "outer_radius": 5.656854249492381,
+      "inner_half_ball_fraction": 0.9387755102040817,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          22,
+          24
+        ],
+        [
+          101,
+          144
+        ],
+        [
+          178,
+          432
+        ],
+        [
+          102,
+          864
+        ],
+        [
+          37,
+          1872
+        ]
+      ],
+      "support_fraction": 0.013458251953125,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 5,
+      "seconds": 0.00307,
+      "collision_evaluation_sites": 441,
+      "nonlinear_source_sites": 119,
+      "nonlinear_source_bits": 892,
+      "outgoing_active_sites": 797,
+      "outgoing_direction_bits": 1146,
+      "active_sites": 797,
+      "active_direction_bits": 1146,
+      "mean_r": 4.21544516956446,
+      "r10": 2.449489742783178,
+      "r50": 4.242640687119285,
+      "r90": 5.830951894845301,
+      "outer_radius": 7.0710678118654755,
+      "inner_half_ball_fraction": 0.6390532544378699,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          19,
+          24
+        ],
+        [
+          88,
+          144
+        ],
+        [
+          224,
+          432
+        ],
+        [
+          244,
+          864
+        ],
+        [
+          144,
+          1560
+        ],
+        [
+          62,
+          2664
+        ],
+        [
+          15,
+          4316
+        ]
+      ],
+      "support_fraction": 0.024322509765625,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 6,
+      "seconds": 0.00436,
+      "collision_evaluation_sites": 797,
+      "nonlinear_source_sites": 145,
+      "nonlinear_source_bits": 1056,
+      "outgoing_active_sites": 1298,
+      "outgoing_direction_bits": 1754,
+      "active_sites": 1298,
+      "active_direction_bits": 1754,
+      "mean_r": 4.920284275037926,
+      "r10": 3.1622776601683795,
+      "r50": 4.898979485566356,
+      "r90": 7.0710678118654755,
+      "outer_radius": 8.48528137423857,
+      "inner_half_ball_fraction": 0.6479217603911981,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          97,
+          144
+        ],
+        [
+          239,
+          432
+        ],
+        [
+          312,
+          864
+        ],
+        [
+          296,
+          1560
+        ],
+        [
+          192,
+          2664
+        ],
+        [
+          130,
+          4296
+        ],
+        [
+          15,
+          5388
+        ]
+      ],
+      "support_fraction": 0.03961181640625,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 7,
+      "seconds": 0.00391,
+      "collision_evaluation_sites": 1298,
+      "nonlinear_source_sites": 205,
+      "nonlinear_source_bits": 1572,
+      "outgoing_active_sites": 1950,
+      "outgoing_direction_bits": 2646,
+      "active_sites": 1950,
+      "active_direction_bits": 2646,
+      "mean_r": 5.607170525287682,
+      "r10": 3.1622776601683795,
+      "r50": 5.477225575051661,
+      "r90": 8.12403840463596,
+      "outer_radius": 9.899494936611665,
+      "inner_half_ball_fraction": 0.5696,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          21,
+          24
+        ],
+        [
+          98,
+          144
+        ],
+        [
+          236,
+          432
+        ],
+        [
+          365,
+          864
+        ],
+        [
+          393,
+          1560
+        ],
+        [
+          372,
+          2664
+        ],
+        [
+          257,
+          4296
+        ],
+        [
+          170,
+          5388
+        ],
+        [
+          37,
+          6144
+        ]
+      ],
+      "support_fraction": 0.05950927734375,
+      "nonwrapped_geometry": true
+    },
+    {
+      "tick": 8,
+      "seconds": 0.0047,
+      "collision_evaluation_sites": 1950,
+      "nonlinear_source_sites": 274,
+      "nonlinear_source_bits": 2068,
+      "outgoing_active_sites": 2774,
+      "outgoing_direction_bits": 3822,
+      "active_sites": 2774,
+      "active_direction_bits": 3822,
+      "mean_r": 6.193336273147154,
+      "r10": 3.4641016151377544,
+      "r50": 6.164414002968976,
+      "r90": 8.831760866327848,
+      "outer_radius": 11.313708498984761,
+      "inner_half_ball_fraction": 0.5720384204909285,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          111,
+          144
+        ],
+        [
+          263,
+          432
+        ],
+        [
+          384,
+          864
+        ],
+        [
+          503,
+          1560
+        ],
+        [
+          472,
+          2664
+        ],
+        [
+          434,
+          4296
+        ],
+        [
+          323,
+          5388
+        ],
+        [
+          173,
+          5720
+        ],
+        [
+          82,
+          5400
+        ],
+        [
+          4,
+          3606
+        ]
+      ],
+      "support_fraction": 0.08465576171875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 9,
+      "seconds": 0.00648,
+      "collision_evaluation_sites": 2774,
+      "nonlinear_source_sites": 376,
+      "nonlinear_source_bits": 2840,
+      "outgoing_active_sites": 3863,
+      "outgoing_direction_bits": 5418,
+      "active_sites": 3863,
+      "active_direction_bits": 5418,
+      "mean_r": 6.641746672186362,
+      "r10": 3.7416573867739413,
+      "r50": 6.48074069840786,
+      "r90": 9.486832980505138,
+      "outer_radius": 11.489125293076057,
+      "inner_half_ball_fraction": 0.6384222059897735,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          113,
+          144
+        ],
+        [
+          295,
+          432
+        ],
+        [
+          458,
+          864
+        ],
+        [
+          591,
+          1560
+        ],
+        [
+          690,
+          2664
+        ],
+        [
+          532,
+          4296
+        ],
+        [
+          505,
+          5388
+        ],
+        [
+          441,
+          5720
+        ],
+        [
+          200,
+          5400
+        ],
+        [
+          17,
+          3606
+        ]
+      ],
+      "support_fraction": 0.117889404296875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 10,
+      "seconds": 0.00893,
+      "collision_evaluation_sites": 3863,
+      "nonlinear_source_sites": 516,
+      "nonlinear_source_bits": 3708,
+      "outgoing_active_sites": 5036,
+      "outgoing_direction_bits": 7398,
+      "active_sites": 5036,
+      "active_direction_bits": 7398,
+      "mean_r": 6.960543243817297,
+      "r10": 4.242640687119285,
+      "r50": 7.0710678118654755,
+      "r90": 9.899494936611665,
+      "outer_radius": 11.661903789690601,
+      "inner_half_ball_fraction": 0.6655290102389079,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          118,
+          144
+        ],
+        [
+          314,
+          432
+        ],
+        [
+          522,
+          864
+        ],
+        [
+          684,
+          1560
+        ],
+        [
+          813,
+          2664
+        ],
+        [
+          873,
+          4296
+        ],
+        [
+          630,
+          5388
+        ],
+        [
+          560,
+          5720
+        ],
+        [
+          456,
+          5400
+        ],
+        [
+          45,
+          3606
+        ]
+      ],
+      "support_fraction": 0.1536865234375,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 11,
+      "seconds": 0.01084,
+      "collision_evaluation_sites": 5036,
+      "nonlinear_source_sites": 656,
+      "nonlinear_source_bits": 4724,
+      "outgoing_active_sites": 6488,
+      "outgoing_direction_bits": 9946,
+      "active_sites": 6488,
+      "active_direction_bits": 9946,
+      "mean_r": 7.191002377187578,
+      "r10": 4.242640687119285,
+      "r50": 7.3484692283495345,
+      "r90": 10.0,
+      "outer_radius": 12.083045973594572,
+      "inner_half_ball_fraction": 0.7255972696245734,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          21,
+          24
+        ],
+        [
+          116,
+          144
+        ],
+        [
+          345,
+          432
+        ],
+        [
+          580,
+          864
+        ],
+        [
+          835,
+          1560
+        ],
+        [
+          972,
+          2664
+        ],
+        [
+          1099,
+          4296
+        ],
+        [
+          978,
+          5388
+        ],
+        [
+          867,
+          5720
+        ],
+        [
+          594,
+          5400
+        ],
+        [
+          79,
+          3566
+        ],
+        [
+          1,
+          1824
+        ]
+      ],
+      "support_fraction": 0.197998046875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 12,
+      "seconds": 0.01487,
+      "collision_evaluation_sites": 6488,
+      "nonlinear_source_sites": 914,
+      "nonlinear_source_bits": 6408,
+      "outgoing_active_sites": 8182,
+      "outgoing_direction_bits": 13384,
+      "active_sites": 8182,
+      "active_direction_bits": 13384,
+      "mean_r": 7.412129172780895,
+      "r10": 4.47213595499958,
+      "r50": 7.615773105863909,
+      "r90": 10.099504938362077,
+      "outer_radius": 12.649110640673518,
+      "inner_half_ball_fraction": 0.7706484641638225,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          125,
+          144
+        ],
+        [
+          338,
+          432
+        ],
+        [
+          642,
+          864
+        ],
+        [
+          896,
+          1560
+        ],
+        [
+          1257,
+          2664
+        ],
+        [
+          1427,
+          4296
+        ],
+        [
+          1378,
+          5388
+        ],
+        [
+          1165,
+          5720
+        ],
+        [
+          711,
+          5400
+        ],
+        [
+          188,
+          3566
+        ],
+        [
+          31,
+          1824
+        ]
+      ],
+      "support_fraction": 0.24969482421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 13,
+      "seconds": 0.01991,
+      "collision_evaluation_sites": 8182,
+      "nonlinear_source_sites": 1216,
+      "nonlinear_source_bits": 8482,
+      "outgoing_active_sites": 10232,
+      "outgoing_direction_bits": 17738,
+      "active_sites": 10232,
+      "active_direction_bits": 17738,
+      "mean_r": 7.609574634823928,
+      "r10": 4.69041575982343,
+      "r50": 7.745966692414834,
+      "r90": 10.099504938362077,
+      "outer_radius": 13.341664064126334,
+      "inner_half_ball_fraction": 0.8061433447098976,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          129,
+          144
+        ],
+        [
+          367,
+          432
+        ],
+        [
+          661,
+          864
+        ],
+        [
+          1062,
+          1560
+        ],
+        [
+          1412,
+          2664
+        ],
+        [
+          1817,
+          4296
+        ],
+        [
+          1830,
+          5388
+        ],
+        [
+          1554,
+          5720
+        ],
+        [
+          1036,
+          5400
+        ],
+        [
+          256,
+          3566
+        ],
+        [
+          65,
+          1824
+        ],
+        [
+          19,
+          676
+        ]
+      ],
+      "support_fraction": 0.312255859375,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 14,
+      "seconds": 0.02652,
+      "collision_evaluation_sites": 10232,
+      "nonlinear_source_sites": 1592,
+      "nonlinear_source_bits": 10756,
+      "outgoing_active_sites": 12479,
+      "outgoing_direction_bits": 23128,
+      "active_sites": 12479,
+      "active_direction_bits": 23128,
+      "mean_r": 7.813472491962102,
+      "r10": 5.0990195135927845,
+      "r50": 7.874007874011811,
+      "r90": 10.392304845413264,
+      "outer_radius": 14.142135623730951,
+      "inner_half_ball_fraction": 0.8034425319267073,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          22,
+          24
+        ],
+        [
+          127,
+          144
+        ],
+        [
+          367,
+          432
+        ],
+        [
+          705,
+          864
+        ],
+        [
+          1103,
+          1560
+        ],
+        [
+          1715,
+          2664
+        ],
+        [
+          2206,
+          4296
+        ],
+        [
+          2326,
+          5388
+        ],
+        [
+          1990,
+          5720
+        ],
+        [
+          1359,
+          5400
+        ],
+        [
+          426,
+          3566
+        ],
+        [
+          90,
+          1824
+        ],
+        [
+          31,
+          652
+        ],
+        [
+          11,
+          200
+        ]
+      ],
+      "support_fraction": 0.380828857421875,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 15,
+      "seconds": 0.03111,
+      "collision_evaluation_sites": 12479,
+      "nonlinear_source_sites": 2014,
+      "nonlinear_source_bits": 13512,
+      "outgoing_active_sites": 14974,
+      "outgoing_direction_bits": 29590,
+      "active_sites": 14974,
+      "active_direction_bits": 29590,
+      "mean_r": 7.988242695914654,
+      "r10": 5.0990195135927845,
+      "r50": 8.12403840463596,
+      "r90": 10.488088481701515,
+      "outer_radius": 15.033296378372908,
+      "inner_half_ball_fraction": 0.8711826762909495,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          129,
+          144
+        ],
+        [
+          389,
+          432
+        ],
+        [
+          740,
+          864
+        ],
+        [
+          1241,
+          1560
+        ],
+        [
+          1814,
+          2664
+        ],
+        [
+          2599,
+          4296
+        ],
+        [
+          2855,
+          5388
+        ],
+        [
+          2562,
+          5720
+        ],
+        [
+          1827,
+          5400
+        ],
+        [
+          592,
+          3566
+        ],
+        [
+          152,
+          1824
+        ],
+        [
+          32,
+          652
+        ],
+        [
+          15,
+          200
+        ],
+        [
+          3,
+          33
+        ]
+      ],
+      "support_fraction": 0.45697021484375,
+      "nonwrapped_geometry": false
+    },
+    {
+      "tick": 16,
+      "seconds": 0.05451,
+      "collision_evaluation_sites": 14974,
+      "nonlinear_source_sites": 2541,
+      "nonlinear_source_bits": 16476,
+      "outgoing_active_sites": 17713,
+      "outgoing_direction_bits": 36948,
+      "active_sites": 17713,
+      "active_direction_bits": 36948,
+      "mean_r": 8.18446188016973,
+      "r10": 5.477225575051661,
+      "r50": 8.366600265340756,
+      "r90": 10.677078252031311,
+      "outer_radius": 15.0996688705415,
+      "inner_half_ball_fraction": 0.8845960863020572,
+      "radial_shell_occupancy": [
+        [
+          1,
+          1
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          139,
+          144
+        ],
+        [
+          388,
+          432
+        ],
+        [
+          759,
+          864
+        ],
+        [
+          1276,
+          1560
+        ],
+        [
+          2041,
+          2664
+        ],
+        [
+          2972,
+          4296
+        ],
+        [
+          3347,
+          5388
+        ],
+        [
+          3103,
+          5720
+        ],
+        [
+          2390,
+          5400
+        ],
+        [
+          967,
+          3566
+        ],
+        [
+          232,
