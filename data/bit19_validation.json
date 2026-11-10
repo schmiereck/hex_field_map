@@ -1,0 +1,19 @@
+{
+  "shapes": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "sites": 512,
+  "tests": [
+    "directional_initialization",
+    "explicit_16bit_threshold",
+    "exact_24bit_population_count",
+    "x_mirror_two_independent_seeds",
+    "forward_inverse_roundtrip",
+    "same_collision_free_initial_quadrature",
+    "five_charges_initial_final"
+  ],
+  "all_passed": true
+}
