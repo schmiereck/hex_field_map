@@ -1,0 +1,1000 @@
+{
+  "experiment": "Bit15 exact discrete direction masks on radial/sector 4D shell supports",
+  "shape": [
+    8,
+    4,
+    4,
+    8
+  ],
+  "physical_nodes": 512,
+  "seed": 1509,
+  "kind": "background_pulse",
+  "ticks": 3,
+  "microdynamics": "unchanged Bit8 reversible local collision + 4D streaming",
+  "quantity": "FULL 24-bit XOR difference of pulse and shared evolving background",
+  "baseline_not_included_in_encoding": true,
+  "encoder": "selected shell 24-bit mask + explicit sparse XOR residual; exact decoder",
+  "geometric_support": "periodic D4 Euclidean squared radius, fixed center; angular 8 dominant-axis sectors",
+  "lossless_roundtrip": true,
+  "exact_reverse_evolution": true,
+  "five_charges_conserved": true,
+  "ks": [
+    0,
+    1,
+    4,
+    8,
+    16
+  ],
+  "history": [
+    {
+      "tick": 0,
+      "pulse": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 22,
+        "nonzero_delta_nodes": 1,
+        "changed_bits": 12,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 1,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 18,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01172,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 1,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 18,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01172,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 0,
+              "hamming_error_bits": 0,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 20,
+              "encoded_zlib_bytes": 23,
+              "ratio_vs_raw": 0.01302,
+              "ratio_vs_raw_zlib": 1.04545
+            }
+          ]
+        }
+      },
+      "random_control": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 51,
+        "nonzero_delta_nodes": 12,
+        "changed_bits": 12,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            },
+            {
+              "k": 4,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            },
+            {
+              "k": 8,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            },
+            {
+              "k": 16,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.37255
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 11,
+              "hamming_error_bits": 11,
+              "chosen_labels": [
+                39
+              ],
+              "encoded_bytes": 75,
+              "encoded_zlib_bytes": 72,
+              "ratio_vs_raw": 0.04883,
+              "ratio_vs_raw_zlib": 1.41176
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 11,
+              "hamming_error_bits": 11,
+              "chosen_labels": [
+                39
+              ],
+              "encoded_bytes": 75,
+              "encoded_zlib_bytes": 72,
+              "ratio_vs_raw": 0.04883,
+              "ratio_vs_raw_zlib": 1.41176
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 11,
+              "hamming_error_bits": 11,
+              "chosen_labels": [
+                39
+              ],
+              "encoded_bytes": 75,
+              "encoded_zlib_bytes": 72,
+              "ratio_vs_raw": 0.04883,
+              "ratio_vs_raw_zlib": 1.41176
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 11,
+              "hamming_error_bits": 11,
+              "chosen_labels": [
+                39
+              ],
+              "encoded_bytes": 75,
+              "encoded_zlib_bytes": 72,
+              "ratio_vs_raw": 0.04883,
+              "ratio_vs_raw_zlib": 1.41176
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tick": 1,
+      "pulse": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 52,
+        "nonzero_delta_nodes": 12,
+        "changed_bits": 12,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 4,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 8,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 16,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 4,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 8,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            },
+            {
+              "k": 16,
+              "templates": 0,
+              "residual_sites": 12,
+              "hamming_error_bits": 12,
+              "chosen_labels": [],
+              "encoded_bytes": 73,
+              "encoded_zlib_bytes": 70,
+              "ratio_vs_raw": 0.04753,
+              "ratio_vs_raw_zlib": 1.34615
+            }
+          ]
+        }
+      },
+      "random_control": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 98,
+        "nonzero_delta_nodes": 34,
+        "changed_bits": 34,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 34,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 149,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.52041
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                32
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                32
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                32
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                32
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 34,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 149,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.52041
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                256
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                256
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                256
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 33,
+              "chosen_labels": [
+                256
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 148,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.5102
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tick": 2,
+      "pulse": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 72,
+        "nonzero_delta_nodes": 20,
+        "changed_bits": 26,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 20,
+              "hamming_error_bits": 26,
+              "chosen_labels": [],
+              "encoded_bytes": 113,
+              "encoded_zlib_bytes": 95,
+              "ratio_vs_raw": 0.07357,
+              "ratio_vs_raw_zlib": 1.31944
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 19,
+              "hamming_error_bits": 22,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 115,
+              "encoded_zlib_bytes": 96,
+              "ratio_vs_raw": 0.07487,
+              "ratio_vs_raw_zlib": 1.33333
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 19,
+              "hamming_error_bits": 22,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 115,
+              "encoded_zlib_bytes": 96,
+              "ratio_vs_raw": 0.07487,
+              "ratio_vs_raw_zlib": 1.33333
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 19,
+              "hamming_error_bits": 22,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 115,
+              "encoded_zlib_bytes": 96,
+              "ratio_vs_raw": 0.07487,
+              "ratio_vs_raw_zlib": 1.33333
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 19,
+              "hamming_error_bits": 22,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 115,
+              "encoded_zlib_bytes": 96,
+              "ratio_vs_raw": 0.07487,
+              "ratio_vs_raw_zlib": 1.33333
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 20,
+              "hamming_error_bits": 26,
+              "chosen_labels": [],
+              "encoded_bytes": 113,
+              "encoded_zlib_bytes": 95,
+              "ratio_vs_raw": 0.07357,
+              "ratio_vs_raw_zlib": 1.31944
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 19,
+              "hamming_error_bits": 22,
+              "chosen_labels": [
+                0
+              ],
+              "encoded_bytes": 115,
+              "encoded_zlib_bytes": 96,
+              "ratio_vs_raw": 0.07487,
+              "ratio_vs_raw_zlib": 1.33333
+            },
+            {
+              "k": 4,
+              "templates": 4,
+              "residual_sites": 16,
+              "hamming_error_bits": 17,
+              "chosen_labels": [
+                0,
+                34,
+                38,
+                39
+              ],
+              "encoded_bytes": 121,
+              "encoded_zlib_bytes": 101,
+              "ratio_vs_raw": 0.07878,
+              "ratio_vs_raw_zlib": 1.40278
+            },
+            {
+              "k": 8,
+              "templates": 4,
+              "residual_sites": 16,
+              "hamming_error_bits": 17,
+              "chosen_labels": [
+                0,
+                34,
+                38,
+                39
+              ],
+              "encoded_bytes": 121,
+              "encoded_zlib_bytes": 101,
+              "ratio_vs_raw": 0.07878,
+              "ratio_vs_raw_zlib": 1.40278
+            },
+            {
+              "k": 16,
+              "templates": 4,
+              "residual_sites": 16,
+              "hamming_error_bits": 17,
+              "chosen_labels": [
+                0,
+                34,
+                38,
+                39
+              ],
+              "encoded_bytes": 121,
+              "encoded_zlib_bytes": 101,
+              "ratio_vs_raw": 0.07878,
+              "ratio_vs_raw_zlib": 1.40278
+            }
+          ]
+        }
+      },
+      "random_control": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 151,
+        "nonzero_delta_nodes": 55,
+        "changed_bits": 70,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 4,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 8,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 16,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 55,
+              "hamming_error_bits": 70,
+              "chosen_labels": [],
+              "encoded_bytes": 288,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1875,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 54,
+              "hamming_error_bits": 68,
+              "chosen_labels": [
+                134
+              ],
+              "encoded_bytes": 290,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1888,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 54,
+              "hamming_error_bits": 68,
+              "chosen_labels": [
+                134
+              ],
+              "encoded_bytes": 290,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1888,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 54,
+              "hamming_error_bits": 68,
+              "chosen_labels": [
+                134
+              ],
+              "encoded_bytes": 290,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1888,
+              "ratio_vs_raw_zlib": 1.46358
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 54,
+              "hamming_error_bits": 68,
+              "chosen_labels": [
+                134
+              ],
+              "encoded_bytes": 290,
+              "encoded_zlib_bytes": 221,
+              "ratio_vs_raw": 0.1888,
+              "ratio_vs_raw_zlib": 1.46358
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tick": 3,
+      "pulse": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 99,
+        "nonzero_delta_nodes": 34,
+        "changed_bits": 40,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            },
+            {
+              "k": 4,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            },
+            {
+              "k": 8,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            },
+            {
+              "k": 16,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            }
+          ],
+          "angular8": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 34,
+              "hamming_error_bits": 40,
+              "chosen_labels": [],
+              "encoded_bytes": 183,
+              "encoded_zlib_bytes": 142,
+              "ratio_vs_raw": 0.11914,
+              "ratio_vs_raw_zlib": 1.43434
+            },
+            {
+              "k": 1,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 39,
+              "chosen_labels": [
+                34
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 145,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.46465
+            },
+            {
+              "k": 4,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 39,
+              "chosen_labels": [
+                34
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 145,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.46465
+            },
+            {
+              "k": 8,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 39,
+              "chosen_labels": [
+                34
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 145,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.46465
+            },
+            {
+              "k": 16,
+              "templates": 1,
+              "residual_sites": 33,
+              "hamming_error_bits": 39,
+              "chosen_labels": [
+                34
+              ],
+              "encoded_bytes": 185,
+              "encoded_zlib_bytes": 145,
+              "ratio_vs_raw": 0.12044,
+              "ratio_vs_raw_zlib": 1.46465
+            }
+          ]
+        }
+      },
+      "random_control": {
+        "raw_bytes": 1536,
+        "raw_zlib_bytes": 248,
+        "nonzero_delta_nodes": 116,
+        "changed_bits": 144,
+        "modes": {
+          "radial": [
+            {
+              "k": 0,
+              "templates": 0,
+              "residual_sites": 116,
+              "hamming_error_bits": 144,
+              "chosen_labels": [],
+              "encoded_bytes": 593,
+              "encoded_zlib_bytes": 394,
+              "ratio_vs_raw": 0.38607,
+              "ratio_vs_raw_zlib": 1.58871
+            },
+            {
+              "k": 1,
+              "templates": 0,
+              "residual_sites": 116,
+              "hamming_error_bits": 144,
+              "chosen_labels": [],
+              "encoded_bytes": 593,
+              "encoded_zlib_bytes": 394,
