@@ -1,0 +1,52 @@
+{
+  "test": "Bit25 exact outgoing mode observable and parallel implementation",
+  "numba_reference_audit": {
+    "cases": 385,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "parallel_serial_full_steps": 3,
+  "all_five_charges_conserved": true,
+  "four_state_6tick_exact_roundtrip": true,
+  "free_streaming_connected_zero": true,
+  "zero_mode_connected_charges": true,
+  "separation": 6,
+  "short_histogram": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      4,
+      16,
+      16
+    ],
+    [
+      5,
+      209,
+      234
+    ],
+    [
+      6,
+      798,
+      1284
+    ]
+  ]
+}
