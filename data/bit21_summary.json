@@ -1,0 +1,1801 @@
+{
+  "name": "Bit21 geometry controls of the q-dependent packet response",
+  "microscopic_rule": "Bit8 unchanged; JIT exact benchmarked reference",
+  "bit20_original_shape": [
+    48,
+    4,
+    4,
+    16
+  ],
+  "bit20_original_qk_center_slopes": {
+    "q1_k+3": 0.6310367610107616,
+    "q1_k-3": -0.6382262338712325,
+    "q2_k+3": -0.3685604567084133,
+    "q2_k-3": 0.3985216664204281,
+    "q3_k+3": 0.6972916322228431,
+    "q3_k-3": -0.6655891622303706
+  },
+  "cases": {
+    "w32_q1": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "physical_nodes": 12288,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 0.39269908169872414,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 1,
+      "actual_hidden_q_index": 2,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 0.39269908169872414,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.6114664094101229,
+          "seed_center_slope_mean": 0.5982352599942619,
+          "seed_center_slope_95ci": [
+            0.5764175842541988,
+            0.6200529896419573
+          ],
+          "seed_center_slopes": [
+            0.6011207745005943,
+            0.547150014998941,
+            0.5996485915462871,
+            0.6467598776541006,
+            0.5664627114359991,
+            0.6285277321889328,
+            0.6149500279390095,
+            0.5812623496902308
+          ],
+          "free_ensemble_center_slope": 0.6076232139585098,
+          "free_seed_center_slope_mean": 0.6026462738770071,
+          "free_seed_center_slopes": [
+            0.5888906922265958,
+            0.5498605855999137,
+            0.656728685139231,
+            0.6328804645487419,
+            0.5858413229614332,
+            0.6027230310063911,
+            0.6226206015655023,
+            0.5816248079682486
+          ],
+          "visible_w0_ensemble_center_slope": 0.6353629246366256,
+          "hidden_amplitude_initial": 14.25297887222029,
+          "hidden_amplitude_ratio_final": 0.43940342831131324,
+          "free_hidden_amplitude_ratio_final": 0.5376429907481269,
+          "width_initial": 5.321135673183067,
+          "width_final": 7.0851194766861845,
+          "width_by_tick": [
+            5.321135673183067,
+            5.330825083935023,
+            5.375528637306465,
+            5.461477823453084,
+            5.564474006517795,
+            5.6272102963082755,
+            5.653246866111805,
+            5.79725644639171,
+            6.118039636084216,
+            6.439351670136015,
+            6.691676150628265,
+            6.817621396842617,
+            7.0851194766861845
+          ],
+          "center_by_tick": [
+            -0.008571669741815655,
+            0.45988804038456305,
+            0.8359898678353007,
+            1.2285809954743865,
+            1.7891885083860801,
+            2.5844407728240424,
+            3.4167028475191037,
+            3.9482487227961016,
+            4.187393091070962,
+            4.445351204146934,
+            4.823911178907866,
+            5.228270930850754,
+            5.440603962639136
+          ],
+          "free_center_by_tick": [
+            -0.008571669741815655,
+            0.4589960295759772,
+            0.8031791233812541,
+            1.1175242457937795,
+            1.6280099583682655,
+            2.580323238915232,
+            3.684463154612475,
+            3.9083906044498375,
+            3.9282671491419023,
+            4.876234354488927,
+            5.47903966284371,
+            5.05004031035923,
+            4.714067315017292
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 0.39269908169872414,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.6203624575025303,
+          "seed_center_slope_mean": -0.6128010327459619,
+          "seed_center_slope_95ci": [
+            -0.6362569457801006,
+            -0.5919818137577237
+          ],
+          "seed_center_slopes": [
+            -0.676530516577097,
+            -0.5916013738521282,
+            -0.6543425021055357,
+            -0.6091513318884245,
+            -0.5957895276061573,
+            -0.5758487032935484,
+            -0.590795861338799,
+            -0.6083484453060042
+          ],
+          "free_ensemble_center_slope": -0.6283989057309718,
+          "free_seed_center_slope_mean": -0.625594185398079,
+          "free_seed_center_slopes": [
+            -0.666829749038575,
+            -0.6385701733627318,
+            -0.656633325326817,
+            -0.6121137204716708,
+            -0.6418161121710928,
+            -0.6184525565567249,
+            -0.6068482373120697,
+            -0.5634896089449499
+          ],
+          "visible_w0_ensemble_center_slope": -0.5765597181724579,
+          "hidden_amplitude_initial": 14.30203993299078,
+          "hidden_amplitude_ratio_final": 0.43776127111930735,
+          "free_hidden_amplitude_ratio_final": 0.5344524181847883,
+          "width_initial": 5.323941047152735,
+          "width_final": 7.06222054880969,
+          "width_by_tick": [
+            5.323941047152735,
+            5.339888704170622,
+            5.396439377580844,
+            5.4897880749832435,
+            5.589791094142703,
+            5.634769460745235,
+            5.6370844446524755,
+            5.766275736568106,
+            6.058853898838658,
+            6.3461789113662075,
+            6.557274074489314,
+            6.7468550234114515,
+            7.06222054880969
+          ],
+          "center_by_tick": [
+            -0.035164019141354294,
+            -0.496406201074764,
+            -0.866155388614298,
+            -1.2533197493150532,
+            -1.8168698600519135,
+            -2.6203315208863214,
+            -3.4704993644847413,
+            -4.021506146875226,
+            -4.259537558786856,
+            -4.466706074926964,
+            -4.811788616763104,
+            -5.27355108819208,
+            -5.648951521939703
+          ],
+          "free_center_by_tick": [
+            -0.035164019141354294,
+            -0.4970421073806965,
+            -0.8366447293410962,
+            -1.1494292155393238,
+            -1.6645601025373467,
+            -2.6317672698915433,
+            -3.7681361356719347,
+            -4.0307801134500245,
+            -4.079608573178168,
+            -5.043951463580659,
+            -5.592448549635677,
+            -5.119846239693462,
+            -4.814389129397218
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 85.3097461010002,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": -0.007282886375850006,
+        "even_95ci": [
+          -0.022909218995569,
+          0.007682581545652125
+        ],
+        "odd_mean": 0.6055181463701118,
+        "odd_95ci": [
+          0.5907371645728047,
+          0.621748835530318
+        ]
+      },
+      "positive_seed_all_reversed": null,
+      "negative_seed_all_reversed": null
+    },
+    "w32_q2": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "physical_nodes": 12288,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 0.7853981633974483,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 2,
+      "actual_hidden_q_index": 4,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.39458253175385954,
+          "seed_center_slope_mean": -0.3841309803760734,
+          "seed_center_slope_95ci": [
+            -0.4243038512156245,
+            -0.3471755582230332
+          ],
+          "seed_center_slopes": [
+            -0.33633869779921016,
+            -0.4503445073854555,
+            -0.3930382603648831,
+            -0.3415693537867745,
+            -0.42349055729596163,
+            -0.31543481714974486,
+            -0.3375602485241679,
+            -0.47527140070238966
+          ],
+          "free_ensemble_center_slope": 0.36381001690566794,
+          "free_seed_center_slope_mean": 0.35970573300136316,
+          "free_seed_center_slopes": [
+            0.31129812648960625,
+            0.37389837032871914,
+            0.3072439359983683,
+            0.3799025052840377,
+            0.36254587792098725,
+            0.40331398803017326,
+            0.45647106540026,
+            0.2829719945587533
+          ],
+          "visible_w0_ensemble_center_slope": -0.35583927446608343,
+          "hidden_amplitude_initial": 14.265056292487166,
+          "hidden_amplitude_ratio_final": 0.1973670293080279,
+          "free_hidden_amplitude_ratio_final": 0.17397913016139288,
+          "width_initial": 5.296074847555772,
+          "width_final": 8.786152719899086,
+          "width_by_tick": [
+            5.296074847555772,
+            5.305905673350028,
+            5.349739115266144,
+            5.3647406494524805,
+            5.59216119752005,
+            5.781100247241008,
+            5.53971871601422,
+            6.28328260757241,
+            7.5572460066982545,
+            7.421605773727914,
+            7.735195775676918,
+            8.957319217931369,
+            8.786152719899086
+          ],
+          "center_by_tick": [
+            0.024963118717556375,
+            0.2926829925403814,
+            0.5863319226131584,
+            1.3632075963429975,
+            1.7659599609090382,
+            -1.2110395432727519,
+            -2.052803551757715,
+            -1.622709692054298,
+            0.16709432273091618,
+            0.4039186715470245,
+            0.33115050714491673,
+            1.5928884605726115,
+            5.158788936321155
+          ],
+          "free_center_by_tick": [
+            0.024963118717556375,
+            0.2918634425984098,
+            0.5148638013802679,
+            1.2411862275912597,
+            1.8502321477422774,
+            -2.981363830245334,
+            -1.8178111813726567,
+            2.743066093847302,
+            4.131851824700786,
+            3.3485653594602693,
+            0.4599581742659878,
+            -1.3035110848404192,
+            4.375096553329026
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.4090153756496948,
+          "seed_center_slope_mean": 0.38434986741767596,
+          "seed_center_slope_95ci": [
+            0.3358510507779486,
+            0.43027081853287985
+          ],
+          "seed_center_slopes": [
+            0.47338294082863397,
+            0.29220061238691136,
+            0.4015553804033904,
+            0.299763621426054,
+            0.3780955478066574,
+            0.44892011640879,
+            0.3252997684603694,
+            0.455580951620601
+          ],
+          "free_ensemble_center_slope": -0.40466661705524054,
+          "free_seed_center_slope_mean": -0.4021192315284944,
+          "free_seed_center_slopes": [
+            -0.3755774642691094,
+            -0.4901579658765135,
+            -0.3470872916992553,
+            -0.4723458097629096,
+            -0.3612874818247725,
+            -0.3306291232649149,
+            -0.4404616752726352,
+            -0.39940704025784485
+          ],
+          "visible_w0_ensemble_center_slope": 0.5222589473002495,
+          "hidden_amplitude_initial": 14.24641322824626,
+          "hidden_amplitude_ratio_final": 0.20137021930896953,
+          "free_hidden_amplitude_ratio_final": 0.17686144796436276,
+          "width_initial": 5.305455734013843,
+          "width_final": 8.681750332615136,
+          "width_by_tick": [
+            5.305455734013843,
+            5.315294804491716,
+            5.35943697041533,
+            5.347777394262752,
+            5.5278206735065565,
+            5.788907159834159,
+            5.473439466527929,
+            6.030173074110411,
+            7.313242551757714,
+            7.452023666438499,
+            7.835737401943629,
+            9.027001503308751,
+            8.681750332615136
+          ],
+          "center_by_tick": [
+            -0.00929221015552027,
+            -0.2717987573710174,
+            -0.5707863683231843,
+            -1.3708069438973614,
+            -1.803403317473844,
+            1.1412999542604059,
+            2.019801339804106,
+            1.6021770926591068,
+            -0.009700439056328267,
+            -0.30045579433063796,
+            -0.4575632202652026,
+            -2.1638764832115096,
+            -5.7221600774010195
+          ],
+          "free_center_by_tick": [
+            -0.00929221015552027,
+            -0.2802033430779999,
+            -0.4963008012029408,
+            -1.1970006832685964,
+            -1.7738191699105197,
+            2.9434902796033717,
+            1.7403944324766107,
+            -2.905412876817562,
+            -4.30565229881492,
+            -3.6158742416311616,
+            -0.7041406662580322,
+            1.156467177461007,
+            -4.413507656533534
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 83.98881454599996,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": 0.00010944352080127784,
+        "even_95ci": [
+          -0.030841395599931532,
+          0.029430516650632413
+        ],
+        "odd_mean": -0.3842404238968747,
+        "odd_95ci": [
+          -0.41391469709132456,
+          -0.35378018064803934
+        ]
+      },
+      "positive_seed_all_reversed": true,
+      "negative_seed_all_reversed": true
+    },
+    "w32_q3": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "physical_nodes": 12288,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 1.1780972450961724,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 3,
+      "actual_hidden_q_index": 6,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 1.1780972450961724,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.6422489252875885,
+          "seed_center_slope_mean": 0.6131600735716839,
+          "seed_center_slope_95ci": [
+            0.5890055809547938,
+            0.635297078483243
+          ],
+          "seed_center_slopes": [
+            0.6233735103775713,
+            0.6172536459772424,
+            0.5972237627013036,
+            0.6145778494889778,
+            0.6535734816311628,
+            0.5508321973794711,
+            0.5870432068742469,
+            0.661402934143495
+          ],
+          "free_ensemble_center_slope": 0.7419708236555276,
+          "free_seed_center_slope_mean": 0.7292908454511038,
+          "free_seed_center_slopes": [
+            0.7455357346505371,
+            0.7603097339135335,
+            0.7073397973374065,
+            0.7035813134746027,
+            0.7191601690451435,
+            0.7177431710449911,
+            0.7155839454952544,
+            0.7650728986473616
+          ],
+          "visible_w0_ensemble_center_slope": 0.5906318418165785,
+          "hidden_amplitude_initial": 14.266113196660747,
+          "hidden_amplitude_ratio_final": 0.31194770752849754,
+          "free_hidden_amplitude_ratio_final": 0.4060530231443039,
+          "width_initial": 5.312379545473123,
+          "width_final": 7.296945021368168,
+          "width_by_tick": [
+            5.312379545473123,
+            5.316458500419319,
+            5.360281634041866,
+            5.244196981597331,
+            5.209809490722773,
+            6.083441544443362,
+            5.632637962932169,
+            5.8416027942366675,
+            6.7185203702523495,
+            6.330070186823956,
+            6.21572418238549,
+            7.319318425975196,
+            7.296945021368168
+          ],
+          "center_by_tick": [
+            0.04051877931178809,
+            0.20847223432692885,
+            0.6864849618135629,
+            -2.3434610656646018,
+            -2.143736486633399,
+            -0.3007421174073307,
+            2.1494767526693788,
+            2.2386275077517643,
+            2.195011469119221,
+            2.267920801903225,
+            2.8305499905993474,
+            0.15609132876612297,
+            -1.406786843829444
+          ],
+          "free_center_by_tick": [
+            0.04051877931178809,
+            0.20473627555358145,
+            0.5731362290956703,
+            -3.1679781088898853,
+            -1.4786277388699494,
+            1.321356856217617,
+            3.0141661978763157,
+            3.1168376456025952,
+            1.8107221013035217,
+            3.417554324349555,
+            3.6540167616900807,
+            2.558916631017292,
+            -0.5667979775106425
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 1.1780972450961724,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.6956537910792502,
+          "seed_center_slope_mean": -0.6655710993179403,
+          "seed_center_slope_95ci": [
+            -0.6955806438106434,
+            -0.6379978769815885
+          ],
+          "seed_center_slopes": [
+            -0.6241409747533118,
+            -0.7285935201549628,
+            -0.6363970198406501,
+            -0.6992759501163527,
+            -0.6767913075794009,
+            -0.7129664261155917,
+            -0.6088752494455717,
+            -0.637528346537681
+          ],
+          "free_ensemble_center_slope": -0.763224151506476,
+          "free_seed_center_slope_mean": -0.7492877782888514,
+          "free_seed_center_slopes": [
+            -0.6954148320163287,
+            -0.8476390853643831,
+            -0.805269380508133,
+            -0.7489631281509724,
+            -0.7206119868360008,
+            -0.7511549683586191,
+            -0.7170135430649972,
+            -0.7082353020113769
+          ],
+          "visible_w0_ensemble_center_slope": -0.5601560128080307,
+          "hidden_amplitude_initial": 14.276490520031475,
+          "hidden_amplitude_ratio_final": 0.3090916199182728,
+          "free_hidden_amplitude_ratio_final": 0.4044408535815703,
+          "width_initial": 5.2875767199046955,
+          "width_final": 7.042017397105502,
+          "width_by_tick": [
+            5.2875767199046955,
+            5.3136193269118435,
+            5.340264732652772,
+            5.11515145320108,
+            5.227051385693782,
+            6.062473383579072,
+            5.697570402658864,
+            5.786055417812448,
+            6.684119297040313,
+            6.424619924863406,
+            6.388195525573491,
+            7.388533997934797,
+            7.042017397105502
+          ],
+          "center_by_tick": [
+            -0.007246852387512387,
+            -0.17765475580640583,
+            -0.6790417666667468,
+            2.7380577324534694,
+            2.2114430525501634,
+            0.4043586817407631,
+            -2.2398002203057437,
+            -2.420776044302506,
+            -2.2488402079504652,
+            -2.099524134522073,
+            -2.767654382837384,
+            -0.12301022577108409,
+            1.5379987033113838
+          ],
+          "free_center_by_tick": [
+            -0.007246852387512387,
+            -0.17653483891664962,
+            -0.5559420796886417,
+            3.287772096263205,
+            1.5271402500882052,
+            -1.2834601941413728,
+            -2.9807151801080796,
+            -3.144450900428119,
+            -1.888600352556109,
+            -3.49543067539744,
+            -3.699394318260294,
+            -2.628031300191901,
+            0.5323837766558767
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 86.42994216600027,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": -0.026205512873128223,
+        "even_95ci": [
+          -0.044872549586110366,
+          -0.00834057922387788
+        ],
+        "odd_mean": 0.6393655864448121,
+        "odd_95ci": [
+          0.6209478492767394,
+          0.6578415640551935
+        ]
+      },
+      "positive_seed_all_reversed": null,
+      "negative_seed_all_reversed": null
+    },
+    "yz8_q1": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        8,
+        8,
+        16
+      ],
+      "physical_nodes": 24576,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 0.39269908169872414,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 1,
+      "actual_hidden_q_index": 1,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 0.39269908169872414,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.6340405505862011,
+          "seed_center_slope_mean": 0.6279718754732997,
+          "seed_center_slope_95ci": [
+            0.6191128047324751,
+            0.6373953320813012
+          ],
+          "seed_center_slopes": [
+            0.6271928475770903,
+            0.6185754838050485,
+            0.6182841698749134,
+            0.6455689687803524,
+            0.6304000744070146,
+            0.6102603587662918,
+            0.6217753502587176,
+            0.6517177503169691
+          ],
+          "free_ensemble_center_slope": 0.6119741952424359,
+          "free_seed_center_slope_mean": 0.6100998558428858,
+          "free_seed_center_slopes": [
+            0.6528973268843382,
+            0.6032069731369094,
+            0.5863740761879276,
+            0.5794991946187336,
+            0.6456251476771392,
+            0.5714529861714689,
+            0.6329816330349608,
+            0.6087615090316095
+          ],
+          "visible_w0_ensemble_center_slope": 0.5794987671001249,
+          "hidden_amplitude_initial": 57.00484304955279,
+          "hidden_amplitude_ratio_final": 0.4368762948257598,
+          "free_hidden_amplitude_ratio_final": 0.5365446960533049,
+          "width_initial": 5.294617225283804,
+          "width_final": 7.026859246958157,
+          "width_by_tick": [
+            5.294617225283804,
+            5.307574463703,
+            5.357560697710981,
+            5.452081563872491,
+            5.56386724971944,
+            5.626494398535272,
+            5.634328469158674,
+            5.767047933176427,
+            6.06697536984212,
+            6.365952081833657,
+            6.579476493913677,
+            6.765098682741947,
+            7.026859246958157
+          ],
+          "center_by_tick": [
+            -0.015709615297766356,
+            0.4438650829372494,
+            0.8151717977032245,
+            1.2124366387646108,
+            1.791771002882538,
+            2.6203316113155046,
+            3.4901850802154972,
+            4.039515045410655,
+            4.282026639632751,
+            4.487391085414215,
+            4.812553222399186,
+            5.201805199205651,
+            5.502602998029207
+          ],
+          "free_center_by_tick": [
+            -0.015709615297766356,
+            0.4486239250046837,
+            0.7933974359427308,
+            1.1082579491385236,
+            1.621107237111015,
+            2.579529519113279,
+            3.692396246603925,
+            3.91593174984621,
+            3.9429443879027053,
+            4.888722532136306,
+            5.469669148779669,
+            4.997835287459554,
+            4.652415997992353
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 0.39269908169872414,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.6281211122473621,
+          "seed_center_slope_mean": -0.6228374060926841,
+          "seed_center_slope_95ci": [
+            -0.6349049372741582,
+            -0.6107799331927282
+          ],
+          "seed_center_slopes": [
+            -0.6163963594166945,
+            -0.6182603232975062,
+            -0.6270988996585701,
+            -0.5911884291180766,
+            -0.6198682324864079,
+            -0.6160185291662303,
+            -0.6524778774095017,
+            -0.6413905981884859
+          ],
+          "free_ensemble_center_slope": -0.6158489022743476,
+          "free_seed_center_slope_mean": -0.6140890819076963,
+          "free_seed_center_slopes": [
+            -0.6384781814528412,
+            -0.5748378300850203,
+            -0.6044891816241139,
+            -0.5863420120097511,
+            -0.5890869032932621,
+            -0.5955834470256426,
+            -0.660183506790191,
+            -0.6637115929807479
+          ],
+          "visible_w0_ensemble_center_slope": -0.6570702151202833,
+          "hidden_amplitude_initial": 57.150989951892676,
+          "hidden_amplitude_ratio_final": 0.42873885806374973,
+          "free_hidden_amplitude_ratio_final": 0.5346554534493797,
+          "width_initial": 5.303407467289439,
+          "width_final": 6.996736236638536,
+          "width_by_tick": [
+            5.303407467289439,
+            5.316414681657603,
+            5.3639790745928755,
+            5.446159299355397,
+            5.535969912980961,
+            5.5820461840707205,
+            5.599709958385791,
+            5.741210123837225,
+            6.024923637695106,
+            6.308616318363097,
+            6.528750957147116,
+            6.715220537186374,
+            6.996736236638536
+          ],
+          "center_by_tick": [
+            0.00150463125156609,
+            -0.4615853529703532,
+            -0.8400563820195328,
+            -1.2470634473767581,
+            -1.8309523053920835,
+            -2.64019439953138,
+            -3.485519289533354,
+            -4.037797402827567,
+            -4.290508464647283,
+            -4.5217937100704555,
+            -4.885063615296642,
+            -5.328910242715707,
+            -5.660257049673308
+          ],
+          "free_center_by_tick": [
+            0.00150463125156609,
+            -0.4639974203046107,
+            -0.8093077082758854,
+            -1.12438096286457,
+            -1.636809121458725,
+            -2.592994785985956,
+            -3.7080037760510547,
+            -3.9469274034739583,
+            -3.985134950899427,
+            -4.939045749928468,
+            -5.503522898113879,
+            -5.0407954384774785,
+            -4.755875726945624
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 139.00116035400015,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": 0.0025672346903077847,
+        "even_95ci": [
+          -0.004924576554494839,
+          0.010125611009020938
+        ],
+        "odd_mean": 0.6254046407829918,
+        "odd_95ci": [
+          0.6179679241363797,
+          0.6329135457437352
+        ]
+      },
+      "positive_seed_all_reversed": null,
+      "negative_seed_all_reversed": null
+    },
+    "yz8_q2": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        8,
+        8,
+        16
+      ],
+      "physical_nodes": 24576,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 0.7853981633974483,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 2,
+      "actual_hidden_q_index": 2,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.3810286126603438,
+          "seed_center_slope_mean": -0.37858231319187063,
+          "seed_center_slope_95ci": [
+            -0.408698326314007,
+            -0.34791419163517096
+          ],
+          "seed_center_slopes": [
+            -0.36890572359725304,
+            -0.36927871587777583,
+            -0.3556802941344265,
+            -0.31179033254412225,
+            -0.4337984059388379,
+            -0.3303955354056419,
+            -0.4394520253299077,
+            -0.4193574727070001
+          ],
+          "free_ensemble_center_slope": 0.36899337194395615,
+          "free_seed_center_slope_mean": 0.3678236103350471,
+          "free_seed_center_slopes": [
+            0.348282714825535,
+            0.38721487921589665,
+            0.3554243565489902,
+            0.35724087699525936,
+            0.40269938973207636,
+            0.3839940786294649,
+            0.34466400177116435,
+            0.36306858496199007
+          ],
+          "visible_w0_ensemble_center_slope": -0.3052740092765595,
+          "hidden_amplitude_initial": 57.262672456423886,
+          "hidden_amplitude_ratio_final": 0.20239188248617493,
+          "free_hidden_amplitude_ratio_final": 0.1772775468351856,
+          "width_initial": 5.293471650761466,
+          "width_final": 8.62211185568525,
+          "width_by_tick": [
+            5.293471650761466,
+            5.312488055627142,
+            5.363269530546496,
+            5.3674597465030045,
+            5.5770375353516535,
+            5.8077353222728085,
+            5.5285510808740455,
+            6.130007558170635,
+            7.3582223099856865,
+            7.347502846771848,
+            7.742146812588246,
+            8.927540824627933,
+            8.62211185568525
+          ],
+          "center_by_tick": [
+            0.005905590373111652,
+            0.28167507394203695,
+            0.5967989987952993,
+            1.3843145479232881,
+            1.7992611139682249,
+            -1.129604712338658,
+            -1.9359041438062585,
+            -1.5329881867237598,
+            0.2304555229882819,
+            0.4453880407795971,
+            0.40470851472038993,
+            1.894549719224151,
+            5.438564984827708
+          ],
+          "free_center_by_tick": [
+            0.005905590373111652,
+            0.2872063917098903,
+            0.5273540714778071,
+            1.23663482245465,
+            1.695904120371848,
+            -2.9705119481366777,
+            -1.7769195585173274,
+            2.7717179762026167,
+            4.1055113334191455,
+            3.374536134289574,
+            0.5297338565042435,
+            -1.267668992386011,
+            4.26171717441532
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.3900393671415251,
+          "seed_center_slope_mean": 0.38533084692874014,
+          "seed_center_slope_95ci": [
+            0.35986521721724013,
+            0.40938014659255634
+          ],
+          "seed_center_slopes": [
+            0.3730697544691415,
+            0.3345217160931266,
+            0.4414851024411087,
+            0.43558757858634084,
+            0.37841364193352905,
+            0.4017246039013598,
+            0.3404330686492255,
+            0.3774113093560891
+          ],
+          "free_ensemble_center_slope": -0.3717800989808367,
+          "free_seed_center_slope_mean": -0.370100454474445,
+          "free_seed_center_slopes": [
+            -0.3416581674811693,
+            -0.3653498803889573,
+            -0.40192745949952485,
+            -0.39699450068061815,
+            -0.2945361406943195,
+            -0.3865618264906737,
+            -0.42121096497210647,
+            -0.35256469558819087
+          ],
+          "visible_w0_ensemble_center_slope": 0.31407062268537317,
+          "hidden_amplitude_initial": 57.065880779934524,
+          "hidden_amplitude_ratio_final": 0.20321915892269926,
+          "free_hidden_amplitude_ratio_final": 0.1749719240326174,
+          "width_initial": 5.297930742233476,
+          "width_final": 8.673281525693765,
+          "width_by_tick": [
+            5.297930742233476,
+            5.320606040376013,
+            5.368929572935504,
+            5.371631542765409,
+            5.661810035500355,
+            5.8968652618715085,
+            5.6109209749296,
+            6.209298446336391,
+            7.3334194022485635,
+            7.275789692915323,
+            7.685895964061622,
+            8.921492773473895,
+            8.673281525693765
+          ],
+          "center_by_tick": [
+            -0.012697176562064667,
+            -0.2744586176731475,
+            -0.568729779771738,
+            -1.3477129553977276,
+            -1.7747136806575334,
+            1.1702800279673096,
+            1.9449456419880806,
+            1.5395421124948527,
+            -0.09308550592776171,
+            -0.2695848460432231,
+            -0.2540328636884959,
+            -1.6436108321782463,
+            -5.278831362611896
+          ],
+          "free_center_by_tick": [
+            -0.012697176562064667,
+            -0.2788766904825446,
+            -0.5015135711420943,
+            -1.2289562863036219,
+            -1.7436241252218039,
+            3.0757031662950975,
+            1.8130129569870184,
+            -2.749479056424025,
+            -4.1433250089525755,
+            -3.4704017384807577,
+            -0.6048903979393918,
+            1.2590854267381688,
+            -4.385050158303102
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 159.15815118599994,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": 0.0033742668684347554,
+        "even_95ci": [
+          -0.01642038537475095,
+          0.023057074672253087
+        ],
+        "odd_mean": -0.3819565800603054,
+        "odd_95ci": [
+          -0.40160655865043626,
+          -0.361467681364548
+        ]
+      },
+      "positive_seed_all_reversed": true,
+      "negative_seed_all_reversed": true
+    },
+    "yz8_q3": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        8,
+        8,
+        16
+      ],
+      "physical_nodes": 24576,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 1.1780972450961724,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 3,
+      "actual_hidden_q_index": 3,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 1.1780972450961724,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.6437336301192865,
+          "seed_center_slope_mean": 0.6309553428142025,
+          "seed_center_slope_95ci": [
+            0.6121315044664474,
+            0.6484948584211527
+          ],
+          "seed_center_slopes": [
+            0.6210374565953989,
+            0.60512643463153,
+            0.6489078561002508,
+            0.6540740180243662,
+            0.5915526220522527,
+            0.605045384794568,
+            0.6636683597339055,
+            0.6582306105813478
+          ],
+          "free_ensemble_center_slope": 0.76012745621972,
+          "free_seed_center_slope_mean": 0.7523707106731352,
+          "free_seed_center_slopes": [
+            0.7603510872186617,
+            0.7710251768490057,
+            0.768002233942239,
+            0.739801823605374,
+            0.7372250283063185,
+            0.7520172074215826,
+            0.7443490803739755,
+            0.7461940476679237
+          ],
+          "visible_w0_ensemble_center_slope": 0.6219068873566421,
+          "hidden_amplitude_initial": 57.208029551819806,
+          "hidden_amplitude_ratio_final": 0.31217370928435545,
+          "free_hidden_amplitude_ratio_final": 0.4026195852969442,
+          "width_initial": 5.295447598619619,
+          "width_final": 7.099872435921154,
+          "width_by_tick": [
+            5.295447598619619,
+            5.31754125592202,
+            5.352295524653751,
+            5.133160141509116,
+            5.191850868346275,
+            6.043451364150572,
+            5.643934575051736,
+            5.842849318965988,
+            6.756875716313525,
+            6.425101075361814,
+            6.21921863110168,
+            7.190166507014218,
+            7.099872435921154
+          ],
+          "center_by_tick": [
+            -0.005999121059962735,
+            0.17849712527348022,
+            0.6778330310000293,
+            -2.5206049716691745,
+            -2.2193496199210747,
+            -0.40227118737699247,
+            2.233761157152177,
+            2.318339910092377,
+            1.975680065247921,
+            2.0054437195359447,
+            2.8257408828867425,
+            0.08431708021987,
+            -1.6392427663821705
+          ],
+          "free_center_by_tick": [
+            -0.005999121059962735,
+            0.1870789567808043,
+            0.5663322162424118,
+            -3.210603271951185,
+            -1.5365756346803061,
+            1.3078475619661747,
+            3.026121633503457,
+            3.162586496281681,
+            1.8911628727433012,
+            3.527664620761338,
+            3.7282455265447476,
+            2.610933229860503,
+            -0.5390741861010424
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 1.1780972450961724,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.6664395764756855,
+          "seed_center_slope_mean": -0.6512674373060605,
+          "seed_center_slope_95ci": [
+            -0.6658120514399907,
+            -0.6361296732535253
+          ],
+          "seed_center_slopes": [
+            -0.6854829596029921,
+            -0.6208753458758908,
+            -0.6293598417222747,
+            -0.6640797370823966,
+            -0.6807530624583895,
+            -0.6514705235547,
+            -0.6514101131008126,
+            -0.6267079150510274
+          ],
+          "free_ensemble_center_slope": -0.7714131379467902,
+          "free_seed_center_slope_mean": -0.7647014449368695,
+          "free_seed_center_slopes": [
+            -0.8282343719863439,
+            -0.7340566661913146,
+            -0.7441396777503763,
+            -0.7342717540881768,
+            -0.7646647984668029,
+            -0.7949543058297187,
+            -0.7361542816900359,
+            -0.7811357034921872
+          ],
+          "visible_w0_ensemble_center_slope": -0.5443585107097416,
+          "hidden_amplitude_initial": 57.082725448752186,
+          "hidden_amplitude_ratio_final": 0.3133365803510204,
+          "free_hidden_amplitude_ratio_final": 0.4047345334721431,
+          "width_initial": 5.303164734498132,
+          "width_final": 7.147859534229613,
+          "width_by_tick": [
+            5.303164734498132,
+            5.324907383913213,
+            5.352425573809791,
+            5.176751626874115,
+            5.137417517173079,
+            6.009182881401327,
+            5.646329165458362,
+            5.831614977658663,
+            6.745643290801466,
+            6.393061402461178,
+            6.194992651827385,
+            7.187701634065471,
+            7.147859534229613
+          ],
+          "center_by_tick": [
+            0.009586815551061457,
+            -0.17025655771628734,
+            -0.6760174235157528,
+            2.497566938540436,
+            2.25294512048513,
+            0.3409224923407137,
+            -2.254488343444415,
+            -2.3436396740812753,
+            -2.1661712408978304,
+            -2.209165338391807,
+            -2.8312723553752437,
+            -0.22226721050759313,
+            1.5357895717433356
+          ],
+          "free_center_by_tick": [
+            0.009586815551061457,
+            -0.17584637571299896,
+            -0.5673461768435211,
+            3.1679726247846625,
+            1.5355641094118702,
+            -1.2771229070034698,
+            -2.997671402943615,
+            -3.2139422212033586,
+            -2.001513729569721,
+            -3.540814221601578,
+            -3.6956489022462207,
+            -2.581409999655811,
+            0.5510831763090968
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 143.5201124340001,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": -0.010156047245929,
+        "even_95ci": [
+          -0.022371078709801283,
+          0.0019407105328981733
+        ],
+        "odd_mean": 0.6411113900601315,
+        "odd_95ci": [
+          0.6289069419761374,
+          0.6533678228993892
+        ]
+      },
+      "positive_seed_all_reversed": null,
+      "negative_seed_all_reversed": null
+    },
+    "joint_q2": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        8,
+        8,
+        32
+      ],
+      "physical_nodes": 49152,
+      "ticks": 12,
+      "independent_seeds_per_case": 4,
+      "physical_q": 0.7853981633974483,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 2,
+      "actual_hidden_q_index": 4,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 3,
+          "physical_k": 0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 4,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.37216628270058777,
+          "seed_center_slope_mean": -0.3676597868493444,
+          "seed_center_slope_95ci": [
+            -0.40263167406856004,
+            -0.3430012371311058
+          ],
+          "seed_center_slopes": [
+            -0.351294638897339,
+            -0.34023676987569473,
+            -0.4234299754661818,
+            -0.35567776315816196
+          ],
+          "free_ensemble_center_slope": 0.36466680053380784,
+          "free_seed_center_slope_mean": 0.36334505820578644,
+          "free_seed_center_slopes": [
+            0.34399616818757056,
+            0.41736265341632317,
+            0.3434334741836759,
+            0.348587937035576
+          ],
+          "visible_w0_ensemble_center_slope": -0.3636983740666543,
+          "hidden_amplitude_initial": 57.15081533797361,
+          "hidden_amplitude_ratio_final": 0.20459271406249596,
+          "free_hidden_amplitude_ratio_final": 0.17529710924480416,
+          "width_initial": 5.311041256360177,
+          "width_final": 8.535201970093373,
+          "width_by_tick": [
+            5.311041256360177,
+            5.331038096484303,
+            5.38120304323142,
+            5.390732774485159,
+            5.598299344655962,
+            5.771502416629159,
+            5.45643157477791,
+            6.014517674389323,
+            7.359840628962149,
+            7.428579416999196,
+            7.727427776741123,
+            8.758548350350639,
+            8.535201970093373
+          ],
+          "center_by_tick": [
+            -0.02939353698067293,
+            0.23928140726489505,
+            0.5408408000433209,
+            1.3126924994726232,
+            1.7673855321862635,
+            -1.2133586541826333,
+            -2.08195490953383,
+            -1.6865618829749582,
+            0.3499052303762537,
+            0.4924582140290456,
+            0.34261488591280814,
+            1.6896070578713414,
+            5.3020426685630495
+          ],
+          "free_center_by_tick": [
+            -0.02939353698067293,
+            0.2409729854159609,
+            0.4668169166105875,
+            1.1910599171021068,
+            1.7041791512657256,
+            -3.1348622098883694,
+            -1.8984215965578444,
+            2.6928153134755863,
+            4.070070373284999,
+            3.298163833408588,
+            0.4182732516033307,
+            -1.376693211022669,
+            4.309033007051754
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": -3,
+          "physical_k": -0.39269908169872414,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 4,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.38785960052153673,
+          "seed_center_slope_mean": 0.3855103287503851,
+          "seed_center_slope_95ci": [
+            0.36108717838191123,
+            0.40894504621454025
+          ],
+          "seed_center_slopes": [
+            0.37107066076933104,
+            0.41191034492749634,
+            0.40795661331022154,
+            0.3511036959944915
+          ],
+          "free_ensemble_center_slope": -0.4062151487572697,
+          "free_seed_center_slope_mean": -0.40549878259397154,
+          "free_seed_center_slopes": [
+            -0.3715801415101331,
+            -0.3670037982804368,
+            -0.4639559162033728,
+            -0.4194552743819435
+          ],
+          "visible_w0_ensemble_center_slope": 0.28313891583970907,
+          "hidden_amplitude_initial": 57.23879142527643,
+          "hidden_amplitude_ratio_final": 0.2060356679575131,
+          "free_hidden_amplitude_ratio_final": 0.17651714906604093,
+          "width_initial": 5.298093616573641,
+          "width_final": 8.622991760536124,
+          "width_by_tick": [
+            5.298093616573641,
+            5.325020979851898,
+            5.38306233400352,
+            5.384739710375421,
+            5.5643755606651695,
+            5.773603047362996,
+            5.496404870416367,
+            6.119608148073369,
+            7.451110331237589,
+            7.4558608219487885,
+            7.811288529117244,
+            8.936702461224211,
+            8.622991760536124
+          ],
+          "center_by_tick": [
+            0.019889097628006523,
+            -0.25999253604877604,
+            -0.5763754115924961,
+            -1.3532564751085778,
+            -1.7493132086928234,
+            1.1962451590994998,
+            2.0069193173121778,
+            1.6259735068534054,
+            -0.19458330336780819,
+            -0.4589316858105706,
+            -0.37747972483235914,
+            -1.7563488637516766,
+            -5.295579036263879
+          ],
+          "free_center_by_tick": [
+            0.019889097628006523,
+            -0.2595580493660135,
+            -0.4938144406984202,
+            -1.1790585864869232,
+            -1.6689826481199304,
+            3.0123042470008947,
+            1.8006871089733358,
+            -2.896608231640894,
+            -4.296679318028047,
+            -3.531676882986049,
+            -0.5800373945223856,
+            1.266162931533622,
+            -4.438876961602116
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 136.01803854200034,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes",
+      "odd_even_center_velocity": {
+        "even_mean": 0.008925270950520342,
+        "even_95ci": [
+          -0.012303221304821865,
+          0.02747314329855971
+        ],
+        "odd_mean": -0.37658505779986473,
+        "odd_95ci": [
+          -0.3986817454770839,
+          -0.35745161726160957
+        ]
+      },
+      "positive_seed_all_reversed": true,
+      "negative_seed_all_reversed": true
+    },
+    "w32_q2_k_scan": {
+      "experiment": "Bit21 spatial geometry falsification of observed Bit20 q reversal",
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "physical_nodes": 12288,
+      "ticks": 12,
+      "independent_seeds_per_case": 8,
+      "physical_q": 0.7853981633974483,
+      "physical_k_abs": 0.39269908169872414,
+      "physical_q_base_index": 2,
+      "actual_hidden_q_index": 4,
+      "amplitude": 0.105,
+      "symmetric_collision": "exact Bit8 involution via validated Numba kernel",
+      "seeds_aligned_with_bit20_by_physical_q_and_mode": true,
+      "reconstructed_initialization": "Bit19/20 four real finite-threshold phase-cycled trajectories",
+      "symmetry_audit": null,
+      "rows": [
+        {
+          "k_mode": 2,
+          "physical_k": 0.2617993877991494,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": -0.2723364405612603,
+          "seed_center_slope_mean": -0.27237883481433767,
+          "seed_center_slope_95ci": [
+            -0.28933930150353526,
+            -0.2550275575571358
+          ],
+          "seed_center_slopes": [
+            -0.28503864674469054,
+            -0.29759707258212137,
+            -0.23719444273147852,
+            -0.24824391337072668,
+            -0.2622325108994216,
+            -0.27404432661285055,
+            -0.2568276373349533,
+            -0.31785212823845876
+          ],
+          "free_ensemble_center_slope": 0.11412881529923731,
+          "free_seed_center_slope_mean": 0.11706991461393151,
+          "free_seed_center_slopes": [
+            0.1016515731655344,
+            0.11373289959825439,
+            0.1592952870412257,
+            0.06643389522499417,
+            0.14075570068700205,
+            0.11117191403798536,
+            0.1685718096713424,
+            0.07494623748511364
+          ],
+          "visible_w0_ensemble_center_slope": -0.2266461276513905,
+          "hidden_amplitude_initial": 14.292391076505332,
+          "hidden_amplitude_ratio_final": 0.36036572326051697,
+          "free_hidden_amplitude_ratio_final": 0.25732417838785987,
+          "width_initial": 5.299680195347435,
+          "width_final": 8.423798911706742,
+          "width_by_tick": [
+            5.299680195347435,
+            5.324845489600631,
+            5.381257073944126,
+            5.418324239098082,
+            5.654079807370252,
+            4.854867213618286,
+            5.148183064538198,
+            5.9605918895370875,
+            6.5737850940827345,
+            6.155765414908875,
+            6.318215836218168,
+            7.211651611479406,
+            8.423798911706742
+          ],
+          "center_by_tick": [
+            -0.0045120716641759715,
+            0.18095830484446504,
+            0.38636561224496363,
+            1.017184821836618,
+            2.0713240854526034,
+            -3.2496265775366453,
+            -2.7504373118193475,
+            -1.6852125062654808,
+            1.2534108514985847,
+            2.770064712312609,
+            2.8894483044673707,
+            3.031795228603698,
+            2.9641097127987512
+          ],
+          "free_center_by_tick": [
+            -0.0045120716641759715,
+            0.18347928619713452,
+            0.3321882107527181,
+            0.8146430804785002,
+            1.7993227955910995,
+            -2.821886020108393,
+            -1.6403229959005938,
+            0.45194783793869653,
+            2.785735912402701,
+            3.553426896932682,
+            3.626437057712155,
+            3.1972442362698126,
+            2.756569958574541
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        },
+        {
+          "k_mode": 4,
+          "physical_k": 0.5235987755982988,
+          "physical_q": 0.7853981633974483,
+          "n_seeds": 8,
+          "early_window": [
+            2,
+            8
+          ],
+          "ensemble_center_slope": 0.1827555517574764,
+          "seed_center_slope_mean": 0.1730026574695081,
+          "seed_center_slope_95ci": [
+            0.15120718500335537,
+            0.19529873352004992
+          ],
+          "seed_center_slopes": [
+            0.22686300942389764,
+            0.17552881882422489,
+            0.20302025183669098,
+            0.12993260696291647,
+            0.19654978147212704,
+            0.16715217687379605,
+            0.12170465602853296,
+            0.16326995833387867
+          ],
+          "free_ensemble_center_slope": 0.5438110925900962,
+          "free_seed_center_slope_mean": 0.5415470503189319,
+          "free_seed_center_slopes": [
+            0.5397684588518357,
+            0.5324335475941521,
+            0.5540745681872744,
+            0.5126149988597243,
+            0.5372176110841168,
+            0.562932969381592,
+            0.5480200113128467,
+            0.5453142372799136
+          ],
+          "visible_w0_ensemble_center_slope": 0.17250165690358707,
+          "hidden_amplitude_initial": 14.307208712163067,
+          "hidden_amplitude_ratio_final": 0.06407963205246349,
+          "free_hidden_amplitude_ratio_final": 0.07800052708788904,
+          "width_initial": 5.2894760652352515,
+          "width_final": 10.216910596607097,
+          "width_by_tick": [
+            5.2894760652352515,
+            5.309781530975502,
+            5.352038279832966,
+            5.315601371382798,
+            5.5264835824376535,
+            5.916767478638708,
+            6.015090533068909,
+            6.304031489705026,
+            7.054712775268244,
+            7.543319146285836,
+            8.027895777363897,
+            9.221663352260705,
+            10.216910596607097
+          ],
+          "center_by_tick": [
+            -0.028327597569876316,
+            0.30421990539979055,
+            0.681474689234297,
+            1.5380768391762907,
+            1.7942188985492202,
+            1.0596469953282586,
+            1.4390604887407885,
+            2.1827176037698908,
+            2.07581879917782,
+            1.3763249373198079,
+            1.5508210196108194,
+            3.8345271605094275,
+            8.421476781031103
+          ],
+          "free_center_by_tick": [
+            -0.028327597569876316,
+            0.3048967398558811,
+            0.6028688409023519,
+            1.5228267169991487,
+            1.716078407415473,
+            1.0265164236683229,
+            3.45294610658796,
+            3.481518897642189,
+            3.793688351590393,
+            3.6814351621425803,
+            1.7252620786188937,
+            0.7636764980455653,
+            5.064703879451471
+          ],
+          "note": "center slope of |coherent q-response(x)|^2; NOT spectral group velocity"
+        }
+      ],
+      "wall_seconds": 67.89025686500008,
+      "physical_claim_limit": "Finite-time q-response center, not eigenmode or particle group velocity",
+      "relative_comparison_warning": "y/z enlargement also changes microscopic finite-volume ensemble of transverse modes"
+    }
+  },
+  "q2_k_scan_phase_frequency": {
+    "2": {
+      "bit8": {
+        "early_demod_phase_frequency": 0.9735084870408515,
+        "coherent_amplitude_ratio_at_8": 0.34943805169036063,
+        "coherent_amplitude_ratio_at_12": 0.36036572326051697
+      },
+      "free": {
+        "early_demod_phase_frequency": 1.0246205451137105,
+        "coherent_amplitude_ratio_at_8": 0.344449423474759,
+        "coherent_amplitude_ratio_at_12": 0.25732417838785987
+      }
+    },
+    "3": {
+      "bit8": {
+        "early_demod_phase_frequency": 0.8750555170647298,
+        "coherent_amplitude_ratio_at_8": 0.17855649391986042,
+        "coherent_amplitude_ratio_at_12": 0.1973670293080279
+      },
+      "free": {
+        "early_demod_phase_frequency": 0.8958608185931352,
+        "coherent_amplitude_ratio_at_8": 0.12385936198641513,
+        "coherent_amplitude_ratio_at_12": 0.17397913016139288
+      }
+    },
+    "4": {
+      "bit8": {
+        "early_demod_phase_frequency": 0.7697892550510267,
+        "coherent_amplitude_ratio_at_8": 0.30469288056366073,
+        "coherent_amplitude_ratio_at_12": 0.06407963205246349
+      },
+      "free": {
+        "early_demod_phase_frequency": 0.7628649075506388,
+        "coherent_amplitude_ratio_at_8": 0.4005250684820931,
+        "coherent_amplitude_ratio_at_12": 0.07800052708788904
+      }
+    }
+  },
+  "q2_finite_difference_frequency_slopes": {
+    "bit8": -0.7781501465775645,
+    "free": -0.9998328864080028
+  },
+  "frequency_warning": "The free-streaming control has negative d(early fitted omega)/dk but POSITIVE packet displacement. This simple frequency finite difference must NOT be presented as group velocity of an eigenmode.",
+  "physical_limitations": [
+    "Finite t=2..8 window, width broadening by t=12",
+    "Transient packet center motion and demodulated phase are not sufficient to identify a single dispersion eigenmode",
+    "Two separate geometry enlargements have eight seeds; combined enlargement has four seeds",
+    "Amplitude at k_mode 4 has strong decay by tick 12",
+    "Periodic x length remains 48; no thermodynamic-limit or long-time claim",
+    "No result concerning a D3/D4/D8 interaction mechanism"
+  ]
+}
