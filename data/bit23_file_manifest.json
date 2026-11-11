@@ -1,0 +1,221 @@
+{
+  "test": "Bit23",
+  "created": "2026-11-11",
+  "files": {
+    "README_BIT23.md": {
+      "sha256": "5370f6a310ddc78b816569fa7c1943c624e7a7da170f4f0b8d9275ba4eb6d493",
+      "size_bytes": 1696
+    },
+    "data/bit21_w32_q1.json": {
+      "sha256": "0d34d00df1516016f24ee173bb65658bb09f5f3d3ceaf00bde60589a4ec9af9f",
+      "size_bytes": 6184
+    },
+    "data/bit21_w32_q2.json": {
+      "sha256": "ac2d8fbfe49c493f4f02b85df4b5c065a655fc3f8fdaf94b5ef48761e5033d19",
+      "size_bytes": 6211
+    },
+    "data/bit21_w32_q3.json": {
+      "sha256": "0cf70feac5fc41437f734faa184fcc9a74d72627a2b80f6a5a1bde3ede1f1cca",
+      "size_bytes": 6195
+    },
+    "data/bit23_collision_operator.json": {
+      "sha256": "166c673069401cb912d14222304c0988eb2291d104cf7ae6d09d9bb3cab20cd9",
+      "size_bytes": 190644
+    },
+    "data/bit23_collision_operator.npz": {
+      "sha256": "11fa333843e82bc484abab7c58e69654d2b1c775882c2d1435197cda4eb3bc69",
+      "size_bytes": 8609
+    },
+    "data/bit23_eigenprobe_q1_mixed.json": {
+      "sha256": "fde76d4300be0b94729aba4ccff1e2426b5a2ab2d3342fbaa4c1f2ea7f6d727c",
+      "size_bytes": 3246
+    },
+    "data/bit23_eigenprobe_q1_mixed.npz": {
+      "sha256": "e69f3e04ad462d8d0c41bdeffc80d29741328d94f5c49133c89ac7f0e1660470",
+      "size_bytes": 16474
+    },
+    "data/bit23_eigenprobe_q2_w.json": {
+      "sha256": "aba22a40a6114708bfbc42002208a4ef1d8e5e8626dd625c59e10e7c64e3784a",
+      "size_bytes": 3233
+    },
+    "data/bit23_eigenprobe_q2_w.npz": {
+      "sha256": "681231c93f63929f03b5ca368433d5615c26f018cc0be3acbf66945efe50209c",
+      "size_bytes": 16417
+    },
+    "data/bit23_eigenprobe_q2_x.json": {
+      "sha256": "8b07953b8831c5a71b09dfc0916800a57e4706bf506e65088967d12c432db711",
+      "size_bytes": 3234
+    },
+    "data/bit23_eigenprobe_q2_x.npz": {
+      "sha256": "192663abaea5fb5bd2fdfaa38559819131865d4b80523b33f9e131030bbc537c",
+      "size_bytes": 16427
+    },
+    "data/bit23_eigenprobe_q3_x.json": {
+      "sha256": "78a70021cc965f0e30ddc8541a668b1cce728d82f4239efaee51129cb5b909f9",
+      "size_bytes": 3238
+    },
+    "data/bit23_eigenprobe_q3_x.npz": {
+      "sha256": "6a71a9bb5f3830136e16db378372089c6a2a43984db5440014939469be04f226",
+      "size_bytes": 16418
+    },
+    "data/bit23_mode_interference.json": {
+      "sha256": "cd9b597da788ad61bf2943829ef2748aab2e9cdf4388aa82033085eb5cd5def0",
+      "size_bytes": 2718
+    },
+    "data/bit23_packet_predictions.json": {
+      "sha256": "ab468f241cb4529903eccb100fcdaae4d71cfc14d6dc72485fb50d6876163c7a",
+      "size_bytes": 10662
+    },
+    "data/bit23_spectral_decomposition.json": {
+      "sha256": "1fae3551ebb83d4924b959283ebba8ea9f609770f140f393c0a04243526a47c6",
+      "size_bytes": 19618
+    },
+    "data/bit23_validation.json": {
+      "sha256": "e8b5d7f4d0f55140a380f5b13a64a364e7b57f89db1a32c92c224a883ead223d",
+      "size_bytes": 2128
+    },
+    "docs/RESULTS_Bit23_LinearizedD4Modes_de.md": {
+      "sha256": "45e04ec1083ec7a5a49267e41e0ae32f3850b23316f7c3e70adcfffcb4ada6fd",
+      "size_bytes": 11426
+    },
+    "figures/bit23_interference_decomposition.png": {
+      "sha256": "177f104a861e84671934705824f6e4f7211f8ee0214147f98cbcecb9b4c547e2",
+      "size_bytes": 89235
+    },
+    "figures/bit23_interference_decomposition.svg": {
+      "sha256": "460fb05333c3b039ae3094f67e3343494b724f7ed6540093163f355c09a72fcc",
+      "size_bytes": 52141
+    },
+    "figures/bit23_predicted_vs_exact.png": {
+      "sha256": "6ad344915114f4170056abf641a4c8bfb53f343293b8fe9663e9fe8315517591",
+      "size_bytes": 129314
+    },
+    "figures/bit23_predicted_vs_exact.svg": {
+      "sha256": "dda9e3878a5c1eabb06a1918e98c08ee5296bf30938391ca87e508751c80273d",
+      "size_bytes": 52121
+    },
+    "src/phase_bit_s4_open25_symmetry_recovery.py": {
+      "sha256": "d684ee84955b12affb379a9453e881700faaf71ffb030d30442b7574255ec586",
+      "size_bytes": 7973
+    },
+    "src/phase_bit_s4_open26_symmetric_collision.py": {
+      "sha256": "dd52a4687b7787f58365e0b7804b030033deab5df4593a633767a15609e31bb0",
+      "size_bytes": 6946
+    },
+    "src/phase_bit_s4_open27_active_collision.py": {
+      "sha256": "cd0f8ae9c27a00241b6179364894ca654708a961c88d8b62b6f9689801fc525f",
+      "size_bytes": 3805
+    },
+    "src/phase_bit_s4_open28_fast4d.py": {
+      "sha256": "e2e5dff332890d576271f1e2a50fb9ca2afb5b65b28ae3538945be5f0b6f12ad",
+      "size_bytes": 6548
+    },
+    "src/phase_bit_s4_open29_engine.py": {
+      "sha256": "eacc2c8d0a69b09e80b399952f96f546c992b54ad63841f686e3f17dc2599836",
+      "size_bytes": 1042
+    },
+    "src/phase_bit_s4_open29_fast_collision.py": {
+      "sha256": "9e4f6192d80d9f7ce245d10df1c7cbc858bbc603bf2c1e05e1fe3e3056f34365",
+      "size_bytes": 3253
+    },
+    "src/phase_bit_s4_open31_bounded_cache.py": {
+      "sha256": "1296e161b7f27400f95d2762c4b3d108a405f8d6ab7b7554132103459ec9b121",
+      "size_bytes": 2712
+    },
+    "src/phase_bit_s4_open33_shells.py": {
+      "sha256": "4c53ea54295bc9dd6c9c2324d353d0e748c621417e973d1fa28859cb60b77f5a",
+      "size_bytes": 10738
+    },
+    "src/phase_bit_s4_open34_front_rays.py": {
+      "sha256": "08b88f52cdfae88ee336356d6a98e4a29907efb2cefc03ee892c7cff18f6749e",
+      "size_bytes": 5347
+    },
+    "src/phase_bit_s4_open36_event_solver.py": {
+      "sha256": "4a1b1857b51a7033824067eb93086185b06de0eb304681ed84bb3162bb8c104f",
+      "size_bytes": 8095
+    },
+    "src/phase_bit_s4_open37_longfront.py": {
+      "sha256": "cd19ab2f29aee901207798b7c1f5a5a9ed6b403c1c2d51ed1b856839edcd7877",
+      "size_bytes": 5834
+    },
+    "src/phase_bit_s4_open38_analyze.py": {
+      "sha256": "19ef4c5a47785db8eb4cffefd0447f0bdcc0eba4e84b62889cb6645a7e5d2f49",
+      "size_bytes": 6198
+    },
+    "src/phase_bit_s4_open38_phased_packet.py": {
+      "sha256": "4a89481d8e9988faf2042c43469c004f17ed446d916a714870aad813939eb041",
+      "size_bytes": 10304
+    },
+    "src/phase_bit_s4_open38_validate.py": {
+      "sha256": "15fa782df999eaf164eaa9a9ab11cff3e9d4d62208e7c49df14f010572ec5de1",
+      "size_bytes": 1596
+    },
+    "src/phase_bit_s4_open39_analyze.py": {
+      "sha256": "1920d4eeb34e837b568d57d56869668786d389c54d417711370f5786e7ad3332",
+      "size_bytes": 9406
+    },
+    "src/phase_bit_s4_open39_dispersion.py": {
+      "sha256": "5ac713d72f25b2c00c6e78c29b7b3caa304551d248083ebb90cbf964c2f6bdbe",
+      "size_bytes": 5698
+    },
+    "src/phase_bit_s4_open39_merge.py": {
+      "sha256": "ba02ea92e041756d69fffe12eed399c1200b65605b173b78ab9caf952b1a16c4",
+      "size_bytes": 1466
+    },
+    "src/phase_bit_s4_open39_numba_collision.py": {
+      "sha256": "dfdbe1e8275deab76b205de73abbc9acd10ad9cc7f8b9315116237a261b9c7e2",
+      "size_bytes": 3842
+    },
+    "src/phase_bit_s4_open39_plot.py": {
+      "sha256": "a632d9f17910024e995c11fb1b6f0f8a40f271877a25da256fdeb9f3738c28a8",
+      "size_bytes": 1803
+    },
+    "src/phase_bit_s4_open39_report.py": {
+      "sha256": "dbb03019e7270fcb4e1ceb7905e828a2f835179c59460be53833cc5bf62a5e52",
+      "size_bytes": 11064
+    },
+    "src/phase_bit_s4_open39_validate.py": {
+      "sha256": "6e65b56fce95edef16e3d570e915e6f1eb258bc0951972ae194d274b26dad4fe",
+      "size_bytes": 3260
+    },
+    "src/phase_bit_s4_open42_eigenprobe.py": {
+      "sha256": "4b1cb9a784de9ca8e4e6e98f9478143e493e519d364a0497e19cd5eb92df73ab",
+      "size_bytes": 7538
+    },
+    "src/phase_bit_s4_open42_linear_collision.py": {
+      "sha256": "24c9149c2dcd08d414aa1f9dc12d0cdadb9ed6eaecfb450d8762e5ed9bbc000c",
+      "size_bytes": 5797
+    },
+    "src/phase_bit_s4_open42_mode_interference.py": {
+      "sha256": "ad22c592d9e391ccaa0adc31ff9a285329f1b65e9e0f168bd81ec38cf0bcc07f",
+      "size_bytes": 4114
+    },
+    "src/phase_bit_s4_open42_plots.py": {
+      "sha256": "3b0c7c9fd6696fb5c71c5bba1c31c1a742a095010631207829efdfa82554de20",
+      "size_bytes": 2123
+    },
+    "src/phase_bit_s4_open42_predict_packets.py": {
+      "sha256": "f614a9d685bb47c734a31aadd3a4216010f0f06860a3e49f35d0b747d0f1028c",
+      "size_bytes": 3650
+    },
+    "src/phase_bit_s4_open42_spectral_decomp.py": {
+      "sha256": "c4b53072586d8e087a83f227062476792f1c538913338005ab9bd6e65c0d08cb",
+      "size_bytes": 3061
+    },
+    "src/phase_bit_s4_open42_validate.py": {
+      "sha256": "0c6bac76a844a2bff04af8cd952f1e1ef2eec8bc677d46e7a4bbeeda578fba1e",
+      "size_bytes": 3820
+    }
+  },
+  "previous": {
+    "previous/bit22_dynamic_structure_factor_backup_20261111.zip": {
+      "sha256": "2cb05d0527ff5e961b2199cde6899ee8b4396e1ee8d7ae43d38fe7928877db0d",
+      "size_bytes": 10416658
+    },
+    "previous/phase_bit_s4_open25.png": {
+      "sha256": "1c323d982c3f0dccb0eb27a545df7979592f050c90b888e84388b46bbc2f4f6b",
+      "size_bytes": 580489
+    }
+  },
+  "note": "SHA256 of files before ZIP assembly. GitHub push after full validated ZIP."
+}
