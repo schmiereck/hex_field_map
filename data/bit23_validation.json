@@ -1,0 +1,56 @@
+{
+  "test": "Bit23 independently checked diagnostics",
+  "collision_reference": {
+    "cases": 1826,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "B4_symmetry_100_local_states": true,
+  "five_invariants_and_reversibility": "passed",
+  "tangent_matrix_charge_error_inf": 5.551115123125783e-16,
+  "negative_q2_and_positive_neighbor_signs_reproduced": true,
+  "out_of_fit_six_packet_slope_errors": [
+    0.01733904550700016,
+    0.01029460889368583,
+    0.0022266440930773235,
+    0.02018239776242442,
+    0.025129559759437314,
+    0.026251775274732436
+  ],
+  "max_packet_slope_error": 0.026251775274732436,
+  "eigenmode_tests": {
+    "q2_x": {
+      "t1_vector_relative_error": 0.01702993791672953,
+      "one_step_complex_ratio_error": 0.0013767560893088863,
+      "t10_orthogonal_energy_fraction": 0.004747158448814043,
+      "t10_amplitude_measured": 0.7560398387737165,
+      "t10_amplitude_linear_predicted": 0.7629978823730535
+    },
+    "q2_w": {
+      "t1_vector_relative_error": 0.015976101020814308,
+      "one_step_complex_ratio_error": 0.0021804701264622355,
+      "t10_orthogonal_energy_fraction": 0.003634532187517308,
+      "t10_amplitude_measured": 0.7621556462397203,
+      "t10_amplitude_linear_predicted": 0.7651811725136064
+    },
+    "q1_mixed": {
+      "t1_vector_relative_error": 0.016638261607978672,
+      "one_step_complex_ratio_error": 0.0007130987834052812,
+      "t10_orthogonal_energy_fraction": 0.0024781319873990173,
+      "t10_amplitude_measured": 0.838358745387729,
+      "t10_amplitude_linear_predicted": 0.8411959862790203
+    },
+    "q3_x": {
+      "t1_vector_relative_error": 0.015806367867877983,
+      "one_step_complex_ratio_error": 0.0005709121570364756,
+      "t10_orthogonal_energy_fraction": 0.00959032028251852,
+      "t10_amplitude_measured": 0.7626221270281579,
+      "t10_amplitude_linear_predicted": 0.7612447220923239
+    }
+  },
+  "interference_cross_term_sign_flip": true,
+  "interference_reconstruction_center_error_max": 2.1938006966593093e-13,
+  "no_claim_of_exact_multitick_tangent_closure": true,
+  "passed": true
+}
