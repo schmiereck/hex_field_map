@@ -1,0 +1,52 @@
+{
+  "collision_equivalence": {
+    "cases": 310,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "mirrored_packet_checks": [
+    {
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "physical_nodes": 12288,
+      "physical_q": 0.7853981633974483,
+      "phase_coded_mirror_x_exact_each_tick": true,
+      "roundtrip_exact": true,
+      "five_charges_conserved": true,
+      "ticks_each_direction": 4
+    },
+    {
+      "shape": [
+        48,
+        8,
+        8,
+        16
+      ],
+      "physical_nodes": 24576,
+      "physical_q": 0.7853981633974483,
+      "phase_coded_mirror_x_exact_each_tick": true,
+      "roundtrip_exact": true,
+      "five_charges_conserved": true,
+      "ticks_each_direction": 4
+    },
+    {
+      "shape": [
+        48,
+        8,
+        8,
+        32
+      ],
+      "physical_nodes": 49152,
+      "physical_q": 0.7853981633974483,
+      "phase_coded_mirror_x_exact_each_tick": true,
+      "roundtrip_exact": true,
+      "five_charges_conserved": true,
+      "ticks_each_direction": 4
+    }
+  ]
+}
