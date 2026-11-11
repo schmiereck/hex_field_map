@@ -1,0 +1,11 @@
+# Bit25 — Reproduktion und methodische Abgrenzung
+
+**Mikrodynamik:** unveränderte reversible D4-Bit8-Kollision aus Bit 8, integergenau beschleunigt durch `phase_bit_s4_open39_numba_collision.py`. Die optional parallelisierte Umsetzung `phase_bit_s4_open44_parallel.py` führt die identischen lokalen Kollisionspermutationen aus. Komplexe Eigenvektoren, Wellenzahlen, Fouriertransformationen und Hesse-Koeffizienten sind externe **Präparations-/Beobachtungswerkzeuge**.
+
+Im vollständigen ZIP liegen alle benötigten Python-Quelldateien unter `src`, die eingefrorene 24×24-Matrix unter `data/bit24_collision_matrix.json`, die neu erzeugten 12-Tick-/Vierphasen-Trajektorien unter `data/bit25_*.npz` sowie vollständiges Bit24-ZIP und Originalfigur unter `archive/` bzw. `figures/`.
+
+Benötigt: Python 3, NumPy mit `bitwise_count`, Numba, SciPy (indirekte Vorgängermodule), Matplotlib für die Diagramme. Kommandos siehe ausführlichen Bericht. Die vollständige lokale Vertex-Auswertung besucht sämtliche 16.777.216 Bitwörter; sie benötigt kein Zufallssampling und hat bei unverändertem Rechner nur begrenzten RAM-Bedarf. Bei nicht unterstützter Parallelisierung kann `BIT25_PARALLEL=0` verwendet werden, die Regel bleibt bitgleich.
+
+**Wichtige Verwechslungen vermeiden:** Der `R`-Vierzustandsterm ist *vorzeichenbehaftet*, der `I`-Vierzustandsterm bitweises XOR. Eine erhöhte lokale XOR-Zahl beweist keine komplex kohärente Welle. Die Summe über alle Knoten der erhaltenen Dichte/Impulse ist exakt null, räumliche Fouriermoden dürfen trotzdem existieren. Der Vertex ist eine **lokale** gemittelte Hesse-Matrix um iid-Halbfüllung, nicht ein globaler endlicher-Tick-Operator oder eine gemessene Energieübertragung.
+
+**Eindeutigkeit der Datensätze:** `baseline` 12 Seeds × 4 Phasen, `weak`, `strong`, `xw` je 6 × 4. Gemeinsame Seed-Indizes `250001+i`, kein Austausch der Hintergründe zwischen Phasen. Die Ausgabe der ersten Phasenharmonik wird je Seed vor dem Seed-Mittel bestimmt; der Signifikanztest verwendet 6000 zufällige phasenfeste Seedrotationen mit vorher festgelegtem Tickfenster 5–10. Nach Korrektur für 108 explorative Gesamttests bleibt kein signifikanter ausgehender Mischkanal. Die kurze Zeitachse ist **keine** hochauflösende zeitliche Spektralanalyse.
