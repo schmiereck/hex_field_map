@@ -1,0 +1,56 @@
+{
+  "validation": "Bit22 spectral equilibrium experiment",
+  "cases": {
+    "bit22_equilibrium_w32": {
+      "shape": [
+        48,
+        4,
+        4,
+        32
+      ],
+      "seeds": 8,
+      "ticks": 80,
+      "per_seed_five_charge_conservation": true,
+      "full_backward_roundtrip_first_seed": true,
+      "analytic_free_streaming": {
+        "first_seed_all_modes_all_ticks_exact_up_to_float32_error": true,
+        "max_abs_error": 2.385215134189856e-07,
+        "max_error_density_jx_jw": [
+          2.385215134189856e-07,
+          1.258656765516427e-07,
+          1.245011456704795e-07
+        ],
+        "analytic_branches": "omega_d=k_x*v_dx+q*v_dw for 24 D4 streaming directions"
+      },
+      "density_power_first_vs_last_half_relative_change_median": 0.09903541207313538,
+      "density_power_first_vs_last_half_relative_change_max": 0.4806444048881531,
+      "note": "Stationarity of uniform measure follows bijectivity; finite-seed empirical half-time powers fluctuate."
+    },
+    "bit22_equilibrium_yz8": {
+      "shape": [
+        48,
+        8,
+        8,
+        32
+      ],
+      "seeds": 4,
+      "ticks": 80,
+      "per_seed_five_charge_conservation": true,
+      "full_backward_roundtrip_first_seed": true,
+      "analytic_free_streaming": {
+        "first_seed_all_modes_all_ticks_exact_up_to_float32_error": true,
+        "max_abs_error": 2.5685486821463455e-07,
+        "max_error_density_jx_jw": [
+          2.5685486821463455e-07,
+          1.4777615866459934e-07,
+          1.534155914885704e-07
+        ],
+        "analytic_branches": "omega_d=k_x*v_dx+q*v_dw for 24 D4 streaming directions"
+      },
+      "density_power_first_vs_last_half_relative_change_median": 0.17546433210372925,
+      "density_power_first_vs_last_half_relative_change_max": 0.730787456035614,
+      "note": "Stationarity of uniform measure follows bijectivity; finite-seed empirical half-time powers fluctuate."
+    }
+  },
+  "warning": "Exact free identities test streaming/observables; collision correctness additionally covered by original Bit20/21 and current conservation/roundtrip, not exhaustive 2^24 enumeration."
+}
