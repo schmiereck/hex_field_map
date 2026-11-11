@@ -1,0 +1,592 @@
+{
+  "decomposition": [
+    {
+      "q": 0.39269908169872414,
+      "q_index": 1,
+      "acoustic_profile_density_initial": 24.0,
+      "main_eigencomponents_by_density": [
+        {
+          "eigen_id": 6,
+          "phase": -0.39138571758314383,
+          "damping": 0.9828556061133059,
+          "density_amplitude": 17.188563229339763,
+          "jx_amplitude": 8.562385319244163,
+          "jw_amplitude": 8.562385319244688,
+          "density_complex": [
+            17.188559438377574,
+            0.011415882453245318
+          ],
+          "significant_density_fraction": 0.7161901345558235
+        },
+        {
+          "eigen_id": 1,
+          "phase": -0.6232625795823783,
+          "damping": 0.8436959814139837,
+          "density_amplitude": 4.263066822560552,
+          "jx_amplitude": 3.419756075254364,
+          "jw_amplitude": 3.4197560752543494,
+          "density_complex": [
+            3.86741203446396,
+            1.7935615097620317
+          ],
+          "significant_density_fraction": 0.17762778427335635
+        },
+        {
+          "eigen_id": 11,
+          "phase": -1.1926296601098414e-16,
+          "damping": 0.9305320483533647,
+          "density_amplitude": 3.8301971514983633,
+          "jx_amplitude": 0.3466472904065758,
+          "jw_amplitude": 0.34664729040657916,
+          "density_complex": [
+            3.768952291265377,
+            -0.6822087990576213
+          ],
+          "significant_density_fraction": 0.15959154797909847
+        },
+        {
+          "eigen_id": 0,
+          "phase": 0.6232625795823781,
+          "damping": 0.8436959814139809,
+          "density_amplitude": 1.159731037093273,
+          "jx_amplitude": 0.9303155274912261,
+          "jw_amplitude": 0.9303155274912267,
+          "density_complex": [
+            -1.155768262624586,
+            -0.09579040404541839
+          ],
+          "significant_density_fraction": 0.04832212654555304
+        },
+        {
+          "eigen_id": 10,
+          "phase": 4.065316049177193e-16,
+          "damping": 0.37571628829386455,
+          "density_amplitude": 0.7206609127962416,
+          "jx_amplitude": 0.7898193431669708,
+          "jw_amplitude": 0.789819343166971,
+          "density_complex": [
+            0.2991206038838383,
+            -0.6556515961732114
+          ],
+          "significant_density_fraction": 0.03002753803317673
+        },
+        {
+          "eigen_id": 2,
+          "phase": 0.3913857175831444,
+          "damping": 0.9828556061133067,
+          "density_amplitude": 0.3726792778173245,
+          "jx_amplitude": 0.18564806927683394,
+          "jw_amplitude": 0.18564806927683025,
+          "density_complex": [
+            0.03172389463383713,
+            -0.37132659293902415
+          ],
+          "significant_density_fraction": 0.015528303242388521
+        },
+        {
+          "eigen_id": 8,
+          "phase": -0.39123007694367085,
+          "damping": 0.9644587401388414,
+          "density_amplitude": 2.1451885628428103e-26,
+          "jx_amplitude": 2.937099050317509e-13,
+          "jw_amplitude": 2.937099050317303e-13,
+          "density_complex": [
+            2.066184482954874e-26,
+            -5.768150938976038e-27
+          ],
+          "significant_density_fraction": 8.93828567851171e-28
+        },
+        {
+          "eigen_id": 9,
+          "phase": -0.3913499190454551,
+          "damping": 0.9631177507439982,
+          "density_amplitude": 5.996993447713761e-27,
+          "jx_amplitude": 7.887440244746342e-26,
+          "jw_amplitude": 8.081142627293928e-26,
+          "density_complex": [
+            5.812327149668415e-27,
+            -1.4767476145737341e-27
+          ],
+          "significant_density_fraction": 2.4987472698807335e-28
+        },
+        {
+          "eigen_id": 7,
+          "phase": -0.3894441813116634,
+          "damping": 0.9455429157558705,
+          "density_amplitude": 4.976222629633909e-27,
+          "jx_amplitude": 3.881715363705768e-27,
+          "jw_amplitude": 1.8798758233865343e-27,
+          "density_complex": [
+            3.751822465231132e-27,
+            3.269039591235873e-27
+          ],
+          "significant_density_fraction": 2.073426095680795e-28
+        },
+        {
+          "eigen_id": 4,
+          "phase": 0.39123007694367146,
+          "damping": 0.9644587401388418,
+          "density_amplitude": 2.4384488424463802e-28,
+          "jx_amplitude": 5.2416095077370575e-15,
+          "jw_amplitude": 5.241609507737117e-15,
+          "density_complex": [
+            -1.3430356911387726e-28,
+            -2.0352611354702105e-28
+          ],
+          "significant_density_fraction": 1.0160203510193251e-29
+        },
+        {
+          "eigen_id": 5,
+          "phase": 0.39134991904545546,
+          "damping": 0.9631177507439983,
+          "density_amplitude": 2.1991021151306195e-28,
+          "jx_amplitude": 7.6624193251597225e-28,
+          "jw_amplitude": 7.506216213200144e-28,
+          "density_complex": [
+            1.262177448353619e-28,
+            -1.800821535199841e-28
+          ],
+          "significant_density_fraction": 9.162925479710915e-30
+        },
+        {
+          "eigen_id": 15,
+          "phase": 6.13738472691837e-16,
+          "damping": 0.3391783739118783,
+          "density_amplitude": 6.828091275146787e-29,
+          "jx_amplitude": 1.7057923105978335e-29,
+          "jw_amplitude": 4.6722946819241706e-29,
+          "density_complex": [
+            -4.417621069237666e-29,
+            5.206481974458678e-29
+          ],
+          "significant_density_fraction": 2.8450380313111614e-30
+        }
+      ]
+    },
+    {
+      "q": 0.7853981633974483,
+      "q_index": 2,
+      "acoustic_profile_density_initial": 24.0,
+      "main_eigencomponents_by_density": [
+        {
+          "eigen_id": 4,
+          "phase": -0.7845311941267594,
+          "damping": 0.973590724236548,
+          "density_amplitude": 9.686151226014005,
+          "jx_amplitude": 0.09281711658077972,
+          "jw_amplitude": 9.62980270860668,
+          "density_complex": [
+            9.675689518204681,
+            0.45006435152840135
+          ],
+          "significant_density_fraction": 0.4035896344172502
+        },
+        {
+          "eigen_id": 8,
+          "phase": -0.391494230187566,
+          "damping": 0.9733125724308558,
+          "density_amplitude": 6.8185777149950075,
+          "jx_amplitude": 6.5795464113835855,
+          "jw_amplitude": 0.367120431567263,
+          "density_complex": [
+            6.807599349458069,
+            -0.38677274035874254
+          ],
+          "significant_density_fraction": 0.28410740479145863
+        },
+        {
+          "eigen_id": 3,
+          "phase": -1.026167226352706,
+          "damping": 0.7812353175344888,
+          "density_amplitude": 4.148450341110895,
+          "jx_amplitude": 3.4676079650280207,
+          "jw_amplitude": 3.7403503377496987,
+          "density_complex": [
+            3.597746405667378,
+            2.0653960959512254
+          ],
+          "significant_density_fraction": 0.17285209754628728
+        },
+        {
+          "eigen_id": 12,
+          "phase": -1.650596017935634e-16,
+          "damping": 0.9307323585866497,
+          "density_amplitude": 3.8868403902764426,
+          "jx_amplitude": 0.3600654111450034,
+          "jw_amplitude": 0.16357109086605934,
+          "density_complex": [
+            3.8627657619530478,
+            -0.4319362079840229
+          ],
+          "significant_density_fraction": 0.1619516829281851
+        },
+        {
+          "eigen_id": 11,
+          "phase": -0.2209942867062506,
+          "damping": 0.6611922133891317,
+          "density_amplitude": 2.443991284350065,
+          "jx_amplitude": 4.014835015132011,
+          "jw_amplitude": 1.4512472477407374,
+          "density_complex": [
+            -0.35528569971400503,
+            -2.41802925324691
+          ],
+          "significant_density_fraction": 0.1018329701812527
+        },
+        {
+          "eigen_id": 6,
+          "phase": 0.39149423018756696,
+          "damping": 0.973312572430855,
+          "density_amplitude": 1.554491250862427,
+          "jx_amplitude": 1.4999971780986745,
+          "jw_amplitude": 0.08369568005789864,
+          "density_complex": [
+            1.55009001664601,
+            -0.11689306781073516
+          ],
+          "significant_density_fraction": 0.06477046878593445
+        },
+        {
+          "eigen_id": 10,
+          "phase": 0.22099428670625063,
+          "damping": 0.6611922133891295,
+          "density_amplitude": 1.461192596815362,
+          "jx_amplitude": 2.400355205483497,
+          "jw_amplitude": 0.8676592867275077,
+          "density_complex": [
+            1.137986927557717,
+            0.9165530850396875
+          ],
+          "significant_density_fraction": 0.060883024867306755
+        },
+        {
+          "eigen_id": 0,
+          "phase": 1.0261672263527055,
+          "damping": 0.7812353175344877,
+          "density_amplitude": 1.1490691311849066,
+          "jx_amplitude": 0.9604842637691116,
+          "jw_amplitude": 1.0360305076652527,
+          "density_complex": [
+            -1.1484089533704998,
+            0.038945398451028845
+          ],
+          "significant_density_fraction": 0.047877880466037775
+        },
+        {
+          "eigen_id": 1,
+          "phase": 0.7845311941267586,
+          "damping": 0.97359072423655,
+          "density_amplitude": 1.1342677806152515,
+          "jx_amplitude": 0.010869070941661648,
+          "jw_amplitude": 1.1276692559495491,
+          "density_complex": [
+            -1.128183326402398,
+            -0.11732766156993273
+          ],
+          "significant_density_fraction": 0.04726115752563548
+        },
+        {
+          "eigen_id": 5,
+          "phase": -0.7842142148178085,
+          "damping": 0.9543158325243818,
+          "density_amplitude": 2.830686196357226e-27,
+          "jx_amplitude": 1.4707257193756808e-28,
+          "jw_amplitude": 2.8222700621753552e-27,
+          "density_complex": [
+            -2.8304329279329904e-27,
+            3.7865323450608567e-29
+          ],
+          "significant_density_fraction": 1.1794525818155108e-28
+        },
+        {
+          "eigen_id": 7,
+          "phase": 0.3906488053196385,
+          "damping": 0.9542639189436773,
+          "density_amplitude": 8.994350883155762e-28,
+          "jx_amplitude": 1.0420791248732963e-27,
+          "jw_amplitude": 1.943552468178222e-29,
+          "density_complex": [
+            8.749453515032547e-28,
+            -2.0845649420465237e-28
+          ],
+          "significant_density_fraction": 3.7476462013149007e-29
+        },
+        {
+          "eigen_id": 2,
+          "phase": 0.7842142148178082,
+          "damping": 0.9543158325243839,
+          "density_amplitude": 6.568073910559062e-28,
+          "jx_amplitude": 2.1738619302553115e-29,
+          "jw_amplitude": 6.364518093528729e-28,
+          "density_complex": [
+            6.301026480452832e-28,
+            1.8538231272693777e-28
+          ],
+          "significant_density_fraction": 2.736697462732943e-29
+        }
+      ]
+    },
+    {
+      "q": 1.1780972450961724,
+      "q_index": 3,
+      "acoustic_profile_density_initial": 24.0,
+      "main_eigencomponents_by_density": [
+        {
+          "eigen_id": 4,
+          "phase": -1.177627054655565,
+          "damping": 0.9735839721230125,
+          "density_amplitude": 9.993219408139286,
+          "jx_amplitude": 0.15910796451039022,
+          "jw_amplitude": 9.959652353438155,
+          "density_complex": [
+            9.989367134377508,
+            0.2774498041632211
+          ],
+          "significant_density_fraction": 0.4163841420058036
+        },
+        {
+          "eigen_id": 10,
+          "phase": -0.39128100037979857,
+          "damping": 0.9730887002676335,
+          "density_amplitude": 5.880546487517155,
+          "jx_amplitude": 5.828614393292181,
+          "jw_amplitude": 0.194628353125599,
+          "density_complex": [
+            5.8791354946936405,
+            -0.12881314716953185
+          ],
+          "significant_density_fraction": 0.24502277031321482
+        },
+        {
+          "eigen_id": 12,
+          "phase": 1.6682471458791147e-16,
+          "damping": 0.930769987638234,
+          "density_amplitude": 3.8877987414774333,
+          "jx_amplitude": 0.3556723270166113,
+          "jw_amplitude": 0.1026927647112351,
+          "density_complex": [
+            3.876516058991325,
+            -0.2959768548651749
+          ],
+          "significant_density_fraction": 0.1619916142282264
+        },
+        {
+          "eigen_id": 3,
+          "phase": -1.4433152840855046,
+          "damping": 0.7459372812889898,
+          "density_amplitude": 3.85260291147892,
+          "jx_amplitude": 3.559636720809904,
+          "jw_amplitude": 3.5528732662286084,
+          "density_complex": [
+            3.065497237414517,
+            2.3335114914951274
+          ],
+          "significant_density_fraction": 0.16052512131162167
+        },
+        {
+          "eigen_id": 7,
+          "phase": -0.8180417521930369,
+          "damping": 0.6926301975825357,
+          "density_amplitude": 2.307856040074433,
+          "jx_amplitude": 2.799475344448309,
+          "jw_amplitude": 2.033201552693096,
+          "density_complex": [
+            0.9831931787110464,
+            -2.0879489158128632
+          ],
+          "significant_density_fraction": 0.0961606683364347
+        },
+        {
+          "eigen_id": 8,
+          "phase": 0.391281000379799,
+          "damping": 0.9730887002676339,
+          "density_amplitude": 2.2562501486834794,
+          "jx_amplitude": 2.236324824469948,
+          "jw_amplitude": 0.07467507511586294,
+          "density_complex": [
+            2.2540392888426637,
+            -0.09985798810250938
+          ],
+          "significant_density_fraction": 0.09401042286181165
+        },
+        {
+          "eigen_id": 0,
+          "phase": 1.1776270546555643,
+          "damping": 0.9735839721230121,
+          "density_amplitude": 1.4522114521199037,
+          "jx_amplitude": 0.023121518576614496,
+          "jw_amplitude": 1.4473334984535184,
+          "density_complex": [
+            -1.449551471272356,
+            -0.08785575564723648
+          ],
+          "significant_density_fraction": 0.060508810504995986
+        },
+        {
+          "eigen_id": 2,
+          "phase": 1.4433152840855055,
+          "damping": 0.7459372812889895,
+          "density_amplitude": 1.0079535542427014,
+          "jx_amplitude": 0.931305033763742,
+          "jw_amplitude": 0.9295355163126021,
+          "density_complex": [
+            -0.9957621815888562,
+            0.1562947383244117
+          ],
+          "significant_density_fraction": 0.04199806476011256
+        },
+        {
+          "eigen_id": 6,
+          "phase": 0.818041752193037,
+          "damping": 0.6926301975825345,
+          "density_amplitude": 0.40313871854012057,
+          "jx_amplitude": 0.48901529529942195,
+          "jw_amplitude": 0.3551617840340004,
+          "density_complex": [
+            0.39756525983051166,
+            -0.06680337238544393
+          ],
+          "significant_density_fraction": 0.016797446605838356
+        },
+        {
+          "eigen_id": 1,
+          "phase": 1.1775766137087795,
+          "damping": 0.9542981969589898,
+          "density_amplitude": 5.166967389255399e-27,
+          "jx_amplitude": 8.780702372026611e-29,
+          "jw_amplitude": 5.241305166154776e-27,
+          "density_complex": [
+            -4.3040250988858404e-27,
+            -2.8588319205209468e-27
+          ],
+          "significant_density_fraction": 2.1529030788564162e-28
+        },
+        {
+          "eigen_id": 5,
+          "phase": -1.1775766137087798,
+          "damping": 0.9542981969589888,
+          "density_amplitude": 4.25121525988065e-27,
+          "jx_amplitude": 1.2437225336370498e-28,
+          "jw_amplitude": 4.0088496483156525e-27,
+          "density_complex": [
+            4.0515896092151166e-27,
+            1.2874209973206913e-27
+          ],
+          "significant_density_fraction": 1.7713396916169376e-28
+        },
+        {
+          "eigen_id": 11,
+          "phase": -0.39056049002654974,
+          "damping": 0.9542815538756056,
+          "density_amplitude": 3.3237550840607085e-27,
+          "jx_amplitude": 3.3379281394044975e-27,
+          "jw_amplitude": 1.5493497886795843e-28,
+          "density_complex": [
+            2.324970302912627e-27,
+            2.3752601856204665e-27
+          ],
+          "significant_density_fraction": 1.384897951691962e-28
+        }
+      ]
+    }
+  ],
+  "independent_operator_batch_predictive_checks": {
+    "1": {
+      "-1": {
+        "eight_batch_predictions": [
+          -0.6284483622468502,
+          -0.6314416125861959,
+          -0.6316241541191818,
+          -0.6307433830528524,
+          -0.6305996963238939,
+          -0.6288389984266327,
+          -0.6319000142835498,
+          -0.631708228925977
+        ],
+        "mean": -0.6306630562456417,
+        "sd_across_batches": 0.0013306729515665998,
+        "sem_ensemble_estimate": 0.0004704639337971305
+      },
+      "1": {
+        "eight_batch_predictions": [
+          0.6266068055767182,
+          0.6295882138068198,
+          0.6297600019934417,
+          0.6288933528408217,
+          0.6287568268679474,
+          0.6270081473067064,
+          0.6300275804177154,
+          0.6298500905139611
+        ],
+        "mean": 0.6288113774155165,
+        "sd_across_batches": 0.0013192481388205816,
+        "sem_ensemble_estimate": 0.0004664246525138825
+      }
+    },
+    "2": {
+      "-1": {
+        "eight_batch_predictions": [
+          0.3832335586143325,
+          0.39180804699364347,
+          0.3933440707811695,
+          0.38698551723406166,
+          0.38760778074793273,
+          0.3805453322129649,
+          0.39306765782595726,
+          0.39341840273837136
+        ],
+        "mean": 0.38875129589355417,
+        "sd_across_batches": 0.004972194698821108,
+        "sem_ensemble_estimate": 0.0017579362944581043
+      },
+      "1": {
+        "eight_batch_predictions": [
+          -0.3912989048631158,
+          -0.3997291152001822,
+          -0.4012656244222275,
+          -0.3949897371896834,
+          -0.3955902070899414,
+          -0.38862396118693976,
+          -0.4010035733548837,
+          -0.4013157483008089
+        ],
+        "mean": -0.39672710895097285,
+        "sd_across_batches": 0.004904681915820191,
+        "sem_ensemble_estimate": 0.001734066921119742
+      }
+    },
+    "3": {
+      "-1": {
+        "eight_batch_predictions": [
+          -0.669045547566898,
+          -0.6685348734414034,
+          -0.6712704966898108,
+          -0.6696368656221345,
+          -0.6678649754515988,
+          -0.6667716621779901,
+          -0.6731455483352761,
+          -0.6688638769560494
+        ],
+        "mean": -0.6693917307801451,
+        "sd_across_batches": 0.0020003362917352975,
+        "sem_ensemble_estimate": 0.0007072256782697904
+      },
+      "1": {
+        "eight_batch_predictions": [
+          0.6670290607688453,
+          0.6665113574611845,
+          0.6692486522626504,
+          0.6676083500091765,
+          0.6658403532341358,
+          0.6647466598037436,
+          0.6711197336893422,
+          0.6668412283431296
+        ],
+        "mean": 0.667368174446526,
+        "sd_across_batches": 0.002000052148541079,
+        "sem_ensemble_estimate": 0.0007071252184800605
+      }
+    }
+  },
+  "note": "B4 sym+charge projection removes known exact constraints, each batch otherwise independent; spread reflects collision-operator sampling error, not Bit21 finite-seed fluctuations"
+}
