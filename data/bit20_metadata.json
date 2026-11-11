@@ -1,0 +1,111 @@
+{
+  "experiment": "Bit20 independent-seed q-dispersion packet study",
+  "source": "Bit19 independent reconstruction of lost Bit6 experiment",
+  "shape": [
+    48,
+    4,
+    4,
+    16
+  ],
+  "physical_nodes": 6144,
+  "ticks": 24,
+  "independent_seeds_per_case": 8,
+  "modes": [
+    0,
+    3,
+    -3
+  ],
+  "hidden_q_modes": [
+    1,
+    2,
+    3
+  ],
+  "amplitude": 0.105,
+  "quadratures": "cos and sin each plus/minus sign, four REAL finite-bit trajectories per case and seed",
+  "phase_angles_only_in_initialization_and_external_analysis": true,
+  "microscopic_dynamics": "exact Bit8 local involution + D4 streaming; Numba implementation audited against Bit10",
+  "numba_collision_audit": {
+    "cases": 730,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "symmetry_audit": {
+    "mirror_x_equivariant": true,
+    "roundtrip": true,
+    "ticks_each_way": 6,
+    "physical_nodes": 6144
+  },
+  "all_five_charges_conserved_first_last": true,
+  "cases": [
+    {
+      "q_mode": 1,
+      "k_mode": 0,
+      "seed_first": 403100,
+      "raw_array_key_bit8": "q1_k+0_bit8",
+      "raw_array_key_free": "q1_k+0_free"
+    },
+    {
+      "q_mode": 1,
+      "k_mode": 3,
+      "seed_first": 403400,
+      "raw_array_key_bit8": "q1_k+3_bit8",
+      "raw_array_key_free": "q1_k+3_free"
+    },
+    {
+      "q_mode": 1,
+      "k_mode": -3,
+      "seed_first": 402800,
+      "raw_array_key_bit8": "q1_k-3_bit8",
+      "raw_array_key_free": "q1_k-3_free"
+    },
+    {
+      "q_mode": 2,
+      "k_mode": 0,
+      "seed_first": 413100,
+      "raw_array_key_bit8": "q2_k+0_bit8",
+      "raw_array_key_free": "q2_k+0_free"
+    },
+    {
+      "q_mode": 2,
+      "k_mode": 3,
+      "seed_first": 413400,
+      "raw_array_key_bit8": "q2_k+3_bit8",
+      "raw_array_key_free": "q2_k+3_free"
+    },
+    {
+      "q_mode": 2,
+      "k_mode": -3,
+      "seed_first": 412800,
+      "raw_array_key_bit8": "q2_k-3_bit8",
+      "raw_array_key_free": "q2_k-3_free"
+    },
+    {
+      "q_mode": 3,
+      "k_mode": 0,
+      "seed_first": 423100,
+      "raw_array_key_bit8": "q3_k+0_bit8",
+      "raw_array_key_free": "q3_k+0_free"
+    },
+    {
+      "q_mode": 3,
+      "k_mode": 3,
+      "seed_first": 423400,
+      "raw_array_key_bit8": "q3_k+3_bit8",
+      "raw_array_key_free": "q3_k+3_free"
+    },
+    {
+      "q_mode": 3,
+      "k_mode": -3,
+      "seed_first": 422800,
+      "raw_array_key_bit8": "q3_k-3_bit8",
+      "raw_array_key_free": "q3_k-3_free"
+    }
+  ],
+  "full_ensemble_elapsed_seconds": 303.735,
+  "limits": [
+    "small y,z periods 4 may cause early periodic aliasing",
+    "phase-coded reconstructed preparation not Bit6 eigenmode",
+    "short times / finite seed uncertainty; no inferred mass or stable particle"
+  ]
+}
