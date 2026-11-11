@@ -1,0 +1,216 @@
+{
+  "title": "Bit22 Exact D4 Equilibrium Structure Factor",
+  "timestamp": "2026-11-11",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "291e40f3d57262103efc6572d8e4583686f447ea91f721410c9f52972d5935bc",
+      "size": 1498
+    },
+    {
+      "path": "data/bit22_equilibrium_w32.log",
+      "sha256": "508f211b6348dba813b5631fa398a2de5161d24dc415fb0c7bd3451e374735ee",
+      "size": 565
+    },
+    {
+      "path": "data/bit22_equilibrium_w32.npz",
+      "sha256": "860e61ec47a57ea55563fdab3e08e17d9207a3ebc106ba6008114a78ac56faeb",
+      "size": 422309
+    },
+    {
+      "path": "data/bit22_equilibrium_w32_metadata.json",
+      "sha256": "c7810b6ec2708b7b3890ebaac1cf76fdc5706360564ef2c8788ae6c1a485d2ee",
+      "size": 4647
+    },
+    {
+      "path": "data/bit22_equilibrium_yz8.log",
+      "sha256": "0bae149acfeccf598bb84c1a480318938e5ff7d3bae1e50bc5af32c841c61e6d",
+      "size": 287
+    },
+    {
+      "path": "data/bit22_equilibrium_yz8.npz",
+      "sha256": "407300f91f7abd61c509fe5b99e0b5ed14e388c25fa19789b3d756b2cb498f6b",
+      "size": 211408
+    },
+    {
+      "path": "data/bit22_equilibrium_yz8_metadata.json",
+      "sha256": "1b25d080f087148316a2b9fc72fbbeea665d2bb728c043823531eeca076d2afc",
+      "size": 4092
+    },
+    {
+      "path": "data/bit22_key_findings.json",
+      "sha256": "0d231c309396d780715a800c495522b6f334570e7ee049d6447ffc93c4ad1dd5",
+      "size": 5239
+    },
+    {
+      "path": "data/bit22_spectral_summary.json",
+      "sha256": "42ba539aac68b9789758626f77680ff503f4ef801c223d7629573495acf255ce",
+      "size": 255216
+    },
+    {
+      "path": "data/bit22_validation.json",
+      "sha256": "4b2b559e5b2bf73da86cccf4bffd13f875171c1b17fa3f764e259c6c049a3ece",
+      "size": 2138
+    },
+    {
+      "path": "docs/RESULTS_Bit22_DynamicStructureFactor_de.md",
+      "sha256": "5163147901367fe9226f65aa5eb5dd27777826ebb03bd2fd8ffa9a6f66e98e34",
+      "size": 13885
+    },
+    {
+      "path": "figures/bit22_density_current_q2.svg",
+      "sha256": "d89342117fa66697a2146983c326ef90570572207383051704086147c074a375",
+      "size": 62899
+    },
+    {
+      "path": "figures/bit22_q_spectral_comparison.svg",
+      "sha256": "32774067aa66839821c3525e962137ae257788948ab344b16e8b330d4d00eab6",
+      "size": 70318
+    },
+    {
+      "path": "previous/bit21_q_falsification_backup_20261111.zip",
+      "sha256": "578455d7b1d201426a2dd6fa016545aae9d86d2d629a0aee766a775accd98614",
+      "size": 7386189
+    },
+    {
+      "path": "src/phase_bit_s4_open41_evidence.py",
+      "sha256": "c1297ee7f8c674aa278c7a13a819d6fd55daa4dd3a0980e34401c0b93c229d07",
+      "size": 4052
+    },
+    {
+      "path": "src/phase_bit_s4_open41_plot.py",
+      "sha256": "ea584133911ea8fe51e235c6df4fa66197e7ba67a7e067333435601161ad3b7c",
+      "size": 2897
+    },
+    {
+      "path": "src/phase_bit_s4_open41_spectral_analysis.py",
+      "sha256": "d695b6b2d79f0a62d4f6dceb10a4bea5f8070d0d47cabe801611566e0346a547",
+      "size": 7948
+    },
+    {
+      "path": "src/phase_bit_s4_open41_structure_factor.py",
+      "sha256": "8ae0c57facbebc6904bacca28f8f62115d778c5468c8042326303ca5430ec89b",
+      "size": 6082
+    },
+    {
+      "path": "src/phase_bit_s4_open41_validate.py",
+      "sha256": "c868b17143310bed984f2c9e82e00f5edb881beefd9eca50c72d90d1d6d03300",
+      "size": 3860
+    },
+    {
+      "path": "support/data/bit20_metadata.json",
+      "sha256": "004e39cc0c730688e6e6f966c20ffd7ce66068411ac6e8bb16416da058308e4a",
+      "size": 2762
+    },
+    {
+      "path": "support/data/bit20_raw.npz",
+      "sha256": "050c758bda20476ba32c6ac52470c7356f201486cbc680c308894337c5adb042",
+      "size": 2265773
+    },
+    {
+      "path": "support/src/phase_bit_s4_open25_symmetry_recovery.py",
+      "sha256": "d684ee84955b12affb379a9453e881700faaf71ffb030d30442b7574255ec586",
+      "size": 7973
+    },
+    {
+      "path": "support/src/phase_bit_s4_open26_symmetric_collision.py",
+      "sha256": "dd52a4687b7787f58365e0b7804b030033deab5df4593a633767a15609e31bb0",
+      "size": 6946
+    },
+    {
+      "path": "support/src/phase_bit_s4_open27_active_collision.py",
+      "sha256": "cd0f8ae9c27a00241b6179364894ca654708a961c88d8b62b6f9689801fc525f",
+      "size": 3805
+    },
+    {
+      "path": "support/src/phase_bit_s4_open28_fast4d.py",
+      "sha256": "e2e5dff332890d576271f1e2a50fb9ca2afb5b65b28ae3538945be5f0b6f12ad",
+      "size": 6548
+    },
+    {
+      "path": "support/src/phase_bit_s4_open29_engine.py",
+      "sha256": "eacc2c8d0a69b09e80b399952f96f546c992b54ad63841f686e3f17dc2599836",
+      "size": 1042
+    },
+    {
+      "path": "support/src/phase_bit_s4_open29_fast_collision.py",
+      "sha256": "9e4f6192d80d9f7ce245d10df1c7cbc858bbc603bf2c1e05e1fe3e3056f34365",
+      "size": 3253
+    },
+    {
+      "path": "support/src/phase_bit_s4_open31_bounded_cache.py",
+      "sha256": "1296e161b7f27400f95d2762c4b3d108a405f8d6ab7b7554132103459ec9b121",
+      "size": 2712
+    },
+    {
+      "path": "support/src/phase_bit_s4_open33_shells.py",
+      "sha256": "4c53ea54295bc9dd6c9c2324d353d0e748c621417e973d1fa28859cb60b77f5a",
+      "size": 10738
+    },
+    {
+      "path": "support/src/phase_bit_s4_open34_front_rays.py",
+      "sha256": "08b88f52cdfae88ee336356d6a98e4a29907efb2cefc03ee892c7cff18f6749e",
+      "size": 5347
+    },
+    {
+      "path": "support/src/phase_bit_s4_open36_event_solver.py",
+      "sha256": "4a1b1857b51a7033824067eb93086185b06de0eb304681ed84bb3162bb8c104f",
+      "size": 8095
+    },
+    {
+      "path": "support/src/phase_bit_s4_open37_longfront.py",
+      "sha256": "cd19ab2f29aee901207798b7c1f5a5a9ed6b403c1c2d51ed1b856839edcd7877",
+      "size": 5834
+    },
+    {
+      "path": "support/src/phase_bit_s4_open38_analyze.py",
+      "sha256": "19ef4c5a47785db8eb4cffefd0447f0bdcc0eba4e84b62889cb6645a7e5d2f49",
+      "size": 6198
+    },
+    {
+      "path": "support/src/phase_bit_s4_open38_phased_packet.py",
+      "sha256": "4a89481d8e9988faf2042c43469c004f17ed446d916a714870aad813939eb041",
+      "size": 10304
+    },
+    {
+      "path": "support/src/phase_bit_s4_open38_validate.py",
+      "sha256": "15fa782df999eaf164eaa9a9ab11cff3e9d4d62208e7c49df14f010572ec5de1",
+      "size": 1596
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_analyze.py",
+      "sha256": "1920d4eeb34e837b568d57d56869668786d389c54d417711370f5786e7ad3332",
+      "size": 9406
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_dispersion.py",
+      "sha256": "5ac713d72f25b2c00c6e78c29b7b3caa304551d248083ebb90cbf964c2f6bdbe",
+      "size": 5698
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_merge.py",
+      "sha256": "ba02ea92e041756d69fffe12eed399c1200b65605b173b78ab9caf952b1a16c4",
+      "size": 1466
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_numba_collision.py",
+      "sha256": "dfdbe1e8275deab76b205de73abbc9acd10ad9cc7f8b9315116237a261b9c7e2",
+      "size": 3842
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_plot.py",
+      "sha256": "a632d9f17910024e995c11fb1b6f0f8a40f271877a25da256fdeb9f3738c28a8",
+      "size": 1803
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_report.py",
+      "sha256": "dbb03019e7270fcb4e1ceb7905e828a2f835179c59460be53833cc5bf62a5e52",
+      "size": 11064
+    },
+    {
+      "path": "support/src/phase_bit_s4_open39_validate.py",
+      "sha256": "6e65b56fce95edef16e3d570e915e6f1eb258bc0951972ae194d274b26dad4fe",
+      "size": 3260
+    }
+  ]
+}
