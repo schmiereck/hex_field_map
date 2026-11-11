@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "test": "Bit25 coherent outgoing eigenpacket mode coupling vs exact local quadratic vertex",
+  "date": "2026-11-11",
+  "previous_test": "Bit24",
+  "microscopic_rule": "unchanged reversible Bit8 B4-symmetric 24-bit collision plus D4 streaming",
+  "shape": [
+    48,
+    4,
+    4,
+    32
+  ],
+  "physical_nodes": 12288,
+  "cases": {
+    "baseline": {
+      "amplitude": 0.22,
+      "branch": "left",
+      "seeds": 12,
+      "phase_conditions": 4,
+      "ticks": 12,
+      "particles": "4 exact bit trajectories per seed and phase",
+      "nonlinear_sites_tick_4": 29.958333333333332,
+      "nonlinear_sites_tick_8": 2373.7083333333335,
+      "nonlinear_sites_tick_12": 4644.479166666667,
+      "sum_mode": {
+        "coherence_fraction": {
+          "rho": 0.06422635991165224,
+          "jx": 0.06976482859551152,
+          "jw": 0.029975323500896836
+        },
+        "p_value": {
+          "rho": 0.6193967672054658,
+          "jx": 0.550074987502083,
+          "jw": 0.9310114980836527
+        }
+      },
+      "minimum_exploratory_uncorrected_p_value": 0.125812364605899,
+      "familywise_significant_27": false,
+      "mean_signed_charge_all_zero": true,
+      "initial_connected_response_zero": true,
+      "causal_onset_tick_4": true
+    },
+    "weak": {
+      "amplitude": 0.11,
+      "branch": "left",
+      "seeds": 6,
+      "phase_conditions": 4,
+      "ticks": 12,
+      "particles": "4 exact bit trajectories per seed and phase",
+      "nonlinear_sites_tick_4": 4.666666666666667,
+      "nonlinear_sites_tick_8": 2017.2916666666667,
+      "nonlinear_sites_tick_12": 4386.333333333333,
+      "sum_mode": {
+        "coherence_fraction": {
+          "rho": 0.041443642846241295,
+          "jx": 0.22796498238864854,
+          "jw": 0.10270202931587459
+        },
+        "p_value": {
+          "rho": 0.9801699716713881,
+          "jx": 0.25129145142476256,
+          "jw": 0.647558740209965
+        }
+      },
+      "minimum_exploratory_uncorrected_p_value": 0.027995334110981502,
+      "familywise_significant_27": false,
+      "mean_signed_charge_all_zero": true,
+      "initial_connected_response_zero": true,
+      "causal_onset_tick_4": true
+    },
+    "strong": {
+      "amplitude": 0.3,
+      "branch": "left",
+      "seeds": 6,
+      "phase_conditions": 4,
+      "ticks": 12,
+      "particles": "4 exact bit trajectories per seed and phase",
+      "nonlinear_sites_tick_4": 47.625,
+      "nonlinear_sites_tick_8": 2472.6666666666665,
+      "nonlinear_sites_tick_12": 4715.75,
+      "sum_mode": {
+        "coherence_fraction": {
+          "rho": 0.12397045023512183,
+          "jx": 0.3460552816475551,
+          "jw": 0.1750089550984374
+        },
+        "p_value": {
+          "rho": 0.6543909348441926,
+          "jx": 0.02649558406932178,
+          "jw": 0.3961006498916847
+        }
+      },
+      "minimum_exploratory_uncorrected_p_value": 0.00899850024995834,
+      "familywise_significant_27": false,
+      "mean_signed_charge_all_zero": true,
+      "initial_connected_response_zero": true,
+      "causal_onset_tick_4": true
+    },
+    "xw": {
+      "amplitude": 0.22,
+      "branch": "w",
+      "seeds": 6,
+      "phase_conditions": 4,
+      "ticks": 12,
+      "particles": "4 exact bit trajectories per seed and phase",
+      "nonlinear_sites_tick_4": 5.916666666666667,
+      "nonlinear_sites_tick_8": 2148.0833333333335,
+      "nonlinear_sites_tick_12": 4461.125,
+      "sum_mode": {
+        "coherence_fraction": {
+          "rho": 0.22442197352714507,
+          "jx": 0.07937425973287629,
+          "jw": 0.04625457300728804
+        },
+        "p_value": {
+          "rho": 0.20696550574904182,
+          "jx": 0.7870354940843193,
+          "jw": 0.958506915514081
+        }
+      },
+      "minimum_exploratory_uncorrected_p_value": 0.022829528411931345,
+      "familywise_significant_27": false,
+      "mean_signed_charge_all_zero": true,
+      "initial_connected_response_zero": true,
+      "causal_onset_tick_4": true
+    }
+  },
+  "total_seed_case_runs": 30,
+  "total_phase_condition_runs": 120,
+  "total_executed_bit_trajectories": 480,
+  "predefined_window": [
+    5,
+    10
+  ],
+  "phase_cycling": "first of four phi harmonics",
+  "permutation_null": "random independent fourth-root rotations of per-seed complex first-harmonic; constant in time",
+  "permutations": 6000,
+  "number_of_tested_spatial_observable_combinations_per_case": 27,
+  "number_of_exploratory_tests_all_cases": 108,
+  "smallest_raw_p_over_all": [
+    0.00899850024995834,
+    "strong",
+    "q_flip",
+    "jw"
+  ],
+  "any_bonferroni_significant_across_108": false,
+  "exhaustive_local_vertex_states": 16777216,
+  "exhaustive_local_vertex_summary": {
+    "right_left": {
+      "source_norm": 0.017868541297538218,
+      "local_charge_error": 9.549182570386131e-17,
+      "after_one_stream_at_2k_2q": {
+        "density": [
+          -0.033343287088444085,
+          0.0002589602620195262
+        ],
+        "current_x": [
+          -0.00037923989594102446,
+          0.0067876391052789625
+        ],
+        "current_w": [
+          0.00016086534070449895,
+          -0.022724675705090923
+        ]
+      }
+    },
+    "right_w": {
+      "source_norm": 0.017356897744274145,
+      "local_charge_error": 7.57391076790106e-17,
+      "after_one_stream_at_2k_2q": {
+        "density": [
+          0.013852017508259958,
+          -0.006755140885206868
+        ],
+        "current_x": [
+          0.005513172424785892,
+          -0.00010442192833862727
+        ],
+        "current_w": [
+          0.0011677863424213713,
+          0.016651078897530855
+        ]
+      }
+    }
+  },
+  "conclusions": [
+    "Strong XOR-mixed nonlinear response after first causal intersection",
+    "No resolved phase-locked outgoing Fourier mode at familywise 0.05 in 4 measured conditions",
+    "Local iid half-filled second-order collision vertex nonzero by exhaustive 2^24 enumeration",
+    "Local nonzero mixing does not imply sustained coherent far-field wave",
+    "No conserved microscopic energy identified; currents are particle directional currents, not measured energy transfer"
+  ],
+  "caveats": [
+    "Small seeded ensembles, 12 ticks and short transverse periods",
+    "Predefined short time window, no asymptotic frequency resolution",
+    "Local vertex is a single collision at iid half-filling, correlated backgrounds may differ",
+    "No D3/D8 coupling or stable particle observed"
+  ]
+}
