@@ -1,0 +1,216 @@
+{
+  "experiment": "Bit22 stationary equilibrium density/current D4 structure factor",
+  "shape": [
+    48,
+    4,
+    4,
+    32
+  ],
+  "physical_nodes": 12288,
+  "ticks": 80,
+  "seeds": 8,
+  "seed0": 412200,
+  "initial_states": "24 iid fair bits per physical D4 site (uniform invariant measure of bijective full evolution)",
+  "physical_q_modes": [
+    1,
+    2,
+    3
+  ],
+  "k_modes": [
+    0,
+    2,
+    3,
+    4,
+    -2,
+    -3,
+    -4
+  ],
+  "mode_pairs": [
+    {
+      "k_mode": 0,
+      "q_mode": 2,
+      "k_physical": 0.0,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 2,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 2,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 2,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 2,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 2,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 2,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 0,
+      "q_mode": 4,
+      "k_physical": 0.0,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 4,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 4,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 4,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 4,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 4,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 4,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 0,
+      "q_mode": 6,
+      "k_physical": 0.0,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 6,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 6,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 6,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 6,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 6,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 6,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 1.1780972450961724
+    }
+  ],
+  "probes": [
+    "density",
+    "current_x",
+    "current_w"
+  ],
+  "fourier_normalization": "2D spatial FFT / sqrt(physical D4 nodes)",
+  "dynamics": "unchanged deterministic Bit8 + streaming via audited Bit20 Numba",
+  "free_streaming_same_start": true,
+  "reverse_audit_on_first_seed": true,
+  "audit": [
+    {
+      "seed": 412200,
+      "seconds": 14.395,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": true
+    },
+    {
+      "seed": 412201,
+      "seconds": 6.85,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412202,
+      "seconds": 6.829,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412203,
+      "seconds": 6.76,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412204,
+      "seconds": 7.357,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412205,
+      "seconds": 6.832,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412206,
+      "seconds": 6.786,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412207,
+      "seconds": 6.8,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    }
+  ],
+  "elapsed_seconds": 62.627889082000024
+}
