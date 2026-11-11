@@ -1,0 +1,110 @@
+{
+  "test": "Bit23 exact finite-bit eigenvector preparation vs linear mean-field prediction",
+  "shape": [
+    48,
+    4,
+    4,
+    32
+  ],
+  "ticks": 10,
+  "seeds_per_case": 8,
+  "cases": [
+    {
+      "code": "q2_w",
+      "q": 0.7853981633974483,
+      "k": 0.39269908169872414,
+      "branch": "w",
+      "mode_id": 3,
+      "eigenvalue": [
+        0.6890291943198876,
+        -0.6878354946455821
+      ],
+      "eigenvalue_modulus": 0.973590724236548,
+      "mode_collision_jx_weight": 3.1726467130797186e-05,
+      "mode_collision_jw_weight": 0.34150758044030116,
+      "mode_density_weight": 0.1727579587025103,
+      "vector_eigen_residual": 2.2358872390067364e-15,
+      "seed_count": 8,
+      "node_count": 12288,
+      "time_ticks": 10,
+      "threshold_amplitude": 0.075,
+      "one_step_measured_complex_ratio": [
+        0.6883843853288163,
+        -0.6857525468936143
+      ],
+      "one_step_measured_minus_eigenvalue": 0.0021804701264622355,
+      "one_step_standard_error_complex_magnitude": 0.0015635173065017061,
+      "t1_prediction_relative_complex_vector_error": 0.015976101020814308,
+      "projected_amplitude_ratio_t": [
+        1.0,
+        0.9716676954498088,
+        0.9460283505750503,
+        0.9219255894773491,
+        0.8957853541513761,
+        0.8741350783950648,
+        0.8517547040753289,
+        0.826840277767809,
+        0.8044584235482641,
+        0.7820758470543265,
+        0.7621556462397203
+      ],
+      "predicted_amplitude_ratio_t": [
+        1.0,
+        0.973590724236548,
+        0.947878898319446,
+        0.9228461031033708,
+        0.8984744058792868,
+        0.874746347528017,
+        0.8516449300130773,
+        0.8291536042038161,
+        0.8072562580201375,
+        0.7859372048903113,
+        0.7651811725136064
+      ],
+      "projected_phase_t": [
+        -1.2894908366183875e-19,
+        -0.7834599509762967,
+        -1.5705958649042921,
+        -2.3541589863564685,
+        -3.1386611562870974,
+        -3.923218677751203,
+        -4.704943208302082,
+        -5.491147040366555,
+        -6.273674886028638,
+        -7.057714069438527,
+        -7.839455055431172
+      ],
+      "predicted_phase_t": [
+        -0.0,
+        -0.7845311941267594,
+        -1.5690623882535188,
+        -2.3535935823802783,
+        -3.1381247765070377,
+        -3.922655970633797,
+        -4.7071871647605565,
+        -5.491718358887316,
+        -6.276249553014075,
+        -7.060780747140835,
+        -7.845311941267594
+      ],
+      "orthogonal_energy_fraction_t": [
+        9.277833793670073e-05,
+        0.00024486487252025973,
+        0.0006913568091180409,
+        0.0010673794009442804,
+        0.0019353419948947397,
+        0.002820070576732683,
+        0.002412148547450645,
+        0.0038176356649696837,
+        0.003077297059570085,
+        0.0037194615478274165,
+        0.003634532187517308
+      ],
+      "sample_size_warning": "ensemble projection has nonzero finite-seed fluctuations"
+    }
+  ],
+  "all_five_charges_conserved": true,
+  "first_seed_per_case_forward_backward_exact": true,
+  "limit": "statistical linear tangent exact only at first tick in infinitesimal-amplitude limit; multi-tick correlations can cause failure",
+  "time_seconds": 16.172418986000025
+}
