@@ -1,0 +1,192 @@
+{
+  "experiment": "Bit22 stationary equilibrium density/current D4 structure factor",
+  "shape": [
+    48,
+    8,
+    8,
+    32
+  ],
+  "physical_nodes": 49152,
+  "ticks": 80,
+  "seeds": 4,
+  "seed0": 412900,
+  "initial_states": "24 iid fair bits per physical D4 site (uniform invariant measure of bijective full evolution)",
+  "physical_q_modes": [
+    1,
+    2,
+    3
+  ],
+  "k_modes": [
+    0,
+    2,
+    3,
+    4,
+    -2,
+    -3,
+    -4
+  ],
+  "mode_pairs": [
+    {
+      "k_mode": 0,
+      "q_mode": 2,
+      "k_physical": 0.0,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 2,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 2,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 2,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 2,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 2,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 2,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 0.39269908169872414
+    },
+    {
+      "k_mode": 0,
+      "q_mode": 4,
+      "k_physical": 0.0,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 4,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 4,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 4,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 4,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 4,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 4,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 0.7853981633974483
+    },
+    {
+      "k_mode": 0,
+      "q_mode": 6,
+      "k_physical": 0.0,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 2,
+      "q_mode": 6,
+      "k_physical": 0.2617993877991494,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 3,
+      "q_mode": 6,
+      "k_physical": 0.39269908169872414,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": 4,
+      "q_mode": 6,
+      "k_physical": 0.5235987755982988,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -2,
+      "q_mode": 6,
+      "k_physical": -0.2617993877991494,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -3,
+      "q_mode": 6,
+      "k_physical": -0.39269908169872414,
+      "q_physical": 1.1780972450961724
+    },
+    {
+      "k_mode": -4,
+      "q_mode": 6,
+      "k_physical": -0.5235987755982988,
+      "q_physical": 1.1780972450961724
+    }
+  ],
+  "probes": [
+    "density",
+    "current_x",
+    "current_w"
+  ],
+  "fourier_normalization": "2D spatial FFT / sqrt(physical D4 nodes)",
+  "dynamics": "unchanged deterministic Bit8 + streaming via audited Bit20 Numba",
+  "free_streaming_same_start": true,
+  "reverse_audit_on_first_seed": true,
+  "audit": [
+    {
+      "seed": 412900,
+      "seconds": 55.55,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": true
+    },
+    {
+      "seed": 412901,
+      "seconds": 27.113,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412902,
+      "seconds": 27.214,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    },
+    {
+      "seed": 412903,
+      "seconds": 28.355,
+      "number_four_momenta_conserved": true,
+      "exact_roundtrip_test": null
+    }
+  ],
+  "elapsed_seconds": 138.292911033
+}
