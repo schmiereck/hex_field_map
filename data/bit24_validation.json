@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "exact_bit8_collision_reference": {
+    "cases": 157,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "one_seed_end_to_end": {
+    "nodes": 4096,
+    "ticks": 6,
+    "finite_speed_first_interaction_tick": 4,
+    "all_four_states_bit_exact_reversible": true,
+    "all_five_mixed_additive_charges_zero_each_tick": true,
+    "collision_free_streaming_cross_term_exactly_zero_each_tick": true
+  },
+  "tested_preparation_velocities": {
+    "x_right": 1.0047732266440865,
+    "x_left": -1.0029591384676961,
+    "w": -0.0014529606834864004
+  },
+  "validated_existing_datasets": {
+    "bit24_amp_010.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_amp_016.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_amp_030.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_baseline.json": {
+      "seeds": 8,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_branch_right.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_branch_w.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_phase_halfpi.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_phase_pi.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_sep_12.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_sep_20.json": {
+      "seeds": 4,
+      "ticks": 14,
+      "all_initial_interactions_zero": true
+    },
+    "bit24_transverse_8.json": {
+      "seeds": 2,
+      "ticks": 12,
+      "all_initial_interactions_zero": true
+    }
+  }
+}
