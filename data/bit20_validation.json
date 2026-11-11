@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "local_collision_audit": {
+    "cases": 1430,
+    "exact_bit8_bit10_match": true,
+    "involution": true,
+    "five_charges_conserved": true
+  },
+  "numba_bit10_reference_exact_four_forward_reverse_ticks_512_nodes": true,
+  "q2_phase_preparation_mirror_x_six_ticks_exact": true,
+  "full_grid_symmetry_audit": {
+    "mirror_x_equivariant": true,
+    "roundtrip": true,
+    "ticks_each_way": 6,
+    "physical_nodes": 6144
+  },
+  "all_raw_ensembles": 9,
+  "independent_seeds": 72,
+  "real_microtrajectories": 288,
+  "forward_ticks_per_trajectory": 24,
+  "numba_and_free_raw_array_keys": 18,
+  "raw_npz_sha256": "050c758bda20476ba32c6ac52470c7356f201486cbc680c308894337c5adb042"
+}
