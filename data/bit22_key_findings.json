@@ -1,0 +1,149 @@
+{
+  "evidence": "Bit22 q-sensitive equilibrium spectral branch comparisons",
+  "uncertainty": "Paired bootstrap resamples independent initial fields; finite N and 80 ticks; intervals descriptive.",
+  "measured_peaks": "+k for x dominated sector, -q for w dominated sector at physical q=pi/4",
+  "cases": {
+    "w32": {
+      "nodes": 12288,
+      "seeds": 8,
+      "ticks": 80,
+      "k_mode": 3,
+      "physical_k": 0.39269908169872414,
+      "q": {
+        "2": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.8667749764847872,
+            "free_fraction": 0.9997156621692064,
+            "difference_bit8_minus_free": -0.1329406856844192,
+            "difference_bootstrap_95ci": [
+              -0.17756674114662552,
+              -0.09950372451537047
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          }
+        },
+        "4": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.827362050475442,
+            "free_fraction": 0.9947016844806654,
+            "difference_bit8_minus_free": -0.16733963400522345,
+            "difference_bootstrap_95ci": [
+              -0.20331034364677428,
+              -0.14004498606275806
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          },
+          "x_sector_peak": {
+            "omega": 0.3878509448876288,
+            "jx_power": 58.34606912420267,
+            "jw_power": 1.7673741273513468,
+            "polarization_index_jx_minus_jw_over_sum": 0.9411987059215525,
+            "bootstrap_95ci": [
+              0.8408907680694303,
+              0.9767408839567514
+            ]
+          },
+          "w_sector_peak": {
+            "omega": -0.7757018897752576,
+            "jx_power": 0.6499292895315504,
+            "jw_power": 55.66590603590003,
+            "polarization_index_jx_minus_jw_over_sum": -0.9769184178561567,
+            "bootstrap_95ci": [
+              -0.9890632517980174,
+              -0.9546240357010605
+            ]
+          }
+        },
+        "6": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.6785866098302322,
+            "free_fraction": 0.9619820021756148,
+            "difference_bit8_minus_free": -0.2833953923453826,
+            "difference_bootstrap_95ci": [
+              -0.3438427136126758,
+              -0.2364899704114484
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          }
+        }
+      }
+    },
+    "yz8": {
+      "nodes": 49152,
+      "seeds": 4,
+      "ticks": 80,
+      "k_mode": 3,
+      "physical_k": 0.39269908169872414,
+      "q": {
+        "2": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.8664161115933157,
+            "free_fraction": 0.9996763066008086,
+            "difference_bit8_minus_free": -0.13326019500749298,
+            "difference_bootstrap_95ci": [
+              -0.19813970600847342,
+              -0.11462473561665432
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          }
+        },
+        "4": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.8719858716921315,
+            "free_fraction": 0.9876785386654986,
+            "difference_bit8_minus_free": -0.11569266697336711,
+            "difference_bootstrap_95ci": [
+              -0.13672984743837135,
+              -0.09202823095610413
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          },
+          "x_sector_peak": {
+            "omega": 0.3878509448876288,
+            "jx_power": 43.2430544694932,
+            "jw_power": 1.9306864028513804,
+            "polarization_index_jx_minus_jw_over_sum": 0.9145217391534051,
+            "bootstrap_95ci": [
+              0.47720937290490306,
+              0.9891439612397213
+            ]
+          },
+          "w_sector_peak": {
+            "omega": -0.7757018897752576,
+            "jx_power": 1.0190876285179677,
+            "jw_power": 54.463150643145184,
+            "polarization_index_jx_minus_jw_over_sum": -0.9632643649476395,
+            "bootstrap_95ci": [
+              -0.9709698446895882,
+              -0.9426561566708442
+            ]
+          }
+        },
+        "6": {
+          "free_branch_concentration": {
+            "bit8_fraction": 0.7739434684889608,
+            "free_fraction": 0.9635528277403909,
+            "difference_bit8_minus_free": -0.18960935925143008,
+            "difference_bootstrap_95ci": [
+              -0.28003219293679804,
+              -0.14760963878240452
+            ],
+            "bootstrap_reps": 1200,
+            "paired_same_microstate_per_seed": true,
+            "free_band_tolerance": "1.15*2pi/(ticks+1), |omega|>0.16"
+          }
+        }
+      }
+    }
+  }
+}
